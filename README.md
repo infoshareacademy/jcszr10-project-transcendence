@@ -30,7 +30,7 @@ Gra jest osadzona w świecie fantasy, gracz wciela się w nej w stworzoną przez
 
 #
 
-## Gitflow Workflow
+## Git Workflow
 
 Do końca 1 sprintu będziemy korzystać z 3 branchy:
 - main
@@ -39,7 +39,6 @@ Do końca 1 sprintu będziemy korzystać z 3 branchy:
 
 Każdy tworzy swój feature branch wychodzący od develop i pracuje nad swoim taskiem.
 Po spuszowaniu wszystkich zmian robicie merge pull request a tech lead go sprawdza i jeśli wszystko się zgadza merguje zmiany i poprawia ewentualne konflikty.
-Swoje branche nazywamy feature/"nazwa feature'a' lub feature/Issue#1234"
 Podczas 2 sprintu dodamy do tego release branch ( o tym później )
 
 ## Workflow
