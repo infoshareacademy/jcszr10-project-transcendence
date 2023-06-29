@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Project_Transcendence.ConsoleApp
 {
+    /// <summary>
+    /// This class is used to store Ascii art in a form of public fields.
+    /// </summary>
     public static class AsciiArt
     {
 
