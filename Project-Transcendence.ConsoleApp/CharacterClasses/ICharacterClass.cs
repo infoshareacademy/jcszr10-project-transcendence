@@ -9,5 +9,10 @@ namespace Project_Transcendence.ConsoleApp.CharacterClasses
     internal interface ICharacterClass
     {
         //TODO: Design characterclass interface
+
+
+
+        // Adnotacja od Pitera:
+        // Tutaj trzeba sie dobrze zastanowić jak chcemy stworzyc system klas, czy robimy to na zasadzie dziedziczenia czy wybierame opcje kompozycji.
     }
 }

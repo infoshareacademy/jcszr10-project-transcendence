@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_Transcendence.ConsoleApp
+namespace Project_Transcendence.ConsoleApp.Menus
 {
 
     /// <summary>
@@ -34,7 +34,7 @@ namespace Project_Transcendence.ConsoleApp
             {
                 string currentOption = _options[i];
                 string prefix;
-                if(i == _selectedIndex)
+                if (i == _selectedIndex)
                 {
                     prefix = "||";
                     Console.ForegroundColor = ConsoleColor.Green;
@@ -68,24 +68,24 @@ namespace Project_Transcendence.ConsoleApp
 
                 if (keyPressed == ConsoleKey.UpArrow)
                 {
-                    _selectedIndex--; 
-                    if(_selectedIndex == -1)
+                    _selectedIndex--;
+                    if (_selectedIndex == -1)
                     {
-                        _selectedIndex = _options.Length-1;
+                        _selectedIndex = _options.Length - 1;
                     }
 
                 }
                 else if (keyPressed == ConsoleKey.DownArrow)
                 {
                     _selectedIndex++;
-                    if(_selectedIndex == _options.Length)
+                    if (_selectedIndex == _options.Length)
                     {
                         _selectedIndex = 0;
                     }
                 }
 
 
-            } while(keyPressed != ConsoleKey.Enter);
+            } while (keyPressed != ConsoleKey.Enter);
 
             return _selectedIndex;
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Project_Transcendence.ConsoleApp.Menus;
 
 namespace Project_Transcendence.ConsoleApp
 {
@@ -10,6 +11,7 @@ namespace Project_Transcendence.ConsoleApp
     {
         public void Start()
         {
+            RunLoadingScreen();
             Console.Title = "Transcendence";
             RunStartingMenu();
         }
@@ -58,6 +60,12 @@ namespace Project_Transcendence.ConsoleApp
             Console.WriteLine("Press any key to return to the menu.");
             Console.ReadKey(true);
             RunStartingMenu();
+        }
+
+        private void RunLoadingScreen()
+        {
+            LoadingMenu load = new LoadingMenu();
+            load.Animate(AsciiArt.loading);
         }
 
         private void RunMainMenu()
