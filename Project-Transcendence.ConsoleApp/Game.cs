@@ -11,21 +11,21 @@ namespace Project_Transcendence.ConsoleApp
         public void Start()
         {
             Console.Title = "Transcendence";
-            RunMainMenu();
+            RunStartingMenu();
         }
 
-        private void RunMainMenu()
+        private void RunStartingMenu()
         {
             Console.WriteLine("Starting the game!");
             string prompt = AsciiArt.headerArt;
             string[] options = { "Play", "About", "Exit" };
-            MainMenuView mainMenu = new MainMenuView(prompt, options);
-            int selectedIndex = mainMenu.Run();
+            Menu StartingMenu = new Menu(prompt, options);
+            int selectedIndex = StartingMenu.Run();
 
             switch (selectedIndex)
             {
                 case 0:
-                    DisplayNextMenu();
+                    RunMainMenu();
                     break;
 
                 case 1:
@@ -38,6 +38,9 @@ namespace Project_Transcendence.ConsoleApp
             }
         }
 
+        /// <summary>
+        /// THis method turns off the console app.
+        /// </summary>
         private void ExitGame()
         {
             Environment.Exit(0);
@@ -50,18 +53,48 @@ namespace Project_Transcendence.ConsoleApp
             Console.WriteLine("Tech Leader - Piotr Niewczas");
             Console.WriteLine("Scrum Master - Paula Migulska");
             Console.WriteLine("Developer - Piotr Żak");
-            Console.WriteLine("Developer Marek Laskowski");
+            Console.WriteLine("Developer - Marek Laskowski");
             Console.WriteLine("Trener - Tymoteusz Micherda");
             Console.WriteLine("Press any key to return to the menu.");
             Console.ReadKey(true);
-            RunMainMenu();
+            RunStartingMenu();
         }
 
-        private void DisplayNextMenu()
+        private void RunMainMenu()
         {
             Console.Clear();
-            Console.WriteLine("PLACEHOLDER");
-            ExitGame();
+            string prompt = "Hello adventurer what are we going to do today?";
+          //  Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (prompt.Length / 2)) + "}", prompt));
+
+            string[] options = { "Create character", "Load Character", "Class info", "Game master", "Back" };
+            Menu menuView = new Menu(prompt, options);
+            int selectedIndex = menuView.Run();
+
+            switch(selectedIndex)
+            {
+                case 0:
+                    // TODO: Create a character creator menu and system.
+                    break; 
+
+                case 1:
+                    // TODO: Create a system to load alreade created character.
+                    break;
+
+                case 2:
+                    // TODO: Create a class info displaying menu.
+                    break; 
+
+                case 3:
+                    // TODO: Create a admin controls menu.
+                    break;
+                case 4:
+                    Console.Clear();
+                    RunStartingMenu();
+                    break;
+            }
+
+
+
         }
     }
 }

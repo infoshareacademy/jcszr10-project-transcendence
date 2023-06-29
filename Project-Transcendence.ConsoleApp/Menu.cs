@@ -6,20 +6,27 @@ using System.Threading.Tasks;
 
 namespace Project_Transcendence.ConsoleApp
 {
-    public class MainMenuView
+
+    /// <summary>
+    /// This class is used to create a menu that user can move thru with UP and DOWN arrows, pressing Enter selects current option.
+    /// </summary>
+    public class Menu
     {
 
         private int _selectedIndex;
         private string[] _options;
         private string _prompt;
 
-        public MainMenuView(string prompt, string[] options)
+        public Menu(string prompt, string[] options)
         {
             _prompt = prompt;
             _options = options;
             _selectedIndex = 0;
         }
 
+        /// <summary>
+        /// This method changes the color of selected option from the Menu.
+        /// </summary>
         private void DisplayOptions()
         {
             Console.WriteLine(_prompt);
@@ -45,6 +52,10 @@ namespace Project_Transcendence.ConsoleApp
             Console.ResetColor();
         }
 
+        /// <summary>
+        /// This is a Method that returns int avlue when u press ENTER key while moving thru a Menu.
+        /// </summary>
+        /// <returns></returns>
         public int Run()
         {
             ConsoleKey keyPressed;
