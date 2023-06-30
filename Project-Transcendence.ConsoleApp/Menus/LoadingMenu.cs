@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace Project_Transcendence.ConsoleApp.Menus
 {
-    public class LoadingMenu
+    public static class LoadingMenu
     {
-
-       // TextAnimationUtils
-
-        public void Animate(string[] frames)
+        public static void Run(string[] frames)
         {
             for (int i = 0; i <5; i++)
             {
