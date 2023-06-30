@@ -23,28 +23,28 @@ namespace Project_Transcendence.ConsoleApp.Menus
             {
                 case 0:
                     // TODO: Create a character creator menu and system.
+                    PlayerCharacterCreationMenu.Run();
                     break;
 
                 case 1:
-                    // TODO: Create a system to load alreade created character.
+                    // TODO: Create a system to load already created character.
+                    PlayerCharacterLoadMenu.Run();
                     break;
 
                 case 2:
-                    // TODO: Create a class info displaying menu.
+                    ClassInfoMenu.Run();
                     break;
 
                 case 3:
                     // TODO: Create a admin controls menu.
+                    AdminControlsMenu.Run();
                     break;
+
                 case 4:
                     Console.Clear();
                     StartingMenu.Run();
                     break;
             }
-
-
-
         }
-
     }
 }

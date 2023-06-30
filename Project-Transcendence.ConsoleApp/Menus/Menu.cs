@@ -9,6 +9,8 @@ namespace Project_Transcendence.ConsoleApp.Menus
 
     /// <summary>
     /// This class is used to create a menu that user can move thru with UP and DOWN arrows, pressing Enter selects current option.
+    /// To use this class u have create a instance of this class with parameters (string prompt, string[] options) then u create a intiger with assigned value of created instance [ int x = instance.Run() ]
+    /// then u create a switch(x) statement that depents on created int and inside this switch in every case u put your desired function.
     /// </summary>
     public class Menu
     {
