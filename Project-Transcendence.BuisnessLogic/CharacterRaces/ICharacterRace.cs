@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project_Transcendence.ConsoleApp.CharacterRaces
 {
-    internal interface ICharacterRace
+    public interface ICharacterRace
     {
         // TODO: Design Race interface
 

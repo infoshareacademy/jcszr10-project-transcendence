@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Project_Transcendence.ConsoleApp.Perks
 {
-    internal interface IAbility
+    public interface IAbility
     {
+        int damage { get; set; }
     }
 }
