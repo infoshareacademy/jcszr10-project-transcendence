@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project_Transcendence.ConsoleApp.CharacterClasses
 {
-    internal interface ICharacterClass
+    public interface ICharacterClass
     {
         //TODO: Design characterclass interface
 
