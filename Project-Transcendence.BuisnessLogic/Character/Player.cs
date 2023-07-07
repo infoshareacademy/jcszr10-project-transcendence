@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Project_Transcendence.ConsoleApp.Character
 {
-    internal class Player : IPlayer
+    public class Player : IPlayer
     {
         public ICharacterClass CharacterClass { get; set; }
 
