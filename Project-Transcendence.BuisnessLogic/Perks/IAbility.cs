@@ -8,9 +8,8 @@ namespace Project_Transcendence.ConsoleApp.Perks
 {
     public interface IAbility
     {
-        int Damage { get; set; }
-        int damage { get; set; }
-        int Healing { get; set; }
-        int healing { get; set; }
+        public int Damage { get; set; }
+        public int Healing { get; set; }
+        public int Name { get; set; }
     }
 }
