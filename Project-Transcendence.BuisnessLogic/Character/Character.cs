@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 
 namespace Project_Transcendence.ConsoleApp.Character
 {
-    public class Character : IHealth
+    public class Character : IHealth, ICharacter  
     {
         public string Name { get; set; }
         public ICharacterRace Race { get; set; }
         public int Health { get; set; }
+        public int Level { get; set; }
 
+        
         public void Death()
         {
             Console.WriteLine("You are dead!");
@@ -23,6 +25,11 @@ namespace Project_Transcendence.ConsoleApp.Character
         public void IncreaseHealth()
         {
             Health += 100;
+        }
+
+        public void LevelUp()
+        {
+            Level++;
         }
 
         public void TakeDamage(IAbility ability)
