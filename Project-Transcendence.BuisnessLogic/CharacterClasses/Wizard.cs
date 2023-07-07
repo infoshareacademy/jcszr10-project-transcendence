@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project_Transcendence.ConsoleApp.CharacterClasses
 {
-    internal class Class1
+    internal class Wizard
     {
         //TODO: Design your chosen class #1
     }
