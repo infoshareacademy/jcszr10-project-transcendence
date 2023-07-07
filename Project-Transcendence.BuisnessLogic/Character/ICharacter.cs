@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Project_Transcendence.ConsoleApp.Character
 {
-    internal interface ICharacter
+    public interface ICharacter
     {
         public string Name { get; set; }
         public ICharacterRace Race { get; set; }

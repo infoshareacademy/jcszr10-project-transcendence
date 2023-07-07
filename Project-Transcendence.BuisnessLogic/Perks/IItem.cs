@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project_Transcendence.ConsoleApp.Perks
 {
-    internal interface IItem
+    public interface IItem
     {
     }
 }
