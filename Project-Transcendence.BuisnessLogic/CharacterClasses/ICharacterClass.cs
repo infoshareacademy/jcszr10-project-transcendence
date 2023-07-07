@@ -1,18 +1,19 @@
-﻿using System;
+﻿using Project_Transcendence.ConsoleApp.Perks;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Project_Transcendence.ConsoleApp.CharacterClasses
 {
     public interface ICharacterClass
     {
-        //TODO: Design characterclass interface
-
-
-
-        // Adnotacja od Pitera:
-        // Tutaj trzeba sie dobrze zastanowić jak chcemy stworzyc system klas, czy robimy to na zasadzie dziedziczenia czy wybierame opcje kompozycji.
+        public List<IAbility> Abilities { get; }
+        public string Description { get; set; }
+        public void DisplayAbilities();
+        public void GetCharacterClassName();
     }
 }
