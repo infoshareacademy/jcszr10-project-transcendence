@@ -9,18 +9,12 @@ using System.Threading.Tasks;
 
 namespace Project_Transcendence.ConsoleApp.Character
 {
-    public class Character : IHealth, ICharacter  
+    public abstract class Character : IHealth, ICharacter  
     {
         public string Name { get; set; }
         public ICharacterRace Race { get; set; }
         public int Health { get; set; }
         public int Level { get; set; }
-
-        
-        public void Death()
-        {
-            Console.WriteLine("You are dead!");
-        }
 
         public void IncreaseHealth()
         {
