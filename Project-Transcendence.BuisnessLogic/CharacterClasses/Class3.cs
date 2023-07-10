@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_Transcendence.ConsoleApp.Perks;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +7,21 @@ using System.Threading.Tasks;
 
 namespace Project_Transcendence.ConsoleApp.CharacterClasses
 {
-    internal class Class3
+    public class Class3 : ICharacterClass
     {
         //TODO: Design your chosen class #3
+        public List<Ability> Abilities => throw new NotImplementedException();
+
+        public string Description { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public void DisplayAbilities()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetCharacterClassName()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

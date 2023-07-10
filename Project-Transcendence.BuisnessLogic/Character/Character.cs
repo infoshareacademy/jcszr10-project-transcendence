@@ -34,7 +34,7 @@ namespace Project_Transcendence.ConsoleApp.Character
 
         public void TakeDamage(IAbility ability)
         {
-            Health -= ability.damage;
+            Health -= ability.Damage;
         }
 
         public void TakeDamage(int damage)
@@ -44,7 +44,7 @@ namespace Project_Transcendence.ConsoleApp.Character
 
         public void TakeHealth(IAbility ability)
         {
-            Health += ability.healing;
+            Health += ability.Healing;
         }
 
         public void TakeHealth(int healing)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project_Transcendence.ConsoleApp.CharacterRaces
 {
-    internal class Race1
+    public class Race1 : ICharacterRace
     {
         //TODO: Design your chosen race #1.
     }
