@@ -8,11 +8,21 @@ namespace Project_Transcendence.ConsoleApp.Perks
 {
     public class Ability : IAbility
     {
-        //TODO: Create abilities 
-
-        // Tutaj na pewno trzeba wybrać kompozycje zamiast dziedziczenia.
-        public int Damage { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int Healing { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public Ability(string name, string description, int healing, int damage) 
+        {
+            Name = name;
+            Description = description;
+            Healing = healing;
+            Damage = damage;  
+        }
+        public Ability() 
+        {
+        
+        }    
+    
+        public int Damage { get; set; }
+        public int Healing { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
     }
 }
