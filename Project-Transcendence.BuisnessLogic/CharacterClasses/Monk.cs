@@ -14,7 +14,7 @@ namespace Project_Transcendence.ConsoleApp.CharacterClasses
         {
             Description = _description;
             ClassName = "Mnich";
-            Abilities = new List<Ability>()
+            Abilities = new List<IAbility>()
             { 
                 new Ability(),
                 new Ability(),
@@ -23,7 +23,7 @@ namespace Project_Transcendence.ConsoleApp.CharacterClasses
             };
         }
 
-        public List<Ability> Abilities { get; set; }
+        public List<IAbility> Abilities { get; set; }
 
         public string Description { get; set; }
         public string ClassName { get; set; }
