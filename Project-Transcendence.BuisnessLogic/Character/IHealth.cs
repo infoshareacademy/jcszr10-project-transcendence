@@ -15,7 +15,5 @@ namespace Project_Transcendence.BuisnessLogic.Character
         public void TakeHealth(IAbility ability);
         public void TakeHealth(int damage);
         public void IncreaseHealth();
-        public void Death();
-
     }
 }

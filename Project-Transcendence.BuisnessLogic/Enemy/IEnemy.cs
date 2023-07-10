@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Project_Transcendence.ConsoleApp.Character;
+using Project_Transcendence.ConsoleApp.Perks;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,10 @@ namespace Project_Transcendence.ConsoleApp.Enemy
 {
     internal interface IEnemy
     {
+
+        public List<IAbility> EnemyAttacks { get; set; }
+        public IAbility Attack();
+        public List<IItem> ItemsToDrop { get; set; }
+        public void GiveItem(Player player);
     }
 }

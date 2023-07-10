@@ -1,13 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Project_Transcendence.ConsoleApp.Enemy
+﻿namespace Project_Transcendence.ConsoleApp.Enemy
 {
-    internal class Enemy
+    using Project_Transcendence.ConsoleApp.Character;
+    using Project_Transcendence.ConsoleApp.CharacterRaces;
+    using Project_Transcendence.ConsoleApp.Perks;
+
+    public class Enemy : Character, IEnemy
     {
-        //TODO: Design enemy class
+        public List<IAbility> EnemyAttacks { get; set; }
+        public List<IItem> ItemsToDrop { get; set; }
+
+        public Enemy(string name, ICharacterRace race, int health = 100, int level = 1)
+        {
+            Name = name;
+            Race = race;
+            Health = health;
+            Level = level;
+            EnemyAttacks = new List<IAbility>()
+            {
+                new Ability(),
+                new Ability(),
+                new Ability(),
+                new Ability()
+            };
+            ItemsToDrop = new List<IItem>()
+            {
+                new Item(),
+                new Item()
+            };
+        }
+
+        public void GiveItem(Player player)
+        {
+            player.AddToInventory(ItemsToDrop[new Random().Next(ItemsToDrop.Count)]);
+        }
+
+        public IAbility Attack()
+        {
+            return EnemyAttacks[new Random().Next(EnemyAttacks.Count)];
+        }
     }
 }
