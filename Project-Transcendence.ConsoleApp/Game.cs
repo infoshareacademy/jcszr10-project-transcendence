@@ -11,7 +11,7 @@ namespace Project_Transcendence.ConsoleApp
     {
         public void Start()
         {
-            RunLoadingScreen();
+           // RunLoadingScreen();
             Console.Title = "Transcendence";
             RunStartingMenu();
             PlayerCreatorMenu.Run();

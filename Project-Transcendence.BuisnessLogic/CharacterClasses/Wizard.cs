@@ -13,6 +13,7 @@ namespace Project_Transcendence.ConsoleApp.CharacterClasses
         public Wizard()
         {
             Description = _description;
+            ClassName = "Czarodziej";
             Abilities = new List<Ability>()
             {
                 new Ability(),
@@ -25,6 +26,7 @@ namespace Project_Transcendence.ConsoleApp.CharacterClasses
         public List<Ability> Abilities { get; set; }
 
         public string Description { get; set; }
+        public string ClassName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public void DisplayAbilities()
         {
@@ -32,11 +34,6 @@ namespace Project_Transcendence.ConsoleApp.CharacterClasses
             {
                 Console.WriteLine(item);
             }
-        }
-
-        public string GetCharacterClassName()
-        {
-            return this.GetType().ToString();
         }
     }
 }

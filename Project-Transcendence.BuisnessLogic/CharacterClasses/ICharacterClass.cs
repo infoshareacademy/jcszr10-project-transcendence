@@ -11,9 +11,9 @@ namespace Project_Transcendence.ConsoleApp.CharacterClasses
 {
     public interface ICharacterClass
     {
+        public string ClassName { get; set; }
         public List<Ability> Abilities { get; }
         public string Description { get; set; }
         public void DisplayAbilities();
-        public string GetCharacterClassName();
     }
 }

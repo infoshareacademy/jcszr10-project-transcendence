@@ -13,13 +13,9 @@ namespace Project_Transcendence.ConsoleApp.CharacterClasses
         public List<Ability> Abilities => throw new NotImplementedException();
 
         public string Description { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string ClassName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public void DisplayAbilities()
-        {
-            throw new NotImplementedException();
-        }
-
-        public string GetCharacterClassName()
         {
             throw new NotImplementedException();
         }
