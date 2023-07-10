@@ -8,4 +8,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Project-Transcendence.BuisnessLogic\Project-Transcendence.BuisnessLogic.csproj" />
+  </ItemGroup>
+
 </Project>

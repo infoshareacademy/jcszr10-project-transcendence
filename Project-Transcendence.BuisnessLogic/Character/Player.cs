@@ -1,5 +1,6 @@
 ﻿using Project_Transcendence.BuisnessLogic.Character;
 using Project_Transcendence.ConsoleApp.CharacterClasses;
+using Project_Transcendence.ConsoleApp.CharacterRaces;
 using Project_Transcendence.ConsoleApp.Perks;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Project_Transcendence.ConsoleApp.Character
 {
-    public class Player : IPlayer
+    public class Player : Character, IPlayer
     {
         public ICharacterClass CharacterClass { get; set; }
 
@@ -19,6 +20,20 @@ namespace Project_Transcendence.ConsoleApp.Character
         public List<IItem> Gear { get; set; }
         public List<IItem> Weapons { get; set; }
         public List<IItem> Jewelery { get; set; }
+
+        public Player(string name, ICharacterRace race, ICharacterClass characterClass, int startingHealth, int startingExp, int level)
+        {
+            Name = name;
+            Race = race;
+            CharacterClass = characterClass;
+            Health = startingHealth;
+            Level = level;
+            Experience = startingExp;
+            Inventory = new List<IItem>();
+            Gear = new List<IItem>();
+            Weapons = new List<IItem>();
+            Jewelery = new List<IItem>();
+        }
 
         public void AddExperience()
         {
@@ -59,6 +74,11 @@ namespace Project_Transcendence.ConsoleApp.Character
         public void RemoveFromWeapons(IItem item)
         {
             Weapons.Remove(item);
+        }
+
+        public override string ToString()
+        {
+            return $"Imie: {Name} Rasa: {Race} Klasa: {CharacterClass} Poziom: {Level} Punkty doświadczenia: {Experience}";
         }
     }
 }
