@@ -10,6 +10,8 @@ namespace Project_Transcendence.ConsoleApp.Perks
     {
         public int Damage { get; set; }
         public int Healing { get; set; }
-        public int Name { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+
     }
 }
