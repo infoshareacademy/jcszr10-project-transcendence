@@ -9,5 +9,11 @@ namespace Project_Transcendence.ConsoleApp.CharacterRaces
     public class Race3 : ICharacterRace
     {
         //TODO: Design your chosen race #3.
+        public string Description { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public string GetCharacterRaceName()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

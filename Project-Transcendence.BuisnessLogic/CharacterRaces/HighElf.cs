@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Project_Transcendence.ConsoleApp.CharacterRaces
 {
-    internal class HighElf : ICharacterRace
+    public class HighElf : ICharacterRace
     {
         private string _description = "Elfy są znanym ze swojego wdzięku magicznym ludem. Elfy wysokie mają bystre umysły i szczycą się znajomością przynajmniej podstaw magii.";
         public HighElf()

@@ -57,11 +57,11 @@ namespace Project_Transcendence.ConsoleApp.Menus
                     break;
 
                 case 1:
-                    _characterRace = new Race2();
+                    _characterRace = new Race3();
                     break;
 
                 case 2:
-                    _characterRace = new Race3();
+                    _characterRace = new HighElf();
                     break;
 
                 case 3:
