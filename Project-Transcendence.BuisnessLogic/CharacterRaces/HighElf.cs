@@ -18,7 +18,7 @@ namespace Project_Transcendence.ConsoleApp.CharacterRaces
 
         public string GetCharacterRaceName()
         {
-            return this.GetType().ToString();
+            return nameof(HighElf);
         }
     }
 }

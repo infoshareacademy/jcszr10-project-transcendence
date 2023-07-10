@@ -78,7 +78,7 @@ namespace Project_Transcendence.ConsoleApp.Character
 
         public override string ToString()
         {
-            return $"Imie: {Name} Rasa: {Race} Klasa: {CharacterClass} Poziom: {Level} Punkty doświadczenia: {Experience}";
+            return $"Imie: {Name} Rasa: {Race.GetCharacterRaceName()} Klasa: {CharacterClass.ClassName} Poziom: {Level} Punkty doświadczenia: {Experience}";
         }
     }
 }

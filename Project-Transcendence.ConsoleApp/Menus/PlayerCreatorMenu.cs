@@ -16,7 +16,7 @@ namespace Project_Transcendence.ConsoleApp.Menus
             Console.WriteLine("opis klas");
             Console.WriteLine();
             string[] characterClasses = { "Mnich", "Czarodziej", "Druid", "Wojownik" };
-            string[] characterRaces = { "Człowiek", "Krasnolud", "Wysoki Elf", "Ork" };
+            string[] characterRaces = { "Aasimar", "Krasnolud", "Wysoki Elf", "Ork" };
             string title = "Wybierz swoją klasę!";
             string title2 = "Wybierz rasę!";
 
@@ -53,7 +53,7 @@ namespace Project_Transcendence.ConsoleApp.Menus
             switch (menu2.Run())
             {
                 case 0:
-                    _characterRace = new Race1();
+                    _characterRace = new Aasimar();
                     break;
 
                 case 1:
