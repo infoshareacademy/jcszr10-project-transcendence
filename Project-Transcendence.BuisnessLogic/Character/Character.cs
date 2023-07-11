@@ -1,6 +1,6 @@
 ﻿using Project_Transcendence.BuisnessLogic.Character;
-using Project_Transcendence.ConsoleApp.CharacterRaces;
-using Project_Transcendence.ConsoleApp.Perks;
+using Project_Transcendence.BuisnessLogic.Character.CharacterRaces;
+using Project_Transcendence.BuisnessLogic.Perks.Ability;
 
 namespace Project_Transcendence.ConsoleApp.Character
 {

@@ -1,4 +1,4 @@
-﻿using Project_Transcendence.ConsoleApp.Perks;
+﻿using Project_Transcendence.BuisnessLogic.Perks.Ability;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace Project_Transcendence.ConsoleApp.CharacterClasses
+namespace Project_Transcendence.BuisnessLogic.Character.CharacterClasses
 {
     public interface ICharacterClass
     {

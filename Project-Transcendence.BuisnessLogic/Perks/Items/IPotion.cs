@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_Transcendence.BuisnessLogic.Perks
+namespace Project_Transcendence.BuisnessLogic.Perks.Items
 {
-    internal class Jewelery
+    public interface IPotion
     {
-
+        public int Healing { get; set; }
     }
 }

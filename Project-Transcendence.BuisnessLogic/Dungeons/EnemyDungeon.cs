@@ -1,4 +1,4 @@
-﻿using Project_Transcendence.ConsoleApp.Enemy;
+﻿using Project_Transcendence.BuisnessLogic.Character.Enemy;
 using System;
 using System.Collections.Generic;
 using System.Linq;

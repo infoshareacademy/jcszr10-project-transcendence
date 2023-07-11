@@ -1,8 +1,11 @@
-﻿namespace Project_Transcendence.ConsoleApp.Enemy
+﻿namespace Project_Transcendence.BuisnessLogic.Character.Enemy
 {
+    using Project_Transcendence.BuisnessLogic.Character.CharacterRaces;
+    using Project_Transcendence.BuisnessLogic.Character.Player;
+    using Project_Transcendence.BuisnessLogic.Perks;
+    using Project_Transcendence.BuisnessLogic.Perks.Ability;
+    using Project_Transcendence.BuisnessLogic.Perks.Items;
     using Project_Transcendence.ConsoleApp.Character;
-    using Project_Transcendence.ConsoleApp.CharacterRaces;
-    using Project_Transcendence.ConsoleApp.Perks;
 
     public class Enemy : Character, IEnemy
     {
@@ -24,8 +27,7 @@
             };
             ItemsToDrop = new List<IItem>()
             {
-                new Item(),
-                new Item()
+                new Weapon(),
             };
         }
 

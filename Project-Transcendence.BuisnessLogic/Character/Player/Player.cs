@@ -1,6 +1,6 @@
-﻿using Project_Transcendence.BuisnessLogic.Character;
-using Project_Transcendence.ConsoleApp.CharacterClasses;
-using Project_Transcendence.ConsoleApp.CharacterRaces;
+﻿using Project_Transcendence.BuisnessLogic.Character.CharacterClasses;
+using Project_Transcendence.BuisnessLogic.Character.CharacterRaces;
+using Project_Transcendence.BuisnessLogic.Perks.Items;
 using Project_Transcendence.ConsoleApp.Perks;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_Transcendence.ConsoleApp.Character
+namespace Project_Transcendence.BuisnessLogic.Character.Player
 {
     public class Player : Character, IPlayer
     {
@@ -16,7 +16,7 @@ namespace Project_Transcendence.ConsoleApp.Character
 
         public int Experience { get; set; }
 
-        public List<IItem> Inventory  { get; set; }
+        public List<IItem> Inventory { get; set; }
         public List<IItem> Gear { get; set; }
         public List<IItem> Weapons { get; set; }
         public List<IItem> Jewelery { get; set; }
@@ -38,7 +38,7 @@ namespace Project_Transcendence.ConsoleApp.Character
 
         public void AddExperience()
         {
-           Experience++;
+            Experience++;
             //TODO: Design exp system 
         }
 

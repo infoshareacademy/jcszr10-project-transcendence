@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_Transcendence.ConsoleApp.Perks
+namespace Project_Transcendence.BuisnessLogic.Perks.Ability
 {
     public interface IAbility
     {

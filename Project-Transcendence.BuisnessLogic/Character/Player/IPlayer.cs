@@ -1,15 +1,15 @@
-﻿using Project_Transcendence.ConsoleApp.CharacterClasses;
-using Project_Transcendence.ConsoleApp.Perks;
+﻿using Project_Transcendence.BuisnessLogic.Character.CharacterClasses;
+using Project_Transcendence.BuisnessLogic.Perks.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_Transcendence.BuisnessLogic.Character
+namespace Project_Transcendence.BuisnessLogic.Character.Player
 {
     public interface IPlayer
-    { 
+    {
         public ICharacterClass CharacterClass { get; set; }
         public int Experience { get; set; }
         public List<IItem> Inventory { get; set; }

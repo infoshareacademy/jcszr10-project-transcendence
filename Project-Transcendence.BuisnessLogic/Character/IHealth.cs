@@ -1,4 +1,4 @@
-﻿using Project_Transcendence.ConsoleApp.Perks;
+﻿using Project_Transcendence.BuisnessLogic.Perks.Ability;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,6 +1,6 @@
-﻿using Project_Transcendence.ConsoleApp.Character;
-using Project_Transcendence.ConsoleApp.CharacterClasses;
-using Project_Transcendence.ConsoleApp.CharacterRaces;
+﻿using Project_Transcendence.BuisnessLogic.Character.CharacterClasses;
+using Project_Transcendence.BuisnessLogic.Character.CharacterRaces;
+using Project_Transcendence.BuisnessLogic.Character.Player;
 using System;
 using System.Collections.Generic;
 using System.Linq;

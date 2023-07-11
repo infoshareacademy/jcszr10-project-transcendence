@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Project_Transcendence.BuisnessLogic.Dungeons
 {
-    using Project_Transcendence.ConsoleApp.Enemy;
     public interface IDungeon
     {
         public string DungeonStory { get; set; }

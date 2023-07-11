@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_Transcendence.BuisnessLogic.Perks
+namespace Project_Transcendence.BuisnessLogic.Dungeons
 {
-    internal interface IShield
+    public class Puzzle
     {
-        public int Defense { get; set; }
-       
     }
 }
