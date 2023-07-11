@@ -16,17 +16,17 @@ namespace Project_Transcendence.ConsoleApp.CharacterClasses
             ClassName = "Czarodziej";
             Abilities = new List<IAbility>()
             {
-                new Ability(),
-                new Ability(),
-                new Ability(),
-                new Ability()
+                new Ability("Ognisty pocisk", "Ciskasz garścią ognia w istotę w zasięgu czaru.", 0, 20),
+                new Ability("Piekielna reprymenda", "Istotę spowijają ognie piekielne.", 0, 35),
+                new Ability("Magiczny pocisk", "Wywołujesz trzy świetliste strzałki stworzone z magicznej energii.", 0, 50),
+                new Ability("Leczenie ran", "Odzyskujesz punkty wytrzymałości", 40, 0)
             };
         }
 
         public List<IAbility> Abilities { get; set; }
 
         public string Description { get; set; }
-        public string ClassName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string ClassName { get; set; }
 
         public void DisplayAbilities()
         {
