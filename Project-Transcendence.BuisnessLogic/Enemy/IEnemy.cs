@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Project_Transcendence.ConsoleApp.Enemy
 {
-    internal interface IEnemy
+    public interface IEnemy
     {
 
         public List<IAbility> EnemyAttacks { get; set; }

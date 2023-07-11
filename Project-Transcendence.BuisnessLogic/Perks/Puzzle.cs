@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_Transcendence.ConsoleApp.Dungeons
+namespace Project_Transcendence.BuisnessLogic.Perks
 {
-    internal class EnemyDungeon
+    public class Puzzle
     {
     }
 }

@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_Transcendence.ConsoleApp.Dungeons
+namespace Project_Transcendence.ConsoleApp.Menus
 {
-    internal class ShopDungeon
+    public class DungeonDisplayMenu
     {
+
     }
 }
