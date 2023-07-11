@@ -6,11 +6,22 @@ using System.Threading.Tasks;
 
 namespace Project_Transcendence.ConsoleApp.Perks
 {
-    public class Item : IItem
+    public abstract class Item : IItem
     {
+        public Item(string name, string description)
+        {
+            Name = name;
+            Description = description;
+        }
 
-        //TODO: Create Items
+        public Item()
+        {
 
-        // Tutaj na pewno trzeba wybrać kompozycje zamiast dziedziczenia.
+        }
+
+        public string Name { get; set; }
+        public string Description { get; set; }
+   
     }
+    
 }

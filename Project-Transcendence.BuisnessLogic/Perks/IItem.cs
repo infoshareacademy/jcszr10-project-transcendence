@@ -8,5 +8,9 @@ namespace Project_Transcendence.ConsoleApp.Perks
 {
     public interface IItem
     {
+        public string Name { get; set; }
+        public string Description { get; set; }
+
+
     }
 }
