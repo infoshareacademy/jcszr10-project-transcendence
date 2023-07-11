@@ -1,7 +1,8 @@
-﻿namespace Project_Transcendence.ConsoleApp.Enemy
+﻿namespace Project_Transcendence.BuisnessLogic.Character.Enemy
 {
+    using Project_Transcendence.BuisnessLogic.Character.CharacterRaces;
+    using Project_Transcendence.BuisnessLogic.Items;
     using Project_Transcendence.ConsoleApp.Character;
-    using Project_Transcendence.ConsoleApp.CharacterRaces;
     using Project_Transcendence.ConsoleApp.Perks;
 
     public class Enemy : Character, IEnemy

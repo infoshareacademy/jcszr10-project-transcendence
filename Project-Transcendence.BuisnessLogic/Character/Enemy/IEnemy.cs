@@ -1,4 +1,5 @@
-﻿using Project_Transcendence.ConsoleApp.Character;
+﻿using Project_Transcendence.BuisnessLogic.Items;
+using Project_Transcendence.ConsoleApp.Character;
 using Project_Transcendence.ConsoleApp.Perks;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_Transcendence.ConsoleApp.Enemy
+namespace Project_Transcendence.BuisnessLogic.Character.Enemy
 {
     public interface IEnemy
     {

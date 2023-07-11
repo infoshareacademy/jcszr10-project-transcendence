@@ -1,5 +1,5 @@
-﻿using Project_Transcendence.ConsoleApp.CharacterClasses;
-using Project_Transcendence.ConsoleApp.Perks;
+﻿using Project_Transcendence.BuisnessLogic.Character.CharacterClasses;
+using Project_Transcendence.BuisnessLogic.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,6 +1,7 @@
 ﻿using Project_Transcendence.BuisnessLogic.Character;
-using Project_Transcendence.ConsoleApp.CharacterClasses;
-using Project_Transcendence.ConsoleApp.CharacterRaces;
+using Project_Transcendence.BuisnessLogic.Character.CharacterClasses;
+using Project_Transcendence.BuisnessLogic.Character.CharacterRaces;
+using Project_Transcendence.BuisnessLogic.Items;
 using Project_Transcendence.ConsoleApp.Perks;
 using System;
 using System.Collections.Generic;

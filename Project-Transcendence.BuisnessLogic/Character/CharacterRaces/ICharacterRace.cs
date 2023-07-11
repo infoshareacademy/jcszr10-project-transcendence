@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_Transcendence.ConsoleApp.CharacterRaces
+namespace Project_Transcendence.BuisnessLogic.Character.CharacterRaces
 {
     public interface ICharacterRace
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_Transcendence.ConsoleApp.Perks
+namespace Project_Transcendence.BuisnessLogic.Items
 {
     public abstract class Item : IItem
     {
@@ -21,7 +21,7 @@ namespace Project_Transcendence.ConsoleApp.Perks
 
         public string Name { get; set; }
         public string Description { get; set; }
-   
+
     }
-    
+
 }

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_Transcendence.BuisnessLogic.Perks
+namespace Project_Transcendence.BuisnessLogic.Items
 {
-    public interface IWeapon
+    public interface IPotion
     {
-        public int Damage { get; set; }
+        public int Healing { get; set; }
     }
 }

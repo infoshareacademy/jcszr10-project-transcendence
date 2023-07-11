@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace Project_Transcendence.ConsoleApp.CharacterClasses
+namespace Project_Transcendence.BuisnessLogic.Character.CharacterClasses
 {
     public interface ICharacterClass
     {

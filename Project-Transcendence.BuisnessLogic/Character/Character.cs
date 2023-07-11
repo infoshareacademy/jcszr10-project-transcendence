@@ -1,5 +1,5 @@
 ﻿using Project_Transcendence.BuisnessLogic.Character;
-using Project_Transcendence.ConsoleApp.CharacterRaces;
+using Project_Transcendence.BuisnessLogic.Character.CharacterRaces;
 using Project_Transcendence.ConsoleApp.Perks;
 
 namespace Project_Transcendence.ConsoleApp.Character

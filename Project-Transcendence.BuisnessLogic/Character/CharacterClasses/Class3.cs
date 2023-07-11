@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_Transcendence.ConsoleApp.CharacterClasses
+namespace Project_Transcendence.BuisnessLogic.Character.CharacterClasses
 {
     public class Class3 : ICharacterClass
     {

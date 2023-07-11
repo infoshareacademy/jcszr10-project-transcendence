@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_Transcendence.ConsoleApp.CharacterClasses
+namespace Project_Transcendence.BuisnessLogic.Character.CharacterClasses
 {
     public class Monk : ICharacterClass
     {
@@ -15,7 +15,7 @@ namespace Project_Transcendence.ConsoleApp.CharacterClasses
             Description = _description;
             ClassName = "Mnich";
             Abilities = new List<IAbility>()
-            { 
+            {
                 new Ability(),
                 new Ability(),
                 new Ability(),

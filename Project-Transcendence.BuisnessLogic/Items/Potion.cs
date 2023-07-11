@@ -1,17 +1,16 @@
-﻿using Project_Transcendence.ConsoleApp.Perks;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_Transcendence.BuisnessLogic.Perks
+namespace Project_Transcendence.BuisnessLogic.Items
 {
-   public class Potion : IItem, IPotion
+    public class Potion : IItem, IPotion
     {
-        public Potion() 
+        public Potion()
         {
-        
+
         }
         public Potion(string name, string description, int healing)
         {
