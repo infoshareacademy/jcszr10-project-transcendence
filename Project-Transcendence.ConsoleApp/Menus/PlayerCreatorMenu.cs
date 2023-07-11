@@ -38,11 +38,11 @@ namespace Project_Transcendence.ConsoleApp.Menus
                     break;
 
                 case 2:
-                    _characterClass = new Class3();
+                    _characterClass = new Thief();
                     break;
 
                 case 3:
-                    _characterClass = new Class4();
+                    _characterClass = new Warrior();
                     break;
             }
 
@@ -53,7 +53,7 @@ namespace Project_Transcendence.ConsoleApp.Menus
                     break;
 
                 case 1:
-                    _characterRace = new Race3();
+                    _characterRace = new Human();
                     break;
 
                 case 2:
@@ -61,7 +61,7 @@ namespace Project_Transcendence.ConsoleApp.Menus
                     break;
 
                 case 3:
-                    _characterRace = new Race4();
+                    _characterRace = new Dwarf();
                     break;
             }
 
