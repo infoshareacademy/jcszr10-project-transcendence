@@ -1,16 +1,10 @@
 ﻿using Project_Transcendence.BuisnessLogic.Character.CharacterClasses;
 using Project_Transcendence.BuisnessLogic.Character.CharacterRaces;
 using Project_Transcendence.BuisnessLogic.Perks.Items;
-using Project_Transcendence.ConsoleApp.Perks;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Project_Transcendence.BuisnessLogic.Character.Player
 {
-    public class Player : Character, IPlayer
+    public class BasicPlayer : BasicCharacter, IPlayer
     {
         public ICharacterClass CharacterClass { get; set; }
 
@@ -21,7 +15,7 @@ namespace Project_Transcendence.BuisnessLogic.Character.Player
         public List<IItem> Weapons { get; set; }
         public List<IItem> Jewelery { get; set; }
 
-        public Player(string name, ICharacterRace race, ICharacterClass characterClass, int startingHealth, int startingExp, int level)
+        public BasicPlayer(string name, ICharacterRace race, ICharacterClass characterClass, int startingHealth, int startingExp, int level)
         {
             Name = name;
             Race = race;
@@ -33,7 +27,7 @@ namespace Project_Transcendence.BuisnessLogic.Character.Player
             Gear = new List<IItem>();
             Weapons = new List<IItem>();
             Jewelery = new List<IItem>();
-            Weapons.Add(new Item());
+            Weapons.Add(new Weapon());
         }
 
         public void AddExperience()

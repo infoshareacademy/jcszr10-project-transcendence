@@ -1,5 +1,4 @@
-﻿
-namespace Project_Transcendence.BuisnessLogic.Dungeons
+﻿namespace Project_Transcendence.BuisnessLogic.Dungeons
 {
     public static class DungeonContainer
     {
@@ -13,10 +12,9 @@ namespace Project_Transcendence.BuisnessLogic.Dungeons
             {
                 Dungeons = new List<IDungeon>()
                 {
-                    new EnemyDungeon(),
-                    new EnemyDungeon(),
                     new ShopDungeon(),
-                    new PuzzleDungeon()
+                    new EnemyDungeon(),
+                    new EnemyDungeon()
                 };
             }
         }

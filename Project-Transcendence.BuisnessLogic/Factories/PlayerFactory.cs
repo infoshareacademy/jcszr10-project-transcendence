@@ -25,9 +25,9 @@ namespace Project_Transcendence.ConsoleApp.Factories
             _class = characterClass;
         }
 
-        public Player Create()
+        public BasicPlayer Create()
         {
-            return new Player(_name,_race,_class,_health,_experience,_level);
+            return new BasicPlayer(_name,_race,_class,_health,_experience,_level);
         }
     }
 }
