@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Project_Transcendence.BuisnessLogic.Dungeons
 {
+    /// <summary>
+    /// This Class creates a dungeon with enemies inside. You have to provide: story, list of enemies and level.
+    /// </summary>
     public class EnemyDungeon : IDungeon, IEnemyDungeon
     {
         public string DungeonStory { get; set; }
@@ -14,11 +17,10 @@ namespace Project_Transcendence.BuisnessLogic.Dungeons
         public string DungeonType { get; set; }
         public int DungeonLevel { get; set; }
 
-        public EnemyDungeon(string story, List<IEnemy> enemies, string type, int level)
+        public EnemyDungeon(string story, List<IEnemy> enemies, int level)
         {
             DungeonStory = story;
             EnemiesInDungeonList = enemies;
-            DungeonType = type;
             DungeonLevel = level;
         }
         public EnemyDungeon()

@@ -5,9 +5,8 @@
     using Project_Transcendence.BuisnessLogic.Perks;
     using Project_Transcendence.BuisnessLogic.Perks.Ability;
     using Project_Transcendence.BuisnessLogic.Perks.Items;
-    using Project_Transcendence.ConsoleApp.Character;
 
-    public class Enemy : Character, IEnemy
+    public class Enemy : BasicCharacter, IEnemy
     {
         public List<IAbility> EnemyAttacks { get; set; }
         public List<IItem> ItemsToDrop { get; set; }
@@ -31,7 +30,7 @@
             };
         }
 
-        public void GiveItem(Player player)
+        public void GiveItem(BasicPlayer player)
         {
             player.AddToInventory(ItemsToDrop[new Random().Next(ItemsToDrop.Count)]);
         }
@@ -40,5 +39,6 @@
         {
             return EnemyAttacks[new Random().Next(EnemyAttacks.Count)];
         }
+
     }
 }

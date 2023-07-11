@@ -2,9 +2,9 @@
 using Project_Transcendence.BuisnessLogic.Character.CharacterRaces;
 using Project_Transcendence.BuisnessLogic.Perks.Ability;
 
-namespace Project_Transcendence.ConsoleApp.Character
+namespace Project_Transcendence.BuisnessLogic.Character
 {
-    public abstract class Character : IHealth, ICharacter  
+    public abstract class BasicCharacter : IHealth, IBasicCharacter  
     {
         public string Name { get; set; }
         public ICharacterRace Race { get; set; }
