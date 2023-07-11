@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project_Transcendence.ConsoleApp.Character
 {
-    internal class CharacterSerializer
+    internal class PlayerSerializer
     {
         //TODO: Design a character serializing system.
     }

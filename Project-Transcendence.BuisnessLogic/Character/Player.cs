@@ -33,6 +33,7 @@ namespace Project_Transcendence.ConsoleApp.Character
             Gear = new List<IItem>();
             Weapons = new List<IItem>();
             Jewelery = new List<IItem>();
+            Weapons.Add(new Item());
         }
 
         public void AddExperience()

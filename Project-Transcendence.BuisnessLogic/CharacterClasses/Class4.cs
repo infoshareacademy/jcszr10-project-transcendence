@@ -15,6 +15,8 @@ namespace Project_Transcendence.ConsoleApp.CharacterClasses
         public string Description { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string ClassName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
+        List<IAbility> ICharacterClass.Abilities => throw new NotImplementedException();
+
         public void DisplayAbilities()
         {
             throw new NotImplementedException();
