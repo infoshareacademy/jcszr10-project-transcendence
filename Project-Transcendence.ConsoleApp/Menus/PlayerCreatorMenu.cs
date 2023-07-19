@@ -1,5 +1,6 @@
 ﻿using Project_Transcendence.BuisnessLogic.Character.CharacterClasses;
 using Project_Transcendence.BuisnessLogic.Character.CharacterRaces;
+using Project_Transcendence.BuisnessLogic.Character.Player;
 using Project_Transcendence.ConsoleApp.Factories;
 
 
@@ -15,7 +16,6 @@ namespace Project_Transcendence.ConsoleApp.Menus
             string[] characterRaces = { "Aasimar", "Krasnolud", "Wysoki Elf", "Ork" };
             string title = "Wybierz swoją klasę!";
             string title2 = "Wybierz rasę!";
-
 
             ICharacterClass _characterClass = null;
             ICharacterRace _characterRace = null;
@@ -65,15 +65,15 @@ namespace Project_Transcendence.ConsoleApp.Menus
                     break;
             }
 
-            PlayerFactory playerFactory = new PlayerFactory(name,_characterRace,_characterClass);
+            PlayerFactory playerFactory = new PlayerFactory(name, _characterRace, _characterClass);
 
             var player1 = playerFactory.Create();
 
-            Console.WriteLine(player1.ToString());
-
+            Console.WriteLine("Wcisnij przycisk by zacząć przygodę!");
             Console.ReadKey(true);
 
-            MainMenu.Run();
+            DungeonRun dungeonRun = new(player1);
+            dungeonRun.Traverse();
 
         }
     }

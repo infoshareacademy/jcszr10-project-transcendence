@@ -15,6 +15,9 @@ namespace Project_Transcendence.BuisnessLogic.Character.Player
         public List<IItem> Weapons { get; set; }
         public List<IItem> Jewelery { get; set; }
 
+        private StatisticsManager statisticsManager { get; set; }
+
+
         public BasicPlayer(string name, ICharacterRace race, ICharacterClass characterClass, int startingHealth, int startingExp, int level)
         {
             Name = name;
@@ -28,6 +31,20 @@ namespace Project_Transcendence.BuisnessLogic.Character.Player
             Weapons = new List<IItem>();
             Jewelery = new List<IItem>();
             Weapons.Add(new Weapon());
+            statisticsManager = new StatisticsManager(10,10,10,10);
+        }
+        public BasicPlayer()
+        {
+            
+        }
+
+        public int GetIntelect()
+        {
+            return statisticsManager.Intelect;
+        }
+        public void IncreaseIntelect(int x)
+        {
+            statisticsManager.IncreaseIntelect(x);
         }
 
         public void AddExperience()
@@ -74,6 +91,12 @@ namespace Project_Transcendence.BuisnessLogic.Character.Player
         public override string ToString()
         {
             return $"Imie: {Name} Rasa: {Race.GetCharacterRaceName()} Klasa: {CharacterClass.ClassName} Poziom: {Level} Punkty doświadczenia: {Experience}";
+        }
+
+        public void LevelUp()
+        {
+            Level++;
+            IncreaseIntelect(5);
         }
     }
 }

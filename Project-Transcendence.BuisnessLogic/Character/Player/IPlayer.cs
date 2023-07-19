@@ -18,5 +18,6 @@ namespace Project_Transcendence.BuisnessLogic.Character.Player
         public void RemoveFromJewelery(IItem item);
         public void AddExperience();
         public string GetCharacterClass();
+        public void LevelUp();
     }
 }

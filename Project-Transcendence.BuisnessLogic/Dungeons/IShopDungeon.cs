@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_Transcendence.ConsoleApp.Menus
+namespace Project_Transcendence.BuisnessLogic.Dungeons
 {
-    public class DungeonDisplayMenu
+    public interface IShopDungeon
     {
-
     }
 }

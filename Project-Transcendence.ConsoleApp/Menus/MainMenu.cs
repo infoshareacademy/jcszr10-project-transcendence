@@ -22,7 +22,6 @@ namespace Project_Transcendence.ConsoleApp.Menus
             switch (selectedIndex)
             {
                 case 0:
-                    // TODO: Create a character creator menu and system.
                     PlayerCreatorMenu.Run();
                     break;
 

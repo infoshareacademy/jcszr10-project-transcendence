@@ -1,4 +1,4 @@
-﻿
+﻿using Project_Transcendence.BuisnessLogic.Character.Player;
 
 namespace Project_Transcendence.BuisnessLogic.Dungeons
 {
@@ -9,7 +9,7 @@ namespace Project_Transcendence.BuisnessLogic.Dungeons
         public int DungeonLevel { get; set; }
         public Puzzle PuzzleToSolve { get; set; }
 
-        public PuzzleDungeon(string story,string type, int level, Puzzle puzzle)
+        public PuzzleDungeon(string story, int level, Puzzle puzzle, string type = "Zagadka")
         {
             DungeonStory = story;
             DungeonType = type;
@@ -21,5 +21,9 @@ namespace Project_Transcendence.BuisnessLogic.Dungeons
             
         }
 
+        public bool RunDungeon(IPlayer player)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

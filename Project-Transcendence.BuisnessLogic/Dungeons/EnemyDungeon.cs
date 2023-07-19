@@ -1,9 +1,5 @@
 ﻿using Project_Transcendence.BuisnessLogic.Character.Enemy;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Project_Transcendence.BuisnessLogic.Character.Player;
 
 namespace Project_Transcendence.BuisnessLogic.Dungeons
 {
@@ -13,20 +9,34 @@ namespace Project_Transcendence.BuisnessLogic.Dungeons
     public class EnemyDungeon : IDungeon, IEnemyDungeon
     {
         public string DungeonStory { get; set; }
-        public List<IEnemy> EnemiesInDungeonList { get; set; }
+        public IEnemy EnemyInDungeon { get; set; }
         public string DungeonType { get; set; }
         public int DungeonLevel { get; set; }
+        private IPlayer _player;
 
-        public EnemyDungeon(string story, List<IEnemy> enemies, int level)
+        public EnemyDungeon(string story, IEnemy enemy, int level, string type = "Z przeciwnikiem")
         {
             DungeonStory = story;
-            EnemiesInDungeonList = enemies;
+            EnemyInDungeon = enemy;
             DungeonLevel = level;
+            DungeonType = type;
         }
         public EnemyDungeon()
         {
             
         }
 
+        public bool RunDungeon(IPlayer player)
+        {
+            _player = player;
+
+            FightManager fightManager = new FightManager(EnemyInDungeon,_player);
+
+            if (fightManager.Fight())
+                return true;
+            else 
+                return false;
+
+        }
     }
 }

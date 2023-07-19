@@ -15,6 +15,11 @@ namespace Project_Transcendence.BuisnessLogic.Perks.Ability
             Healing = healing;
             Damage = damage;
         }
+        public Ability(string name, int damage)
+        {
+            Name = name;
+            Damage = damage;
+        }
         public Ability()
         {
 

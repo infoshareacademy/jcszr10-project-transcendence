@@ -12,8 +12,6 @@ namespace Project_Transcendence.BuisnessLogic.Character
         public string Name { get; set; }
         public ICharacterRace Race { get; set; }
         public int Level { get; set; }
-
-        public void LevelUp();
       
     }
 }

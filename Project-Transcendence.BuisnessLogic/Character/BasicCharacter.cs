@@ -16,11 +16,6 @@ namespace Project_Transcendence.BuisnessLogic.Character
             Health += 100;
         }
 
-        public void LevelUp()
-        {
-            Level++;
-        }
-
         public void TakeDamage(IAbility ability)
         {
             Health -= ability.Damage;
