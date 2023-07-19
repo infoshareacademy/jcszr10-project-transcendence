@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_Transcendence.BuisnessLogic.Character.Player;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +12,6 @@ namespace Project_Transcendence.BuisnessLogic.Dungeons
         public string DungeonStory { get; set; }
         public string DungeonType { get; set; }
         public int DungeonLevel { get; set; }
+        public bool RunDungeon(IPlayer player);
     }
 }

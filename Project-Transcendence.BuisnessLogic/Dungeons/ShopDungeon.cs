@@ -1,5 +1,7 @@
 ﻿
 
+using Project_Transcendence.BuisnessLogic.Character.Player;
+
 namespace Project_Transcendence.BuisnessLogic.Dungeons
 {
     public class ShopDungeon : IDungeon
@@ -8,7 +10,7 @@ namespace Project_Transcendence.BuisnessLogic.Dungeons
         public string DungeonType { get; set; }
         public int DungeonLevel { get; set; }
 
-        public ShopDungeon(string story, string type, int level)
+        public ShopDungeon(string story, int level, string type = "Sklep")
         {
             DungeonStory = story;
             DungeonType = type;
@@ -19,5 +21,9 @@ namespace Project_Transcendence.BuisnessLogic.Dungeons
             
         }
 
+        public bool RunDungeon(IPlayer player)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

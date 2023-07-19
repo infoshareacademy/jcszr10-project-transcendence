@@ -1,9 +1,4 @@
 ﻿using Project_Transcendence.BuisnessLogic.Perks.Ability;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Project_Transcendence.BuisnessLogic.Character.CharacterClasses
 {
@@ -16,10 +11,10 @@ namespace Project_Transcendence.BuisnessLogic.Character.CharacterClasses
             ClassName = "Mnich";
             Abilities = new List<IAbility>()
             {
-                new Ability(),
-                new Ability(),
-                new Ability(),
-                new Ability()
+                new Ability("Fists of fury",15),
+                new Ability("Touch of Death", 25),
+                new Ability("Strike Of A Deadly Mantis", 30),
+                new Ability("Inner peace", 0)
             };
         }
 
