@@ -3,21 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Project_Transcendence.BuisnessLogic.Perks.Items
 {
-    public class Weapon : IItem, IWeapon
+    public class Weapon : Item, IWeapon
     {
-        public Weapon() { }
-        public Weapon(string name, string description, int damage)
+        public Weapon(int damage) : base(" "," ", 0, 0, 0, 0 )
         {
-            Name = name;
-            Description = description;
             Damage = damage;
         }
 
-        public string Name { get; set; }
-        public string Description { get; set; }
         public int Damage { get; set; }
     }
 }

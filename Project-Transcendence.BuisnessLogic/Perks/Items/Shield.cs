@@ -3,25 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Project_Transcendence.BuisnessLogic.Perks.Items
 {
-    internal class Shield : IItem, IShield
+    internal class Shield : Item, IShield
     {
-        public Shield(string name, string description, int defense)
+        public Shield(int defense) : base(" ", " ", 0, 0, 0, 0)
         {
-            Name = name;
-            Description = description;
             Defense = defense;
         }
-
-        public Shield()
-        {
-
-        }
-
-        public string Name { get; set; }
-        public string Description { get; set; }
         public int Defense { get; set; }
     }
 }
