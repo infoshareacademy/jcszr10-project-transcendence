@@ -10,10 +10,10 @@ namespace Project_Transcendence.BuisnessLogic.Character.Player
 
         public int Experience { get; set; }
 
-        public List<IItem> Inventory { get; set; }
-        public List<IItem> Gear { get; set; }
-        public List<IItem> Weapons { get; set; }
-        public List<IItem> Jewelery { get; set; }
+        public List<Item> Inventory { get; set; }
+        public List<Item> Gear { get; set; }
+        public List<Item> Weapons { get; set; }
+        public List<Item> Jewelery { get; set; }
 
         private StatisticsManager statisticsManager { get; set; }
 
@@ -26,10 +26,10 @@ namespace Project_Transcendence.BuisnessLogic.Character.Player
             Health = startingHealth;
             Level = level;
             Experience = startingExp;
-            Inventory = new List<IItem>();
-            Gear = new List<IItem>();
-            Weapons = new List<IItem>();
-            Jewelery = new List<IItem>();
+            Inventory = new List<Item>();
+            Gear = new List<Item>();
+            Weapons = new List<Item>();
+            Jewelery = new List<Item>();
             Weapons.Add(new Weapon());
             statisticsManager = new StatisticsManager(10,10,10,10);
         }
@@ -53,17 +53,17 @@ namespace Project_Transcendence.BuisnessLogic.Character.Player
             //TODO: Design exp system 
         }
 
-        public void AddToInventory(IItem item)
+        public void AddToInventory(Item item)
         {
             Inventory.Add(item);
         }
 
-        public void AddToJewelery(IItem item)
+        public void AddToJewelery(Item item)
         {
             Jewelery.Add(item);
         }
 
-        public void AddToWeapons(IItem item)
+        public void AddToWeapons(Item item)
         {
             Weapons.Add(item);
         }
@@ -73,17 +73,17 @@ namespace Project_Transcendence.BuisnessLogic.Character.Player
             return CharacterClass.GetType().ToString();
         }
 
-        public void RemoveFromInventory(IItem item)
+        public void RemoveFromInventory(Item item)
         {
             Inventory.Remove(item);
         }
 
-        public void RemoveFromJewelery(IItem item)
+        public void RemoveFromJewelery(Item item)
         {
             Jewelery.Remove(item);
         }
 
-        public void RemoveFromWeapons(IItem item)
+        public void RemoveFromWeapons(Item item)
         {
             Weapons.Remove(item);
         }
