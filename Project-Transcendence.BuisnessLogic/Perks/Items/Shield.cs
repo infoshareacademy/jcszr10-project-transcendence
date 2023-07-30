@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
-
+﻿
 namespace Project_Transcendence.BuisnessLogic.Perks.Items
 {
-    internal class Shield : Item, IShield
+    public class Shield : Item, IShield, IWeapon
     {
-        public Shield(int defense) : base(" ", " ", 0, 0, 0, 0)
+        public int Armor { get; set; }
+        public int Damage { get; set; }
+
+        public Shield(int armor)
         {
-            Defense = defense;
+            Armor = armor;
         }
-        public int Defense { get; set; }
+
     }
 }

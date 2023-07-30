@@ -8,7 +8,7 @@ namespace Project_Transcendence.BuisnessLogic.Perks.Items
 {
     internal interface IShield
     {
-        public int Defense { get; set; }
+        public int Armor { get; set; }
 
     }
 }

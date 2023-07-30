@@ -1,13 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Project_Transcendence.BuisnessLogic.Character.Player;
+using Project_Transcendence.BuisnessLogic.Perks.Ability;
 
 namespace Project_Transcendence.BuisnessLogic.Character.CharacterRaces
 {
     public class Dwarf : ICharacterRace
     {
+
+        private StatisticsManager _statisticsManager;
+
+        public Dwarf()
+        {
+            _statisticsManager = new StatisticsManager(0, 0, 5, 0);
+        }
+
         public string Description
         {
             get
@@ -20,9 +25,31 @@ namespace Project_Transcendence.BuisnessLogic.Character.CharacterRaces
             }
         }
 
+        public List<Ability> Abilities { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public int GetCharacterAgility()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetCharacterIntelect()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetCharacterLuck()
+        {
+            throw new NotImplementedException();
+        }
+
         public string GetCharacterRaceName()
         {
             return nameof(Dwarf);
+        }
+
+        public int GetCharacterStrength()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,13 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Project_Transcendence.BuisnessLogic.Character.Player;
+using Project_Transcendence.BuisnessLogic.Perks.Ability;
 
 namespace Project_Transcendence.BuisnessLogic.Character.CharacterRaces
 {
     public class Human : ICharacterRace
     {
+
+        private StatisticsManager _statisticsManager;
+
+        public Human()
+        {
+            _statisticsManager = new StatisticsManager(5, 0, 0, 0);
+        }
+
         //TODO: Design your chosen race #3.
         public string Description
         {
@@ -21,9 +26,31 @@ namespace Project_Transcendence.BuisnessLogic.Character.CharacterRaces
             }
         }
 
+        public List<Ability> Abilities { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public int GetCharacterAgility()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetCharacterIntelect()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetCharacterLuck()
+        {
+            throw new NotImplementedException();
+        }
+
         public string GetCharacterRaceName()
         {
             return nameof(Human);
+        }
+
+        public int GetCharacterStrength()
+        {
+            throw new NotImplementedException();
         }
     }
 }
