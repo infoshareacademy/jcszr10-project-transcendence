@@ -1,7 +1,4 @@
 ﻿
-
-using Project_Transcendence.BuisnessLogic.Character.Player;
-
 namespace Project_Transcendence.BuisnessLogic.Dungeons
 {
     public class ShopDungeon : IDungeon
@@ -21,7 +18,7 @@ namespace Project_Transcendence.BuisnessLogic.Dungeons
             
         }
 
-        public bool RunDungeon(IPlayer player)
+        public bool RunDungeon()
         {
             throw new NotImplementedException();
         }

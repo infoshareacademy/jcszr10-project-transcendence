@@ -1,22 +1,16 @@
-﻿using Project_Transcendence.BuisnessLogic.Character;
+﻿using Project_Transcendence.BuisnessLogic.Character.Enemy;
+using Project_Transcendence.BuisnessLogic.Character.Player;
 using Project_Transcendence.BuisnessLogic.Perks.Ability;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Project_Transcendence.BuisnessLogic.Fight
 {
     internal class CastDamageSpellCast : ICommand
     {
-        private BasicCharacter _caster;
-        private BasicCharacter _target;
+        private Enemy _target;
         private Ability _ability;
 
-        public CastDamageSpellCast(BasicCharacter caster, BasicCharacter target, Ability ability)
+        public CastDamageSpellCast(Enemy target, Ability ability)
         {
-            _caster = caster;
             _target = target;
             _ability = ability;
         }

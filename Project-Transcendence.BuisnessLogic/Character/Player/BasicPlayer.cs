@@ -88,6 +88,12 @@ namespace Project_Transcendence.BuisnessLogic.Character.Player
         }
 
         #region // Health and statistic management
+
+        public int GetHealth()
+        {
+            return _healthManager.GetHealth();
+        }
+
         public int GetIntelect()
         {
             return _statisticsManager.Intelect + Race.GetCharacterIntelect() + CalculateStatistic("intelect");

@@ -1,24 +1,21 @@
-﻿using Project_Transcendence.BuisnessLogic.Character;
-using Project_Transcendence.BuisnessLogic.Character.Player;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Project_Transcendence.BuisnessLogic.Character.Player;
+using Project_Transcendence.BuisnessLogic.Perks.Items;
 
 namespace Project_Transcendence.BuisnessLogic.Fight
 {
     public class DrinkPotionCommand : ICommand
     {
         private BasicPlayer _player;
+        private Potion _potion;
         
-        public DrinkPotionCommand(BasicPlayer player) 
+        public DrinkPotionCommand(BasicPlayer player, Potion potion) 
         {
-        _player = player;
+            _player = player;
+            _potion = potion;
         }
         public void Execute()
         {
-            _player.TakeHealth(_player.Potion(50));
+            _player.TakeHealth(_potion.Healing);
         }
     }
 }

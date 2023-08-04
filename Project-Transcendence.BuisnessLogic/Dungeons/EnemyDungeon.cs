@@ -10,34 +10,28 @@ namespace Project_Transcendence.BuisnessLogic.Dungeons
     public class EnemyDungeon : IDungeon, IEnemyDungeon
     {
         public string DungeonStory { get; set; }
-        public IEnemy EnemyInDungeon { get; set; }
+        public Enemy EnemyInDungeon { get; set; }
         public string DungeonType { get; set; }
         public int DungeonLevel { get; set; }
-        private IPlayer _player;
+        private BasicPlayer _player;
 
-        public EnemyDungeon(string story, IEnemy enemy, int level, string type = "Z przeciwnikiem")
+        public EnemyDungeon(BasicPlayer player,string story, Enemy enemy, int level, string type = "Z przeciwnikiem")
         {
             DungeonStory = story;
             EnemyInDungeon = enemy;
             DungeonLevel = level;
             DungeonType = type;
-        }
-        public EnemyDungeon()
-        {
-            
-        }
-
-        public bool RunDungeon(IPlayer player)
-        {
             _player = player;
+        }
 
+        public bool RunDungeon()
+        {
             FightManager fightManager = new FightManager(EnemyInDungeon,_player);
 
             if (fightManager.Fight())
                 return true;
             else 
                 return false;
-
         }
     }
 }

@@ -4,6 +4,6 @@ namespace Project_Transcendence.BuisnessLogic.Dungeons
 {
     public interface IEnemyDungeon
     {
-        public IEnemy EnemyInDungeon { get; set; }
+        public Enemy EnemyInDungeon { get; set; }
     }
 }

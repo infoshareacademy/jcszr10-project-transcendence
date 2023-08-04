@@ -11,10 +11,10 @@ namespace Project_Transcendence.ConsoleApp.Menus
         private IPlayer _player;
         private List<IDungeon> _dungeons = new List<IDungeon>()
         {
-            new EnemyDungeon("Dungeon number 1",new Enemy("Burek", new HighElf()), 1),
-            new EnemyDungeon("Dungeon number 2",new Enemy("Kurek", new HighElf()), 2),
-            new EnemyDungeon("Dungeon number 3",new Enemy("Fiurek", new HighElf()), 3),
-            new PuzzleDungeon("Dungeon number 4",1,new Puzzle())
+            //new EnemyDungeon("Dungeon number 1",new Enemy("Burek", new HighElf()), 1),
+            //new EnemyDungeon("Dungeon number 2",new Enemy("Kurek", new HighElf()), 2),
+            //new EnemyDungeon("Dungeon number 3",new Enemy("Fiurek", new HighElf()), 3),
+            //new PuzzleDungeon("Dungeon number 4",1,new Puzzle())
         };
 
         public DungeonRun(IPlayer player)
@@ -28,7 +28,7 @@ namespace Project_Transcendence.ConsoleApp.Menus
             {
                 if(DungeonInfoDisplay.Run(item))
                 {
-                    if (item.RunDungeon(_player))
+                    if (item.RunDungeon())
                     {
                         _player.LevelUp();
                     }

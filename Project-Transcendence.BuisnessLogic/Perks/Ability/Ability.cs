@@ -20,9 +20,9 @@ namespace Project_Transcendence.BuisnessLogic.Perks.Ability
             Name = name;
             Damage = damage;
         }
-        public Ability()
+        public Ability(int dmg)
         {
-
+            Damage = dmg;
         }
 
         public int Damage { get; set; }

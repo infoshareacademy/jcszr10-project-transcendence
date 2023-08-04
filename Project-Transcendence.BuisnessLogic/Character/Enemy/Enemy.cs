@@ -2,7 +2,6 @@
 {
     using Project_Transcendence.BuisnessLogic.Character.CharacterRaces;
     using Project_Transcendence.BuisnessLogic.Character.Player;
-    using Project_Transcendence.BuisnessLogic.Perks;
     using Project_Transcendence.BuisnessLogic.Perks.Ability;
     using Project_Transcendence.BuisnessLogic.Perks.Items;
 
@@ -21,10 +20,10 @@
             Level = level;
             EnemyAttacks = new List<IAbility>()
             {
-                new Ability(),
-                new Ability(),
-                new Ability(),
-                new Ability()
+                new Ability(5),
+                new Ability(7),
+                new Ability(12),
+                new Ability(15)
             };
             ItemsToDrop = new List<IItem>()
             {
@@ -40,6 +39,11 @@
         public IAbility Attack()
         {
             return EnemyAttacks[new Random().Next(EnemyAttacks.Count)];
+        }
+
+        public int GetHealth()
+        {
+            return _healthManager.GetHealth();
         }
 
         public void TakeDamage(IAbility ability)

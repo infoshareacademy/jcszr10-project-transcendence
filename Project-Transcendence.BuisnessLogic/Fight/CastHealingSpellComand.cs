@@ -1,11 +1,5 @@
-﻿using Project_Transcendence.BuisnessLogic.Character;
-using Project_Transcendence.BuisnessLogic.Character.Player;
+﻿using Project_Transcendence.BuisnessLogic.Character.Player;
 using Project_Transcendence.BuisnessLogic.Perks.Ability;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Project_Transcendence.BuisnessLogic.Fight
 {

@@ -1,66 +1,74 @@
-﻿using Project_Transcendence.BuisnessLogic.Character;
-using Project_Transcendence.BuisnessLogic.Character.Enemy;
+﻿using Project_Transcendence.BuisnessLogic.Character.Enemy;
 using Project_Transcendence.BuisnessLogic.Character.Player;
-using Project_Transcendence.BuisnessLogic.Dungeons;
 using Project_Transcendence.BuisnessLogic.Perks.Ability;
-using System.ComponentModel.Design;
 
 namespace Project_Transcendence.BuisnessLogic.Fight
 {
     public class FightManager
     {
+        private BasicPlayer _player;
+        private Enemy _enemy;
 
-        //private BasicPlayer _player;
-        //private Enemy _enemy;
-        //private Ability _ability;
-        //private HealthManager _healthManager;
-
-        //public FightManager(Enemy enemy, BasicPlayer player, Ability ability, HealthManager healthManager)
-        //{
-        //    _player = player;
-        //    _enemy = enemy;
-        //    _ability = ability;
-        //    _healthManager = healthManager;
-
-        //}
-
-        public void Fight(Enemy enemy, BasicPlayer player, Ability ability, HealthManager healthManager)
+        public FightManager(Enemy enemy, BasicPlayer player)
         {
-            while (player.GetHealth() > 0 && enemy.GetHealth() > 0)
+            _player = player;
+            _enemy = enemy;
+        }
+
+        public bool Fight()
+        {
+            bool result = false;
+            int turn = 0;
+            while (true)
             {
-               
-                //tutaj trzeba while (jeżeli gracz ma więcej niż 0 żyćka i enemy też to to się wykonuje)
-                ICommand playerCommand;
-                //A tutaj trzeba ifa z wyborem playera
-                playerCommand = new PlayerAttackCommand(player, enemy);
-                playerCommand = new CastHealingSpellComand(player, ability);
-                playerCommand = new CastDamageSpellCast(player, enemy, ability);
-                playerCommand = new DrinkPotionCommand(player);
-                
-                playerCommand.Execute();
+                #region // Magia Pauli :D 
+                ////tutaj trzeba while (jeżeli gracz ma więcej niż 0 żyćka i enemy też to to się wykonuje)
+                //ICommand playerCommand;
+                ////A tutaj trzeba ifa z wyborem playera
+                //playerCommand = new PlayerAttackCommand(_player, _enemy);
+                //playerCommand = new CastHealingSpellComand(_player, ability);
+                //playerCommand = new CastDamageSpellCast(_player, _enemy, ability);
+                //playerCommand = new DrinkPotionCommand(_player);
 
-                ICommand enemyCommand;
-                //a tu trzeba z wyborem enemy
-                enemyCommand = new EnemyAttackCommand(player, enemy);
-                enemyCommand = new CastHealingSpellComand(enemy, ability);
-                enemyCommand = new CastDamageSpellCast(enemy, player, ability);
-                enemyCommand.Execute();
+                //playerCommand.Execute();
 
+                //ICommand enemyCommand;
+                ////a tu trzeba z wyborem enemy
+                //enemyCommand = new EnemyAttackCommand(_player, _enemy);
+                //enemyCommand = new CastHealingSpellComand(_enemy, ability);
+                //enemyCommand = new CastDamageSpellCast(_enemy, _player, ability);
+                //enemyCommand.Execute();
+                #endregion
 
-                if (player.GetHealth() == 0)
+                if(turn % 2 == 0) // tura gracza
                 {
-                    Console.WriteLine($"{enemy.Name} wygrał!");
+
                 }
-                else if (enemy.GetHealth() == 0)
+                else // tura przeciwnika
                 {
-                    Console.WriteLine($"Gratulacje {player.Name}, zwycięstwo!");
-                }
-                else
-                {
-                    Console.WriteLine("Remis!");
+
                 }
 
+                turn++;
+            }
+            return result;
+        }
+
+        public bool CheckWhoWon(BasicPlayer player, Enemy enemy)
+        {
+            bool result = false;
+
+            if(player.GetHealth() < 0) // Player przegrał
+            {
+                return false;
+            }
+            else if(enemy.GetHealth() < 0) // Player wygrał
+            {
+                return true;
             }
 
+            return false;
         }
+
     }
+}

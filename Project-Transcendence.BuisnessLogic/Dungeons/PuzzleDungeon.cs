@@ -21,7 +21,7 @@ namespace Project_Transcendence.BuisnessLogic.Dungeons
             
         }
 
-        public bool RunDungeon(IPlayer player)
+        public bool RunDungeon()
         {
             throw new NotImplementedException();
         }

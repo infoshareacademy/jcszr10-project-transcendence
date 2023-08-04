@@ -54,5 +54,10 @@ namespace Project_Transcendence.BuisnessLogic.Perks.Items
         {
             throw new NotImplementedException();
         }
+
+        public void IncreaseStatistics(int x)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
