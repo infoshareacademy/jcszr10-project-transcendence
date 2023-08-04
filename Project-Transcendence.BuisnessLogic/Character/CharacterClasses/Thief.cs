@@ -1,4 +1,5 @@
 ﻿using Project_Transcendence.BuisnessLogic.Perks.Ability;
+using Project_Transcendence.BuisnessLogic.Perks.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,21 +17,40 @@ namespace Project_Transcendence.BuisnessLogic.Character.CharacterClasses
             ClassName = "Złodziej";
             Abilities = new List<IAbility>()
             {
-                new Ability(),
-                new Ability(),
-                new Ability(),
-                new Ability()
+                new Ability("Kuglarstwo", "Tworzysz iluzje zasłony z deszczu iskier, jednocześnie zadając obrażenia", 0, 20),
+                new Ability("Magiczna dłoń", "Zadajesz obrażenia", 0, 25),
+                new Ability("Fałszywe życie", "Wspomagasz się nekromantyczną namiastką życia", 30, 0),
+                new Ability("Gniewne ugodzenie", "Zadajesz obrażenie", 0, 25)
+            };
+            Weapons = new List<IWeapon>()
+            {
+                new Weapon(25, "Miecz krótki"),
+                new Weapon(20, "Proca")
+            };
+            Jewelery = new List<Jewelery>()
+            {
+                new Jewelery("Pierścień z rubinem"," ", 1 , 1 , 1 ,1)
             };
         }
 
         public List<IAbility> Abilities { get; set; }
+        public List<IWeapon> Weapons { get; set; }
+        public List<Jewelery> Jewelery { get; }
 
         public string Description { get; set; }
         public string ClassName { get; set; }
 
+
         public void DisplayAbilities()
         {
             foreach (var item in Abilities)
+            {
+                Console.WriteLine(item);
+            }
+        }
+        public void DisplayWeapon()
+        {
+            foreach (var item in Weapons)
             {
                 Console.WriteLine(item);
             }

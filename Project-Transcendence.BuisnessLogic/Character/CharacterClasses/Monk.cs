@@ -1,4 +1,5 @@
 ﻿using Project_Transcendence.BuisnessLogic.Perks.Ability;
+using Project_Transcendence.BuisnessLogic.Perks.Items;
 
 namespace Project_Transcendence.BuisnessLogic.Character.CharacterClasses
 {
@@ -16,9 +17,20 @@ namespace Project_Transcendence.BuisnessLogic.Character.CharacterClasses
                 new Ability("Strike Of A Deadly Mantis", 30),
                 new Ability("Inner peace", 0)
             };
+            Weapons = new List<IWeapon>()
+            {
+                new Weapon(25, "Buława"),
+                new Weapon(20, "Łuk długi")
+            };
+            Jewelery = new List<Jewelery>()
+            {
+                new Jewelery("Srebrny pierścień"," ", 1 , 1 , 1 ,1)
+            };
         }
 
         public List<IAbility> Abilities { get; set; }
+        public List<IWeapon> Weapons { get; set; }
+        public List<Jewelery> Jewelery { get; }
 
         public string Description { get; set; }
         public string ClassName { get; set; }
@@ -26,6 +38,13 @@ namespace Project_Transcendence.BuisnessLogic.Character.CharacterClasses
         public void DisplayAbilities()
         {
             foreach (var item in Abilities)
+            {
+                Console.WriteLine(item);
+            }
+        }
+        public void DisplayWeapon()
+        {
+            foreach (var item in Weapons)
             {
                 Console.WriteLine(item);
             }

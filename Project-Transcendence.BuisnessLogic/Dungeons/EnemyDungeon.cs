@@ -1,5 +1,6 @@
 ﻿using Project_Transcendence.BuisnessLogic.Character.Enemy;
 using Project_Transcendence.BuisnessLogic.Character.Player;
+using Project_Transcendence.BuisnessLogic.Fight;
 
 namespace Project_Transcendence.BuisnessLogic.Dungeons
 {
