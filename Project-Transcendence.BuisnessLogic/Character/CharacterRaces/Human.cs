@@ -7,6 +7,7 @@ namespace Project_Transcendence.BuisnessLogic.Character.CharacterRaces
     {
 
         private StatisticsManager _statisticsManager;
+        private string _description;
 
         public Human()
         {
@@ -18,39 +19,39 @@ namespace Project_Transcendence.BuisnessLogic.Character.CharacterRaces
         {
             get
             {
-                return Description;
+                return _description;
             }
             set
             {
-                Description = "Człowiek to dość pospolita rasa, żyje krótko i jest dość słaby w porównaniu do innych inteligentnych gatunków, mimo swoich ograniczeń posiada zdolność szybkiego dostosowania się do zaistniałych warunków, łatwość uczenia się i zdobywania umiejętności, dają mu możliwość wcielania się w dowolną klasę.";
+                _description = "Człowiek to dość pospolita rasa, żyje krótko i jest dość słaby w porównaniu do innych inteligentnych gatunków, mimo swoich ograniczeń posiada zdolność szybkiego dostosowania się do zaistniałych warunków, łatwość uczenia się i zdobywania umiejętności, dają mu możliwość wcielania się w dowolną klasę.";
             }
         }
 
-        public List<Ability> Abilities { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string RaceName { get; set; } = "Human";
 
         public int GetCharacterAgility()
         {
-            throw new NotImplementedException();
+            return _statisticsManager.Agility;
         }
 
         public int GetCharacterIntelect()
         {
-            throw new NotImplementedException();
+            return _statisticsManager.Intelect;
         }
 
         public int GetCharacterLuck()
         {
-            throw new NotImplementedException();
-        }
-
-        public string GetCharacterRaceName()
-        {
-            return nameof(Human);
+            return _statisticsManager.Luck;
         }
 
         public int GetCharacterStrength()
         {
-            throw new NotImplementedException();
+            return _statisticsManager.Strength;
+        }
+
+        public string GetCharacterRaceName()
+        {
+            return "Human";
         }
     }
 }

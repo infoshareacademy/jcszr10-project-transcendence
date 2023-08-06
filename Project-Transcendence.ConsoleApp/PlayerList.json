@@ -1,0 +1,89 @@
+{
+  "$type": "Project_Transcendence.BuisnessLogic.Character.Player.BasicPlayer, Project-Transcendence.BuisnessLogic",
+  "CharacterClass": {
+    "$type": "Project_Transcendence.BuisnessLogic.Character.CharacterClasses.Monk, Project-Transcendence.BuisnessLogic",
+    "Abilities": [
+      {
+        "$type": "Project_Transcendence.BuisnessLogic.Perks.Ability.Ability, Project-Transcendence.BuisnessLogic",
+        "Damage": 15,
+        "Healing": 0,
+        "Name": "Fists of fury",
+        "Description": null
+      },
+      {
+        "$type": "Project_Transcendence.BuisnessLogic.Perks.Ability.Ability, Project-Transcendence.BuisnessLogic",
+        "Damage": 25,
+        "Healing": 0,
+        "Name": "Touch of Death",
+        "Description": null
+      },
+      {
+        "$type": "Project_Transcendence.BuisnessLogic.Perks.Ability.Ability, Project-Transcendence.BuisnessLogic",
+        "Damage": 30,
+        "Healing": 0,
+        "Name": "Strike Of A Deadly Mantis",
+        "Description": null
+      },
+      {
+        "$type": "Project_Transcendence.BuisnessLogic.Perks.Ability.Ability, Project-Transcendence.BuisnessLogic",
+        "Damage": 0,
+        "Healing": 0,
+        "Name": "Inner peace",
+        "Description": null
+      },
+      {
+        "$type": "Project_Transcendence.BuisnessLogic.Perks.Ability.Ability, Project-Transcendence.BuisnessLogic",
+        "Damage": 25,
+        "Healing": 0,
+        "Name": "Atak z broni",
+        "Description": null
+      }
+    ],
+    "Weapons": [
+      {
+        "$type": "Project_Transcendence.BuisnessLogic.Perks.Items.Weapon, Project-Transcendence.BuisnessLogic",
+        "Damage": 25,
+        "Name": "Buława",
+        "Description": null
+      },
+      {
+        "$type": "Project_Transcendence.BuisnessLogic.Perks.Items.Weapon, Project-Transcendence.BuisnessLogic",
+        "Damage": 20,
+        "Name": "Łuk długi",
+        "Description": null
+      }
+    ],
+    "Jewelery": [
+      {
+        "$type": "Project_Transcendence.BuisnessLogic.Perks.Items.Jewelery, Project-Transcendence.BuisnessLogic",
+        "Name": "Srebrny pierścień",
+        "Description": " "
+      }
+    ],
+    "Description": "Mnich to mistrz sztuk walki, który harmonizuje ciało, umysł i duszę. Poprzez długie lata treningu i medytacji, mnich osiąga doskonałość w technikach walki wręcz i opanowuje sztuki obronne. Jego umiejętności fizyczne są wspierane przez głębokie duchowe przekonania, co pozwala mu opanować techniki uzdrawiania, koncentrację umysłu i kontrolę nad energią życiową. Jako pustelnicy i obrońcy sprawiedliwości, mnisi emanują spokojem, mądrością i pokorą, czyniąc ich niezwykle szanowanymi i inspirującymi postaciami.",
+    "ClassName": "Mnich"
+  },
+  "Experience": 0,
+  "Inventory": [],
+  "Gear": [],
+  "Weapons": [],
+  "Jewelery": [
+    {
+      "$type": "Project_Transcendence.BuisnessLogic.Perks.Items.Jewelery, Project-Transcendence.BuisnessLogic",
+      "Name": "ring",
+      "Description": "description"
+    },
+    {
+      "$type": "Project_Transcendence.BuisnessLogic.Perks.Items.Jewelery, Project-Transcendence.BuisnessLogic",
+      "Name": "necklace",
+      "Description": "description"
+    }
+  ],
+  "Name": "Piotr",
+  "Race": {
+    "$type": "Project_Transcendence.BuisnessLogic.Character.CharacterRaces.Aasimar, Project-Transcendence.BuisnessLogic",
+    "Description": null,
+    "RaceName": "Aasimar"
+  },
+  "Level": 1
+}

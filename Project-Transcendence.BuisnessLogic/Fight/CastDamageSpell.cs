@@ -4,12 +4,12 @@ using Project_Transcendence.BuisnessLogic.Perks.Ability;
 
 namespace Project_Transcendence.BuisnessLogic.Fight
 {
-    internal class CastDamageSpellCast : ICommand
+    internal class CastDamageSpell : ICommand
     {
         private Enemy _target;
-        private Ability _ability;
+        private IAbility _ability;
 
-        public CastDamageSpellCast(Enemy target, Ability ability)
+        public CastDamageSpell(Enemy target, IAbility ability)
         {
             _target = target;
             _ability = ability;
@@ -18,6 +18,8 @@ namespace Project_Transcendence.BuisnessLogic.Fight
         public void Execute()
         {
             _target.TakeDamage(_ability.Damage);
+            Console.WriteLine($"Uzyles czaru {_ability.Name} i zadales {_ability.Damage} obrazen");
+            Thread.Sleep( 2000 );
         }
     }
 }

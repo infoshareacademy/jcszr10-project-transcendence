@@ -22,6 +22,9 @@ namespace Project_Transcendence.BuisnessLogic.Fight
         public void Execute()
         {
             _player.TakeDamage(_enemy.Attack());
+            Console.WriteLine("tura przeciwnika");
+            Console.WriteLine($"Pzzeciwnik zadał Ci {_enemy.Attack().Damage} obrazen");
+            Thread.Sleep(3000);
         }
     }
 }

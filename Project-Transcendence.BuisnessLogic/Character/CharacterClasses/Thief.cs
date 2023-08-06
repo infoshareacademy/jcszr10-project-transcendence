@@ -16,7 +16,8 @@ namespace Project_Transcendence.BuisnessLogic.Character.CharacterClasses
                 new Ability("Kuglarstwo", "Tworzysz iluzje zasłony z deszczu iskier, jednocześnie zadając obrażenia", 0, 20),
                 new Ability("Magiczna dłoń", "Zadajesz obrażenia", 0, 25),
                 new Ability("Fałszywe życie", "Wspomagasz się nekromantyczną namiastką życia", 30, 0),
-                new Ability("Gniewne ugodzenie", "Zadajesz obrażenie", 0, 25)
+                new Ability("Gniewne ugodzenie", "Zadajesz obrażenie", 0, 25),
+                new Ability("Atak z broni", Weapons[0].Damage)
             };
             Weapons = new List<IWeapon>()
             {

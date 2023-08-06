@@ -10,21 +10,25 @@ namespace Project_Transcendence.BuisnessLogic.Character.CharacterClasses
         {
             Description = _description;
             ClassName = "Mnich";
-            Abilities = new List<IAbility>()
-            {
-                new Ability("Fists of fury",15),
-                new Ability("Touch of Death", 25),
-                new Ability("Strike Of A Deadly Mantis", 30),
-                new Ability("Inner peace", 0)
-            };
+
             Weapons = new List<IWeapon>()
             {
                 new Weapon(25, "Buława"),
                 new Weapon(20, "Łuk długi")
             };
+
             Jewelery = new List<Jewelery>()
             {
                 new Jewelery("Srebrny pierścień"," ", 1 , 1 , 1 ,1)
+            };
+
+            Abilities = new List<IAbility>()
+            {
+                new Ability("Fists of fury",15),
+                new Ability("Touch of Death", 25),
+                new Ability("Strike Of A Deadly Mantis", 30),
+                new Ability("Inner peace", 0),
+                new Ability("Atak z broni", Weapons[0].Damage)
             };
         }
 

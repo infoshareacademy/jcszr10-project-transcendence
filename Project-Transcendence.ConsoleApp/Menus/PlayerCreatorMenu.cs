@@ -1,6 +1,7 @@
 ﻿using Project_Transcendence.BuisnessLogic.Character.CharacterClasses;
 using Project_Transcendence.BuisnessLogic.Character.CharacterRaces;
 using Project_Transcendence.BuisnessLogic.Character.Player;
+using Project_Transcendence.BuisnessLogic.Dungeons;
 using Project_Transcendence.ConsoleApp.Factories;
 
 
@@ -69,11 +70,13 @@ namespace Project_Transcendence.ConsoleApp.Menus
 
             var player1 = playerFactory.Create();
 
+            player1.SaveToFile();
+
             Console.WriteLine("Wcisnij przycisk by zacząć przygodę!");
             Console.ReadKey(true);
 
-            DungeonRun dungeonRun = new(player1);
-            dungeonRun.Traverse();
+            DungeonsTraverser dungeonsTraverser = new(player1, DungeonContainer.Dungeons);
+            dungeonsTraverser.Traverse();
 
         }
     }

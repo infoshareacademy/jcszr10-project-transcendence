@@ -7,6 +7,5 @@ namespace Project_Transcendence.BuisnessLogic.Dungeons
         public string DungeonStory { get; set; }
         public string DungeonType { get; set; }
         public int DungeonLevel { get; set; }
-        public bool RunDungeon();
     }
 }

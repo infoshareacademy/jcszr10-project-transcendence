@@ -17,6 +17,8 @@ namespace Project_Transcendence.BuisnessLogic.Fight
         public void Execute()
         {
             _enemy.TakeDamage(_player.Weapons[0].Damage);
+            Console.WriteLine($"Uderzyles przeciwnika {_player.Weapons[0].Name} i zadales {_player.Weapons[0].Damage} obrazen");
+            Thread.Sleep(2000);
         }
     }
 }

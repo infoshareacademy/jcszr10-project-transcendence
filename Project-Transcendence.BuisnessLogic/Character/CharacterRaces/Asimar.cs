@@ -7,7 +7,7 @@ namespace Project_Transcendence.BuisnessLogic.Character.CharacterRaces
     public class Aasimar : ICharacterRace
     {
         private StatisticsManager _statisticsManager;
-
+        private string _description;
         public Aasimar()
         {
             _statisticsManager = new StatisticsManager(0,0,0,5);
@@ -17,17 +17,17 @@ namespace Project_Transcendence.BuisnessLogic.Character.CharacterRaces
         {
             get
             {
-                return Description;
+                return _description;
             }
             set
             {
-                Description = "Aasimar to rasa istot występujących w wielu światach fantasy," +
+                _description = "Aasimar to rasa istot występujących w wielu światach fantasy," +
                     " zwykle pochodzących z mieszańców ludzi i istot boskich lub pochodzących bezpośrednio od boskich przodków." +
                     " Posiadają cechy zarówno ludzkie, jak i boskie, co nadaje im wyjątkowe zdolności i wygląd. ";
             }
         }
 
-        public List<Ability> Abilities { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string RaceName { get; set; } = "Aasimar";
 
         public int GetCharacterAgility()
         {

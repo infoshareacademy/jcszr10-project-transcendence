@@ -15,7 +15,8 @@ namespace Project_Transcendence.BuisnessLogic.Character.CharacterClasses
                 new Ability("Znak Łowcy", "Oznaczasz istotę którą widzisz i zadajesz jej magiczne obrażenia", 0, 20),
                 new Ability("Leczenie ran", "Odzyskujesz punkty wytrzymałości", 40, 0),
                 new Ability("Kordon strzał", "Rozmieszczasz 4 sztuki niemagicznej amunicji, które uderzają ze zdwojoną siłą", 0, 40),
-                new Ability("Alarm", "Ogłuszasz przeciwnika", 0, 15)
+                new Ability("Alarm", "Ogłuszasz przeciwnika", 0, 15),
+                new Ability("Atak z broni", Weapons[0].Damage)
             };
             Weapons = new List<IWeapon>()
             {

@@ -1,4 +1,5 @@
-﻿using Project_Transcendence.BuisnessLogic.Character.CharacterClasses;
+﻿using Newtonsoft.Json;
+using Project_Transcendence.BuisnessLogic.Character.CharacterClasses;
 using Project_Transcendence.BuisnessLogic.Character.CharacterRaces;
 using Project_Transcendence.BuisnessLogic.Perks.Ability;
 using Project_Transcendence.BuisnessLogic.Perks.Items;
@@ -15,6 +16,8 @@ namespace Project_Transcendence.BuisnessLogic.Character.Player
         public List<Jewelery> Jewelery { get; set; }
         private StatisticsManager _statisticsManager { get; set; }
         private HealthManager _healthManager { get; set; }
+        private int _finishedDungeonIndex = 0;
+        private static string _filePath = @"H:\Project_Transcendence\jcszr10-project-transcendence\Project-Transcendence.ConsoleApp\PlayerList.json";
 
         public BasicPlayer(string name, ICharacterRace race, ICharacterClass characterClass, int startingHealth, int startingExp, int level)
         {
@@ -33,8 +36,6 @@ namespace Project_Transcendence.BuisnessLogic.Character.Player
 
             Jewelery.Add(new Jewelery("ring","description",0,0,0,5));
             Jewelery.Add(new Jewelery("necklace", "description",0,0,0,5));
-
-
         }
 
         /// <summary>
@@ -225,5 +226,63 @@ namespace Project_Transcendence.BuisnessLogic.Character.Player
                 IncreaseLevel();
             }
         }
+
+        public PlayerMemento CreateMemento()
+        {
+            string raceType = Race.GetType().FullName;
+
+            return new PlayerMemento(Name, Race, CharacterClass, Level, Experience, Inventory, Gear, Weapons, Jewelery, _finishedDungeonIndex,raceType);
+        }
+
+        public void RestoreFromMemento(PlayerMemento memento)
+        {
+            Name = memento.Name;
+            Race = memento.Race;
+            CharacterClass = memento.CharacterClass;
+            Level = memento.Level;
+            Experience = memento.Experience;
+            Inventory = new List<Item>(memento.Inventory);
+            Gear = new List<Item>(memento.Gear);
+            Weapons = new List<Weapon>(memento.Weapons);
+            Jewelery = new List<Jewelery>(memento.Jewelery);
+            _finishedDungeonIndex = memento.FinishedDungeonIndex;
+        }
+
+        public void SaveMementoToFile(PlayerMemento memento)
+        {
+            string json = JsonConvert.SerializeObject(memento,Formatting.Indented);
+            File.WriteAllText(_filePath, json);
+        }
+
+
+        public PlayerMemento LoadMementoFromFile()
+        {
+            string json = File.ReadAllText(_filePath);
+            return JsonConvert.DeserializeObject<PlayerMemento>(json);
+        }
+
+        public void SaveToFile()
+        {
+            string json = JsonConvert.SerializeObject(this, Formatting.Indented, new JsonSerializerSettings
+            {
+                TypeNameHandling = TypeNameHandling.Objects,
+                Converters = { new RaceConverter(), new ClassConverter() } // Dodaj odpowiednie konwertery
+            });
+
+            File.WriteAllText(_filePath, json);
+        }
+
+        public static BasicPlayer LoadFromFile()
+        {
+            if (File.Exists(_filePath))
+            {
+                string json = File.ReadAllText(_filePath);
+                return JsonConvert.DeserializeObject<BasicPlayer>(json, new RaceConverter(), new ClassConverter());
+            }
+            return null;
+        }
+
+
+
     }
 }

@@ -15,7 +15,8 @@ namespace Project_Transcendence.BuisnessLogic.Character.CharacterClasses
                 new Ability("Ognisty pocisk", "Ciskasz garścią ognia w istotę w zasięgu czaru.", 0, 20),
                 new Ability("Piekielna reprymenda", "Istotę spowijają ognie piekielne.", 0, 25),
                 new Ability("Magiczny pocisk", "Wywołujesz trzy świetliste strzałki stworzone z magicznej energii.", 0, 45),
-                new Ability("Leczenie ran", "Odzyskujesz punkty wytrzymałości", 40, 0)
+                new Ability("Leczenie ran", "Odzyskujesz punkty wytrzymałości", 40, 0),
+                new Ability("Atak z broni", Weapons[0].Damage)
             };
             Weapons = new List<IWeapon>()
             {
