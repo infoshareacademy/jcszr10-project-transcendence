@@ -10,6 +10,12 @@ namespace Project_Transcendence.BuisnessLogic.Character.CharacterClasses
         {
             Description = _description;
             ClassName = "Wojownik";
+
+            Weapons = new List<IWeapon>()
+            {
+                new Weapon(35, "Miecz dwuręczny"),
+                new Weapon(20, "Kusza")
+            };
             Abilities = new List<IAbility>()
             {
                 new Ability("Znak Łowcy", "Oznaczasz istotę którą widzisz i zadajesz jej magiczne obrażenia", 0, 20),
@@ -18,11 +24,7 @@ namespace Project_Transcendence.BuisnessLogic.Character.CharacterClasses
                 new Ability("Alarm", "Ogłuszasz przeciwnika", 0, 15),
                 new Ability("Atak z broni", Weapons[0].Damage)
             };
-            Weapons = new List<IWeapon>()
-            {
-                new Weapon(35, "Miecz dwuręczny"),
-                new Weapon(20, "Kusza")
-            };
+
             Jewelery = new List<Jewelery>()
             {
                 new Jewelery("Sygnet"," ", 1 , 1 , 1 ,1)

@@ -11,6 +11,12 @@ namespace Project_Transcendence.BuisnessLogic.Character.CharacterClasses
         {
             Description = _description;
             ClassName = "Złodziej";
+
+            Weapons = new List<IWeapon>()
+            {
+                new Weapon(25, "Miecz krótki"),
+                new Weapon(20, "Proca")
+            };
             Abilities = new List<IAbility>()
             {
                 new Ability("Kuglarstwo", "Tworzysz iluzje zasłony z deszczu iskier, jednocześnie zadając obrażenia", 0, 20),
@@ -18,11 +24,6 @@ namespace Project_Transcendence.BuisnessLogic.Character.CharacterClasses
                 new Ability("Fałszywe życie", "Wspomagasz się nekromantyczną namiastką życia", 30, 0),
                 new Ability("Gniewne ugodzenie", "Zadajesz obrażenie", 0, 25),
                 new Ability("Atak z broni", Weapons[0].Damage)
-            };
-            Weapons = new List<IWeapon>()
-            {
-                new Weapon(25, "Miecz krótki"),
-                new Weapon(20, "Proca")
             };
             Jewelery = new List<Jewelery>()
             {
