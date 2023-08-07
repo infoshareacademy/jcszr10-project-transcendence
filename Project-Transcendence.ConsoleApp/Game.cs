@@ -7,7 +7,7 @@ namespace Project_Transcendence.ConsoleApp
 
         public void Start()
         {
-           // RunLoadingScreen();
+            LoadingMenu.Run(AsciiArt.loading);
             Console.Title = "Transcendence";
             StartingMenu.Run();
 

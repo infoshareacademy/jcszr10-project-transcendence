@@ -1,5 +1,4 @@
-﻿
-namespace Project_Transcendence.BuisnessLogic
+﻿namespace Project_Transcendence.BuisnessLogic.Character
 {
     public class HealthManager
     {

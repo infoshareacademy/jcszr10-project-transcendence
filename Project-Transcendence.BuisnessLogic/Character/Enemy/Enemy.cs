@@ -1,5 +1,6 @@
 ﻿namespace Project_Transcendence.BuisnessLogic.Character.Enemy
 {
+    using Project_Transcendence.BuisnessLogic.Character;
     using Project_Transcendence.BuisnessLogic.Character.CharacterRaces;
     using Project_Transcendence.BuisnessLogic.Character.Player;
     using Project_Transcendence.BuisnessLogic.Perks.Ability;

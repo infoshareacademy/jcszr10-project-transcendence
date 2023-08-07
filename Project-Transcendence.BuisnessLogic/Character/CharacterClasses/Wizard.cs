@@ -6,10 +6,17 @@ namespace Project_Transcendence.BuisnessLogic.Character.CharacterClasses
     public class Wizard : ICharacterClass
     {
         private string _description = "Czarodziej to utalentowany magiczny mistrz, który walczy z siłą zaklęć i eliksirów. Zawodowy manipulator energii magicznej, czarodziej zdobywa wiedzę i umiejętności, które pozwalają mu rzucać potężne czary i używać magii w różnorodny sposób";
+        
         public Wizard()
         {
             Description = _description;
             ClassName = "Czarodziej";
+
+            Weapons = new List<IWeapon>()
+            {
+                new Weapon(30, "Miecz długi"),
+                new Weapon(20, "Strzałka")
+            };
             Abilities = new List<IAbility>()
             {
                 new Ability("Ognisty pocisk", "Ciskasz garścią ognia w istotę w zasięgu czaru.", 0, 20),
@@ -17,11 +24,6 @@ namespace Project_Transcendence.BuisnessLogic.Character.CharacterClasses
                 new Ability("Magiczny pocisk", "Wywołujesz trzy świetliste strzałki stworzone z magicznej energii.", 0, 45),
                 new Ability("Leczenie ran", "Odzyskujesz punkty wytrzymałości", 40, 0),
                 new Ability("Atak z broni", Weapons[0].Damage)
-            };
-            Weapons = new List<IWeapon>()
-            {
-                new Weapon(30, "Miecz długi"),
-                new Weapon(20, "Strzałka")
             };
             Jewelery = new List<Jewelery>()
             {
