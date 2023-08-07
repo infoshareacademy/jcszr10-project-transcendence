@@ -79,7 +79,7 @@
       "Description": "description"
     }
   ],
-  "Name": "Piotr",
+  "Name": "add",
   "Race": {
     "$type": "Project_Transcendence.BuisnessLogic.Character.CharacterRaces.Aasimar, Project-Transcendence.BuisnessLogic",
     "Description": null,

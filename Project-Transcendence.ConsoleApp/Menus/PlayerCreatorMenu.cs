@@ -74,10 +74,6 @@ namespace Project_Transcendence.ConsoleApp.Menus
 
             Console.WriteLine("Wcisnij przycisk by zacząć przygodę!");
             Console.ReadKey(true);
-
-            DungeonsTraverser dungeonsTraverser = new(player1, DungeonContainer.Dungeons);
-            dungeonsTraverser.Traverse();
-
         }
     }
 }

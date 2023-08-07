@@ -227,46 +227,12 @@ namespace Project_Transcendence.BuisnessLogic.Character.Player
             }
         }
 
-        public PlayerMemento CreateMemento()
-        {
-            string raceType = Race.GetType().FullName;
-
-            return new PlayerMemento(Name, Race, CharacterClass, Level, Experience, Inventory, Gear, Weapons, Jewelery, _finishedDungeonIndex,raceType);
-        }
-
-        public void RestoreFromMemento(PlayerMemento memento)
-        {
-            Name = memento.Name;
-            Race = memento.Race;
-            CharacterClass = memento.CharacterClass;
-            Level = memento.Level;
-            Experience = memento.Experience;
-            Inventory = new List<Item>(memento.Inventory);
-            Gear = new List<Item>(memento.Gear);
-            Weapons = new List<Weapon>(memento.Weapons);
-            Jewelery = new List<Jewelery>(memento.Jewelery);
-            _finishedDungeonIndex = memento.FinishedDungeonIndex;
-        }
-
-        public void SaveMementoToFile(PlayerMemento memento)
-        {
-            string json = JsonConvert.SerializeObject(memento,Formatting.Indented);
-            File.WriteAllText(_filePath, json);
-        }
-
-
-        public PlayerMemento LoadMementoFromFile()
-        {
-            string json = File.ReadAllText(_filePath);
-            return JsonConvert.DeserializeObject<PlayerMemento>(json);
-        }
-
         public void SaveToFile()
         {
             string json = JsonConvert.SerializeObject(this, Formatting.Indented, new JsonSerializerSettings
             {
                 TypeNameHandling = TypeNameHandling.Objects,
-                Converters = { new RaceConverter(), new ClassConverter() } // Dodaj odpowiednie konwertery
+                Converters = { new RaceConverter(), new ClassConverter() }
             });
 
             File.WriteAllText(_filePath, json);
