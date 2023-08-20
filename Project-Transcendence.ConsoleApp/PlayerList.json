@@ -1,38 +1,38 @@
 {
-  "$type": "Project_Transcendence.BuisnessLogic.Character.Player.BasicPlayer, Project-Transcendence.BuisnessLogic",
+  "$type": "Project_Transcendence.BuisnessLogic.Character.Player.BasicPlayer, Project-Transcendence.BusinessLogic",
   "CharacterClass": {
-    "$type": "Project_Transcendence.BuisnessLogic.Character.CharacterClasses.Monk, Project-Transcendence.BuisnessLogic",
+    "$type": "Project_Transcendence.BuisnessLogic.Character.CharacterClasses.Monk, Project-Transcendence.BusinessLogic",
     "Abilities": [
       {
-        "$type": "Project_Transcendence.BuisnessLogic.Perks.Ability.Ability, Project-Transcendence.BuisnessLogic",
+        "$type": "Project_Transcendence.BuisnessLogic.Perks.Ability.Ability, Project-Transcendence.BusinessLogic",
         "Damage": 15,
         "Healing": 0,
         "Name": "Fists of fury",
         "Description": null
       },
       {
-        "$type": "Project_Transcendence.BuisnessLogic.Perks.Ability.Ability, Project-Transcendence.BuisnessLogic",
+        "$type": "Project_Transcendence.BuisnessLogic.Perks.Ability.Ability, Project-Transcendence.BusinessLogic",
         "Damage": 25,
         "Healing": 0,
         "Name": "Touch of Death",
         "Description": null
       },
       {
-        "$type": "Project_Transcendence.BuisnessLogic.Perks.Ability.Ability, Project-Transcendence.BuisnessLogic",
+        "$type": "Project_Transcendence.BuisnessLogic.Perks.Ability.Ability, Project-Transcendence.BusinessLogic",
         "Damage": 30,
         "Healing": 0,
         "Name": "Strike Of A Deadly Mantis",
         "Description": null
       },
       {
-        "$type": "Project_Transcendence.BuisnessLogic.Perks.Ability.Ability, Project-Transcendence.BuisnessLogic",
+        "$type": "Project_Transcendence.BuisnessLogic.Perks.Ability.Ability, Project-Transcendence.BusinessLogic",
         "Damage": 0,
         "Healing": 0,
         "Name": "Inner peace",
         "Description": null
       },
       {
-        "$type": "Project_Transcendence.BuisnessLogic.Perks.Ability.Ability, Project-Transcendence.BuisnessLogic",
+        "$type": "Project_Transcendence.BuisnessLogic.Perks.Ability.Ability, Project-Transcendence.BusinessLogic",
         "Damage": 25,
         "Healing": 0,
         "Name": "Atak z broni",
@@ -41,13 +41,13 @@
     ],
     "Weapons": [
       {
-        "$type": "Project_Transcendence.BuisnessLogic.Perks.Items.Weapon, Project-Transcendence.BuisnessLogic",
+        "$type": "Project_Transcendence.BuisnessLogic.Perks.Items.Weapon, Project-Transcendence.BusinessLogic",
         "Damage": 25,
         "Name": "Buława",
         "Description": null
       },
       {
-        "$type": "Project_Transcendence.BuisnessLogic.Perks.Items.Weapon, Project-Transcendence.BuisnessLogic",
+        "$type": "Project_Transcendence.BuisnessLogic.Perks.Items.Weapon, Project-Transcendence.BusinessLogic",
         "Damage": 20,
         "Name": "Łuk długi",
         "Description": null
@@ -55,7 +55,7 @@
     ],
     "Jewelery": [
       {
-        "$type": "Project_Transcendence.BuisnessLogic.Perks.Items.Jewelery, Project-Transcendence.BuisnessLogic",
+        "$type": "Project_Transcendence.BuisnessLogic.Perks.Items.Jewelery, Project-Transcendence.BusinessLogic",
         "Name": "Srebrny pierścień",
         "Description": " "
       }
@@ -69,19 +69,19 @@
   "Weapons": [],
   "Jewelery": [
     {
-      "$type": "Project_Transcendence.BuisnessLogic.Perks.Items.Jewelery, Project-Transcendence.BuisnessLogic",
+      "$type": "Project_Transcendence.BuisnessLogic.Perks.Items.Jewelery, Project-Transcendence.BusinessLogic",
       "Name": "ring",
       "Description": "description"
     },
     {
-      "$type": "Project_Transcendence.BuisnessLogic.Perks.Items.Jewelery, Project-Transcendence.BuisnessLogic",
+      "$type": "Project_Transcendence.BuisnessLogic.Perks.Items.Jewelery, Project-Transcendence.BusinessLogic",
       "Name": "necklace",
       "Description": "description"
     }
   ],
-  "Name": "add",
+  "Name": "asd",
   "Race": {
-    "$type": "Project_Transcendence.BuisnessLogic.Character.CharacterRaces.Aasimar, Project-Transcendence.BuisnessLogic",
+    "$type": "Project_Transcendence.BuisnessLogic.Character.CharacterRaces.Aasimar, Project-Transcendence.BusinessLogic",
     "Description": null,
     "RaceName": "Aasimar"
   },

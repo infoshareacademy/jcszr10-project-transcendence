@@ -1,8 +1,7 @@
-﻿using Project_Transcendence.BuisnessLogic.Character.Enemy;
-using Project_Transcendence.BuisnessLogic.Character.Player;
-using Project_Transcendence.BuisnessLogic.Perks.Ability;
+﻿using Project_Transcendence.BuisnessLogic.Models.Character.Enemy;
+using Project_Transcendence.BuisnessLogic.Models.Perks.Ability;
 
-namespace Project_Transcendence.BuisnessLogic.Fight
+namespace Project_Transcendence.BusinessLogic.Fight
 {
     internal class CastDamageSpell : ICommand
     {
@@ -17,7 +16,7 @@ namespace Project_Transcendence.BuisnessLogic.Fight
 
         public void Execute()
         {
-            _target.TakeDamage(_ability.Damage);
+            _target.HealthManager.DecreaseHealth(_ability.Damage);
             Console.WriteLine($"Uzyles czaru {_ability.Name} i zadales {_ability.Damage} obrazen");
             Thread.Sleep( 2000 );
         }

@@ -1,9 +1,5 @@
-﻿using Project_Transcendence.BuisnessLogic.Character.CharacterClasses;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using Project_Transcendence.BuisnessLogic.Models.Character.CharacterClasses;
 
 namespace Project_Transcendence.ConsoleApp.Menus
 {
@@ -19,7 +15,7 @@ namespace Project_Transcendence.ConsoleApp.Menus
             Console.WriteLine(new Wizard().Description);
             Console.WriteLine();
             Console.WriteLine("Informacje o Złodzieju: ");
-            Console.WriteLine(new Thief().Description);
+            Console.WriteLine(new Rogue().Description);
             Console.WriteLine();
             Console.WriteLine("Informacje o Wojowniku: ");
             Console.WriteLine(new Warrior().Description);

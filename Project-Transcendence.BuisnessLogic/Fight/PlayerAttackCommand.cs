@@ -1,14 +1,14 @@
-﻿using Project_Transcendence.BuisnessLogic.Character.Enemy;
-using Project_Transcendence.BuisnessLogic.Character.Player;
+﻿using Project_Transcendence.BuisnessLogic.Models.Character.Enemy;
+using Project_Transcendence.BuisnessLogic.Models.Character.Player;
 
-namespace Project_Transcendence.BuisnessLogic.Fight
+namespace Project_Transcendence.BusinessLogic.Fight
 {
     public class PlayerAttackCommand : ICommand
     {
-        private BasicPlayer _player;
+        private PlayerCharacter _player;
         private Enemy _enemy;
 
-        public PlayerAttackCommand(BasicPlayer player, Enemy enemy)
+        public PlayerAttackCommand(PlayerCharacter player, Enemy enemy)
         {
             _player = player;
             _enemy = enemy;
@@ -16,7 +16,7 @@ namespace Project_Transcendence.BuisnessLogic.Fight
 
         public void Execute()
         {
-            _enemy.TakeDamage(_player.Weapons[0].Damage);
+            _enemy.HealthManager.DecreaseHealth(_player.Weapons[0].Damage);
             Console.WriteLine($"Uderzyles przeciwnika {_player.Weapons[0].Name} i zadales {_player.Weapons[0].Damage} obrazen");
             Thread.Sleep(2000);
         }

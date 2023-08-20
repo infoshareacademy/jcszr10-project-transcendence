@@ -1,4 +1,4 @@
-﻿using Project_Transcendence.BuisnessLogic.Dungeons;
+﻿using Project_Transcendence.BuisnessLogic.Models.Dungeons;
 using Project_Transcendence.ConsoleApp.Menus;
 
 namespace Project_Transcendence.ConsoleApp.Dungeons
