@@ -1,16 +1,16 @@
-﻿using Project_Transcendence.BuisnessLogic.Character.Player;
-using Project_Transcendence.BuisnessLogic.Dungeons;
-using Project_Transcendence.BuisnessLogic.Fight;
+﻿using Project_Transcendence.BuisnessLogic.Models.Character.Player;
+using Project_Transcendence.BuisnessLogic.Models.Dungeons;
+using Project_Transcendence.BusinessLogic.Fight;
 
 namespace Project_Transcendence.ConsoleApp.Menus
 {
     public class DungeonRunner
     {
         private IDungeon _dungeon;
-        private BasicPlayer _player;
+        private PlayerCharacter _player;
 
         private int _turn = 0;
-        public DungeonRunner(IDungeon dungeon, BasicPlayer player)
+        public DungeonRunner(IDungeon dungeon, PlayerCharacter player)
         {
             _dungeon = dungeon;
             _player = player;
@@ -21,33 +21,7 @@ namespace Project_Transcendence.ConsoleApp.Menus
             switch (_dungeon)
             {
                 case EnemyDungeon enemyDungeon:
-
-                    while (true)
-                    {
-                        if (_turn % 2 == 0)
-                        {
-                            PlayerActionMenu playerActionMenu = new(_player, enemyDungeon.EnemyInDungeon);
-                            playerActionMenu.Run();
-                        }
-                        else
-                        {
-                            FightManager fightManager = new FightManager(enemyDungeon.EnemyInDungeon, _player);
-                            fightManager.Fight(null, 0, _turn);
-                        }
-                        
-                        if (enemyDungeon.EnemyInDungeon.GetHealth() <= 0)
-                        {
-                            Console.WriteLine("Wygrales!");
-                            Console.WriteLine("Przechodzisz do następnego poziomu!");
-                            Thread.Sleep(1000);
-                            return true;
-                        }
-                        else if (enemyDungeon.EnemyInDungeon.GetHealth() <= 0)
-                        {                           
-                            return false;
-                        }
-                        _turn++;
-                    }
+                    break;
 
                 case PuzzleDungeon puzzleDungeon:
                     Console.WriteLine("puzzle");

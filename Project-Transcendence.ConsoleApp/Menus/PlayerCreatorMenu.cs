@@ -1,8 +1,9 @@
-﻿using Project_Transcendence.BuisnessLogic.Character.CharacterClasses;
-using Project_Transcendence.BuisnessLogic.Character.CharacterRaces;
-using Project_Transcendence.BuisnessLogic.Character.Player;
-using Project_Transcendence.BuisnessLogic.Dungeons;
-using Project_Transcendence.ConsoleApp.Factories;
+﻿using Project_Transcendence.BuisnessLogic.Models.Character;
+using Project_Transcendence.BuisnessLogic.Models.Character.CharacterClasses;
+using Project_Transcendence.BuisnessLogic.Models.Character.CharacterRaces;
+using Project_Transcendence.BuisnessLogic.Models.Character.Player;
+using Project_Transcendence.BuisnessLogic.Services;
+using Project_Transcendence.BusinessLogic.Factories;
 
 
 namespace Project_Transcendence.ConsoleApp.Menus
@@ -18,8 +19,8 @@ namespace Project_Transcendence.ConsoleApp.Menus
             string title = "Wybierz swoją klasę!";
             string title2 = "Wybierz rasę!";
 
-            ICharacterClass _characterClass = null;
-            ICharacterRace _characterRace = null;
+            ICharacterClass characterClass = null;
+            ICharacterRace characterRace = null;
 
             Menu menu = new Menu(title, characterClasses);
             Menu menu2 = new Menu(title2, characterRaces);
@@ -31,49 +32,58 @@ namespace Project_Transcendence.ConsoleApp.Menus
             switch (menu.Run())
             {
                 case 0:
-                    _characterClass = new Monk();
+                    characterClass = new Monk();
                     break;
 
                 case 1:
-                    _characterClass = new Wizard();
+                    characterClass = new Wizard();
                     break;
 
                 case 2:
-                    _characterClass = new Thief();
+                    characterClass = new Rogue();
                     break;
 
                 case 3:
-                    _characterClass = new Warrior();
+                    characterClass = new Warrior();
                     break;
             }
 
             switch (menu2.Run())
             {
                 case 0:
-                    _characterRace = new Aasimar();
+                    characterRace = new Aasimar();
                     break;
 
                 case 1:
-                    _characterRace = new Human();
+                    characterRace = new Human();
                     break;
 
                 case 2:
-                    _characterRace = new HighElf();
+                    characterRace = new HighElf();
                     break;
 
                 case 3:
-                    _characterRace = new Dwarf();
+                    characterRace = new Dwarf();
                     break;
             }
 
-            PlayerFactory playerFactory = new PlayerFactory(name, _characterRace, _characterClass);
+            PlayerFactory playerFactory = new PlayerFactory();
 
-            var player1 = playerFactory.Create();
+            var player1 = playerFactory.Create(name, characterRace, characterClass);
 
-            player1.SaveToFile();
+            Console.WriteLine(player1.StatisticsManager.Strength);
+            Console.WriteLine(player1.StatisticsManager.Intelect);
+            Console.WriteLine(player1.StatisticsManager.Luck);
+            Console.WriteLine(player1.StatisticsManager.Agility);
+            if(player1 is BasicCharacter player)
+            {
+                Console.WriteLine(player.HealthManager.Health);
+            }
 
             Console.WriteLine("Wcisnij przycisk by zacząć przygodę!");
             Console.ReadKey(true);
+            ChoseSpellMenu menu1 = new ChoseSpellMenu(player1);
+            menu1.ChoseAbility();
         }
     }
 }

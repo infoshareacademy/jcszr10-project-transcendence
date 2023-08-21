@@ -1,5 +1,5 @@
 ﻿
-namespace Project_Transcendence.BuisnessLogic.Fight
+namespace Project_Transcendence.BusinessLogic.Fight
 {
     public interface ICommand
     {

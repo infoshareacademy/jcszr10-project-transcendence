@@ -1,20 +1,19 @@
-﻿using Project_Transcendence.BuisnessLogic.Character.Player;
-using Project_Transcendence.BuisnessLogic.Perks.Ability;
-using Project_Transcendence.BuisnessLogic.Perks.Items;
+﻿using Project_Transcendence.BuisnessLogic.Models.Character.Player;
+using Project_Transcendence.BuisnessLogic.Models.Perks.Ability;
 
 namespace Project_Transcendence.ConsoleApp.Menus
 {
     public class ChoseSpellMenu
     {
-        private BasicPlayer _player;
+        private IPlayerCharacter _player;
         private string[] _playerAbilities = new string[4];
         private int size = 0;
 
-        public ChoseSpellMenu(BasicPlayer player)
+        public ChoseSpellMenu(IPlayerCharacter player)
         {
             _player = player;
 
-            for (int i = 0; i < player.CharacterClass.Abilities.Count-1; i++)
+            for (int i = 0; i < player.CharacterClass.Abilities.Count; i++)
             {
                 _playerAbilities[size++] = player.CharacterClass.Abilities[i].Name;
             }
@@ -40,7 +39,6 @@ namespace Project_Transcendence.ConsoleApp.Menus
             }
             return (Ability)_player.CharacterClass.Abilities[0];
         }
-
     }
 }
 

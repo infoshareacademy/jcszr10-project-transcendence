@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Project-Transcendence.BuisnessLogic\Project-Transcendence.BuisnessLogic.csproj" />
+    <ProjectReference Include="..\Project-Transcendence.BuisnessLogic\Project-Transcendence.BusinessLogic.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,32 +1,18 @@
-﻿using Project_Transcendence.BuisnessLogic.Character.CharacterClasses;
-using Project_Transcendence.BuisnessLogic.Character.CharacterRaces;
-using Project_Transcendence.BuisnessLogic.Character.Player;
+﻿using Project_Transcendence.BuisnessLogic.Models.Character.CharacterClasses;
+using Project_Transcendence.BuisnessLogic.Models.Character.CharacterRaces;
+using Project_Transcendence.BuisnessLogic.Models.Character.Player;
+using Project_Transcendence.BuisnessLogic.Services;
 
-
-namespace Project_Transcendence.ConsoleApp.Factories
+namespace Project_Transcendence.BusinessLogic.Factories
 {
     public class PlayerFactory
     {
-        private string _name;
-        private ICharacterRace _race;
-        private ICharacterClass _class;
-        private int _health;
-        private int _experience;
-        private int _level;
-
-        public PlayerFactory(string name, ICharacterRace race, ICharacterClass characterClass, int startingHealth = 100, int startingExp = 0, int level = 1)
+        public IPlayerCharacter Create(string name, ICharacterRace race, ICharacterClass characterClass, int startingHealth = 100, int startingExp = 0, int level = 1)
         {
-            _name = name;
-            _race = race;
-            _class = characterClass;
-            _level = level;
-            _experience = startingExp;
-            _health = startingHealth;
-        }
-
-        public BasicPlayer Create()
-        {
-            return new BasicPlayer(_name,_race,_class,_health,_experience,_level);
+            var playerCharacter = new PlayerCharacter(name, race, characterClass, startingExp, level);
+            PlayerInitializerService playerInitializer = new(playerCharacter);
+            playerInitializer.Initialize();
+            return playerCharacter;
         }
     }
 }

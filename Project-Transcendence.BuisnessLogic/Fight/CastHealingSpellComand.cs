@@ -1,14 +1,14 @@
-﻿using Project_Transcendence.BuisnessLogic.Character.Player;
-using Project_Transcendence.BuisnessLogic.Perks.Ability;
+﻿using Project_Transcendence.BuisnessLogic.Models.Character.Player;
+using Project_Transcendence.BuisnessLogic.Models.Perks.Ability;
 
-namespace Project_Transcendence.BuisnessLogic.Fight
+namespace Project_Transcendence.BusinessLogic.Fight
 {
     public class CastHealingSpellComand : ICommand
     {
-        private BasicPlayer _caster;
+        private PlayerCharacter _caster;
         private Ability _ability;
 
-        public CastHealingSpellComand(BasicPlayer caster, Ability ability)
+        public CastHealingSpellComand(PlayerCharacter caster, Ability ability)
         {
             _caster = caster;
             _ability = ability;
@@ -16,7 +16,7 @@ namespace Project_Transcendence.BuisnessLogic.Fight
         }
         public void Execute()
         {
-            _caster.TakeHealth(_ability.Healing);
+            _caster.HealthManager.DecreaseHealth(_ability.Healing);
         }
     }
 }
