@@ -1,11 +1,7 @@
 ﻿
-using Project_Transcendence.BuisnessLogic.Models.Character.CharacterClasses;
-using Project_Transcendence.BuisnessLogic.Models.Character.CharacterRaces;
-using Project_Transcendence.BuisnessLogic.Models.Perks.Items;
-
 namespace Project_Transcendence.BuisnessLogic.Models.Character.Player
 {
-    public class NewPlayerCharacter
+    public class PlayerCharacterDTO
     {
         public string Name { get; set; }
         public string Race { get; set; }
@@ -21,8 +17,9 @@ namespace Project_Transcendence.BuisnessLogic.Models.Character.Player
         public int Intelect { get; set; }
         public int Strength { get; set; }
         public int Luck { get; set; }
+        public int FinishedDungeonIndex { get; set; }
 
-        public NewPlayerCharacter(string name, string race, int level, int id, string characterClass, int experience, int health, int agility, int intelect, int strength, int luck, List<int> inventory = null, List<int> weapons = null, List<int> jewelery = null)
+        public PlayerCharacterDTO(string name, string race, int level, int id, string characterClass, int experience, int health, int agility, int intelect, int strength, int luck,int finishedDungeonIndex ,List<int> weapons = null, List<int> jewelery = null, List<int> inventory = null)
         {
             Name = name;
             Race = race;
@@ -30,6 +27,7 @@ namespace Project_Transcendence.BuisnessLogic.Models.Character.Player
             Id = id;
             CharacterClass = characterClass;
             Experience = experience;
+            FinishedDungeonIndex = finishedDungeonIndex;
             Inventory = inventory;
             Weapons = weapons;
             Jewelery = jewelery;

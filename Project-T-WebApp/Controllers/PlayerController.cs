@@ -6,7 +6,7 @@ namespace Project_T_WebApp.Controllers
     public class PlayerController : Controller
     {
 
-        private readonly PlayerFactory _playerFactory;
+        private readonly Factory _playerFactory;
 
         public PlayerController()
         {

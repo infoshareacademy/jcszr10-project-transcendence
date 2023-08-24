@@ -69,8 +69,8 @@ namespace Project_Transcendence.BuisnessLogic.Services
 
         private void CheckCombatStatus()
         {
-            IHealth playerHealth = (_playerCharacter is IHealth health) ? health : null;
-            IHealth enemyHealth = (_enemy is IHealth health1) ? health1 : null;
+            IHealth playerHealth = _playerCharacter as IHealth;
+            IHealth enemyHealth = _enemy as IHealth;
 
             if(!_healthService.CheckIfAlive(playerHealth))
             {

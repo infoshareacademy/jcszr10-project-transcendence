@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Project_Transcendence.BuisnessLogic.Models.Character.CharacterClasses;
 using Project_Transcendence.BuisnessLogic.Models.Character.CharacterRaces;
+using Project_Transcendence.BuisnessLogic.Models.Perks.Ability;
 using Project_Transcendence.BuisnessLogic.Models.Perks.Items;
 using Project_Transcendence.BuisnessLogic.Services;
 
@@ -15,8 +16,8 @@ namespace Project_Transcendence.BuisnessLogic.Models.Character.Player
         public List<Weapon> Weapons { get; set; }
         public List<Jewelery> Jewelery { get; set; }
         public StatisticsManager StatisticsManager { get; set; }
-        private int _finishedDungeonIndex = 0;
-        private static readonly string _filePath = @"H:\Project_Transcendence\jcszr10-project-transcendence\Project-Transcendence.ConsoleApp\PlayerList.json";
+        public List<IAbility> Abilities { get; set; }
+        public int FinishedDungeonIndex { get; set; } = 0;
 
         public PlayerCharacter(string name, ICharacterRace race, ICharacterClass characterClass, int startingExp, int level)
         {

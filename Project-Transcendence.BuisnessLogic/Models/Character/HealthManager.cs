@@ -2,16 +2,32 @@
 {
     public class HealthManager
     {
-        public int Health { get; private set; }
+        public int Health { get;set; }
+
+        private int MaxHealth { get; set; }
 
         public HealthManager(int health = 100)
         {
             Health = health;
+            MaxHealth = health;
+        }
+
+        public void IncreaseMaxHealth(int addHealth)
+        {
+            MaxHealth += addHealth;
         }
 
         public void IncreaseHealth(int addHealth)
         {
-            Health += addHealth;
+
+            if(Health + addHealth > MaxHealth)
+            {
+                Health = MaxHealth;
+            }
+            else
+            {
+                Health += addHealth;
+            }
         }
 
         public void DecreaseHealth(int takeHealth)
@@ -24,5 +40,9 @@
             return Health;
         }
 
+        public int GetMaxHealth()
+        {
+            return MaxHealth;
+        }
     }
 }

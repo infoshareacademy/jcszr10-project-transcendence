@@ -33,14 +33,11 @@ namespace Project_Transcendence.BuisnessLogic.Services
                 new Ability(15)
             };
             _enemy.ItemsToDrop = _enemyItems;
-
         }
-
 
         public void GenerateListOfItems()
         { 
             // Funkcja, która zapełni liste losowymi przedmiotami w wybranej ilosci z listy _allDroppableItems.
         }
-
     }
 }
