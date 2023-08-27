@@ -1,4 +1,5 @@
-﻿using Project_Transcendence.BuisnessLogic.Models.Character.CharacterClasses;
+﻿using Project_Transcendence.BuisnessLogic.Globals;
+using Project_Transcendence.BuisnessLogic.Models.Character.CharacterClasses;
 using Project_Transcendence.BuisnessLogic.Models.Character.CharacterRaces;
 using Project_Transcendence.BuisnessLogic.Models.Character.Player;
 using Project_Transcendence.BuisnessLogic.Models.Perks.Ability;
@@ -23,8 +24,11 @@ namespace Project_Transcendence.BuisnessLogic.Services
             {
                 case Monk:
                     Console.WriteLine("Monk");
-                    _player.Weapons = new List<Models.Perks.Items.Weapon> { new Models.Perks.Items.Weapon(10, "Opaski Wzmacniane") };
-                    _player.Jewelery = new List<Models.Perks.Items.Jewelery> { new Models.Perks.Items.Jewelery("srebrny pierścień", "magiczny pierscien +1", 1, 1, 1, 1) };
+                    _player.Weapons = new();
+                    _player.Jewelery = new();
+                    _player.Inventory = new();
+                    _player.Weapons.Add(ItemList.Weapons.Find(item => item.Id == 0));
+                    _player.Jewelery.Add(ItemList.Jeweleries.Find(item => item.Id == 111));
                     _player.CharacterClass.Abilities = new List<IAbility>
                     {
                         new Ability("Fists of fury",15),
@@ -35,8 +39,11 @@ namespace Project_Transcendence.BuisnessLogic.Services
                     break;
 
                 case Warrior:
-                    _player.Weapons = new List<Models.Perks.Items.Weapon> { new Models.Perks.Items.Weapon(10, "Prosty Miecz") };
-                    _player.Jewelery = new List<Models.Perks.Items.Jewelery> { new Models.Perks.Items.Jewelery("srebrny pierścień", "magiczny pierscien +1", 1, 1, 1, 1) };
+                    _player.Weapons = new();
+                    _player.Jewelery = new();
+                    _player.Inventory = new();
+                    _player.Weapons.Add(ItemList.Weapons.Find(item => item.Id == 1));
+                    _player.Jewelery.Add(ItemList.Jeweleries.Find(item => item.Id == 111));
                     _player.CharacterClass.Abilities = new List<IAbility>
                     {
                         new Ability("Znak Łowcy", "Oznaczasz istotę którą widzisz i zadajesz jej magiczne obrażenia", 0, 20),
@@ -48,8 +55,11 @@ namespace Project_Transcendence.BuisnessLogic.Services
                     break;
 
                 case Wizard:
-                    _player.Weapons = new List<Models.Perks.Items.Weapon> { new Models.Perks.Items.Weapon(10, "Prosty kostur") };
-                    _player.Jewelery = new List<Models.Perks.Items.Jewelery> { new Models.Perks.Items.Jewelery("srebrny pierścień", "magiczny pierscien +1", 1, 1, 1, 1) };
+                    _player.Weapons = new();
+                    _player.Jewelery = new();
+                    _player.Inventory = new();
+                    _player.Weapons.Add(ItemList.Weapons.Find(item => item.Id == 2));
+                    _player.Jewelery.Add(ItemList.Jeweleries.Find(item => item.Id == 111));
                     _player.CharacterClass.Abilities = new List<IAbility>
                     {
                         new Ability("Ognisty pocisk", "Ciskasz garścią ognia w istotę w zasięgu czaru.", 0, 20),
@@ -60,8 +70,11 @@ namespace Project_Transcendence.BuisnessLogic.Services
                     break;
 
                 case Rogue:
-                    _player.Weapons = new List<Models.Perks.Items.Weapon> { new Models.Perks.Items.Weapon(10, "Prosty Sztylet") };
-                    _player.Jewelery = new List<Models.Perks.Items.Jewelery> { new Models.Perks.Items.Jewelery("srebrny pierścień", "magiczny pierscien +1", 1, 1, 1, 1) };
+                    _player.Weapons = new();
+                    _player.Jewelery = new();
+                    _player.Inventory = new();
+                    _player.Weapons.Add(ItemList.Weapons.Find(item => item.Id == 3));
+                    _player.Jewelery.Add(ItemList.Jeweleries.Find(item => item.Id == 111));
                     _player.CharacterClass.Abilities = new List<IAbility>
                     {
                         new Ability("Znak Łowcy", "Oznaczasz istotę którą widzisz i zadajesz jej magiczne obrażenia", 0, 20),

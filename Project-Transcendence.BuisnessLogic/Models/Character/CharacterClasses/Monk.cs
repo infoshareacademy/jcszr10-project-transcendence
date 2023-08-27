@@ -9,7 +9,7 @@ namespace Project_Transcendence.BuisnessLogic.Models.Character.CharacterClasses
 
         public List<IAbility> Abilities { get; set; }
         public string Description { get; set; }
-        public string ClassName { get; set; }
+        public string ClassName { get; set; } = "Monk";
         public int Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }

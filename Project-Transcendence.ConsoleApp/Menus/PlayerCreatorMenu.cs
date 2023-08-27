@@ -1,4 +1,5 @@
-﻿using Project_Transcendence.BuisnessLogic.Models.Character;
+﻿using Newtonsoft.Json;
+using Project_Transcendence.BuisnessLogic.Models.Character;
 using Project_Transcendence.BuisnessLogic.Models.Character.CharacterClasses;
 using Project_Transcendence.BuisnessLogic.Models.Character.CharacterRaces;
 using Project_Transcendence.BuisnessLogic.Models.Character.Player;
@@ -67,23 +68,13 @@ namespace Project_Transcendence.ConsoleApp.Menus
                     break;
             }
 
-            PlayerFactory playerFactory = new PlayerFactory();
+            Factory playerFactory = new Factory();
 
-            var player1 = playerFactory.Create(name, characterRace, characterClass);
-
-            Console.WriteLine(player1.StatisticsManager.Strength);
-            Console.WriteLine(player1.StatisticsManager.Intelect);
-            Console.WriteLine(player1.StatisticsManager.Luck);
-            Console.WriteLine(player1.StatisticsManager.Agility);
-            if(player1 is BasicCharacter player)
-            {
-                Console.WriteLine(player.HealthManager.Health);
-            }
+            var player1 = playerFactory.CreatePlayer(name, characterRace, characterClass);
 
             Console.WriteLine("Wcisnij przycisk by zacząć przygodę!");
             Console.ReadKey(true);
-            ChoseSpellMenu menu1 = new ChoseSpellMenu(player1);
-            menu1.ChoseAbility();
+
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Project_Transcendence.BuisnessLogic.Services
 
         public void LevelUp()
         {
-            if(_player is IBasicCharacter playerCharacter)
+            if (_player is IBasicCharacter playerCharacter)
             {
                 playerCharacter.Level++;
             }
@@ -50,44 +50,40 @@ namespace Project_Transcendence.BuisnessLogic.Services
         /// <returns></returns>
         public int CalculateStatistic(string statisticType)
         {
-            List<Jewelery> jewelery = new List<Jewelery>();
-            if (_player is IInventory inventory)
-            {
-                jewelery = inventory.Jewelery;
-            }
-
+            var playerInventory = _player as IInventory;
             int result = 0;
+
             switch (statisticType)
             {
                 case "intelect":
 
-                    foreach (var item in jewelery)
+                    foreach (var item in playerInventory.Jewelery)
                     {
-                        result += item.GetIntelect();
+                        result += item.StatisticsManager.Intelect;
                     }
                     break;
 
                 case "agility":
 
-                    foreach (var item in jewelery)
+                    foreach (var item in playerInventory.Jewelery)
                     {
-                        result += item.GetAgility();
+                        result += item.StatisticsManager.Agility;
                     }
                     break;
 
                 case "strength":
 
-                    foreach (var item in jewelery)
+                    foreach (var item in playerInventory.Jewelery)
                     {
-                        result += item.GetStrength();
+                        result += item.StatisticsManager.Strength;
                     }
                     break;
 
                 case "luck":
 
-                    foreach (var item in jewelery)
+                    foreach (var item in playerInventory.Jewelery)
                     {
-                        result += item.GetLuck();
+                        result += item.StatisticsManager.Luck;
                     }
                     break;
 
