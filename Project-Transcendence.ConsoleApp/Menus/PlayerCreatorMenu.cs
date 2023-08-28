@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Project_Transcendence.BuisnessLogic.Globals;
 using Project_Transcendence.BuisnessLogic.Models.Character;
 using Project_Transcendence.BuisnessLogic.Models.Character.CharacterClasses;
 using Project_Transcendence.BuisnessLogic.Models.Character.CharacterRaces;
@@ -74,6 +75,9 @@ namespace Project_Transcendence.ConsoleApp.Menus
 
             Console.WriteLine("Wcisnij przycisk by zacząć przygodę!");
             Console.ReadKey(true);
+
+            DungeonRun dungeonRun = new(player1,DungeonContainer.Dungeons);
+            dungeonRun.Run();
 
         }
     }
