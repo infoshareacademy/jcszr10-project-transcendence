@@ -7,7 +7,7 @@
 
     public class Enemy : BasicCharacter, IEnemy
     {
-        public int Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Id { get; set; }
         public List<IAbility> EnemyAttacks { get; set; }
         public List<IItem> ItemsToDrop { get; set; }
 
