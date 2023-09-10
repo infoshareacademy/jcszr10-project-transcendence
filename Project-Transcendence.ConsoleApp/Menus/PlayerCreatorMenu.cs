@@ -31,53 +31,55 @@ namespace Project_Transcendence.ConsoleApp.Menus
             Console.WriteLine("Podaj swoje imie! ");
             string name = Console.ReadLine();
 
-            switch (menu.Run())
-            {
-                case 0:
-                    characterClass = new Monk();
-                    break;
+            //TODO: Stworzyc serwis do tworzenia postaci
 
-                case 1:
-                    characterClass = new Wizard();
-                    break;
+            //switch (menu.Run())
+            //{
+            //    case 0:
+            //        characterClass = new Monk();
+            //        break;
 
-                case 2:
-                    characterClass = new Rogue();
-                    break;
+            //    case 1:
+            //        characterClass = new Wizard();
+            //        break;
 
-                case 3:
-                    characterClass = new Warrior();
-                    break;
-            }
+            //    case 2:
+            //        characterClass = new Rogue();
+            //        break;
 
-            switch (menu2.Run())
-            {
-                case 0:
-                    characterRace = new Aasimar();
-                    break;
+            //    case 3:
+            //        characterClass = new Warrior();
+            //        break;
+            //}
 
-                case 1:
-                    characterRace = new Human();
-                    break;
+            //switch (menu2.Run())
+            //{
+            //    case 0:
+            //        characterRace = new Aasimar();
+            //        break;
 
-                case 2:
-                    characterRace = new HighElf();
-                    break;
+            //    case 1:
+            //        characterRace = new Human();
+            //        break;
 
-                case 3:
-                    characterRace = new Dwarf();
-                    break;
-            }
+            //    case 2:
+            //        characterRace = new HighElf();
+            //        break;
 
-            Factory playerFactory = new Factory();
+            //    case 3:
+            //        characterRace = new Dwarf();
+            //        break;
+            //}
 
-            var player1 = playerFactory.CreatePlayer(name, characterRace, characterClass);
+            //Factory playerFactory = new Factory();
 
-            Console.WriteLine("Wcisnij przycisk by zacząć przygodę!");
-            Console.ReadKey(true);
+            //var player1 = playerFactory.CreatePlayer(name, characterRace, characterClass);
 
-            DungeonRun dungeonRun = new(player1,DungeonContainer.Dungeons);
-            dungeonRun.Run();
+            //Console.WriteLine("Wcisnij przycisk by zacząć przygodę!");
+            //Console.ReadKey(true);
+
+            //DungeonRun dungeonRun = new(player1,DungeonContainer.Dungeons);
+            //dungeonRun.Run();
 
         }
     }

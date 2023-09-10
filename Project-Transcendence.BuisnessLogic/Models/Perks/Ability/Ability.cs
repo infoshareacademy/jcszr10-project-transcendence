@@ -7,8 +7,10 @@
         public int Healing { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public int Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Id { get; set; }
         public string ClassType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int ResourceCost { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Type { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public Ability(string name, string description, int healing, int damage, int id)
         {

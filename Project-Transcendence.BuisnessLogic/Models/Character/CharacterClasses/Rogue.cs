@@ -1,14 +1,12 @@
-﻿using Project_Transcendence.BuisnessLogic.Models.Perks.Ability;
-using Project_Transcendence.BuisnessLogic.Models.Perks.Items;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Project_Transcendence.BuisnessLogic.Models.Character.CharacterClasses
 {
-    public class Rogue : ICharacterClass
+    internal class Rogue
     {
-        public int Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string ClassName { get; set; } = "Rogue";
-        public string Description { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public List<IAbility> Abilities { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
     }
 }

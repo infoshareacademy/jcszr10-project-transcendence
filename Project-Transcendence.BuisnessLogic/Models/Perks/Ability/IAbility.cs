@@ -7,6 +7,7 @@
         public int Healing { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public string ClassType { get; set; }
+        public int ResourceCost { get; set; }
+        public string Type { get; set; }
     }
 }

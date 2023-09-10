@@ -13,35 +13,38 @@ namespace Project_Transcendence.BuisnessLogic.Services
             _player = player;
         }
 
-        public void LevelUp()
-        {
-            if (_player is IBasicCharacter playerCharacter)
-            {
-                playerCharacter.Level++;
-            }
-            _player.Experience = 0;
-            _player.StatisticsManager.IncreaseLuck(5);
-            _player.StatisticsManager.IncreaseAgility(5);
-            _player.StatisticsManager.IncreaseStrength(5);
-            _player.StatisticsManager.IncreaseIntelect(5);
-        }
+        //TODO: Zrobi StatisticService i manager
 
-        public int GetIntelect()
-        {
-            return _player.StatisticsManager.Intelect;
-        }
-        public int GetAgility()
-        {
-            return _player.StatisticsManager.Agility;
-        }
-        public int GetStrength()
-        {
-            return _player.StatisticsManager.Strength;
-        }
-        public int GetLuck()
-        {
-            return _player.StatisticsManager.Luck;
-        }
+        //public void LevelUp()
+        //{
+        //    if (_player is IBasicCharacter playerCharacter)
+        //    {
+        //        playerCharacter.Level++;
+        //    }
+        //    _player.Experience = 0;
+        //    _player.StatisticsManager.IncreaseLuck(5);
+        //    _player.StatisticsManager.IncreaseAgility(5);
+        //    _player.StatisticsManager.IncreaseStrength(5);
+        //    _player.StatisticsManager.IncreaseIntelect(5);
+        //}
+
+        //public int GetIntelect()
+        //{
+        //    return _player.StatisticsManager.Intelect;
+        //}
+        //public int GetAgility()
+        //{
+        //    return _player.StatisticsManager.Agility;
+        //}
+        //public int GetStrength()
+        //{
+        //    return _player.StatisticsManager.Strength;
+        //}
+        //public int GetLuck()
+        //{
+        //    return _player.StatisticsManager.Luck;
+        //}
+
 
         /// <summary>
         /// This class returns int value that represents chosen statistic: agility,intelect,strength,luck.

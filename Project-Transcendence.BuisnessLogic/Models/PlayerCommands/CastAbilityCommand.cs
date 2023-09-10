@@ -1,10 +1,8 @@
-﻿
-
-using Project_Transcendence.BuisnessLogic.Models.Character;
+﻿using Project_Transcendence.BuisnessLogic.Models.Character;
 using Project_Transcendence.BuisnessLogic.Models.Character.Enemy;
 using Project_Transcendence.BuisnessLogic.Models.Perks.Ability;
 
-namespace Project_Transcendence.BuisnessLogic.PlayerCommands
+namespace Project_Transcendence.BuisnessLogic.Models.PlayerCommands
 {
     public class CastAbilityCommand : ICommand
     {
@@ -18,7 +16,7 @@ namespace Project_Transcendence.BuisnessLogic.PlayerCommands
         }
         public CastAbilityCommand()
         {
-            
+
         }
 
         public void Execute()

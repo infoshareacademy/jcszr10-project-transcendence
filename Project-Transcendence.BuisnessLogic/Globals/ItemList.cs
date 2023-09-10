@@ -6,6 +6,20 @@ namespace Project_Transcendence.BuisnessLogic.Globals
     {
         public static List<Weapon> Weapons { get; set; }
         public static List<Jewelery> Jeweleries { get; set; }
+        public enum ItemType
+        {
+            Weapon,
+            Jewelery,
+            Shield,
+        }
+        public enum AbilityType
+        {
+            Monk,
+            Wizard,
+            Warrior,
+            Rogue,
+            Enemy
+        }
 
     }
 }
