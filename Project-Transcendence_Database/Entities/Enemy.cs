@@ -15,6 +15,7 @@ namespace Project_Transcendence_Database.Entities
 
         public virtual ICollection<Ability>? Abilities { get; set; }
         public virtual ICollection<EnemyDungeon> EnemyDungeons { get; set; }
+        public virtual ICollection<Potion> Potions { get; set; }
         public virtual Inventory? Inventory { get; set; }
     }
 }

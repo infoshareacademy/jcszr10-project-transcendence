@@ -8,6 +8,6 @@ namespace Project_Transcendence_Database.Entities
         public int Amount { get; set; }
         public int MaxAmount { get; set; }
 
-        public virtual ICollection<CharacterClass> CharacterClass { get; set; }
+        public virtual ICollection<CharacterClass>? CharacterClass { get; set; }
     }
 }

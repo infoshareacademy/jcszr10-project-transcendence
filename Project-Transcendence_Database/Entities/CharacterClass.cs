@@ -7,7 +7,6 @@ namespace Project_Transcendence_Database.Entities
         public string? Name { get; set; }
         public string? Description { get; set; }
 
-        public int AbilityId { get; set; }
         public virtual ICollection<Ability>? Ability { get; set; }
 
         public int PlayerCharacterId { get; set; }

@@ -11,6 +11,7 @@ namespace Project_Transcendence.BuisnessLogic.Globals
             Weapon,
             Jewelery,
             Shield,
+            Potion,
         }
         public enum AbilityType
         {

@@ -2,6 +2,7 @@
 
 using Project_Transcendence.BuisnessLogic.Models.Character.Enemy;
 using Project_Transcendence.BuisnessLogic.Models.Character.Player;
+using Project_Transcendence.BuisnessLogic.Models.PlayerCommands;
 using Project_Transcendence.BuisnessLogic.PlayerCommands;
 
 namespace Project_Transcendence.ConsoleApp.Menus

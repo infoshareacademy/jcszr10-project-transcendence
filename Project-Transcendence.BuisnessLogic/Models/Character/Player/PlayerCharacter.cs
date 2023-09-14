@@ -6,7 +6,6 @@ namespace Project_Transcendence.BuisnessLogic.Models.Character.Player
     public class PlayerCharacter : BasicCharacter, IPlayerCharacter, IInventory, IHealth, IStatistics
     {
         public int Id { get; set; }
-        public ICollection<Item> Inventory { get; set; }
 
         public CharacterClass CharacterClass { get; set; }
         public int FinishedDungeonIndex { get; set; } = 0;
@@ -18,5 +17,6 @@ namespace Project_Transcendence.BuisnessLogic.Models.Character.Player
         public Weapon MainHandWeapon { get; set; }
         public Weapon OffHandWeapon { get; set; }
         public Jewelery[] Jewelery { get; set; } = new Jewelery[4];
+        public ICollection<Item> Inventory { get; set; }
     }
 }

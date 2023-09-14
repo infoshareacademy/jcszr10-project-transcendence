@@ -16,9 +16,9 @@ namespace Project_Transcendence_Database.Entities
         public int Agility { get; set; }
         public int Strength { get; set; }
         public int Luck { get; set; }
+        public int Healing { get; set; }
         [EnumDataType(typeof(ItemType))]
         public ItemType ItemType { get; set; }
-
         public virtual ICollection<Inventory>? Inventories { get; set; }
 
     }

@@ -12,7 +12,6 @@ namespace Project_Transcendence_Database.DataAccess
         public DbSet<CharacterRace> Races { get; set; }
         public DbSet<CharacterClass> Classes { get; set; }
         public DbSet<Ability> Abilities { get; set; }
-        public DbSet<Weapon> Weapons { get; set; }
         public DbSet<Enemy> Enemies { get; set; }
         public DbSet<EnemyDungeon> EnemyDungeons { get; set; }
         public DbSet<PuzzleDungeon> PuzzleDungeons { get; set; }

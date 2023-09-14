@@ -4,7 +4,7 @@ using Project_Transcendence.BuisnessLogic.Models.Character.Player;
 using Project_Transcendence.BuisnessLogic.Models.Perks.Items;
 using Project_Transcendence.BuisnessLogic.Services;
 
-namespace Project_Transcendence.BusinessLogic.Factories
+namespace Project_Transcendence.BuisnessLogic.Models.Factories
 {
     public class Factory
     {
