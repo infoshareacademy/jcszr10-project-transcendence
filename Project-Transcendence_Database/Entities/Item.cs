@@ -1,6 +1,5 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
-using static Project_Transcendence.BuisnessLogic.Globals.ItemList;
 
 namespace Project_Transcendence_Database.Entities
 {
@@ -17,8 +16,7 @@ namespace Project_Transcendence_Database.Entities
         public int Strength { get; set; }
         public int Luck { get; set; }
         public int Healing { get; set; }
-        [EnumDataType(typeof(ItemType))]
-        public ItemType ItemType { get; set; }
+        public int ItemType { get; set; }
         public virtual ICollection<Inventory>? Inventories { get; set; }
 
 

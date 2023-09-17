@@ -218,19 +218,21 @@ namespace Project_Transcendence_Database.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("EnemyId")
+                    b.Property<int?>("EnemyId")
                         .HasColumnType("int");
 
-                    b.Property<int>("PlayerCharacterId")
+                    b.Property<int?>("PlayerCharacterId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("EnemyId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[EnemyId] IS NOT NULL");
 
                     b.HasIndex("PlayerCharacterId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[PlayerCharacterId] IS NOT NULL");
 
                     b.ToTable("Inventories");
                 });
@@ -524,15 +526,11 @@ namespace Project_Transcendence_Database.Migrations
                 {
                     b.HasOne("Project_Transcendence_Database.Entities.Enemy", "Enemy")
                         .WithOne("Inventory")
-                        .HasForeignKey("Project_Transcendence_Database.Entities.Inventory", "EnemyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("Project_Transcendence_Database.Entities.Inventory", "EnemyId");
 
                     b.HasOne("Project_Transcendence_Database.Entities.PlayerCharacter", "PlayerCharacter")
                         .WithOne("Inventory")
-                        .HasForeignKey("Project_Transcendence_Database.Entities.Inventory", "PlayerCharacterId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("Project_Transcendence_Database.Entities.Inventory", "PlayerCharacterId");
 
                     b.Navigation("Enemy");
 
