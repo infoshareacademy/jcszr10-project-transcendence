@@ -22,7 +22,7 @@ namespace Project_Transcendence.BuisnessLogic.Services
                 case IEnemyDungeon:
                     var enemyDungeon = _dungeon as IEnemyDungeon;
 
-                    enemyDungeon.EnemyInDungeon = (Enemy)EnemyContainer.Enemies[new Random().Next(EnemyContainer.Enemies.Count)];
+                   // enemyDungeon.EnemyInDungeon = (Enemy)EnemyContainer.Enemies[new Random().Next(EnemyContainer.Enemies.Count)];
                     _dungeon.DungeonType = "Enemy dungeon";
                     _dungeon.DungeonStory = DungeonStories.Story[new Random().Next(DungeonStories.Story.Count)];
                     _dungeon.DungeonLevel = 1;

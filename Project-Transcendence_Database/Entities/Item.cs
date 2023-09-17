@@ -21,6 +21,7 @@ namespace Project_Transcendence_Database.Entities
         public ItemType ItemType { get; set; }
         public virtual ICollection<Inventory>? Inventories { get; set; }
 
+
     }
 
 

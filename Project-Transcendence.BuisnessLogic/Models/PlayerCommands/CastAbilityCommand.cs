@@ -23,7 +23,7 @@ namespace Project_Transcendence.BuisnessLogic.Models.PlayerCommands
         {
             var enemyHealth = _enemy as IHealth;
 
-            enemyHealth.HealthManager.DecreaseHealth(_ability.Damage);
+           // enemyHealth.HealthManager.DecreaseHealth(_ability.Damage);
 
         }
     }

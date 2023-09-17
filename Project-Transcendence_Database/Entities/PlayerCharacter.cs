@@ -1,5 +1,4 @@
-﻿using Project_Transcendence.BuisnessLogic.Models.Perks.Items;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Project_Transcendence_Database.Entities
 {
@@ -14,17 +13,14 @@ namespace Project_Transcendence_Database.Entities
         public virtual CharacterRace CharacterRace { get; set; }
 
         public virtual Inventory Inventory { get; set; }
+
         public virtual ICollection<EquipedJewelery> Jewelery { get; set; }
 
-        public virtual ICollection<Potion> Potions { get; set; }
 
-
-        [ForeignKey(nameof(MainHandWeapon))]
-        public int MainHandWeaponId { get; set; }
+        public int? MainHandWeaponId { get; set; }
         public virtual Item MainHandWeapon { get; set; }
 
-        [ForeignKey(nameof(OffHandWeapon))]
-        public int OffHandWeaponId { get; set; }
+        public int? OffHandWeaponId { get; set; }
         public virtual Item OffHandWeapon { get; set; }
 
         public int UserId { get; set; }

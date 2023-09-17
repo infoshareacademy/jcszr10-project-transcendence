@@ -16,7 +16,7 @@ namespace Project_Transcendence.BuisnessLogic.Models.Character.Player
         public int Luck { get; set; }
         public Weapon MainHandWeapon { get; set; }
         public Weapon OffHandWeapon { get; set; }
-        public Jewelery[] Jewelery { get; set; } = new Jewelery[4];
         public ICollection<Item> Inventory { get; set; }
+        ICollection<Jewelery> IInventory.Jewelery { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }

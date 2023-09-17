@@ -6,41 +6,42 @@ namespace Project_Transcendence.BuisnessLogic.Services
 {
     public class EquipmentService
     {
-        private readonly IInventory _playerInventory;
+        //TODO: EquipmentService do zrobienia
+        //private readonly IInventory _playerInventory;
 
-        public EquipmentService(IInventory inventory)
-        {
-            _playerInventory = inventory;
-        }
+        //public EquipmentService(IInventory inventory)
+        //{
+        //    _playerInventory = inventory;
+        //}
 
-        public void AddToInventory(IItem item)
-        {
-            _playerInventory.Inventory.Add(item);
-        }
+        //public void AddToInventory(IItem item)
+        //{
+        //    _playerInventory.Inventory.Add(item);
+        //}
 
-        public void RemoveFromInventory(IItem item)
-        {
-            _playerInventory.Inventory.Remove(item);
-        }
+        //public void RemoveFromInventory(IItem item)
+        //{
+        //    _playerInventory.Inventory.Remove(item);
+        //}
 
-        public void AddToJewelery(Jewelery item)
-        {
-            _playerInventory.Jewelery.Add(item);
-        }
+        //public void AddToJewelery(Jewelery item)
+        //{
+        //    _playerInventory.Jewelery.Add(item);
+        //}
 
-        public void RemoveFromJEwelery(Jewelery item)
-        {
-            _playerInventory.Jewelery.Remove(item);
-        }
+        //public void RemoveFromJEwelery(Jewelery item)
+        //{
+        //    _playerInventory.Jewelery.Remove(item);
+        //}
 
-        public void AddToWeapon(Weapon item)
-        {
-            _playerInventory.Weapons.Add(item);
-        }
+        //public void AddToWeapon(Weapon item)
+        //{
+        //    _playerInventory.Weapons.Add(item);
+        //}
 
-        public void RemoveFroMWeapon(Weapon item)
-        {
-            _playerInventory.Weapons.Remove(item);
-        }
+        //public void RemoveFroMWeapon(Weapon item)
+        //{
+        //    _playerInventory.Weapons.Remove(item);
+        //}
     }
 }

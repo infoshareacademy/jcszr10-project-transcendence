@@ -17,20 +17,21 @@ namespace Project_Transcendence.BuisnessLogic.Services
             
         }
 
-        public void SavePlayer()
-        {
-            var playerDto = DtoConverterService.ConvertToDto(_player as PlayerCharacter);
+        //TODO: PlayerService do zrobienia
+        //public void SavePlayer()
+        //{
+        //    var playerDto = DtoConverterService.ConvertToDto(_player as PlayerCharacter);
 
-            string serializedPlayer = JsonConvert.SerializeObject(playerDto, Formatting.Indented);
-            File.WriteAllText(JsonString.PlayerJsonString, serializedPlayer);
-        }
+        //    string serializedPlayer = JsonConvert.SerializeObject(playerDto, Formatting.Indented);
+        //    File.WriteAllText(JsonString.PlayerJsonString, serializedPlayer);
+        //}
 
-        public IPlayerCharacter LoadPlayer()
-        {
-            string json1 = File.ReadAllText(JsonString.PlayerJsonString);
-            PlayerCharacterDTO deserializedPlayer = JsonConvert.DeserializeObject<PlayerCharacterDTO>(json1);
+        //public IPlayerCharacter LoadPlayer()
+        //{
+        //    string json1 = File.ReadAllText(JsonString.PlayerJsonString);
+        //    PlayerCharacterDTO deserializedPlayer = JsonConvert.DeserializeObject<PlayerCharacterDTO>(json1);
 
-            return DtoConverterService.ConvertFromDto(deserializedPlayer);
-        }
+        //    return DtoConverterService.ConvertFromDto(deserializedPlayer);
+        //}
     }
 }

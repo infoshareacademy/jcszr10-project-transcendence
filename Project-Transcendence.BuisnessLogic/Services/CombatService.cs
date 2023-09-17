@@ -26,7 +26,7 @@ namespace Project_Transcendence.BuisnessLogic.Services
             _statisticsService = new(_playerCharacter);
             if (_playerCharacter is IInventory playerInventory)
             {
-                _equipmentService = new(playerInventory);
+            //    _equipmentService = new(playerInventory);
             }
         }
 
