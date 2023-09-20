@@ -7,7 +7,7 @@ namespace Project_Transcendence.BuisnessLogic.Models.Character.Enemy
     public interface IEnemy
     {
         public int Id { get; set; }
-        public List<IAbility> EnemyAttacks { get; set; }
-        public List<IItem> ItemsToDrop { get; set; }
+        public ICollection<Ability> Abilities { get; set; }
+        public ICollection<Item> ItemsToDrop { get; set; }
     }
 }

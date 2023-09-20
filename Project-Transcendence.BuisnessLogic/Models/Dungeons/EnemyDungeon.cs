@@ -11,7 +11,8 @@ namespace Project_Transcendence.BuisnessLogic.Models.Dungeons
         public Enemy EnemyInDungeon { get; set; }
         public string DungeonType { get; set; }
         public int DungeonLevel { get; set; }
-        public int Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Id { get; set; }
+        ICollection<Enemy> IEnemyDungeon.EnemyInDungeon { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public EnemyDungeon(string story, Enemy enemy, int level, string type = "Z przeciwnikiem")
         {
@@ -19,6 +20,10 @@ namespace Project_Transcendence.BuisnessLogic.Models.Dungeons
             EnemyInDungeon = enemy;
             DungeonLevel = level;
             DungeonType = type;
+        }
+        public EnemyDungeon()
+        {
+            
         }
     }
 }

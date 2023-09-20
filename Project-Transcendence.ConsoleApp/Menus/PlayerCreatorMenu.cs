@@ -1,4 +1,6 @@
-﻿using Project_Transcendence.BuisnessLogic.Models.Character;
+﻿using Newtonsoft.Json;
+using Project_Transcendence.BuisnessLogic.Globals;
+using Project_Transcendence.BuisnessLogic.Models.Character;
 using Project_Transcendence.BuisnessLogic.Models.Character.CharacterClasses;
 using Project_Transcendence.BuisnessLogic.Models.Character.CharacterRaces;
 using Project_Transcendence.BuisnessLogic.Models.Character.Player;
@@ -29,61 +31,56 @@ namespace Project_Transcendence.ConsoleApp.Menus
             Console.WriteLine("Podaj swoje imie! ");
             string name = Console.ReadLine();
 
-            switch (menu.Run())
-            {
-                case 0:
-                    characterClass = new Monk();
-                    break;
+            //TODO: Stworzyc serwis do tworzenia postaci
 
-                case 1:
-                    characterClass = new Wizard();
-                    break;
+            //switch (menu.Run())
+            //{
+            //    case 0:
+            //        characterClass = new Monk();
+            //        break;
 
-                case 2:
-                    characterClass = new Rogue();
-                    break;
+            //    case 1:
+            //        characterClass = new Wizard();
+            //        break;
 
-                case 3:
-                    characterClass = new Warrior();
-                    break;
-            }
+            //    case 2:
+            //        characterClass = new Rogue();
+            //        break;
 
-            switch (menu2.Run())
-            {
-                case 0:
-                    characterRace = new Aasimar();
-                    break;
+            //    case 3:
+            //        characterClass = new Warrior();
+            //        break;
+            //}
 
-                case 1:
-                    characterRace = new Human();
-                    break;
+            //switch (menu2.Run())
+            //{
+            //    case 0:
+            //        characterRace = new Aasimar();
+            //        break;
 
-                case 2:
-                    characterRace = new HighElf();
-                    break;
+            //    case 1:
+            //        characterRace = new Human();
+            //        break;
 
-                case 3:
-                    characterRace = new Dwarf();
-                    break;
-            }
+            //    case 2:
+            //        characterRace = new HighElf();
+            //        break;
 
-            PlayerFactory playerFactory = new PlayerFactory();
+            //    case 3:
+            //        characterRace = new Dwarf();
+            //        break;
+            //}
 
-            var player1 = playerFactory.Create(name, characterRace, characterClass);
+            //Factory playerFactory = new Factory();
 
-            Console.WriteLine(player1.StatisticsManager.Strength);
-            Console.WriteLine(player1.StatisticsManager.Intelect);
-            Console.WriteLine(player1.StatisticsManager.Luck);
-            Console.WriteLine(player1.StatisticsManager.Agility);
-            if(player1 is BasicCharacter player)
-            {
-                Console.WriteLine(player.HealthManager.Health);
-            }
+            //var player1 = playerFactory.CreatePlayer(name, characterRace, characterClass);
 
-            Console.WriteLine("Wcisnij przycisk by zacząć przygodę!");
-            Console.ReadKey(true);
-            ChoseSpellMenu menu1 = new ChoseSpellMenu(player1);
-            menu1.ChoseAbility();
+            //Console.WriteLine("Wcisnij przycisk by zacząć przygodę!");
+            //Console.ReadKey(true);
+
+            //DungeonRun dungeonRun = new(player1,DungeonContainer.Dungeons);
+            //dungeonRun.Run();
+
         }
     }
 }

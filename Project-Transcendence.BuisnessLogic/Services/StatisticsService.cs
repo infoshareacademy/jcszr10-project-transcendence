@@ -13,35 +13,38 @@ namespace Project_Transcendence.BuisnessLogic.Services
             _player = player;
         }
 
-        public void LevelUp()
-        {
-            if(_player is IBasicCharacter playerCharacter)
-            {
-                playerCharacter.Level++;
-            }
-            _player.Experience = 0;
-            _player.StatisticsManager.IncreaseLuck(5);
-            _player.StatisticsManager.IncreaseAgility(5);
-            _player.StatisticsManager.IncreaseStrength(5);
-            _player.StatisticsManager.IncreaseIntelect(5);
-        }
+        //TODO: Zrobi StatisticService i manager
 
-        public int GetIntelect()
-        {
-            return _player.StatisticsManager.Intelect;
-        }
-        public int GetAgility()
-        {
-            return _player.StatisticsManager.Agility;
-        }
-        public int GetStrength()
-        {
-            return _player.StatisticsManager.Strength;
-        }
-        public int GetLuck()
-        {
-            return _player.StatisticsManager.Luck;
-        }
+        //public void LevelUp()
+        //{
+        //    if (_player is IBasicCharacter playerCharacter)
+        //    {
+        //        playerCharacter.Level++;
+        //    }
+        //    _player.Experience = 0;
+        //    _player.StatisticsManager.IncreaseLuck(5);
+        //    _player.StatisticsManager.IncreaseAgility(5);
+        //    _player.StatisticsManager.IncreaseStrength(5);
+        //    _player.StatisticsManager.IncreaseIntelect(5);
+        //}
+
+        //public int GetIntelect()
+        //{
+        //    return _player.StatisticsManager.Intelect;
+        //}
+        //public int GetAgility()
+        //{
+        //    return _player.StatisticsManager.Agility;
+        //}
+        //public int GetStrength()
+        //{
+        //    return _player.StatisticsManager.Strength;
+        //}
+        //public int GetLuck()
+        //{
+        //    return _player.StatisticsManager.Luck;
+        //}
+
 
         /// <summary>
         /// This class returns int value that represents chosen statistic: agility,intelect,strength,luck.
@@ -50,44 +53,40 @@ namespace Project_Transcendence.BuisnessLogic.Services
         /// <returns></returns>
         public int CalculateStatistic(string statisticType)
         {
-            List<Jewelery> jewelery = new List<Jewelery>();
-            if (_player is IInventory inventory)
-            {
-                jewelery = inventory.Jewelery;
-            }
-
+            var playerInventory = _player as IInventory;
             int result = 0;
+
             switch (statisticType)
             {
                 case "intelect":
 
-                    foreach (var item in jewelery)
+                    foreach (var item in playerInventory.Jewelery)
                     {
-                        result += item.GetIntelect();
+                        result += item.StatisticsManager.Intelect;
                     }
                     break;
 
                 case "agility":
 
-                    foreach (var item in jewelery)
+                    foreach (var item in playerInventory.Jewelery)
                     {
-                        result += item.GetAgility();
+                        result += item.StatisticsManager.Agility;
                     }
                     break;
 
                 case "strength":
 
-                    foreach (var item in jewelery)
+                    foreach (var item in playerInventory.Jewelery)
                     {
-                        result += item.GetStrength();
+                        result += item.StatisticsManager.Strength;
                     }
                     break;
 
                 case "luck":
 
-                    foreach (var item in jewelery)
+                    foreach (var item in playerInventory.Jewelery)
                     {
-                        result += item.GetLuck();
+                        result += item.StatisticsManager.Luck;
                     }
                     break;
 

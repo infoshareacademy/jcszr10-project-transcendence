@@ -2,15 +2,15 @@
 using Project_Transcendence.BuisnessLogic.Models.Character;
 using Project_Transcendence.BuisnessLogic.Models.Character.Enemy;
 using Project_Transcendence.BuisnessLogic.Models.Character.Player;
+using Project_Transcendence.BuisnessLogic.Models.Perks.Ability;
+using System.Numerics;
+using Microsoft.Extensions.DependencyInjection;
+using Project_Transcendence.BuisnessLogic.Models.PlayerCommands;
 
 namespace Project_Transcendence.BuisnessLogic.Services
 {
     public class CombatService
     {
-        private bool _isPlayerTurn;
-        private bool _combnatInProgress;
-        private bool _playerWon;
-
         private IPlayerCharacter _playerCharacter;
         private IEnemy _enemy;
 
@@ -20,69 +20,43 @@ namespace Project_Transcendence.BuisnessLogic.Services
 
         public CombatService(IPlayerCharacter playerCharacter, IEnemy enemy)
         {
-            _isPlayerTurn = true;
-            _combnatInProgress = true;
             _playerCharacter = playerCharacter;
             _enemy = enemy;
             _healthService = new();
             _statisticsService = new(_playerCharacter);
-            if(_playerCharacter is IInventory playerInventory)
+            if (_playerCharacter is IInventory playerInventory)
             {
-                _equipmentService = new(playerInventory);
+            //    _equipmentService = new(playerInventory);
             }
         }
 
-        public bool StartCombat()
+        public void CombatRound(bool isPlayerTurn, ICommand playerAction)
         {
-            Console.WriteLine("Walka!");
-
-            while(_combnatInProgress)
+            if (isPlayerTurn) // player turn
             {
-                if(_isPlayerTurn) // player turn
+
+                switch (playerAction)
                 {
-                    PlayerTurn();
-                }
-                else // enemy turn
-                {
-                    EnemyTurn();
+                    case CastAbilityCommand:
+                        ICommand spellCommand = playerAction as CastAbilityCommand;
+                        CommandInvoker commandInvoker = new();
+                        commandInvoker.SetCommand(spellCommand);
+                        commandInvoker.ExecuteCommand();
+                        break;
+
+
+                    default:
+                        break;
                 }
 
-                CheckCombatStatus();
-                if(_playerWon)
-                {
-                    return true;
-                }
-                else return false;
             }
-            return false;
-        }
-
-        private void PlayerTurn()
-        {
-
-        }
-
-        private void EnemyTurn()
-        {
-
-        }
-
-        private void CheckCombatStatus()
-        {
-            IHealth playerHealth = (_playerCharacter is IHealth health) ? health : null;
-            IHealth enemyHealth = (_enemy is IHealth health1) ? health1 : null;
-
-            if(!_healthService.CheckIfAlive(playerHealth))
+            else // enemy turn
             {
-                _combnatInProgress = false;
-                _playerWon = false;
-            }
-            else if(!_healthService.CheckIfAlive(enemyHealth))
-            {
-                _combnatInProgress = false;
-                _playerWon = true;
-                // dawanie przedmiotu graczowi
+
+
+
             }
         }
+
     }
 }

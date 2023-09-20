@@ -1,5 +1,5 @@
 ﻿using Project_Transcendence.BuisnessLogic.Models.Character.CharacterClasses;
-using Project_Transcendence.BuisnessLogic.Models.Perks.Items;
+using Project_Transcendence.BuisnessLogic.Models.Perks.Ability;
 
 namespace Project_Transcendence.BuisnessLogic.Models.Character.Player
 {
@@ -7,8 +7,8 @@ namespace Project_Transcendence.BuisnessLogic.Models.Character.Player
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public ICharacterClass CharacterClass { get; set; }
-        public int Experience { get; set; }
-        public StatisticsManager StatisticsManager { get; set; }
+        public CharacterClass CharacterClass { get; set; }
+        public int FinishedDungeonIndex { get; set; }
+        public int Expirience { get; set; }
     }
 }

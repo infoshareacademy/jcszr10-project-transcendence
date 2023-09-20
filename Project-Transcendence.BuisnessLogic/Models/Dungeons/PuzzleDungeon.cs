@@ -7,6 +7,7 @@ namespace Project_Transcendence.BuisnessLogic.Models.Dungeons
         public string DungeonType { get; set; }
         public int DungeonLevel { get; set; }
         public Puzzle PuzzleToSolve { get; set; }
+        public int Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public PuzzleDungeon(string story, int level, Puzzle puzzle, string type = "Zagadka")
         {

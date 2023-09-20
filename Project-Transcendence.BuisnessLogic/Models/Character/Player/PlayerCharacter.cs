@@ -1,30 +1,22 @@
-﻿using Newtonsoft.Json;
-using Project_Transcendence.BuisnessLogic.Models.Character.CharacterClasses;
-using Project_Transcendence.BuisnessLogic.Models.Character.CharacterRaces;
+﻿using Project_Transcendence.BuisnessLogic.Models.Character.CharacterClasses;
 using Project_Transcendence.BuisnessLogic.Models.Perks.Items;
-using Project_Transcendence.BuisnessLogic.Services;
 
 namespace Project_Transcendence.BuisnessLogic.Models.Character.Player
 {
-    public class PlayerCharacter : BasicCharacter, IPlayerCharacter, IInventory
+    public class PlayerCharacter : BasicCharacter, IPlayerCharacter, IInventory, IHealth, IStatistics
     {
         public int Id { get; set; }
-        public ICharacterClass CharacterClass { get; set; }
-        public int Experience { get; set; }
-        public List<IItem> Inventory { get; set; }
-        public List<Weapon> Weapons { get; set; }
-        public List<Jewelery> Jewelery { get; set; }
-        public StatisticsManager StatisticsManager { get; set; }
-        private int _finishedDungeonIndex = 0;
-        private static readonly string _filePath = @"H:\Project_Transcendence\jcszr10-project-transcendence\Project-Transcendence.ConsoleApp\PlayerList.json";
 
-        public PlayerCharacter(string name, ICharacterRace race, ICharacterClass characterClass, int startingExp, int level)
-        {
-            Name = name;
-            Race = race;
-            CharacterClass = characterClass;
-            Level = level;
-            Experience = startingExp;
-        }
+        public CharacterClass CharacterClass { get; set; }
+        public int FinishedDungeonIndex { get; set; } = 0;
+        public int Expirience { get; set; }
+        public int Strength { get; set; }
+        public int Intelect { get; set; }
+        public int Agility { get; set; }
+        public int Luck { get; set; }
+        public Weapon MainHandWeapon { get; set; }
+        public Weapon OffHandWeapon { get; set; }
+        public ICollection<Item> Inventory { get; set; }
+        ICollection<Jewelery> IInventory.Jewelery { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }
