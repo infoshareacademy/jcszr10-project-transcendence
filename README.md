@@ -25,8 +25,8 @@ Gra jest osadzona w świecie fantasy, gracz wciela się w nej w stworzoną przez
 - Do właściwości używamy "PascalCasing
 - prywatne pola posiadają prefix _ i uzywaja "camelCasing". "private int _age = 5"
 - Lokalne zmienne używaja "camelCasing"
-- staramy się by nazwy byly jak najkrutsze i w punkt (ale jeśli mamy wybraćjedno albo   drugie to używamy dluzszej nazwy)
-- swój featur breanch nazywamy: feature\(nazwa feature'a) zamiast spacji uzywamy " - "
+- staramy się by nazwy byly jak najkrótsze i w punkt (ale jeśli mamy wybrać jedno albo   drugie to używamy dluzszej nazwy)
+- swój feature breanch nazywamy: feature\(nazwa feature'a) zamiast spacji uzywamy " - "
 
 #
 

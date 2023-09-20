@@ -5,7 +5,7 @@
 namespace Project_Transcendence_Database.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class test : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -245,14 +245,12 @@ namespace Project_Transcendence_Database.Migrations
                         name: "FK_Characters_Item_MainHandWeaponId",
                         column: x => x.MainHandWeaponId,
                         principalTable: "Item",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Characters_Item_OffHandWeaponId",
                         column: x => x.OffHandWeaponId,
                         principalTable: "Item",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Characters_Races_CharacterRaceId",
                         column: x => x.CharacterRaceId,
@@ -315,8 +313,8 @@ namespace Project_Transcendence_Database.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    PlayerCharacterId = table.Column<int>(type: "int", nullable: false),
-                    EnemyId = table.Column<int>(type: "int", nullable: false)
+                    PlayerCharacterId = table.Column<int>(type: "int", nullable: true),
+                    EnemyId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -325,14 +323,12 @@ namespace Project_Transcendence_Database.Migrations
                         name: "FK_Inventories_Characters_PlayerCharacterId",
                         column: x => x.PlayerCharacterId,
                         principalTable: "Characters",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Inventories_Enemies_EnemyId",
                         column: x => x.EnemyId,
                         principalTable: "Enemies",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -414,13 +410,15 @@ namespace Project_Transcendence_Database.Migrations
                 name: "IX_Inventories_EnemyId",
                 table: "Inventories",
                 column: "EnemyId",
-                unique: true);
+                unique: true,
+                filter: "[EnemyId] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Inventories_PlayerCharacterId",
                 table: "Inventories",
                 column: "PlayerCharacterId",
-                unique: true);
+                unique: true,
+                filter: "[PlayerCharacterId] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_InventoryItem_ItemsId",

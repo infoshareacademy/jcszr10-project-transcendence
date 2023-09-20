@@ -12,8 +12,8 @@ using Project_Transcendence_Database.DataAccess;
 namespace Project_Transcendence_Database.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230915142119_UpdatedMigration-2")]
-    partial class UpdatedMigration2
+    [Migration("20230917190700_test1")]
+    partial class test1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -202,10 +202,10 @@ namespace Project_Transcendence_Database.Migrations
 
             modelBuilder.Entity("Project_Transcendence_Database.Entities.EquipedJewelery", b =>
                 {
-                    b.Property<int>("PlayerCharacterId")
+                    b.Property<int?>("PlayerCharacterId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ItemId")
+                    b.Property<int?>("ItemId")
                         .HasColumnType("int");
 
                     b.HasKey("PlayerCharacterId", "ItemId");
@@ -221,19 +221,21 @@ namespace Project_Transcendence_Database.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("EnemyId")
+                    b.Property<int?>("EnemyId")
                         .HasColumnType("int");
 
-                    b.Property<int>("PlayerCharacterId")
+                    b.Property<int?>("PlayerCharacterId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("EnemyId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[EnemyId] IS NOT NULL");
 
                     b.HasIndex("PlayerCharacterId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[PlayerCharacterId] IS NOT NULL");
 
                     b.ToTable("Inventories");
                 });
@@ -314,12 +316,14 @@ namespace Project_Transcendence_Database.Migrations
                         .HasColumnType("int");
 
                     b.Property<int?>("MainHandWeaponId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("OffHandWeaponId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int>("Strength")
@@ -525,15 +529,11 @@ namespace Project_Transcendence_Database.Migrations
                 {
                     b.HasOne("Project_Transcendence_Database.Entities.Enemy", "Enemy")
                         .WithOne("Inventory")
-                        .HasForeignKey("Project_Transcendence_Database.Entities.Inventory", "EnemyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("Project_Transcendence_Database.Entities.Inventory", "EnemyId");
 
                     b.HasOne("Project_Transcendence_Database.Entities.PlayerCharacter", "PlayerCharacter")
                         .WithOne("Inventory")
-                        .HasForeignKey("Project_Transcendence_Database.Entities.Inventory", "PlayerCharacterId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("Project_Transcendence_Database.Entities.Inventory", "PlayerCharacterId");
 
                     b.Navigation("Enemy");
 
@@ -556,11 +556,15 @@ namespace Project_Transcendence_Database.Migrations
 
                     b.HasOne("Project_Transcendence_Database.Entities.Item", "MainHandWeapon")
                         .WithMany()
-                        .HasForeignKey("MainHandWeaponId");
+                        .HasForeignKey("MainHandWeaponId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
 
                     b.HasOne("Project_Transcendence_Database.Entities.Item", "OffHandWeapon")
                         .WithMany()
-                        .HasForeignKey("OffHandWeaponId");
+                        .HasForeignKey("OffHandWeaponId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
 
                     b.HasOne("Project_Transcendence_Database.Entities.User", "User")
                         .WithOne("Character")
@@ -595,7 +599,8 @@ namespace Project_Transcendence_Database.Migrations
 
             modelBuilder.Entity("Project_Transcendence_Database.Entities.Enemy", b =>
                 {
-                    b.Navigation("Inventory");
+                    b.Navigation("Inventory")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Project_Transcendence_Database.Entities.PlayerCharacter", b =>
