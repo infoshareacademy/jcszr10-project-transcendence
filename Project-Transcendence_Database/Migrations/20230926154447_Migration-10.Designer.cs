@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Project_Transcendence_Database.DataAccess;
 
@@ -11,9 +12,11 @@ using Project_Transcendence_Database.DataAccess;
 namespace Project_Transcendence_Database.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230926154447_Migration-10")]
+    partial class Migration10
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -89,23 +92,8 @@ namespace Project_Transcendence_Database.Migrations
                         },
                         new
                         {
-                            InventoriesId = 3,
-                            ItemsId = 9
-                        },
-                        new
-                        {
-                            InventoriesId = 3,
+                            InventoriesId = 2,
                             ItemsId = 10
-                        },
-                        new
-                        {
-                            InventoriesId = 3,
-                            ItemsId = 14
-                        },
-                        new
-                        {
-                            InventoriesId = 3,
-                            ItemsId = 15
                         });
                 });
 

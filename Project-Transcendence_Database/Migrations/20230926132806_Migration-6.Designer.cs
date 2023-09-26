@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Project_Transcendence_Database.DataAccess;
 
@@ -11,9 +12,11 @@ using Project_Transcendence_Database.DataAccess;
 namespace Project_Transcendence_Database.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230926132806_Migration-6")]
+    partial class Migration6
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -65,48 +68,6 @@ namespace Project_Transcendence_Database.Migrations
                     b.HasIndex("ItemsId");
 
                     b.ToTable("InventoryItem");
-
-                    b.HasData(
-                        new
-                        {
-                            InventoriesId = 2,
-                            ItemsId = 1
-                        },
-                        new
-                        {
-                            InventoriesId = 2,
-                            ItemsId = 2
-                        },
-                        new
-                        {
-                            InventoriesId = 2,
-                            ItemsId = 3
-                        },
-                        new
-                        {
-                            InventoriesId = 2,
-                            ItemsId = 11
-                        },
-                        new
-                        {
-                            InventoriesId = 3,
-                            ItemsId = 9
-                        },
-                        new
-                        {
-                            InventoriesId = 3,
-                            ItemsId = 10
-                        },
-                        new
-                        {
-                            InventoriesId = 3,
-                            ItemsId = 14
-                        },
-                        new
-                        {
-                            InventoriesId = 3,
-                            ItemsId = 15
-                        });
                 });
 
             modelBuilder.Entity("Project_Transcendence_Database.Entities.Ability", b =>
@@ -475,15 +436,6 @@ namespace Project_Transcendence_Database.Migrations
                     b.HasIndex("RaceId");
 
                     b.ToTable("Enemies");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Level = 1,
-                            Name = "Andrzej",
-                            RaceId = 4
-                        });
                 });
 
             modelBuilder.Entity("Project_Transcendence_Database.Entities.EnemyDungeon", b =>
@@ -548,18 +500,6 @@ namespace Project_Transcendence_Database.Migrations
                         .HasFilter("[PlayerCharacterId] IS NOT NULL");
 
                     b.ToTable("Inventories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 2,
-                            PlayerCharacterId = 1
-                        },
-                        new
-                        {
-                            Id = 3,
-                            EnemyId = 1
-                        });
                 });
 
             modelBuilder.Entity("Project_Transcendence_Database.Entities.Item", b =>
