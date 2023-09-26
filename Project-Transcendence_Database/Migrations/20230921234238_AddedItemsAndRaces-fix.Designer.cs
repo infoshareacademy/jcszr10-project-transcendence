@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Project_Transcendence_Database.DataAccess;
 
@@ -11,9 +12,11 @@ using Project_Transcendence_Database.DataAccess;
 namespace Project_Transcendence_Database.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230921234238_AddedItemsAndRaces-fix")]
+    partial class AddedItemsAndRacesfix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -65,48 +68,6 @@ namespace Project_Transcendence_Database.Migrations
                     b.HasIndex("ItemsId");
 
                     b.ToTable("InventoryItem");
-
-                    b.HasData(
-                        new
-                        {
-                            InventoriesId = 2,
-                            ItemsId = 1
-                        },
-                        new
-                        {
-                            InventoriesId = 2,
-                            ItemsId = 2
-                        },
-                        new
-                        {
-                            InventoriesId = 2,
-                            ItemsId = 3
-                        },
-                        new
-                        {
-                            InventoriesId = 2,
-                            ItemsId = 11
-                        },
-                        new
-                        {
-                            InventoriesId = 3,
-                            ItemsId = 9
-                        },
-                        new
-                        {
-                            InventoriesId = 3,
-                            ItemsId = 10
-                        },
-                        new
-                        {
-                            InventoriesId = 3,
-                            ItemsId = 14
-                        },
-                        new
-                        {
-                            InventoriesId = 3,
-                            ItemsId = 15
-                        });
                 });
 
             modelBuilder.Entity("Project_Transcendence_Database.Entities.Ability", b =>
@@ -143,184 +104,6 @@ namespace Project_Transcendence_Database.Migrations
                     b.HasIndex("CharacterClassId");
 
                     b.ToTable("Abilities");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CharacterClassId = 1,
-                            ClassType = 0,
-                            Damage = 10,
-                            Description = "Opis umiejętności mnicha 1",
-                            Healing = 0,
-                            Name = "Umiejętność 1",
-                            ResourceCost = 2
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CharacterClassId = 1,
-                            ClassType = 0,
-                            Damage = 15,
-                            Description = "Opis umiejętności mnicha 2",
-                            Healing = 0,
-                            Name = "Umiejętność 2",
-                            ResourceCost = 1
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CharacterClassId = 1,
-                            ClassType = 0,
-                            Damage = 15,
-                            Description = "Opis umiejętności mnicha 3",
-                            Healing = 0,
-                            Name = "Umiejętność 3",
-                            ResourceCost = 1
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CharacterClassId = 1,
-                            ClassType = 0,
-                            Damage = 15,
-                            Description = "Opis umiejętności mnicha 4",
-                            Healing = 0,
-                            Name = "Umiejętność 4",
-                            ResourceCost = 1
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CharacterClassId = 2,
-                            ClassType = 1,
-                            Damage = 10,
-                            Description = "Opis umiejętności czarodzieja 1",
-                            Healing = 0,
-                            Name = "Umiejętność 1",
-                            ResourceCost = 2
-                        },
-                        new
-                        {
-                            Id = 6,
-                            CharacterClassId = 2,
-                            ClassType = 1,
-                            Damage = 15,
-                            Description = "Opis umiejętności czarodzieja 2",
-                            Healing = 0,
-                            Name = "Umiejętność 2",
-                            ResourceCost = 1
-                        },
-                        new
-                        {
-                            Id = 7,
-                            CharacterClassId = 2,
-                            ClassType = 1,
-                            Damage = 15,
-                            Description = "Opis umiejętności czarodzieja 3",
-                            Healing = 0,
-                            Name = "Umiejętność 3",
-                            ResourceCost = 1
-                        },
-                        new
-                        {
-                            Id = 8,
-                            CharacterClassId = 2,
-                            ClassType = 1,
-                            Damage = 15,
-                            Description = "Opis umiejętności czarodzieja 4",
-                            Healing = 0,
-                            Name = "Umiejętność 4",
-                            ResourceCost = 1
-                        },
-                        new
-                        {
-                            Id = 9,
-                            CharacterClassId = 3,
-                            ClassType = 3,
-                            Damage = 10,
-                            Description = "Opis umiejętności łotrzyka 1",
-                            Healing = 0,
-                            Name = "Umiejętność 1",
-                            ResourceCost = 2
-                        },
-                        new
-                        {
-                            Id = 10,
-                            CharacterClassId = 3,
-                            ClassType = 3,
-                            Damage = 15,
-                            Description = "Opis umiejętności łotrzyka 2",
-                            Healing = 0,
-                            Name = "Umiejętność 2",
-                            ResourceCost = 1
-                        },
-                        new
-                        {
-                            Id = 11,
-                            CharacterClassId = 3,
-                            ClassType = 3,
-                            Damage = 15,
-                            Description = "Opis umiejętności łotrzyka 3",
-                            Healing = 0,
-                            Name = "Umiejętność 3",
-                            ResourceCost = 1
-                        },
-                        new
-                        {
-                            Id = 12,
-                            CharacterClassId = 3,
-                            ClassType = 3,
-                            Damage = 15,
-                            Description = "Opis umiejętności łotrzyka 4",
-                            Healing = 0,
-                            Name = "Umiejętność 4",
-                            ResourceCost = 1
-                        },
-                        new
-                        {
-                            Id = 13,
-                            CharacterClassId = 4,
-                            ClassType = 2,
-                            Damage = 10,
-                            Description = "Opis umiejętności wojownika 1",
-                            Healing = 0,
-                            Name = "Umiejętność 1",
-                            ResourceCost = 2
-                        },
-                        new
-                        {
-                            Id = 14,
-                            CharacterClassId = 4,
-                            ClassType = 2,
-                            Damage = 15,
-                            Description = "Opis umiejętności wojownika 2",
-                            Healing = 0,
-                            Name = "Umiejętność 2",
-                            ResourceCost = 1
-                        },
-                        new
-                        {
-                            Id = 15,
-                            CharacterClassId = 4,
-                            ClassType = 2,
-                            Damage = 15,
-                            Description = "Opis umiejętności wojownika 3",
-                            Healing = 0,
-                            Name = "Umiejętność 3",
-                            ResourceCost = 1
-                        },
-                        new
-                        {
-                            Id = 16,
-                            CharacterClassId = 4,
-                            ClassType = 2,
-                            Damage = 15,
-                            Description = "Opis umiejętności wojownika 4",
-                            Healing = 0,
-                            Name = "Umiejętność 4",
-                            ResourceCost = 1
-                        });
                 });
 
             modelBuilder.Entity("Project_Transcendence_Database.Entities.CharacterClass", b =>
@@ -348,40 +131,6 @@ namespace Project_Transcendence_Database.Migrations
                     b.HasIndex("ResourceId");
 
                     b.ToTable("Classes");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "Mnich to duchowy wojownik, mistrz w sztukach walki opartych na medytacji i kontroli nad energią życiową",
-                            Name = "Mnich",
-                            PlayerCharacterId = 0,
-                            ResourceId = 4
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "Mnich to duchowy wojownik, mistrz w sztukach walki opartych na medytacji i kontroli nad energią życiową",
-                            Name = "Czarodziej",
-                            PlayerCharacterId = 0,
-                            ResourceId = 3
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "Mnich to duchowy wojownik, mistrz w sztukach walki opartych na medytacji i kontroli nad energią życiową",
-                            Name = "Łotrzyk",
-                            PlayerCharacterId = 0,
-                            ResourceId = 1
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Description = "Mnich to duchowy wojownik, mistrz w sztukach walki opartych na medytacji i kontroli nad energią życiową",
-                            Name = "Wojownik",
-                            PlayerCharacterId = 0,
-                            ResourceId = 2
-                        });
                 });
 
             modelBuilder.Entity("Project_Transcendence_Database.Entities.CharacterRace", b =>
@@ -475,15 +224,6 @@ namespace Project_Transcendence_Database.Migrations
                     b.HasIndex("RaceId");
 
                     b.ToTable("Enemies");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Level = 1,
-                            Name = "Andrzej",
-                            RaceId = 4
-                        });
                 });
 
             modelBuilder.Entity("Project_Transcendence_Database.Entities.EnemyDungeon", b =>
@@ -548,18 +288,6 @@ namespace Project_Transcendence_Database.Migrations
                         .HasFilter("[PlayerCharacterId] IS NOT NULL");
 
                     b.ToTable("Inventories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 2,
-                            PlayerCharacterId = 1
-                        },
-                        new
-                        {
-                            Id = 3,
-                            EnemyId = 1
-                        });
                 });
 
             modelBuilder.Entity("Project_Transcendence_Database.Entities.Item", b =>
@@ -725,7 +453,7 @@ namespace Project_Transcendence_Database.Migrations
                         new
                         {
                             Id = 15,
-                            Description = "Naszyjnik imbued z magią, zwiększa siłę o 5",
+                            Description = "Naszyjnik imbued z magią, zwiększa siłę o 5.",
                             ItemType = 1,
                             Name = "Naszyjnik mocy",
                             Strength = 5
@@ -733,7 +461,7 @@ namespace Project_Transcendence_Database.Migrations
                         new
                         {
                             Id = 16,
-                            Description = "Perła o magicznym pochodzeniu, zwiększa inteligencję o 4",
+                            Description = "Perła o magicznym pochodzeniu, zwiększa inteligencję o 4.",
                             Intelect = 4,
                             ItemType = 1,
                             Name = "Perła mądrości"
@@ -742,14 +470,14 @@ namespace Project_Transcendence_Database.Migrations
                         {
                             Id = 17,
                             Agility = 3,
-                            Description = "Elegancka bransoletka, zwiększa zręczność o 3",
+                            Description = "Elegancka bransoletka, zwiększa zręczność o 3.",
                             ItemType = 1,
                             Name = "Bransoletka zręczności"
                         },
                         new
                         {
                             Id = 18,
-                            Description = "Tajemniczy pierścień, który przynosi szczęście, zwiększa szczęście o 2",
+                            Description = "Tajemniczy pierścień, który przynosi szczęście, zwiększa szczęście o 2.",
                             ItemType = 1,
                             Luck = 2,
                             Name = "Pierścień szczęścia"
@@ -758,7 +486,7 @@ namespace Project_Transcendence_Database.Migrations
                         {
                             Id = 19,
                             Agility = 2,
-                            Description = "Amulet odwagi, który zwiększa siłę o 3 i zręczność o 2",
+                            Description = "Amulet odwagi, który zwiększa siłę o 3 i zręczność o 2.",
                             ItemType = 1,
                             Name = "Amulet odwagi",
                             Strength = 3
@@ -786,9 +514,6 @@ namespace Project_Transcendence_Database.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("FinishedDungeonIndex")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Health")
                         .HasColumnType("int");
 
                     b.Property<int>("Intelect")
@@ -831,26 +556,6 @@ namespace Project_Transcendence_Database.Migrations
                         .IsUnique();
 
                     b.ToTable("Characters");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Agility = 0,
-                            CharacterClassId = 1,
-                            CharacterRaceId = 1,
-                            Expirience = 0,
-                            FinishedDungeonIndex = 0,
-                            Health = 0,
-                            Intelect = 0,
-                            Level = 0,
-                            Luck = 0,
-                            MainHandWeaponId = 4,
-                            Name = "Json",
-                            OffHandWeaponId = 4,
-                            Strength = 0,
-                            UserId = 50
-                        });
                 });
 
             modelBuilder.Entity("Project_Transcendence_Database.Entities.PuzzleDungeon", b =>
@@ -898,36 +603,6 @@ namespace Project_Transcendence_Database.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Resources");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Amount = 100,
-                            MaxAmount = 100,
-                            Name = "Energia"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Amount = 100,
-                            MaxAmount = 100,
-                            Name = "Gniew"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Amount = 100,
-                            MaxAmount = 100,
-                            Name = "Mana"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Amount = 10,
-                            MaxAmount = 10,
-                            Name = "Chi"
-                        });
                 });
 
             modelBuilder.Entity("Project_Transcendence_Database.Entities.ShopDungeon", b =>
@@ -971,14 +646,6 @@ namespace Project_Transcendence_Database.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 50,
-                            Login = "admin",
-                            Password = "admin"
-                        });
                 });
 
             modelBuilder.Entity("AbilityEnemy", b =>
