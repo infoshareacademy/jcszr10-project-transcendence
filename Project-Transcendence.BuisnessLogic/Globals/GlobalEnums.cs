@@ -2,10 +2,8 @@
 
 namespace Project_Transcendence.BuisnessLogic.Globals
 {
-    public static class ItemList
+    public static class GlobalEnums
     {
-        public static List<Weapon> Weapons { get; set; }
-        public static List<Jewelery> Jeweleries { get; set; }
         public enum ItemType
         {
             Weapon,

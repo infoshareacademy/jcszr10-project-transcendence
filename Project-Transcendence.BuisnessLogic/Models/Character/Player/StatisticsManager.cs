@@ -4,13 +4,12 @@ namespace Project_Transcendence.BuisnessLogic.Models.Character.Player
 {
     public class StatisticsManager
     {
-        public int Intelect { get; set; }
-        public int Agility { get; set; }
-        public int Strength { get; set; }
-        public int Luck { get; set; }
-        public int Armor { get; set; }
+        public int? Intelect { get; set; }
+        public int? Agility { get; set; }
+        public int? Strength { get; set; }
+        public int? Luck { get; set; }
 
-        public StatisticsManager(int startingIntelect = 1, int startingAgility = 1, int startingStrength = 1, int startingLuck = 1)
+        public StatisticsManager(int? startingIntelect, int? startingAgility, int? startingStrength, int? startingLuck)
         {
             Intelect = startingIntelect;
             Agility = startingAgility;

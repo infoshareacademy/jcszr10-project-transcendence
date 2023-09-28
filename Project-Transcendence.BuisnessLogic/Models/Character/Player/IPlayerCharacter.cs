@@ -7,7 +7,7 @@ namespace Project_Transcendence.BuisnessLogic.Models.Character.Player
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public CharacterClass CharacterClass { get; set; }
+        public ICharacterClass CharacterClass { get; set; }
         public int FinishedDungeonIndex { get; set; }
         public int Expirience { get; set; }
     }

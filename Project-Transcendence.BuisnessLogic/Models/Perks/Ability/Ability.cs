@@ -1,4 +1,6 @@
-﻿namespace Project_Transcendence.BuisnessLogic.Models.Perks.Ability
+﻿using static Project_Transcendence.BuisnessLogic.Globals.GlobalEnums;
+
+namespace Project_Transcendence.BuisnessLogic.Models.Perks.Ability
 {
     public class Ability : IAbility
     {
@@ -10,7 +12,7 @@
         public int Id { get; set; }
         public string ClassType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public int ResourceCost { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Type { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public AbilityType Type { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public Ability(string name, string description, int healing, int damage, int id)
         {

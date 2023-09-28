@@ -5,23 +5,23 @@ namespace Project_T_WebApp.Controllers
     public class PlayerController : Controller
     {
 
-        //private readonly Factory _playerFactory;
+        private readonly Factory _playerFactory;
 
-        //public PlayerController()
-        //{
-        //    _playerFactory = new();
-        //}
+        public PlayerController()
+        {
+            _playerFactory = new();
+        }
 
-        //public IActionResult CreatePlayerCharacter()
-        //{
-        //    string name = string.Empty;
-        //    ICharacterClass characterClass = null;
-        //    ICharacterRace characterRace = null;
+        public IActionResult CreatePlayerCharacter()
+        {
+            string name = string.Empty;
+            ICharacterClass characterClass = null;
+            ICharacterRace characterRace = null;
 
-        //    PlayerCharacterModel playerCharacter = _playerFactory.Create(name, characterRace, characterClass);
+            PlayerCharacterModel playerCharacter = _playerFactory.Create(name, characterRace, characterClass);
 
-        //    return View(playerCharacter);
-        //}
+            return View(playerCharacter);
+        }
 
     }
 }
