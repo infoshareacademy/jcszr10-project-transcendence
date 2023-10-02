@@ -1,12 +1,34 @@
 ﻿
+using Project_Transcendence.BuisnessLogic.Models.Character.Player;
+using Project_Transcendence.BuisnessLogic.Models.DTOs;
+using static Project_Transcendence.BuisnessLogic.Globals.GlobalEnums;
+
 namespace Project_Transcendence.BuisnessLogic.Models.Perks.Items
 {
-    public abstract class Item : IItem
+    public class Item : IItem, IDtoConvertible<ItemDto>
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public int Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int? Damage { get; set; }
+        public int? Armor { get; set; }
+        public int? Healing { get; set; }
+        public ItemType ItemType { get; set; }
+        public StatisticsManager Statistics { get; set; }
+
+        public ItemDto ConvertToDto() => new()
+        {
+            Id = Id,
+            Name = Name,
+            Description = Description,
+            Armor = Armor,
+            Healing = Healing,
+            Damage = Damage,
+            ItemType = ItemType,
+            Luck = Statistics.Luck,
+            Strength = Statistics.Strength,
+            Intelect = Statistics.Intelect,
+            Agility = Statistics.Agility
+        };
     }
 }
-
-

@@ -4,7 +4,7 @@
     {
         public int Health { get;set; }
 
-        private int MaxHealth { get; set; }
+        public int MaxHealth { get; set; }
 
         public HealthManager(int health = 100)
         {

@@ -501,9 +501,8 @@ namespace Project_Transcendence_Database.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("DungeonType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("DungeonType")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -853,30 +852,6 @@ namespace Project_Transcendence_Database.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Project_Transcendence_Database.Entities.PuzzleDungeon", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("DungeonLevel")
-                        .HasColumnType("int");
-
-                    b.Property<string>("DungeonStory")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DungeonType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("PuzzleDungeons");
-                });
-
             modelBuilder.Entity("Project_Transcendence_Database.Entities.Resource", b =>
                 {
                     b.Property<int>("Id")
@@ -928,30 +903,6 @@ namespace Project_Transcendence_Database.Migrations
                             MaxAmount = 10,
                             Name = "Chi"
                         });
-                });
-
-            modelBuilder.Entity("Project_Transcendence_Database.Entities.ShopDungeon", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("DungeonLevel")
-                        .HasColumnType("int");
-
-                    b.Property<string>("DungeonStory")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DungeonType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ShopDungeons");
                 });
 
             modelBuilder.Entity("Project_Transcendence_Database.Entities.User", b =>

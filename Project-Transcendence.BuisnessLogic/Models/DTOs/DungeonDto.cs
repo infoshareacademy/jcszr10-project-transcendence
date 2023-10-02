@@ -1,8 +1,10 @@
-﻿using static Project_Transcendence_Database.Entities.EnumTypes;
+﻿
+using Project_Transcendence.BuisnessLogic.Models.Character.Enemy;
+using static Project_Transcendence.BuisnessLogic.Globals.GlobalEnums;
 
-namespace Project_Transcendence_Database.Entities
+namespace Project_Transcendence.BuisnessLogic.Models.DTOs
 {
-    public class EnemyDungeon
+    public class DungeonDto
     {
         public int Id { get; set; }
         public virtual ICollection<Enemy>? EnemyInDungeon { get; set; }
