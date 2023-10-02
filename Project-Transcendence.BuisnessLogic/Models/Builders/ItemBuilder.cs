@@ -43,7 +43,7 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
 
         public void SetItemType()
         {
-            _item.Type = _itemDto.ItemType;
+            _item.ItemType = _itemDto.ItemType;
         }
 
         public void SetName()

@@ -1,5 +1,4 @@
-﻿
-using Project_Transcendence.BuisnessLogic.Models.Character.CharacterClasses;
+﻿using Project_Transcendence.BuisnessLogic.Models.Character.CharacterClasses;
 using Project_Transcendence.BuisnessLogic.Models.Character.CharacterRaces;
 using Project_Transcendence.BuisnessLogic.Models.Character.Player;
 using Project_Transcendence.BuisnessLogic.Models.DTOs;

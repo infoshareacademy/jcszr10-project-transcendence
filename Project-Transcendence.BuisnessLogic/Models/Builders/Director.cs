@@ -1,17 +1,20 @@
 ﻿
 namespace Project_Transcendence.BuisnessLogic.Models.Builders
 {
+    #nullable disable
     public class Director
     {
         private readonly ICharacterBuilder? _characterBuilder;
         private readonly IItemBuilder? _itemBuilder;
         private readonly IEnemyCharacterBuilder? _enemyCharacterBuilder;
         private readonly IAbilityBuilder? _abilityBuilder;
+        private readonly IDungeonBuilder _dungeonBuilder;
 
         public Director(ICharacterBuilder characterBuilder)
         {
             _characterBuilder = characterBuilder;
         }
+
 
         public Director(IItemBuilder itemBuilder)
         {
@@ -28,12 +31,18 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
             _abilityBuilder = abilityBuilder;
         }
 
-        public Director(ICharacterBuilder characterBuilder = null!, IItemBuilder itemBuilder = null!, IEnemyCharacterBuilder enemyCharacterBuilder = null!, IAbilityBuilder? abilityBuilder = null!)
+        public Director(IDungeonBuilder dungeonBuilder)
+        {
+            _dungeonBuilder = dungeonBuilder;
+        }
+
+        public Director(ICharacterBuilder characterBuilder = null!, IItemBuilder itemBuilder = null!, IEnemyCharacterBuilder enemyCharacterBuilder = null!, IAbilityBuilder? abilityBuilder = null!, IDungeonBuilder dungeonBuilder = null!)
         {
             _characterBuilder = characterBuilder;
             _itemBuilder = itemBuilder;
             _enemyCharacterBuilder= enemyCharacterBuilder;
             _abilityBuilder = abilityBuilder;
+            _dungeonBuilder = dungeonBuilder;
         }
 
         public void ConstructPlayerCharacter()
@@ -104,5 +113,28 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
             _abilityBuilder.SetDamage();
         }
 
+        public void ConstructEnemyDungeon()
+        {
+            _dungeonBuilder.SetId();
+            _dungeonBuilder.SetStory();
+            _dungeonBuilder.SetLevel();
+            _dungeonBuilder.SetEnemies();
+            _dungeonBuilder.SetType();
+        }
+
+        public void ConstructPuzzleDungeon()
+        {
+            _dungeonBuilder.SetId();
+            _dungeonBuilder.SetStory();
+            _dungeonBuilder.SetType();
+            _dungeonBuilder.SetPuzzle();
+        }
+
+        public void ConstructShopDungeon()
+        {
+            _dungeonBuilder.SetId();
+            _dungeonBuilder.SetStory();
+            _dungeonBuilder.SetType();
+        }
     }
 }

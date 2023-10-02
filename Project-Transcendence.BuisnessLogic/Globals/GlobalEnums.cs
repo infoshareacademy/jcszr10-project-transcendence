@@ -11,6 +11,7 @@ namespace Project_Transcendence.BuisnessLogic.Globals
             Shield,
             Potion,
         }
+
         public enum AbilityType
         {
             Monk,
@@ -18,6 +19,21 @@ namespace Project_Transcendence.BuisnessLogic.Globals
             Warrior,
             Rogue,
             Enemy
+        }
+        
+        public enum DungeonType
+        {
+            Enemy,
+            Shop,
+            Puzzle
+        }
+
+        public enum ClassType
+        {
+            Monk,
+            Warrior,
+            Wizard,
+            Rogue
         }
 
     }

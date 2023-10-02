@@ -51,50 +51,50 @@ namespace Project_Transcendence.BuisnessLogic.Services
         /// </summary>
         /// <param name="statisticType"></param>
         /// <returns></returns>
-        public int CalculateStatistic(string statisticType)
-        {
-            var playerInventory = _player as IInventory;
-            int result = 0;
+        //public int CalculateStatistic(string statisticType)
+        //{
+        //    var playerInventory = _player as IInventory;
+        //    int result = 0;
 
-            switch (statisticType)
-            {
-                case "intelect":
+        //    switch (statisticType)
+        //    {
+        //        case "intelect":
 
-                    foreach (var item in playerInventory.Jewelery)
-                    {
-                        result += item.StatisticsManager.Intelect;
-                    }
-                    break;
+        //            foreach (var item in playerInventory.Jewelery)
+        //            {
+        //                result += item.StatisticsManager.Intelect;
+        //            }
+        //            break;
 
-                case "agility":
+        //        case "agility":
 
-                    foreach (var item in playerInventory.Jewelery)
-                    {
-                        result += item.StatisticsManager.Agility;
-                    }
-                    break;
+        //            foreach (var item in playerInventory.Jewelery)
+        //            {
+        //                result += item.StatisticsManager.Agility;
+        //            }
+        //            break;
 
-                case "strength":
+        //        case "strength":
 
-                    foreach (var item in playerInventory.Jewelery)
-                    {
-                        result += item.StatisticsManager.Strength;
-                    }
-                    break;
+        //            foreach (var item in playerInventory.Jewelery)
+        //            {
+        //                result += item.StatisticsManager.Strength;
+        //            }
+        //            break;
 
-                case "luck":
+        //        case "luck":
 
-                    foreach (var item in playerInventory.Jewelery)
-                    {
-                        result += item.StatisticsManager.Luck;
-                    }
-                    break;
+        //            foreach (var item in playerInventory.Jewelery)
+        //            {
+        //                result += item.StatisticsManager.Luck;
+        //            }
+        //            break;
 
-                default:
-                    result = 0;
-                    break;
-            }
-            return result;
-        }
+        //        default:
+        //            result = 0;
+        //            break;
+        //    }
+        //    return result;
+        //}
     }
 }

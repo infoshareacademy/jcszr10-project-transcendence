@@ -15,6 +15,7 @@ namespace Project_Transcendence_Database.Entities
             Shield,
             Potion,
         }
+
         public enum AbilityType
         {
             Monk,
@@ -22,6 +23,13 @@ namespace Project_Transcendence_Database.Entities
             Warrior,
             Rogue,
             Enemy
+        }
+
+        public enum DungeonType
+        {
+            Enemy,
+            Shop,
+            Puzzle
         }
     }
 }

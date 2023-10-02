@@ -19,10 +19,5 @@ namespace Project_Transcendence_Database.Entities
         public int Healing { get; set; }
         public ItemType ItemType { get; set; }
         public virtual ICollection<Inventory>? Inventories { get; set; }
-
-
     }
-
-
-
 }

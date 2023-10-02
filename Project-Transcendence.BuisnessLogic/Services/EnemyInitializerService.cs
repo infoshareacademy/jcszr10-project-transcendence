@@ -12,14 +12,7 @@ namespace Project_Transcendence.BuisnessLogic.Services
         private readonly List<IItem> _enemyItems;
         public EnemyInitializerService(IEnemy enemy)
         {
-            _enemy = enemy;
-            _allDroppableItems = new List<IItem>
-            {
-                new Jewelery("Pierscionek z brązu", "+1 int", 1, 0, 0, 0),
-                new Jewelery("Pierscionek z brązu", "+1 agi", 0, 1, 0, 0),
-                new Jewelery("Pierscionek z brązu", "+1 str", 0, 0, 1, 0),
-                new Jewelery("Pierscionek z brązu", "+1 luck", 0, 0, 0, 1),
-            };
+          
             GenerateListOfItems();
         }
 
