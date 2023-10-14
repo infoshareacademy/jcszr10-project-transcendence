@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Map";
+}
+<link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+<div class ="map">
+<img src="~/images/mapa.jpg" />
+<H1>Mapa</H1>
+    <a class="map-btn quest" href="@Url.Action("Quest", "Home")" data-tooltip="Witaj w tajemniczej jaskini. Musisz rozwiązać zagadkę, aby przejść dalej!"><span>?</span></a>
+    <a class="map-btn fight" href="@Url.Action("Fight", "Home")" data-tooltip="Niespodziewany przeciwnik stoi na Twojej drodze. Czas na walkę!"><span>!</span></a>
+    <a class="map-btn quest-2" href="@Url.Action("Quest", "Home")" data-tooltip="Twoja intuicja podpowiada, że coś tu nie gra. Zagadka czeka na Twoje rozwiązanie. "><span>?</span></a>
+    <a class="map-btn fight-2" href="@Url.Action("Fight", "Home")" data-tooltip="Twoje umiejętności bojowe zostaną wystawione na próbę. Walczysz z przeciwnikiem!"><span>!</span></a>
+    <a class="map-btn boss" href="@Url.Action("Fight", "Home")" data-tooltip="Wszystkie drogi prowadzą do tego momentu. Przed Tobą ostateczne starcie!"><span>BOSS</span></a>
+</div>

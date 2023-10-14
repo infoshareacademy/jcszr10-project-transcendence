@@ -1,0 +1,110 @@
+﻿@{
+    ViewData["Title"] = "Class Information";
+}
+<link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+
+@* <body> *@
+    <div id="container">
+        <input hidden type="radio" name="carousel-control" id="button_a" checked />
+        <input hidden type="radio" name="carousel-control" id="button_b" />
+        <input hidden type="radio" name="carousel-control" id="button_c" />
+        <input hidden type="radio" name="carousel-control" id="button_d" />
+
+
+        <div id="carousel">
+            <div class="p-wrapper">
+
+                <section class="panel_a">
+                    <div class="content">
+    
+                            <p><h2>Mnich</h2> to mistrz sztuk walki, który harmonizuje ciało, umysł i duszę. Poprzez długie lata treningu i medytacji, mnich osiąga doskonałość w technikach walki wręcz i opanowuje sztuki obronne. Jego umiejętności fizyczne są wspierane przez głębokie duchowe przekonania, co pozwala mu opanować techniki uzdrawiania, koncentrację umysłu i kontrolę nad energią życiową. Jako pustelnicy i obrońcy sprawiedliwości, mnisi emanują spokojem, mądrością i pokorą, czyniąc ich niezwykle szanowanymi i inspirującymi postaciami.</p>
+                    <p><h4>Wyposażenie</h4>Opaski wzmacniane o sile ataku 10. Dodatkowo dwa magiczne pierścienie</p>
+                    <p>
+                        <h4>Czary</h4> <ul>
+                        <li>Fists of fury;</li>
+                            <li>Toutch of Deatch;</li>
+                            <li> Strike Of A Dadly Mantis;</li>
+                            <li>Inner peace.</li>
+                            </ul>
+                    </p>
+                    
+                    <div class="classImage">
+                        <img src="~/images/mnich.png" />
+                        </div>
+                    </div>
+                </section>
+
+                <section class="panel_b">
+                    <div class="content">
+                    <p><h2>Czarodziej</h2> to utalentowany magiczny mistrz, który walczy z siłą zaklęć i eliksirów. Zawodowy manipulator energii magicznej, czarodziej zdobywa wiedzę i umiejętności, które pozwalają mu rzucać potężne czary i używać magii w różnorodny sposób.</p>
+                        <p><h4>Wyposażenie</h4>Prosty kostur o sile ataku 10. Dodatkowo dwa magiczne pierścienie</p>
+                        <p>
+                            <h4>Czary</h4>
+                            <ul>
+                                <li>Ognisty pocisk;</li>
+                                <li>Piekielna reprymenda;</li>
+                                <li>Magiczny pocisk;</li>
+                                <li>Leczenie ran.</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="classImage">
+                        <img src="~/images/czarodziej.png" />
+                    </div>
+                </section>
+
+                <section class="panel_c">
+                    <div class="content">
+                    <p><h2>Druid</h2> to strażnicy lasów, gór i jezior, gotowi umrzeć w obronie swoich zagajników czy zwierząt. </p>
+                        <p><h4>Wyposażenie</h4>prosty sztylet o sile ataku 10. Dodatkowo dwa magiczne pierścienie</p>
+                        <p>
+                            <h4>Czary</h4>
+                            <ul>
+                                <li>Znak łowcy;</li>
+                                <li>Leczenie ran;</li>
+                                <li> Kordon strzał;</li>
+                                <li>Alarm.</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="classImage">
+                        <img src="~/images/druid.png" />
+                    </div>
+                </section>
+                <section class="panel_d">
+                    <div class="content">
+                    <p><h2>Wojownik</h2> to niepowstrzymana siła, wszystkie problemy rozwiązuje przemocą, niezrównany w posługiwaniu się bronią białą a jego wytrzymałość na ciosy jest wręcz legendarna, swoją inteligencje wykorzystuje do uczenia się nowych technik fechtunku i metod w pokonywaniu wrogów, nie jest mu obce żadne pole bitwy.</p>
+
+                        <p><h4>Wyposażenie</h4>Miecz prosty o sile ataku 10. Dodatkowo dwa magiczne pierścienie</p>
+                        <p>
+                            <h4>Czary</h4>
+                            <ul>
+                                <li>Znak łowcy;</li>
+                                <li>Leczenie ran;</li>
+                                <li> Kordon strzał;</li>
+                                <li>Alarm.</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="classImage">
+                        <img src="~/images/wojownik.png" />
+                    </div>
+                    
+                </section>
+
+            </div> <!-- // .p-wrapper -->
+        </div> <!-- // #carousel -->
+
+
+        <div id="navigation">
+            <label for="button_a" class="label_a"> <span>Mnich</span> </label>
+            <label for="button_b" class="label_b"> <span>Czarodziej</span> </label>
+            <label for="button_c" class="label_c"> <span>Druid</span> </label>
+            <label for="button_d" class="label_d"> <span>Wojownik</span> </label>
+            <a for="button_e" class="label_e" " href="@Url.Action("Play", "Home")"><span>Back</span></a>
+        </div> <!-- // #navigation -->
+
+
+    </div> <!-- // #container -->
+@* </body> *@
+
