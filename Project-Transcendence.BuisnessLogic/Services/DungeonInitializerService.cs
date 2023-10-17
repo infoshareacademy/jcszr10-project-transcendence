@@ -17,27 +17,27 @@ namespace Project_Transcendence.BuisnessLogic.Services
 
         public void Initialize()
         {
-            switch (_dungeon)
-            {
-                case IEnemyDungeon:
-                    var enemyDungeon = _dungeon as IEnemyDungeon;
+            //switch (_dungeon)
+            //{
+            //    case IEnemyDungeon:
+            //        var enemyDungeon = _dungeon as IEnemyDungeon;
 
-                   // enemyDungeon.EnemyInDungeon = (Enemy)EnemyContainer.Enemies[new Random().Next(EnemyContainer.Enemies.Count)];
-                    _dungeon.DungeonType = "Enemy dungeon";
-                    _dungeon.DungeonStory = DungeonStories.Story[new Random().Next(DungeonStories.Story.Count)];
-                    _dungeon.DungeonLevel = 1;
-                    _dungeon.Id = _idCounter++;
+            //       // enemyDungeon.EnemyInDungeon = (Enemy)EnemyContainer.Enemies[new Random().Next(EnemyContainer.Enemies.Count)];
+            //        _dungeon.DungeonType = "Enemy dungeon";
+            //        _dungeon.DungeonStory = DungeonStories.Story[new Random().Next(DungeonStories.Story.Count)];
+            //        _dungeon.DungeonLevel = 1;
+            //        _dungeon.Id = _idCounter++;
 
-                    break;
+            //        break;
 
-                case IPuzzleDungeon:
+            //    case IPuzzleDungeon:
 
-                    break;
+            //        break;
 
-                case IShopDungeon:
+            //    case IShopDungeon:
 
-                    break;
-            }
+            //        break;
+            //}
         }
     }
 }

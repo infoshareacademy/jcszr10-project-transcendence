@@ -23,10 +23,10 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
     #nullable disable
         public void SetClass() => _playerCharacter.CharacterClass = _dto.CharacterClass switch
         {
-            nameof(Monk) => new Monk(),
-            nameof(Rogue) => new Rogue(),
-            nameof(Wizard) => new Wizard(),
-            nameof(Warrior) => new Warrior(),
+            //nameof(Monk) => new Monk(),
+            //nameof(Rogue) => new Rogue(),
+            //nameof(Wizard) => new Wizard(),
+            //nameof(Warrior) => new Warrior(),
             _ => new Warrior()
         };
 
