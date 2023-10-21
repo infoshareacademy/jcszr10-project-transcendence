@@ -386,6 +386,10 @@ img {
 
 /*Testy karuzeli*/
 
+#button_a:checked ~ #button_f:checked ~ .fight-btn .player-hero img {
+    /* Styl dla obrazka w sekcji panel_a przy wyborze button_a i button_f */
+    content: url('/images/monk_human.png');
+}
 #button_a:checked ~ #button_f:checked ~ #carousel-create .panel_a .classImageCreate img {
     /* Styl dla obrazka w sekcji panel_a przy wyborze button_a i button_f */
     content: url('/images/monk_human.png');
@@ -731,32 +735,32 @@ img {
 
 .menu-item:nth-child(1) a {
     transform: rotate(0deg);
-    background-color: rgba(127, 255, 212, 0.7);
+    background-color: rgba(127, 255, 212, 0.4);
 }
 
 .menu-item:nth-child(2) a {
     transform: rotate(-60deg);
-    background-color: rgba(173, 255, 47, 0.7);
+    background-color: rgba(173, 255, 47, 0.4);
 }
 
 .menu-item:nth-child(3) a {
     transform: rotate(-120deg);
-    background-color: rgba(255, 215, 0, 0.7)
+    background-color: rgba(255, 215, 0, 0.4)
 }
 
 .menu-item:nth-child(4) a {
     transform: rotate(-180deg);
-    background-color: rgba(255, 20, 147, 0.7);
+    background-color: rgba(255, 20, 147, 0.4);
 }
 
 .menu-item:nth-child(5) a {
     transform: rotate(-240deg);
-    background-color: rgba(138, 43, 226, 0.7);
+    background-color: rgba(138, 43, 226, 0.4);
 }
 
 .menu-item:nth-child(6) a {
     transform: rotate(-300deg);
-    background-color: cyan;
+    background-color: rgb(128, 229, 204, 0,4);
 }
 
 .menu-item {

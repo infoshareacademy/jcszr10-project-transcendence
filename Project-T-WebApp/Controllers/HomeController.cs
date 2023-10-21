@@ -21,14 +21,6 @@ namespace Project_T_WebApp.Controllers
             return View();
         }
 
-        public IActionResult Register()
-        {
-            return View();
-        }
-        public IActionResult SignIn()
-        {
-            return View();
-        }
         public IActionResult Menu()
         {
             return View();

@@ -29,7 +29,7 @@ namespace Project_Transcendence.BuisnessLogic.Models.Character.Player
             Intelect = (int)this.Statistics.Intelect,
             MainHandWeapon = this.MainHandWeapon,
             OffHandWeapon = this.OffHandWeapon,
-            CharacterClass = nameof(this.CharacterClass),
+            //CharacterClass = nameof(this.CharacterClass),
             Race =  nameof(this.Race),
             Inventory = this.Inventory,
             Jewelery = this.Jewelery,
