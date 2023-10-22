@@ -66,7 +66,7 @@ img {
     box-shadow: 4px 4px 8px 2px black;
     border-radius: 0px;
     font-family: "Papyrus";
-    font-size: 23px;
+    font-size: 20px;
     width: 115px;
     height: 42px;
     text-align: center;
@@ -621,6 +621,18 @@ img {
 .player-hero {
     top: 40%;
     left: 62%;
+}
+.health-enemy {
+    width: 150px;
+    height: auto;
+    top: 25%;
+    left: 25%;
+}
+.health-player {
+    width: 150px;
+    height: auto;
+    top: 25%;
+    left: 75%;
 }
 /*Fight menu*/
 .circle{
