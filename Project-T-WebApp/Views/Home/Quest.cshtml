@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Quest";
+}
+
+<link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+<body>
+    <div class="image-container about">
+        <img src="~/images/about-bg.png" />
+        <div class="about-descriptions">
+            <h1> Zagadka! </h1>
+            <a>
+                Na czarną nocy patrzę,
+                W noc, gdy gwiazdy na niebie błyszczą.
+                Kiedy tylko świt wstaje,
+                Przed tobą muszę uciekać.
+
+                Jestem duchem nocy,
+                W ukryciu poruszam się sprytnie.
+                Ciemność moim przyjacielem jest,
+                Mój krok jest cichy jak szelest.
+
+                W dzień jestem nieobecny,
+                Lecz nocą przychodzę znowu.
+                Kim jestem, wiesz może?
+            </a>
+        </div>
+    </div>
+</body>
+<a class="menu-btn btn-q-1" href="@Url.Action("Beaten", "Home")">Sowa</a>
+<a class="menu-btn btn-q-2" href="@Url.Action("Map", "Home")">Złodziej</a>

@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Beaten";
+}
+
+<link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+<body>
+    <div class="image-container about">
+        <img src="~/images/about-bg.png" />
+        <div class="about-descriptions">
+            <h1> Przegrałeś... </h1>
+            <a>Co chcesz teraz zrobić?</a>
+        </div>
+    </div>
+</body>
+<a class="menu-btn btn-q-1" href="@Url.Action("Quest", "Home")">Ponów</a>
+<a class="menu-btn btn-q-2" href="@Url.Action("Menu", "Home")">Wyjście</a>

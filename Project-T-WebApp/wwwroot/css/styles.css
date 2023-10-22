@@ -1,0 +1,813 @@
+﻿.login {
+    top: 50%;
+    min-height: 100vh;
+}
+
+.bg-image {
+    background-image: url('/images/dragon_eye.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.login-heading {
+    font-weight: 300;
+    font-size: 50px;
+}
+
+.btn-login {
+    background-color: #482348;
+    border: 2px solid #986400;
+    box-shadow: 4px 4px 8px 2px black;
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+}
+
+
+.card-img-left {
+    width: 45%;
+    background: scroll center url('/images/profile-dragon.png');
+    background-size: cover;
+}
+
+body {
+    font-family: "Papyrus";
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/big-background-3.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    width: auto;
+    background-size: cover;
+}
+
+.image-container {
+    height: 100vh;
+    text-align: center;
+}
+
+img {
+    max-height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.menu-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-51%, -51%);
+    padding: 10px 20px;
+    background-color: #482348;
+    color: goldenrod;
+    transition: 0.2s;
+    border: 2px solid #986400;
+    box-shadow: 4px 4px 8px 2px black;
+    border-radius: 0px;
+    font-family: "Papyrus";
+    font-size: 20px;
+    width: 115px;
+    height: 42px;
+    text-align: center;
+    line-height: 21px;
+    text-shadow: 0.1em 0.1em 0.2em black;
+    text-decoration: none;
+}
+
+.btn-1 {
+    top: 47%;
+}
+
+.btn-2 {
+    top: 60%;
+}
+
+.btn-3 {
+    top: 63%;
+}
+
+.btn-4 {
+    top: 41%;
+    line-height: 70%;
+    font-size: 20px;
+}
+
+.btn-5 {
+    top: 49%;
+    line-height: 70%;
+    font-size: 20px;
+}
+
+.btn-6 {
+    top: 57%;
+    line-height: 70%;
+    font-size: 20px;
+}
+
+.btn-7 {
+    top: 49%;
+    line-height: 10px;
+    font-size: 20px;
+}
+
+.btn-8 {
+    top: 65%;
+}
+
+.btn-9 {
+    top: 55%;
+}
+
+.about {
+    align-items: center;
+    top: 50%;
+}
+
+.menu-btn:hover {
+    cursor: pointer;
+    background-color: #0e3670;
+    box-shadow: 0 0 9px 5px black;
+    transform: translate(-50%, -50%) scale(1.2);
+    text-decoration: none;
+    color: snow;
+}
+
+.about-descriptions {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-51%, -51%);
+    padding: 10px 20px;
+    font-family: "Papyrus";
+    text-shadow: 0.1em 0.1em 0.2em black;
+    color: papayawhip;
+    font-size: 20px;
+}
+/*Welcome page*/
+.welcome {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/dnd.jpg');
+    height: 850px;
+    width: 1706px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    position: absolute;
+    left: 1px;
+}
+
+.hero-name {
+    font-weight: 700;
+    color: #fff;
+    font-size: 64px;
+    font-weight: bold;
+    text-align: center;
+    font-family: "Papyrus";
+}
+
+.hero-text {
+    color: #fff;
+    text-align: center;
+    font-size: 22px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 16px;
+    gap: 18px;
+}
+
+.hero-btn {
+    border: 1px solid peru;
+    color: floralwhite;
+    padding: 10px 40px;
+    font-size: 20px;
+    font-family: "Papyrus";
+    background-color: #482348;
+    border-radius: 4px;
+    text-transform: uppercase;
+    transition: 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+    .hero-btn:hover {
+        background-color: #0e3670;
+        color: snow;
+    }
+
+/*Karuzela postaci*/
+.createCharacterMenu {
+    position: absolute;
+    top: 20%;
+    left: 67%;
+    transform: translate(-51%, -51%);
+    padding: 10px 20px;
+    background-color: transparent;
+    width: auto;
+}
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#carousel, #navigation, #navigation-races {
+    flex: initial;
+    display: block;
+}
+
+#carousel {
+    overflow: hidden;
+    width: 1000px;
+    height: 800px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    display: flex;
+}
+
+.p-wrapper, .p-wrapper2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s ease-in-out;
+}
+
+#button_a:checked ~ #carousel .p-wrapper {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+#button_b:checked ~ #carousel .p-wrapper {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+}
+
+#button_c:checked ~ #carousel .p-wrapper {
+    -webkit-transform: translateY(-200%);
+    transform: translateY(-200%);
+}
+
+#button_d:checked ~ #carousel .p-wrapper {
+    -webkit-transform: translateY(-300%);
+    transform: translateY(-300%);
+}
+
+#button_e:checked ~ #carousel .p-wrapper {
+    -webkit-transform: translateY(-500%);
+    transform: translateY(-500%);
+}
+
+[class^="panel_"] {
+    overflow: auto;
+    position: relative;
+    width: inherit;
+    height: inherit;
+    padding: 48px;
+}
+
+#navigation {
+    margin-left: 24px;
+}
+
+#navigation-races {
+    margin-left: 24px;
+}
+
+
+[class^="label_"] {
+    display: block;
+    cursor: pointer;
+    margin: 8px 0;
+    width: 200px;
+    height: 34px;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 4px;
+    color: peru;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    border: 1px solid peru;
+    font-size: 18px;
+    font-family: "Papyrus";
+    background-color: #482348;
+    border-radius: 4px;
+    text-transform: uppercase;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+    [class^="label_"]:hover {
+        color: #0e3670;
+        background-color: #ffeed9;
+    }
+
+#button_a:checked ~ #navigation .label_a,
+#button_b:checked ~ #navigation .label_b,
+#button_c:checked ~ #navigation .label_c,
+#button_d:checked ~ #navigation .label_d,
+#button_e:checked ~ #navigation .label_e,
+#button_f:checked ~ #navigation-races .label_f,
+#button_g:checked ~ #navigation-races .label_g,
+#button_h:checked ~ #navigation-races .label_h,
+#button_i:checked ~ #navigation-races .label_i {
+    cursor: default;
+    color: #fff;
+    background-color: #0e3670;
+}
+
+.classImage {
+    width: 100%;
+    height: 300px;
+}
+
+.content {
+    flex: 1;
+}
+
+#carousel-create {
+    overflow: hidden;
+    width: 8000px;
+    height: 800px;
+    border-radius: 4px;
+    background-color: transparent;
+    display: flex;
+}
+
+
+
+#button_a:checked ~ #carousel-create .p-wrapper {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+#button_b:checked ~ #carousel-create .p-wrapper {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+}
+
+#button_c:checked ~ #carousel-create .p-wrapper {
+    -webkit-transform: translateY(-200%);
+    transform: translateY(-200%);
+}
+
+#button_d:checked ~ #carousel-create .p-wrapper {
+    -webkit-transform: translateY(-300%);
+    transform: translateY(-300%);
+}
+
+#button_f:checked ~ #carousel-create .p-wrapper2 {
+    -webkit-transform: translateY(0) translateX(100%);
+    transform: translateY(0) translateX(100%);
+}
+
+#button_g:checked ~ #carousel-create .p-wrapper2 {
+    -webkit-transform: translateY(-100%) translateX(50%);
+    transform: translateY(-100%) translateX(50%);
+}
+
+#button_h:checked ~ #carousel-create .p-wrapper2 {
+    -webkit-transform: translateY(-200%) translateX(50%);
+    transform: translateY(-200%) translateX(50%);
+}
+
+#button_i:checked ~ #carousel-create .p-wrapper2 {
+    -webkit-transform: translateY(-300%) translateX(50%);
+    transform: translateY(-300%) translateX(50%);
+}
+
+/*Testy karuzeli*/
+
+#button_a:checked ~ #button_f:checked ~ .fight-btn .player-hero img {
+    /* Styl dla obrazka w sekcji panel_a przy wyborze button_a i button_f */
+    content: url('/images/monk_human.png');
+}
+#button_a:checked ~ #button_f:checked ~ #carousel-create .panel_a .classImageCreate img {
+    /* Styl dla obrazka w sekcji panel_a przy wyborze button_a i button_f */
+    content: url('/images/monk_human.png');
+}
+
+#button_a:checked ~ #button_g:checked ~ #carousel-create .panel_a .classImageCreate img {
+    content: url('/images/monk_aasimar.png');
+}
+
+#button_a:checked ~ #button_h:checked ~ #carousel-create .panel_a .classImageCreate img {
+   
+    content: url('/images/monk_dwarf.png');
+}
+
+#button_a:checked ~ #button_i:checked ~ #carousel-create .panel_a .classImageCreate img {
+    content: url('/images/monk_elf.png');
+}
+#button_b:checked ~ #button_f:checked ~ #carousel-create .panel_b .classImageCreate img {
+    content: url('/images/wizard_human.png');
+}
+
+#button_b:checked ~ #button_g:checked ~ #carousel-create .panel_b .classImageCreate img {
+    content: url('/images/wizard_aasimar.png');
+}
+
+#button_b:checked ~ #button_h:checked ~ #carousel-create .panel_b .classImageCreate img {
+    content: url('/images/wizard_dwarf.png');
+}
+
+#button_b:checked ~ #button_i:checked ~ #carousel-create .panel_b .classImageCreate img {
+    content: url('/images/wizard_elf.png');
+}
+#button_c:checked ~ #button_f:checked ~ #carousel-create .panel_c .classImageCreate img {
+    content: url('/images/druid_human.png');
+}
+
+#button_c:checked ~ #button_g:checked ~ #carousel-create .panel_c .classImageCreate img {
+    content: url('/images/druid_aasimar.png');
+}
+
+#button_c:checked ~ #button_h:checked ~ #carousel-create .panel_c .classImageCreate img {
+    content: url('/images/druid_dwarf.png');
+}
+
+#button_c:checked ~ #button_i:checked ~ #carousel-create .panel_c .classImageCreate img {
+    content: url('/images/druid_elf.png');
+}
+#button_d:checked ~ #button_f:checked ~ #carousel-create .panel_d .classImageCreate img {
+    content: url('/images/warrior_human.png');
+}
+
+#button_d:checked ~ #button_g:checked ~ #carousel-create .panel_d .classImageCreate img {
+    content: url('/images/warrior_aasimar.png');
+}
+
+#button_d:checked ~ #button_h:checked ~ #carousel-create .panel_d .classImageCreate img {
+    content: url('/images/warrior_dwarf.png');
+}
+
+#button_d:checked ~ #button_i:checked ~ #carousel-create .panel_d .classImageCreate img {
+    content: url('/images/warrior_elf.png');
+}
+
+
+/*Koniec testów*/
+
+.classImageCreate {
+    width: 200px;
+    height: 600px;
+    align-content: center;
+}
+/*MAP*/
+.map {
+    margin: 0px;
+    width: auto;
+    height: 850px;
+    transform: rotate(90deg);
+}
+.map-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-51%, -51%);
+    padding: 10px 20px;
+    background-color: #482348;
+    color: aliceblue;
+    transition: 0.2s;
+    border: 2px solid rgba(0, 0, 0, 0.6);
+    box-shadow: 4px 4px 8px 4px black;
+    border-radius: 0px;
+    font-family: "Papyrus";
+    font-size: 23px;
+    width: 115px;
+    height: 42px;
+    text-align: center;
+    line-height: 21px;
+    text-shadow: 0.1em 0.1em 0.2em black;
+    text-decoration: none;
+}
+
+    .map-btn:hover {
+        cursor: pointer;
+        background-color: rgba(14, 54, 112, 0.2);
+        box-shadow: 0 0 9px 5px black;
+        transform: translate(-50%, -50%) scale(1.2) rotate(-90deg);
+        text-decoration: none;
+        color: snow;
+    }
+    .map-btn[data-tooltip]:hover::before {
+        content: attr(data-tooltip);
+        position: absolute;
+        top: -30px; /* Reguluj pozycję opisu względem przycisku */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.7); /* Tło opisu */
+        color: #fff; /* Kolor tekstu opisu */
+        padding: 5px 10px;
+        border-radius: 5px;
+        white-space: nowrap;
+        opacity: 0; /* Początkowo ukryj opis */
+        transition: opacity 0.3s ease;
+    }
+
+    .map-btn[data-tooltip]:hover::before {
+        opacity: 1; /* Po najechaniu pokaz opis */
+    }
+
+.quest {
+    top: 60%;
+    left: 68%;
+    transform: rotate(45deg);
+    width: 50px;
+    height: 50px;
+    background-color: #ad7633;
+}
+
+.fight {
+    top: 90%;
+    left: 54%;
+    transform: rotate(45deg);
+    width: 50px;
+    height: 50px;
+    background-color: #c1b555;
+}
+
+.fight-2 {
+    top: 33%;
+    left: 53%;
+    transform: rotate(45deg);
+    width: 50px;
+    height: 50px;
+    background-color: #9f4848;
+}
+
+.quest-2 {
+    top: 7%;
+    left: 67%;
+    transform: rotate(45deg);
+    width: 50px;
+    height: 50px;
+    background-color: #793968;
+}
+
+    .quest-2 span {
+        display: inline-block;
+        transform: rotate(220deg);
+    }
+    .fight span {
+        display: inline-block;
+        transform: rotate(220deg);
+    }
+    .quest span {
+        display: inline-block;
+        transform: rotate(220deg);
+    }
+    .fight-2 span {
+        display: inline-block;
+        transform: rotate(220deg);
+    }
+.boss {
+    top: 7%;
+    left: 33%;
+    transform: rotate(45deg);
+    width: 80px;
+    height: 80px;
+    font-size: 18px;
+    text-align: center;
+    background-color: #482348;
+    line-height: 400%;
+}
+
+    .boss span {
+        display: inline-block;
+        transform: rotate(220deg);
+    }
+
+.btn-q-1 {
+    top: 60%;
+    left: 40%;
+ 
+}
+.btn-q-2 {
+    top: 60%;
+    left: 60%;
+}
+.btn-q-3 {
+    width: 300px;
+    top: 75%;
+    left: 68%;
+}
+.fight-panel{
+    height: 600px;
+}
+
+.fight-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-51%, -51%);
+    padding: 10px 20px;
+    background-color: transparent;
+    width: auto;
+    height: 350px;
+}
+.enemy{
+    top: 40%;
+    left: 39%;
+}
+.player-hero {
+    top: 40%;
+    left: 62%;
+}
+.health-enemy {
+    width: 150px;
+    height: auto;
+    top: 25%;
+    left: 25%;
+}
+.health-player {
+    width: 150px;
+    height: auto;
+    top: 25%;
+    left: 75%;
+}
+/*Fight menu*/
+.circle{
+    top: 80%;
+}
+.menu-toggler {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+}
+
+    .menu-toggler:hover + label, .menu-toggler:hover + label:before, .menu-toggler:hover + label:after {
+        background: white;
+    }
+
+    .menu-toggler:checked + label {
+        background: transparent;
+    }
+
+        .menu-toggler:checked + label:before, .menu-toggler:checked + label:after {
+            top: 0;
+            width: 20px;
+            transform-origin: 50% 50%;
+        }
+
+        .menu-toggler:checked + label:before {
+            transform: rotate(45deg);
+        }
+
+        .menu-toggler:checked + label:after {
+            transform: rotate(-45deg);
+        }
+
+    .menu-toggler:checked ~ ul .menu-item {
+        opacity: 1;
+    }
+
+        .menu-toggler:checked ~ ul .menu-item:nth-child(1) {
+            transform: rotate(0deg) translateX(-110px);
+        }
+
+        .menu-toggler:checked ~ ul .menu-item:nth-child(2) {
+            transform: rotate(60deg) translateX(-110px);
+        }
+
+        .menu-toggler:checked ~ ul .menu-item:nth-child(3) {
+            transform: rotate(120deg) translateX(-110px);
+        }
+
+        .menu-toggler:checked ~ ul .menu-item:nth-child(4) {
+            transform: rotate(180deg) translateX(-110px);
+        }
+
+        .menu-toggler:checked ~ ul .menu-item:nth-child(5) {
+            transform: rotate(240deg) translateX(-110px);
+        }
+
+        .menu-toggler:checked ~ ul .menu-item:nth-child(6) {
+            transform: rotate(300deg) translateX(-110px);
+        }
+
+        .menu-toggler:checked ~ ul .menu-item a {
+            pointer-events: auto;
+        }
+
+    .menu-toggler + label {
+        width: 30px;
+        height: 5px;
+        display: block;
+        z-index: 1;
+        border-radius: 2.5px;
+        background: rgba(255, 255, 255, 0.7);
+        transition: transform 0.5s, top 0.5s;
+        position: absolute;
+        display: block;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+    }
+
+        .menu-toggler + label:before, .menu-toggler + label:after {
+            width: 30px;
+            height: 5px;
+            display: block;
+            z-index: 1;
+            border-radius: 2.5px;
+            background: rgba(255, 255, 255, 0.7);
+            transition: transform 0.5s, top 0.5s;
+            content: "";
+            position: absolute;
+            left: 0;
+        }
+
+        .menu-toggler + label:before {
+            top: 10px;
+        }
+
+        .menu-toggler + label:after {
+            top: -10px;
+        }
+
+.menu-item:nth-child(1) a {
+    transform: rotate(0deg);
+    background-color: rgba(127, 255, 212, 0.4);
+}
+
+.menu-item:nth-child(2) a {
+    transform: rotate(-60deg);
+    background-color: rgba(173, 255, 47, 0.4);
+}
+
+.menu-item:nth-child(3) a {
+    transform: rotate(-120deg);
+    background-color: rgba(255, 215, 0, 0.4)
+}
+
+.menu-item:nth-child(4) a {
+    transform: rotate(-180deg);
+    background-color: rgba(255, 20, 147, 0.4);
+}
+
+.menu-item:nth-child(5) a {
+    transform: rotate(-240deg);
+    background-color: rgba(138, 43, 226, 0.4);
+}
+
+.menu-item:nth-child(6) a {
+    transform: rotate(-300deg);
+    background-color: rgb(128, 229, 204, 0,4);
+}
+
+.menu-item {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 60px;
+    height: 60px;
+    display: block;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+    .menu-item a {
+        display: block;
+        width: inherit;
+        height: inherit;
+        line-height: 80px;
+        color: rgba(255, 255, 255, 0.7);
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        text-align: center;
+        text-decoration: none;
+        font-size: 40px;
+        pointer-events: none;
+        transition: 0.2s;
+    }
+
+        .menu-item a:hover {
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+            color: white;
+            background: rgba(255, 255, 255, 0.3);
+            font-size: 44.4444444444px;
+        }

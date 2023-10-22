@@ -21,7 +21,44 @@ namespace Project_T_WebApp.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Menu()
+        {
+            return View();
+        }
+
+        public IActionResult Play()
+        {
+            return View();
+        }
+        public IActionResult About()
+        {
+            return View();
+        }
+        public IActionResult Exit()
+        {
+            return View();
+        }
+        public IActionResult CreateCharacter()
+        {
+            return View();
+        }
+        public IActionResult ClassInfo()
+        {
+            return View();
+        }
+        public IActionResult Map()
+        {
+            return View();
+        }
+        public IActionResult Quest()
+        {
+            return View();
+        }
+        public IActionResult Fight()
+        {
+            return View();
+        }
+        public IActionResult Beaten()
         {
             return View();
         }

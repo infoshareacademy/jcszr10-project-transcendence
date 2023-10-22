@@ -1,9 +1,21 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Index";
 }
+<link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
 
-<div class="text-center">
-    <h1 class="display-4">Andrzeju jak Ci na imie?!!!</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    
+    <div class="container-xxl">
+        <header class="welcome">
+            <h2 class="hero-name">PROJECT TRANSCENDENCE</h2>
 
-</div>
+            <p class="hero-text">
+            Przeżyj przygodę godną obrońcy świata i poszukiwacza przygód. Stwórz swoją postać już teraz, aby rozpocząć pokonywanie wrogów i rozwiązywanie zagadek. Przejdź przez wszystkie lochy!
+            </p>
+
+            <div class="hero-buttons">
+                <a class="hero-btn" href="@Url.Action("Login", "User")">Logowanie</a>
+                <a class="hero-btn" href="@Url.Action("Register", "User")">Rejestracja</a>
+            </div>S
+        </header>
+    </div>
+
