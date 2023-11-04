@@ -11,7 +11,7 @@
                     </div>
                     <div class="card-body p-4 p-sm-5">
                         <h1 class="card-title text-center mb-5 fw-normal fs-1">Rejestracja</h1>
-                        <form>
+                        <form asp-controller ="Identity" asp-action="Signup" method="post">
 
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="floatingInputUsername" placeholder="myusername" required autofocus>
@@ -22,7 +22,7 @@
                                 <input type="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com">
                                 <label for="floatingInputEmail">Adres e-mail</label>
                             </div>
-
+                         
                             <hr>
 
                             <div class="form-floating mb-3">
