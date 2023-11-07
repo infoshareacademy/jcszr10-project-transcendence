@@ -1,4 +1,5 @@
 ﻿
+using Project_Transcendence_Database.Entities;
 using static Project_Transcendence.BuisnessLogic.Globals.GlobalEnums;
 
 namespace Project_Transcendence.BuisnessLogic.Models.DTOs
@@ -16,5 +17,20 @@ namespace Project_Transcendence.BuisnessLogic.Models.DTOs
         public int? Luck { get; set; }
         public int? Healing { get; set; }
         public ItemType ItemType { get; set; }
+
+        public ItemDto(Item entity)
+        {
+            Id = entity.Id;
+            Name = entity.Name;
+            Description = entity.Description;
+            Damage = entity.Damage;
+            Armor = entity.Armor;
+            Intelect = entity.Intelect;
+            Agility = entity.Agility;
+            Strength = entity.Strength;
+            Luck = entity.Luck;
+            Healing = entity.Healing;
+            ItemType = (ItemType)entity.ItemType;
+        }     
     }
 }

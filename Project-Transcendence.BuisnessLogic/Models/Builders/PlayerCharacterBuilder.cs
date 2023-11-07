@@ -2,6 +2,7 @@
 using Project_Transcendence.BuisnessLogic.Models.Character.CharacterRaces;
 using Project_Transcendence.BuisnessLogic.Models.Character.Player;
 using Project_Transcendence.BuisnessLogic.Models.DTOs;
+using static Project_Transcendence.BuisnessLogic.Globals.GlobalEnums;
 
 namespace Project_Transcendence.BuisnessLogic.Models.Builders
 {
@@ -23,11 +24,11 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
     #nullable disable
         public void SetClass() => _playerCharacter.CharacterClass = _dto.CharacterClass switch
         {
-            //nameof(Monk) => new Monk(),
-            //nameof(Rogue) => new Rogue(),
-            //nameof(Wizard) => new Wizard(),
-            //nameof(Warrior) => new Warrior(),
-            //_ => new Warrior()
+            ClassType.Monk => new Monk(),
+            ClassType.Warrior => new Warrior(),
+            ClassType.Wizard => new Wizard(),
+            ClassType.Rogue => new Rogue(),
+            _ => throw new ArgumentOutOfRangeException(nameof(_dto.CharacterClass), "This class doesn't exist")
         };
 
         public void SetRace() => _playerCharacter.Race = _dto.Race switch
@@ -97,6 +98,11 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
         public void SetId()
         {
             _playerCharacter.Id = _dto.Id;
+        }
+
+        public void SetUserId()
+        {
+            _playerCharacter.UserId = _dto.UserId;
         }
     }
 }

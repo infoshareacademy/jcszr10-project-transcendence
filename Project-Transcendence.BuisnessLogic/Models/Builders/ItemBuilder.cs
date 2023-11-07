@@ -9,8 +9,6 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
         private readonly ItemDto _itemDto;
         private readonly Item _item;
 
-
-
         public Item Build()
         {
             return _item;
@@ -48,12 +46,18 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
 
         public void SetName()
         {
-            _itemDto.Name = _item.Name; 
+            _item.Name = _itemDto.Name;
         }
 
         public void SetStatistics()
         {
             _item.Statistics.Luck = _itemDto.Luck;
+            _item.Statistics.Agility = _itemDto.Agility;
+            _item.Statistics.Intelect = _itemDto.Intelect;
+            _item.Statistics.Strength = _itemDto.Strength;
         }
+
+
+
     }
 }
