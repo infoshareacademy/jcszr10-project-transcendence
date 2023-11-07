@@ -207,7 +207,7 @@ img {
 .createCharacterMenu {
     position: absolute;
     top: 20%;
-    left: 67%;
+    left: 76%;
     transform: translate(-51%, -51%);
     padding: 10px 20px;
     background-color: transparent;
@@ -264,6 +264,7 @@ img {
 #button_e:checked ~ #carousel .p-wrapper {
     -webkit-transform: translateY(-500%);
     transform: translateY(-500%);
+    text-decoration: none;
 }
 
 [class^="panel_"] {
@@ -384,7 +385,7 @@ img {
     transform: translateY(-300%) translateX(50%);
 }
 
-/*Testy karuzeli*/
+
 
 #button_a:checked ~ #button_f:checked ~ .fight-btn .player-hero img {
     /* Styl dla obrazka w sekcji panel_a przy wyborze button_a i button_f */
@@ -454,7 +455,7 @@ img {
 }
 
 
-/*Koniec testów*/
+
 
 .classImageCreate {
     width: 200px;
@@ -474,7 +475,6 @@ img {
     left: 50%;
     transform: translate(-51%, -51%);
     padding: 10px 20px;
-    background-color: #482348;
     color: aliceblue;
     transition: 0.2s;
     border: 2px solid rgba(0, 0, 0, 0.6);
@@ -495,6 +495,14 @@ img {
         background-color: rgba(14, 54, 112, 0.2);
         box-shadow: 0 0 9px 5px black;
         transform: translate(-50%, -50%) scale(1.2) rotate(-90deg);
+        text-decoration: none;
+        color: snow;
+    }
+    .inventory:hover {
+        cursor: pointer;
+        background-color: rgba(14, 54, 112, 0.2);
+        box-shadow: 0 0 0px 0px black;
+        transform: translate(-50%, -50%) scale(1.2);
         text-decoration: none;
         color: snow;
     }
@@ -552,6 +560,15 @@ img {
     height: 50px;
     background-color: #793968;
 }
+.inventory {
+    top: 75%;
+    left: 85%;
+    width: 180px;
+    height: 180px;
+    background-image: url('/images/inventory.png');
+    background-size: cover;
+    background-position: center;
+}
 
     .quest-2 span {
         display: inline-block;
@@ -569,6 +586,10 @@ img {
         display: inline-block;
         transform: rotate(220deg);
     }
+.inventory span {
+    display: inline-block;
+    transform: translate(-50%, -50%) scale(1.2) rotate(0deg);
+}
 .boss {
     top: 7%;
     left: 33%;
@@ -598,7 +619,7 @@ img {
 .btn-q-3 {
     width: 300px;
     top: 75%;
-    left: 68%;
+    left: 76%;
 }
 .fight-panel{
     height: 600px;
@@ -634,7 +655,7 @@ img {
     top: 25%;
     left: 75%;
 }
-/*Fight menu*/
+/*Attack menu*/
 .circle{
     top: 80%;
 }
@@ -811,3 +832,84 @@ img {
             background: rgba(255, 255, 255, 0.3);
             font-size: 44.4444444444px;
         }
+
+/*INVENTORY*/
+.inventory-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-51%, -51%);
+    padding: 10px 20px;
+    transition: 0.2s;
+    border-radius: 0px;
+    text-align: center;
+    line-height: 21px;
+    text-shadow: 0.1em 0.1em 0.2em black;
+    text-decoration: none;
+}
+.inventory-backpack {
+    width: 600px;
+    height: 800px;
+    left: 50%;
+    top: 50%;
+    background-image: url('/images/backpack.webp');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7;
+}
+.image-table img {
+    top: 80%;
+    opacity: 1.0;
+    width: 120px;
+    height: 120px;
+    border: double;
+}
+.image-table td {
+    padding: 15px;
+    
+}
+.btn-ivtr{
+    top: 87%;
+}
+.ivtr-item{
+    top: 55%;
+}
+.image-table td:hover {
+    display: inline-block;
+}
+.image {
+    position: relative; /* Ustaw pozycję dla elementu */
+    width: 100px; /* Dostosuj szerokość według potrzeb */
+    height: auto; /* Dostosuj wysokość proporcjonalnie */
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.image:hover {
+    transform: scale(1.2); /* Powiększanie o 20% */
+}
+
+.image-link {
+    display: block; /* Dodaj display block do elementu linku */
+    background-color: rgba(255, 255, 255, 0.2); /* Dodaj tło z 50% przezroczystości */
+    width: fit-content; /* Dopasuj szerokość do zawartości */
+    padding: 5px; /* Dodaj wypełnienie dla lepszego wyglądu */
+}
+
+    .image-link::after {
+        content: attr(data-tooltip); /* Ustaw treść na wartość atrybutu data-tooltip */
+        position: absolute; /* Ustaw pozycję absolutną */
+        top: -10%; /* Ustaw odległość od dołu */
+        left: 50%; /* Ustaw pozycję na środku */
+        transform: translateX(-50%); /* Przesuń w lewo o 50% szerokości */
+        padding: 5px; /* Dodaj wypełnienie dla lepszego wyglądu */
+        background-color: black; /* Ustaw kolor tła */
+        color: white; /* Ustaw kolor tekstu */
+        border-radius: 5px; /* Dodaj zaokrąglenie */
+        opacity: 0; /* Ustaw domyślną przezroczystość */
+        transition: opacity 0.3s; /* Dodaj efekt przejścia */
+   
+    }
+
+    .image-link:hover::after {
+        opacity: 1; /* Ustaw przezroczystość na 1 po najechaniu */
+    }
