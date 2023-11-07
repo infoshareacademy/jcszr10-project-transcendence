@@ -1,6 +1,8 @@
 ﻿using Project_Transcendence.BuisnessLogic.Models.Character.CharacterClasses;
 using Project_Transcendence.BuisnessLogic.Models.DTOs;
 using Project_Transcendence.BuisnessLogic.Models.Perks.Items;
+using Project_Transcendence_Database.Entities;
+using static Project_Transcendence.BuisnessLogic.Globals.GlobalEnums;
 
 namespace Project_Transcendence.BuisnessLogic.Models.Character.Player
 {
@@ -15,6 +17,7 @@ namespace Project_Transcendence.BuisnessLogic.Models.Character.Player
         public StatisticsManager Statistics { get; set; }
         public List<IItem> Inventory { get; set; }
         public List<IItem> Jewelery { get; set; }
+        public int UserId { get; set; }
 
         public PlayerCharacterDTO ConvertToDto() => new()
         {
@@ -29,15 +32,24 @@ namespace Project_Transcendence.BuisnessLogic.Models.Character.Player
             Intelect = (int)this.Statistics.Intelect,
             MainHandWeapon = this.MainHandWeapon,
             OffHandWeapon = this.OffHandWeapon,
-            //CharacterClass = nameof(this.CharacterClass),
             Race =  nameof(this.Race),
             Inventory = this.Inventory,
             Jewelery = this.Jewelery,
             Name = this.Name,
-            Level = this.Level
+            Level = this.Level,
+            RaceId = this.Race.Id,
+            ClassId = this.CharacterClass.Id,
+            CharacterClass = this.CharacterClass switch
+            {
+                Monk => ClassType.Monk,
+                Warrior => ClassType.Warrior,
+                Rogue => ClassType.Rogue,
+                Wizard => ClassType.Wizard,
+                _ => throw new ArgumentOutOfRangeException(nameof(CharacterClass), "This class doesn't exist")
+            }
         };
+
+
+
     }
-
-
-
 }

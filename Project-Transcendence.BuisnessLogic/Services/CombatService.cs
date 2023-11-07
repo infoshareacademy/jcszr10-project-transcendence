@@ -6,55 +6,29 @@ using Project_Transcendence.BuisnessLogic.Models.Perks.Ability;
 using System.Numerics;
 using Microsoft.Extensions.DependencyInjection;
 using Project_Transcendence.BuisnessLogic.Models.PlayerCommands;
+using Project_Transcendence.BuisnessLogic.Models.DTOs;
+using Project_Transcendence_Database.DataAccess;
+using Project_Transcendence.BuisnessLogic.Models.DTOs;
+using Project_Transcendence_Database.DataAccess;
+using Project_Transcendence_Database.Entities;
 
 namespace Project_Transcendence.BuisnessLogic.Services
 {
     public class CombatService
     {
-        private IPlayerCharacter _playerCharacter;
-        private IEnemy _enemy;
+        private readonly ApplicationDbContext _context;
 
-        private readonly HealthService _healthService;
-        private readonly StatisticsService _statisticsService;
-        private readonly EquipmentService _equipmentService;
-
-        public CombatService(IPlayerCharacter playerCharacter, IEnemy enemy)
+        public CombatService(ApplicationDbContext context)
         {
-            _playerCharacter = playerCharacter;
-            _enemy = enemy;
-            _healthService = new();
-            _statisticsService = new(_playerCharacter);
-            if (_playerCharacter is IInventory playerInventory)
-            {
-            //    _equipmentService = new(playerInventory);
-            }
+            _context = context;
         }
 
-        public void CombatRound(bool isPlayerTurn, ICommand playerAction)
+        async Task<Item> GetItemByIdAsync(int itemId)
         {
-            if (isPlayerTurn) // player turn
+            using (var context = _context)
             {
-
-                switch (playerAction)
-                {
-                    case CastAbilityCommand:
-                        ICommand spellCommand = playerAction as CastAbilityCommand;
-                        CommandInvoker commandInvoker = new();
-                        commandInvoker.SetCommand(spellCommand);
-                        commandInvoker.ExecuteCommand();
-                        break;
-
-
-                    default:
-                        break;
-                }
-
-            }
-            else // enemy turn
-            {
-
-
-
+                var item = await context.Items.FindAsync(itemId);
+                return item; // To będzie null, jeśli przedmiot nie zostanie znaleziony
             }
         }
 

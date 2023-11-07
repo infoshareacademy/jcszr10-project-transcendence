@@ -7,6 +7,11 @@ namespace Project_Transcendence_Database.DataAccess
 {
     public class ApplicationDbContext : DbContext
     {
+        public ApplicationDbContext()
+        {
+
+        }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
         public DbSet<PlayerCharacter> Characters { get; set; }
@@ -19,6 +24,7 @@ namespace Project_Transcendence_Database.DataAccess
         public DbSet<Resource> Resources { get; set; }
         public DbSet<Inventory> Inventories { get; set; }
         public DbSet<EquipedJewelery> EquipedJeweleries { get; set; }
+        public DbSet<Item> Items { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

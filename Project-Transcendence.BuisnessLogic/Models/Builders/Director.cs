@@ -15,7 +15,6 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
             _characterBuilder = characterBuilder;
         }
 
-
         public Director(IItemBuilder itemBuilder)
         {
             _itemBuilder = itemBuilder;
@@ -59,6 +58,7 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
             _characterBuilder.SetInventory();
             _characterBuilder.SetEquipedJewelery();
             _characterBuilder.SetStatisticManager();
+            _characterBuilder.SetUserId();
         }
 
         public void ConstructEnemy()
