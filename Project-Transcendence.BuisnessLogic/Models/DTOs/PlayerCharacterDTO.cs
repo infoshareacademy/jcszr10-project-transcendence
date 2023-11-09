@@ -14,8 +14,8 @@ namespace Project_Transcendence.BuisnessLogic.Models.DTOs
         public int Id { get; set; }
         public ClassType CharacterClass { get; set; }
         public int Experience { get; set; }
-        public List<IItem>? Inventory { get; set; }
-        public List<IItem>? Jewelery { get; set; }
+        public List<ItemDto>? Inventory { get; set; }
+        public List<ItemDto>? Jewelery { get; set; }
         public IItem? MainHandWeapon { get; set; }
         public IItem? OffHandWeapon { get; set; }
         public int Health { get; set; }
@@ -92,13 +92,12 @@ namespace Project_Transcendence.BuisnessLogic.Models.DTOs
             RaceId = entity.CharacterRaceId,
             UserId = entity.UserId,
             ClassId = entity.CharacterClassId,
-
-
+            Inventory = ConvertoToDtoList(entity),
+            
         };
 
         private List<ItemDto> ConvertInventory(PlayerCharacter entity)
         {
-
             var result = new List<ItemDto>();
 
             var itemsFromPlayerInventory = entity.Inventory.Items;
@@ -106,6 +105,20 @@ namespace Project_Transcendence.BuisnessLogic.Models.DTOs
             foreach (var item in itemsFromPlayerInventory)
             {
                 result.Add(new ItemDto(item));
+            }
+
+            return result;
+        }
+
+        private List<ItemDto> ConvertoToDtoList(PlayerCharacter entity)
+        {
+            var result = new List<ItemDto>();
+
+            var itemsFromPlayerJewelery = entity.Jewelery;
+
+            foreach (var item in itemsFromPlayerJewelery)
+            {
+                //result.Add(new ItemDto(item));
             }
 
             return result;
