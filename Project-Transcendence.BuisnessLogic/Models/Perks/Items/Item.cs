@@ -18,17 +18,17 @@ namespace Project_Transcendence.BuisnessLogic.Models.Perks.Items
 
         public ItemDto ConvertToDto() => new()
         {
-            Id = Id,
-            Name = Name,
-            Description = Description,
-            Armor = Armor,
-            Healing = Healing,
-            Damage = Damage,
-            ItemType = ItemType,
-            Luck = Statistics.Luck,
-            Strength = Statistics.Strength,
-            Intelect = Statistics.Intelect,
-            Agility = Statistics.Agility
+            Id = this.Id,
+            Name = this.Name,
+            Description = this.Description,
+            Armor = this.Armor,
+            Healing = this.Healing,
+            Damage = this.Damage,
+            ItemType = this.ItemType,
+            Luck = this.Statistics.Luck,
+            Strength = this.Statistics.Strength,
+            Intelect = this.Statistics.Intelect,
+            Agility = this.Statistics.Agility
         };
     }
 }

@@ -18,6 +18,11 @@ namespace Project_Transcendence.BuisnessLogic.Models.DTOs
         public int? Healing { get; set; }
         public ItemType ItemType { get; set; }
 
+        public ItemDto()
+        {
+                
+        }
+
         public ItemDto(Item entity)
         {
             Id = entity.Id;

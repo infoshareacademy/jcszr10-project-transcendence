@@ -28,7 +28,7 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
             ClassType.Warrior => new Warrior(),
             ClassType.Wizard => new Wizard(),
             ClassType.Rogue => new Rogue(),
-            _ => throw new ArgumentOutOfRangeException(nameof(_dto.CharacterClass), "This class doesn't exist")
+            _ => new Warrior()
         };
 
         public void SetRace() => _playerCharacter.Race = _dto.Race switch
