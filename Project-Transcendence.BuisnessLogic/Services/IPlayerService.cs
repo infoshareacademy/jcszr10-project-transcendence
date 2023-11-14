@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_Transcendence_Database.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace Project_Transcendence.BuisnessLogic.Services
 {
-    internal interface IPlayerService
+    public interface IPlayerService
     {
+        public Task<PlayerCharacter> CreateNewCharacterAsync(string name, int raceId, int classId);
     }
 }

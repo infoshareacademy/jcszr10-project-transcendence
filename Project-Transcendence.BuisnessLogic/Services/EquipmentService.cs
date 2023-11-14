@@ -1,47 +1,47 @@
 ﻿
+using Microsoft.EntityFrameworkCore;
 using Project_Transcendence.BuisnessLogic.Models.Character.Player;
 using Project_Transcendence.BuisnessLogic.Models.Perks.Items;
+using Project_Transcendence_Database.DataAccess;
+using Project_Transcendence_Database.Entities;
 
 namespace Project_Transcendence.BuisnessLogic.Services
 {
-    public class EquipmentService
+    public class EquipmentService : IEquipmentService
     {
-        //TODO: EquipmentService do zrobienia
-        //private readonly IInventory _playerInventory;
+        private readonly ApplicationDbContext _context;
 
-        //public EquipmentService(IInventory inventory)
-        //{
-        //    _playerInventory = inventory;
-        //}
+        public EquipmentService(ApplicationDbContext context)
+        {
+            _context = context;
+        }
 
-        //public void AddToInventory(IItem item)
-        //{
-        //    _playerInventory.Inventory.Add(item);
-        //}
+        public async Task<Inventory> CreateNewInventoryAsync()
+        {
+            var inventory = new Inventory();
+            {
+                
+            };
 
-        //public void RemoveFromInventory(IItem item)
-        //{
-        //    _playerInventory.Inventory.Remove(item);
-        //}
+            _context.Inventories.Add(inventory);
 
-        //public void AddToJewelery(Jewelery item)
-        //{
-        //    _playerInventory.Jewelery.Add(item);
-        //}
+            await _context.SaveChangesAsync();
 
-        //public void RemoveFromJEwelery(Jewelery item)
-        //{
-        //    _playerInventory.Jewelery.Remove(item);
-        //}
+            return inventory;
+        }
 
-        //public void AddToWeapon(Weapon item)
-        //{
-        //    _playerInventory.Weapons.Add(item);
-        //}
+        public async Task<EquipedJewelery> CreateNewJeweleryAsync()
+        {
+            var jewelery = new EquipedJewelery();
+            {
 
-        //public void RemoveFroMWeapon(Weapon item)
-        //{
-        //    _playerInventory.Weapons.Remove(item);
-        //}
+            };
+
+            _context.EquipedJeweleries.Add(jewelery);
+
+            await _context.SaveChangesAsync();
+
+            return jewelery;
+        }
     }
 }

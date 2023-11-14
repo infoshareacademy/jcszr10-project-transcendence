@@ -15,7 +15,7 @@ namespace Project_Transcendence.BuisnessLogic.Services
         }
 
 
-        public async Task<PlayerCharacter> CreateCharacterAsync(string name, int raceId, int classId)
+        public async Task<PlayerCharacter> CreateNewCharacterAsync(string name, int raceId, int classId)
         {
             var character = new PlayerCharacter
             {
@@ -25,12 +25,18 @@ namespace Project_Transcendence.BuisnessLogic.Services
                 Level = 1,
                 Health = 100,
                 Expirience = 0,
-
+                FinishedDungeonIndex = 0,
+                Agility = 1,
+                Intelect = 1,
+                Strength = 1,
+                Luck = 1,               
+                
             };
 
             _context.Characters.Add(character);
 
             await _context.SaveChangesAsync();
+
             return character;
 
         }
