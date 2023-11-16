@@ -38,14 +38,7 @@ namespace Project_T_WebApp.Controllers
         {
             return View();
         }
-        public IActionResult CreateCharacter()
-        {
-            return View();
-        }
-        public IActionResult ClassInfo()
-        {
-            return View();
-        }
+     
         public IActionResult Map()
         {
             return View();
@@ -62,10 +55,7 @@ namespace Project_T_WebApp.Controllers
         {
             return View();
         }
-        public IActionResult Inventory()
-        {
-            return View();
-        }
+      
 
         public IActionResult ShowCharacterClassAbilities()
         {
