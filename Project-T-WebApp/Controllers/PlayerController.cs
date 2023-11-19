@@ -17,7 +17,7 @@ namespace Project_T_WebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(string name, int raceId, int classId)
         {
-            var character = await _playerService.CreateCharacterAsync(name, raceId, classId);
+            var character = await _playerService.CreateNewCharacterAsync(name, raceId, classId);
 
             if (character != null)
             {

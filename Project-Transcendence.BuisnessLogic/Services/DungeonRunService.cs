@@ -16,26 +16,8 @@ namespace Project_Transcendence.BuisnessLogic.Services
             _player = new(_playerCharacter);
         }
 
-        public bool TraverseDungeons()
-        {
-            //TODO: TraverseDungeon do zrobienia
-            //for (int i = _playerCharacter.FinishedDungeonIndex; i < DungeonContainer.Dungeons.Count; i++)
-            //{
-            //    var x = DungeonContainer.Dungeons[i] as IEnemyDungeon;
-            //    CombatService combatService = new(_playerCharacter, x.EnemyInDungeon);
-
-            //    if (combatService.StartCombat())
-            //    {
-            //        _playerCharacter.FinishedDungeonIndex = i;
-            //        _player.LevelUp();
-            //        return true;
-            //    }
-            //    else
-            //    {
-            //        return false;
-            //    }
-            //}
-            return true;
-        }
+        //TODO: Create DungeonRunService 
+       
+        
     }
 }

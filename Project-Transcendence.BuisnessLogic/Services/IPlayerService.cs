@@ -10,5 +10,7 @@ namespace Project_Transcendence.BuisnessLogic.Services
     public interface IPlayerService
     {
         public Task<PlayerCharacter> CreateNewCharacterAsync(string name, int raceId, int classId);
+        public Task<PlayerCharacter> LoadCharacterAsync();
+        public Task<PlayerCharacter> UpdateCharacterAsync();
     }
 }

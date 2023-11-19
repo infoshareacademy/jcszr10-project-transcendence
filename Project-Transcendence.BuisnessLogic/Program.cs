@@ -12,7 +12,7 @@ async Task<Item> GetItemByIdAsync(int itemId)
     using (var context = new ApplicationDbContext())
     {
         var item = await context.Items.FindAsync(itemId);
-        return item; // To będzie null, jeśli przedmiot nie zostanie znaleziony
+        return item;
     }
 }
 
