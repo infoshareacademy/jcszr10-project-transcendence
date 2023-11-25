@@ -18,18 +18,24 @@ namespace Project_T_WebApp.Controllers
         }
 
 
+        [HttpGet] 
+        public IActionResult CreateCharacter()
+        {
+            return View(); 
+        }
+
         [HttpPost]
         public async Task<IActionResult> CreateCharacter(string characterName, int raceId, int classId, string carouselControl, string carouselControl2)
         {
-                characterName = Request.Form["characterName"];
-                classId = GetClassIdFromClassButton(carouselControl);
-                raceId = GetRacesIdFromRaceButton(carouselControl2);
+            characterName = Request.Form["characterName"];
+            classId = GetClassIdFromClassButton(carouselControl);
+            raceId = GetRacesIdFromRaceButton(carouselControl2);
 
 
-                var newPlayerCharacter = await _playerService.CreateNewCharacterAsync(characterName, raceId, classId);
+            var newPlayerCharacter = await _playerService.CreateNewCharacterAsync(characterName, raceId, classId);
 
 
-            return View();
+            return Ok(newPlayerCharacter);
         }
         private int GetClassIdFromClassButton(string classButton)
         {
@@ -50,9 +56,9 @@ namespace Project_T_WebApp.Controllers
             return raceButton switch
             {
                 "button_f" => 1,
-                "button_g" => 2,
+                "button_g" => 8,
                 "button_h" => 3,
-                "button_i" => 4,
+                "button_i" => 2,
                 _ => 0,
             };
         }
