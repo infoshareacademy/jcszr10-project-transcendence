@@ -4,6 +4,7 @@ using Project_Transcendence.BuisnessLogic.Models.Character.Player;
 using Project_Transcendence.BuisnessLogic.Models.Perks.Items;
 using Project_Transcendence_Database.DataAccess;
 using Project_Transcendence_Database.Entities;
+using Item = Project_Transcendence_Database.Entities.Item;
 
 namespace Project_Transcendence.BuisnessLogic.Services
 {
@@ -16,32 +17,14 @@ namespace Project_Transcendence.BuisnessLogic.Services
             _context = context;
         }
 
-        public async Task<Inventory> CreateNewInventoryAsync()
+        public Task<Inventory> AddItemToInventory(int itemId, int InventoryId)
         {
-            var inventory = new Inventory();
-            {
-                
-            };
-
-            _context.Inventories.Add(inventory);
-
-            await _context.SaveChangesAsync();
-
-            return inventory;
+            throw new NotImplementedException();
         }
 
-        public async Task<EquipedJewelery> CreateNewJeweleryAsync()
+        public Task<Inventory> RemoveItemFromInventory(int itemId, int InventoryId)
         {
-            var jewelery = new EquipedJewelery();
-            {
-
-            };
-
-            _context.EquipedJeweleries.Add(jewelery);
-
-            await _context.SaveChangesAsync();
-
-            return jewelery;
+            throw new NotImplementedException();
         }
     }
 }

@@ -3,7 +3,7 @@ namespace Project_Transcendence.BuisnessLogic.Constants
 {
     public class DefaultEquipment
     {
-
+         // TODO: Zmiana na static class
         public const int MonkWeaponId = 0;
         public const int WarriorWeaponId = 1;
         public const int WizardWeaponId = 2;

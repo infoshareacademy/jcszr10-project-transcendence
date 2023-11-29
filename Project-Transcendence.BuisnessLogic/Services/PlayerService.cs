@@ -1,7 +1,6 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
 using Project_Transcendence.BuisnessLogic.Constants;
-using Project_Transcendence.BuisnessLogic.Models.Character.CharacterClasses;
 using Project_Transcendence.BuisnessLogic.Models.DTOs;
 using Project_Transcendence_Database.DataAccess;
 using Project_Transcendence_Database.Entities;
@@ -13,17 +12,15 @@ namespace Project_Transcendence.BuisnessLogic.Services
     {
 
         private readonly ApplicationDbContext _context;
-        private readonly DefaultEquipment _defaultEuipment;
 
         public PlayerService(ApplicationDbContext context)
         {
             _context = context;
-            _defaultEuipment = new DefaultEquipment();
         }
 
         public async Task<PlayerCharacter> CreateNewCharacterAsync(string name, int raceId, int classId)
         {
-            var defaultJeweleryItem = await _context.Items.FirstOrDefaultAsync(i => i.Id == _defaultEuipment.DefaultAllClassJeweleryId);
+            var defaultJeweleryItem = await _context.Items.FirstOrDefaultAsync(i => i.Id == DefaultEquipment.JeweleryId);
             var defaultWeaponItem = await _context.Items.FirstOrDefaultAsync(i => i.Id == SetClassDefaultWeaponId(classId));
             var defaultJewelry = new EquipedJewelery
             {
@@ -83,6 +80,7 @@ namespace Project_Transcendence.BuisnessLogic.Services
             character.CharacterRaceId = dto.RaceId;
             character.CharacterClassId = dto.ClassId;
             //TODO: Dokonczyc implementacje dto
+
             character.Inventory = null;
             character.Jewelery = null;
             character.MainHandWeapon = null;
@@ -98,10 +96,10 @@ namespace Project_Transcendence.BuisnessLogic.Services
         {
             return classId switch
             {
-                1 => _defaultEuipment.DefaultMonkWeaponId,
-                2 => _defaultEuipment.DefaultWizardWeaponId,
-                3 => _defaultEuipment.DefaultRogueWeaponId,
-                4 => _defaultEuipment.DefaultWarriorWeaponId,
+                1 => DefaultEquipment.MonkWeaponId,
+                2 => DefaultEquipment.WizardWeaponId,
+                3 => DefaultEquipment.RogueWeaponId,
+                4 => DefaultEquipment.WarriorWeaponId,
                 _ => throw new NotImplementedException()
             };
         }

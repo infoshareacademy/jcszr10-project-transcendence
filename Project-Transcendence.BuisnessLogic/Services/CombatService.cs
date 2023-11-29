@@ -3,7 +3,7 @@
 
 namespace Project_Transcendence.BuisnessLogic.Services
 {
-    public class CombatService
+    public class CombatService : ICombatService
     {
         private readonly ApplicationDbContext _context;
 
