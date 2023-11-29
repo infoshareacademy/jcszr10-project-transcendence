@@ -23,24 +23,24 @@ namespace Project_T_WebApp.Controllers
         }
 
 
-        [HttpGet]
-        public async Task<IActionResult> Register()
+        public IActionResult Register()
         {
-            return View();
+            var model = new RegisterViewModel();
+            return View(model);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(RegisterViewModel model)
+        public async Task<IActionResult> Register(RegisterViewModel model, [FromServices] UserManager<ApplicationUser> userManager)
         {
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
-                var result = await _userManager.CreateAsync(user, model.Password);
+                var result = await userManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Login", "Identity"); 
+                    return RedirectToAction("Login", "Identity");
                 }
 
                 foreach (var error in result.Errors)
@@ -52,10 +52,12 @@ namespace Project_T_WebApp.Controllers
             return View(model);
         }
 
-        [HttpGet]
+
+
         public IActionResult Login()
         {
-            return View();
+            var model = new LoginViewModel();
+            return View(model);
         }
 
         [HttpPost]

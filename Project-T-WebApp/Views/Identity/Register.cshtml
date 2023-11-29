@@ -1,4 +1,4 @@
-﻿@model Microsoft.AspNetCore.Identity.SignInResult
+﻿@model Project_T_WebApp.Models.RegisterViewModel
 
 @{
     ViewData["Title"] = "Register";
@@ -15,10 +15,10 @@
                     </div>
                     <div class="card-body p-4 p-sm-5">
                         <h1 class="card-title text-center mb-5 fw-normal fs-1">Rejestracja</h1>
-                        <form asp-controller="Account" asp-action="Register" method="post">
+                        <form asp-controller="Identity" asp-action="Register" method="post">
 
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInputUsername" placeholder="myusername" name="username" required autofocus>
+                                <input type="text" class="form-control" id="floatingInputUsername" placeholder="myusername" name="UserName" required autofocus>
                                 <label for="floatingInputUsername">Username</label>
                             </div>
 

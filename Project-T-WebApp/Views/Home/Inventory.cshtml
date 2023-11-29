@@ -1,6 +1,96 @@
 ﻿﻿@{
     ViewData["Title"] = "Inventory";
 }
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var arrowsButton = document.querySelector('.arrows');
+        var equipedDivs = document.querySelectorAll('.inventory-btn.inventory-character .inventory-btn');
+        var imageLinks = document.querySelectorAll('.ivtr-item a.image-link');
+
+        // Dodaj obsługę kliknięcia do każdego elementu image-link
+        imageLinks.forEach(function (link, index) {
+            link.addEventListener('click', function () {
+                // Zresetuj klasę aktywnego elementu
+                imageLinks.forEach(function (link) {
+                    link.classList.remove('active');
+                });
+
+                // Oznacz obecnie kliknięty element jako aktywny
+                link.classList.add('active');
+            });
+        });
+
+        arrowsButton.addEventListener('click', function () {
+            // Znajdź aktywny element
+            var activeImage = document.querySelector('.ivtr-item a.image-link.active img');
+
+            if (activeImage) {
+                // Znajdź pierwszy wolny div equiped-x
+                var firstEmptySlot = Array.from(equipedDivs).findIndex(function (div) {
+                    return !div.hasChildNodes();
+                });
+
+                if (firstEmptySlot !== -1) {
+                    // Sklonuj aktywny obrazek
+                    var clonedImage = activeImage.cloneNode(true);
+
+                    // Wstaw sklonowany obrazek do pierwszego wolnego diva equiped-x
+                    equipedDivs[firstEmptySlot].appendChild(clonedImage);
+
+                    // Usuń oryginalny obrazek z pierwszego miejsca
+                    activeImage.parentNode.removeChild(activeImage);
+
+                    // Zresetuj klasę aktywnego elementu po przeniesieniu
+                    imageLinks.forEach(function (link) {
+                        link.classList.remove('active');
+                    });
+                }
+            } else {
+                // Sprawdź, czy któryś z equipedDivs jest aktywny
+                var activeEquipedDiv = Array.from(equipedDivs).find(function (div) {
+                    return div.classList.contains('active');
+                });
+
+                if (activeEquipedDiv) {
+                    // Znajdź pierwszy pusty image-link
+                    var firstEmptyImageLink = Array.from(imageLinks).find(function (link) {
+                        return !link.hasChildNodes();
+                    });
+
+                    if (firstEmptyImageLink) {
+                        // Sklonuj obrazek z aktywnego diva equiped-x
+                        var clonedImage = activeEquipedDiv.firstChild.cloneNode(true);
+
+                        // Wstaw sklonowany obrazek do pierwszego pustego image-link
+                        firstEmptyImageLink.appendChild(clonedImage);
+
+                        // Usuń oryginalny obrazek z aktywnego diva equiped-x
+                        activeEquipedDiv.removeChild(activeEquipedDiv.firstChild);
+
+                        // Zresetuj klasę aktywnego elementu po cofnięciu
+                        activeEquipedDiv.classList.remove('active');
+                    }
+                }
+            }
+        });
+
+        // Dodaj obsługę kliknięcia do każdego elementu equipedDivs
+        equipedDivs.forEach(function (div) {
+            div.addEventListener('click', function () {
+                // Zresetuj klasę aktywnego elementu
+                equipedDivs.forEach(function (div) {
+                    div.classList.remove('active');
+                });
+
+                // Oznacz obecnie kliknięty element jako aktywny
+                div.classList.add('active');
+            });
+        });
+    });
+</script>
+
+
+
 
 <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
 <div class="inventory-btn inventory-backpack"></div>
@@ -8,38 +98,38 @@
 <div class="inventory-btn ivtr-item">
     <table class="image-table">
         <tr>
-            <td><a data-tooltip="opis zaklęcia 1" class="image-link"><img src="" class="image" /></a></td>
-            <td><a data-tooltip="opis zaklecia 2" class="image-link"><img src="" class="image" /></a></td>
-            <td><a data-tooltip="opis zaklecia 2" class="image-link"><img src="" class="image" /></a></td>
+            <td><a data-tooltip="opis zaklęcia 1" class="image-link"><img src="~/images/x.png" class="image" /></a></td>
+            <td><a data-tooltip="opis zaklecia 2" class="image-link"><img src="~/images/x.png" class="image" /></a></td>
+            <td><a data-tooltip="opis zaklecia 2" class="image-link"><img src="~/images/x.png" class="image" /></a></td>
 
         </tr>
         <tr>
-            <td><a data-tooltip="opis zaklęcia 3" class="image-link"><img src="" class="image" /></a></td>
-            <td><a data-tooltip="opis potki" class="image-link"><img src="" class="image" /></a></td>
-            <td><a data-tooltip="opis zaklecia 2" class="image-link"><img src="" class="image" /></a></td>
+            <td><a data-tooltip="opis zaklęcia 3" class="image-link"><img src="~/images/x.png" class="image" /></a></td>
+            <td><a data-tooltip="opis potki" class="image-link"><img src="~/images/x.png" class="image" /></a></td>
+            <td><a data-tooltip="opis zaklecia 2" class="image-link"><img src="~/images/x.png" class="image" /></a></td>
 
         </tr>
         <tr>
-            <td><a data-tooltip="opis miecza" class="image-link"><img src="" class="image" /></a></td>
-            <td><a data-tooltip="opis łuku" class="image-link"><img src="" class="image" /></a></td>
-            <td><a data-tooltip="opis zaklecia 2" class="image-link"><img src="" class="image" /></a></td>
+            <td><a data-tooltip="opis miecza" class="image-link"><img src="~/images/x.png" class="image" /></a></td>
+            <td><a data-tooltip="opis łuku" class="image-link"><img src="~/images/x.png" class="image" /></a></td>
+            <td><a data-tooltip="opis zaklecia 2" class="image-link"><img src="~/images/x.png" class="image" /></a></td>
 
         </tr>
         <tr>
-            <td><a data-tooltip="opis miecza" class="image-link"><img src="" class="image" /></a></td>
-            <td><a data-tooltip="opis łuku" class="image-link"><img src="" class="image" /></a></td>
-            <td><a data-tooltip="opis zaklecia 2" class="image-link"><img src="" class="image" /></a></td>
+            <td><a data-tooltip="opis miecza" class="image-link"><img src="~/images/x.png" class="image" /></a></td>
+            <td><a data-tooltip="opis łuku" class="image-link"><img src="~/images/x.png" class="image" /></a></td>
+            <td><a data-tooltip="opis zaklecia 2" class="image-link"><img src="~/images/x.png" class="image" /></a></td>
 
         </tr>
     </table>
 </div>
 <button><img src="~/images/arrows.png" class="inventory-btn arrows" /></button>
 <div class="inventory-btn inventory-character">
-    <div class="inventory-btn equiped-1"></div>
-    <div class="inventory-btn equiped-2"></div>
-    <div class="inventory-btn equiped-3"></div>
-    <div class="inventory-btn equiped-4"></div>
-    <div class="inventory-btn equiped-5"></div>
-    <div class="inventory-btn equiped-6"></div>
+    <div class="inventory-btn equiped-common equiped-1"></div>
+    <div class="inventory-btn equiped-common equiped-2"></div>
+    <div class="inventory-btn equiped-common equiped-3"></div>
+    <div class="inventory-btn equiped-common equiped-4"></div>
+    <div class="inventory-btn equiped-common equiped-5"></div>
+    <div class="inventory-btn equiped-common equiped-6"></div>
 </div>
 <a class="menu-btn btn-ivtr" href="@Url.Action("Map", "Home")">Powrót</a>

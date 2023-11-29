@@ -205,10 +205,9 @@ img {
 
 /*Karuzela postaci*/
 .createCharacterMenu {
-    position: absolute;
-    top: 20%;
-    left: 76%;
-    transform: translate(-51%, -51%);
+    /*position: absolute;*/
+    top: 30%;
+    left: 60%;
     padding: 10px 20px;
     background-color: transparent;
     width: auto;
@@ -232,6 +231,7 @@ img {
     border-radius: 4px;
     background-color: #ffffff;
     display: flex;
+
 }
 
 .p-wrapper, .p-wrapper2 {
@@ -276,11 +276,13 @@ img {
 }
 
 #navigation {
+    margin-bottom: 250px;
     margin-left: 24px;
 }
 
 #navigation-races {
     margin-left: 24px;
+    margin-bottom: 250px;
 }
 
 
@@ -387,10 +389,10 @@ img {
 
 
 
-#button_a:checked ~ #button_f:checked ~ .fight-btn .player-hero img {
+/*#button_a:checked ~ #button_f:checked ~ .fight-btn .player-hero img {*/
     /* Styl dla obrazka w sekcji panel_a przy wyborze button_a i button_f */
-    content: url('/images/monk_human.png');
-}
+    /*content: url('/images/monk_human.png');
+}*/
 #button_a:checked ~ #button_f:checked ~ #carousel-create .panel_a .classImageCreate img {
     /* Styl dla obrazka w sekcji panel_a przy wyborze button_a i button_f */
     content: url('/images/monk_human.png');
@@ -618,7 +620,7 @@ img {
 }
 .btn-q-3 {
     width: 300px;
-    top: 75%;
+    top: 65%;
     left: 76%;
 }
 .fight-panel{
@@ -934,77 +936,47 @@ img {
     filter: grayscale(20%);
 }
 
-.equiped-1 {
-    top: 10%;
-    left: 5%;
-    width: 80px;
-    height: 80px;
+.equiped-common {
+    width: 110px;
+    height: 110px;
     background-color: #fff;
     opacity: 0.9;
     filter: grayscale(50%);
     border: 4px solid;
     border-color: deeppink;
+}
+
+.equiped-1 {
+    top: 10%;
+    left: 5%;
+    align-items: center;
 }
 
 .equiped-2 {
     top: 50%;
     left: 5%;
-    width: 80px;
-    height: 80px;
-    background-color: #fff;
-    opacity: 0.9;
-    filter: grayscale(50%);
-    border: 4px solid;
-    border-color: deeppink;
 }
 
 .equiped-3 {
     top: 90%;
     left: 5%;
-    width: 80px;
-    height: 80px;
-    background-color: #fff;
-    opacity: 0.9;
-    filter: grayscale(50%);
-    border: 4px solid;
-    border-color: deeppink;
 }
 
 .equiped-4 {
     top: 10%;
     left: 95%;
-    width: 80px;
-    height: 80px;
-    background-color: #fff;
-    opacity: 0.9;
-    filter: grayscale(50%);
-    border: 4px solid;
-    border-color: deeppink;
 }
 
 .equiped-5 {
     top: 50%;
     left: 95%;
-    width: 80px;
-    height: 80px;
-    background-color: #fff;
-    opacity: 0.9;
-    filter: grayscale(50%);
-    border: 4px solid;
-    border-color: deeppink;
 }
 
 .equiped-6 {
     top: 90%;
     left: 95%;
-    width: 80px;
-    height: 80px;
-    background-color: #fff;
-    opacity: 0.9;
-    filter: grayscale(50%);
-    border: 4px solid;
-    border-color: deeppink;
 }
+
 
 .arrows {
     top: 50%;

@@ -1,13 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Project_Transcendence.BuisnessLogic.Services;
-using Project_Transcendence_Database.DataAccess;
-using Project_Transcendence_Database.Entities;
 
 namespace Project_T_WebApp.Controllers
 {
     public class PlayerController : Controller
-
     {
 
         private readonly IPlayerService _playerService;
@@ -18,10 +14,10 @@ namespace Project_T_WebApp.Controllers
         }
 
 
-        [HttpGet] 
+        //[HttpGet]
         public IActionResult CreateCharacter()
         {
-            return View(); 
+            return View();
         }
 
         [HttpPost]
@@ -35,7 +31,7 @@ namespace Project_T_WebApp.Controllers
             var newPlayerCharacter = await _playerService.CreateNewCharacterAsync(characterName, raceId, classId);
 
 
-            return Ok(newPlayerCharacter);
+            return RedirectToAction("Map", "Home");
         }
         private int GetClassIdFromClassButton(string classButton)
         {

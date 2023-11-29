@@ -4,8 +4,8 @@
 <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
 <div class="createCharacterMenu">
     <h1 style="color: white;"> Stwórz swoją postać!</h1>
-    <form method="post" action="@Url.Action("CreateCharacter", "Player")" >
-    <div class="form-floating mt-3 mb-3 col-12">
+    <form method="post" action="@Url.Action("CreateCharacter", "Player")" />
+    <div class="form-floating mt-3 mb-3 col-5">
         <input type="text" name="characterName" class="form-control" id="floatingInputCharacterName" placeholder="characterName" required autofocus>
         <label for="floatingInputCharacterName">Imię postaci</label>
     </div>
@@ -73,6 +73,6 @@
         <button type="submit" class="menu-btn btn-q-3"><span>Zaczynajmy!</span></button>
     </div>
 
-    </form>
+    @* </form> *@
 
 </div> <!-- // #container -->

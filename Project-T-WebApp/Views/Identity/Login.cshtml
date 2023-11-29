@@ -1,4 +1,4 @@
-﻿@model Microsoft.AspNetCore.Identity.SignInResult
+﻿@model Project_T_WebApp.Models.LoginViewModel
 
 @{
     ViewData["Title"] = "Login";
@@ -14,7 +14,7 @@
                 </div>
                 <div class="card-body p-4 p-sm-5">
                     <h3 class="login-heading mb-4">Witamy ponownie!</h3>
-                    <form method="post" asp-controller="Account" asp-action="Login">
+                    <form method="post" asp-controller="Identity" asp-action="Login">
                         <div class="form-floating mb-3">
                             <input type="email" class="form-control" id="floatingInput" placeholder="nazwa@example.com" name="email" required>
                             <label for="floatingInput">Adres e-mail</label>
