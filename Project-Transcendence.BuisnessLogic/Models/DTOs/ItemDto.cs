@@ -1,12 +1,10 @@
-﻿
-using Project_Transcendence.BuisnessLogic.Models.Character.Player;
+﻿using Project_Transcendence.BuisnessLogic.Models.Character.Player;
 using Project_Transcendence.BuisnessLogic.Models.Perks.Items;
-using Project_Transcendence_Database.Entities;
 using static Project_Transcendence.BuisnessLogic.Globals.GlobalEnums;
 
 namespace Project_Transcendence.BuisnessLogic.Models.DTOs
 {
-    public class ItemDto
+    public class ItemDto : IItem
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -19,6 +17,7 @@ namespace Project_Transcendence.BuisnessLogic.Models.DTOs
         public int? Luck { get; set; }
         public int? Healing { get; set; }
         public ItemType ItemType { get; set; }
+        public StatisticsManager Statistics { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public ItemDto()
         {

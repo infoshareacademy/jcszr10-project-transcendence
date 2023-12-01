@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Project_Transcendence.BuisnessLogic.Models.Character
 {
-    internal interface IActionDirector
+    public interface IActionDirector
     {
+
+        void PerformAction(IBasicCharacter performer, ICharacterAction action, IBasicCharacter target);
+
     }
 }

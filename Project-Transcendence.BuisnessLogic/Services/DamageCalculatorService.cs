@@ -8,38 +8,24 @@ namespace Project_Transcendence.BuisnessLogic.Services
     {
         public int? CalculateDamage(PlayerCharacter attacker, Enemy defender, ICharacterAction action)
         {
-
-            switch (action)
+            return action switch
             {
-
-                case AttackAction:
-                    return CalculatePhysicalDamage(attacker, defender);
-                    break;
-
-                case CastSpellAction:
-                    return CalculateMagicalDamage(attacker, defender);
-                    break;
-
-                default:
-
-                    break;
-
-
-            }
-
-          
+                AttackAction _ => CalculatePhysicalDamage(attacker, defender),
+                CastSpellAction _ => CalculateMagicalDamage(attacker, defender),
+                _ => throw new NotImplementedException("Unknown action type.")
+            };
         }
 
         private int CalculatePhysicalDamage(PlayerCharacter attacker, Enemy defender)
         {
             // Physical damage logic
-            return 0;
+            return 10;
         }
 
         private int CalculateMagicalDamage(PlayerCharacter attacker, Enemy defender)
         {
             // Magical damage logic
-            return 0;
+            return 10;
         }
 
     }

@@ -18,10 +18,10 @@ namespace Project_Transcendence_Database.Entities
 
 
         public int? MainHandWeaponId { get; set; }
-        public virtual Item MainHandWeapon { get; set; }
+        public virtual Item? MainHandWeapon { get; set; }
 
         public int? OffHandWeaponId { get; set; }
-        public virtual Item OffHandWeapon { get; set; }
+        public virtual Item? OffHandWeapon { get; set; }
 
         public int UserId { get; set; }
         public virtual User User { get; set; }

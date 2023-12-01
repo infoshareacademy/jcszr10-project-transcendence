@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Project_Transcendence.BuisnessLogic.Models.Character.Enemy;
+using Project_Transcendence.BuisnessLogic.Models.Character.Player;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +12,7 @@ namespace Project_Transcendence.BuisnessLogic.Models.Character
     {
         public string Name => throw new NotImplementedException();
 
-        public void Execute()
+        public void Execute(PlayerCharacter player, IEnemy enemy)
         {
             throw new NotImplementedException();
         }
