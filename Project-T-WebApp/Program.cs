@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
-builder.Services.AddScoped<IPlayerService, PlayerService>();
+builder.Services.AddTransient<IPlayerService, PlayerService>();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options =>
 {

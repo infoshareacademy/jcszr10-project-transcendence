@@ -9,6 +9,6 @@ namespace Project_Transcendence.BuisnessLogic.Models.Character.CharacterClasses
         public string Name { get; set; }
         public ICollection<Ability> Abilities { get; set; }
         public string Description { get; set; }
-        public Resource Resource { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public Resource Resource { get; set; }
     }
 }

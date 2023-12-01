@@ -22,14 +22,8 @@ namespace Project_T_WebApp.Controllers
 
         [HttpPost]
         public async Task<IActionResult> CreateCharacter(string characterName, int raceId, int classId, string carouselControl, string carouselControl2)
-        {
-            characterName = Request.Form["characterName"];
-            classId = GetClassIdFromClassButton(carouselControl);
-            raceId = GetRacesIdFromRaceButton(carouselControl2);
-
-
-            var newPlayerCharacter = await _playerService.CreateNewCharacterAsync(characterName, raceId, classId);
-
+        {  
+            var character = await _playerService.CreateNewCharacterAsync(name, raceId, classId);
 
             return RedirectToAction("Map", "Home");
         }
