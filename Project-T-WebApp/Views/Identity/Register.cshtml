@@ -1,7 +1,11 @@
-﻿@{
+﻿@model Project_T_WebApp.Models.RegisterViewModel
+
+@{
     ViewData["Title"] = "Register";
 }
+
 <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+
 <body>
     <div class="container">
         <div class="row">
@@ -11,35 +15,37 @@
                     </div>
                     <div class="card-body p-4 p-sm-5">
                         <h1 class="card-title text-center mb-5 fw-normal fs-1">Rejestracja</h1>
-                        <form asp-controller ="Identity" asp-action="Signup" method="post">
+                        <form asp-controller="Identity" asp-action="Register" method="post">
 
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInputUsername" placeholder="myusername" required autofocus>
+                                <input type="text" class="form-control" id="floatingInputUsername" placeholder="myusername" name="UserName" required autofocus>
                                 <label for="floatingInputUsername">Username</label>
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com">
+                                <input type="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com" name="email" required>
                                 <label for="floatingInputEmail">Adres e-mail</label>
                             </div>
-                         
+
                             <hr>
 
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" required>
                                 <label for="floatingPassword">Hasło</label>
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="floatingPasswordConfirm" placeholder="Confirm Password">
+                                <input type="password" class="form-control" id="floatingPasswordConfirm" placeholder="Confirm Password" name="confirmPassword" required>
                                 <label for="floatingPasswordConfirm">Potwierdź hasło</label>
                             </div>
 
                             <div class="d-grid mb-2">
-                                <a class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" href="@Url.Action("Index", "Home")">Zarejestruj sie</a>
+                                <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">Zarejestruj się</button>
                             </div>
 
-                            <a class="d-block text-center mt-2 small" href="@Url.Action("SignIn", "Home")">Masz już konto? Zaloguj się</a>
+                            <a class="d-block text-center mt-2 small" href="@Url.Action("Login", "Identity")">Masz już konto? Zaloguj się</a>
+
+                            <div asp-validation-summary="All" class="text-danger"></div>
 
                         </form>
                     </div>
@@ -48,3 +54,4 @@
         </div>
     </div>
 </body>
+

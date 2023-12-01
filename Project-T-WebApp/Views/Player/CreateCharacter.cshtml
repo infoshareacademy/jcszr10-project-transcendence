@@ -3,18 +3,19 @@
 }
 <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
 <div class="createCharacterMenu">
-    <h1 style ="color: white;"> Stwórz swoją postać!</h1>
-    <div class="form-floating mt-3 mb-3 col-12">
-        <input type="text" class="form-control" id="floatingInputCharacterName" placeholder="characterName" required autofocus>
+    <h1 style="color: white;"> Stwórz swoją postać!</h1>
+    <form method="post" action="@Url.Action("CreateCharacter", "Player")" />
+    <div class="form-floating mt-3 mb-3 col-5">
+        <input type="text" name="characterName" class="form-control" id="floatingInputCharacterName" placeholder="characterName" required autofocus>
         <label for="floatingInputCharacterName">Imię postaci</label>
     </div>
-  </div>
+
     <div id="container">
         <input hidden type="radio" name="carousel-control" id="button_a" checked />
         <input hidden type="radio" name="carousel-control" id="button_b" />
         <input hidden type="radio" name="carousel-control" id="button_c" />
         <input hidden type="radio" name="carousel-control" id="button_d" />
-        <input hidden type="radio" name="carousel-control-2" id="button_f" checked/>
+        <input hidden type="radio" name="carousel-control-2" id="button_f" checked />
         <input hidden type="radio" name="carousel-control-2" id="button_g" />
         <input hidden type="radio" name="carousel-control-2" id="button_h" />
         <input hidden type="radio" name="carousel-control-2" id="button_i" />
@@ -23,15 +24,15 @@
             <div class="p-wrapper">
 
                 <section class="panel_a">
-                
-                        <div class="classImageCreate">
-                            <img src="" />
-                        </div>
-                   
+
+                    <div class="classImageCreate">
+                        <img src="" />
+                    </div>
+
                 </section>
 
                 <section class="panel_b">
-           
+
                     <div class="classImageCreate">
                         <img src="" />
                     </div>
@@ -47,7 +48,7 @@
                     <div class="classImageCreate">
                         <img src="" />
                     </div>
-            </section>
+                </section>
 
             </div> <!-- // .p-wrapper -->
         </div> <!-- // #carousel -->
@@ -59,19 +60,19 @@
             <label for="button_b" class="label_b"> <span>Czarodziej</span> </label>
             <label for="button_c" class="label_c"> <span>Druid</span> </label>
             <label for="button_d" class="label_d"> <span>Wojownik</span> </label>
-            <a class="menu-btn btn-q-3" " href="@Url.Action("Map", "Home")"><span>Zaczynajmy!</span></a>
+
         </div> <!-- // #navigation -->
 
         <div id="navigation-races">
-        <h3 style="color: white;">Wybierz rasę</h3>
-        <label for="button_f" class="label_f"> <span>Człowiek</span> </label>
-        <label for="button_g" class="label_g"> <span>Aasimar</span> </label>
-        <label for="button_h" class="label_h"> <span>Krasnolud</span> </label>
-        <label for="button_i" class="label_i"> <span>Elf</span> </label>
+            <h3 style="color: white;">Wybierz rasę</h3>
+            <label for="button_f" class="label_f"> <span>Człowiek</span> </label>
+            <label for="button_g" class="label_g"> <span>Aasimar</span> </label>
+            <label for="button_h" class="label_h"> <span>Krasnolud</span> </label>
+            <label for="button_i" class="label_i"> <span>Elf</span> </label>
         </div>
-      
-            
-      
+        <button type="submit" class="menu-btn btn-q-3"><span>Zaczynajmy!</span></button>
+    </div>
 
-    </div> <!-- // #container -->
+    @* </form> *@
 
+</div> <!-- // #container -->

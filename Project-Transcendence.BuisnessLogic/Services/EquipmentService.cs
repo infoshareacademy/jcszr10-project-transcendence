@@ -7,41 +7,41 @@ using Project_Transcendence_Database.Entities;
 
 namespace Project_Transcendence.BuisnessLogic.Services
 {
-    public class EquipmentService : IEquipmentService
-    {
-        private readonly ApplicationDbContext _context;
+    //public class EquipmentService : IEquipmentService
+    //{
+    //    private readonly ApplicationDbContext _context;
 
-        public EquipmentService(ApplicationDbContext context)
-        {
-            _context = context;
-        }
+    //    public EquipmentService(ApplicationDbContext context)
+    //    {
+    //        _context = context;
+    //    }
 
-        public async Task<Inventory> CreateNewInventoryAsync()
-        {
-            var inventory = new Inventory();
-            {
+    //    public async Task<Inventory> CreateNewInventoryAsync()
+    //    {
+    //        var inventory = new Inventory();
+    //        {
                 
-            };
+    //        };
 
-            _context.Inventories.Add(inventory);
+    //        _context.Inventories.Add(inventory);
 
-            await _context.SaveChangesAsync();
+    //        await _context.SaveChangesAsync();
 
-            return inventory;
-        }
+    //        return inventory;
+    //    }
 
-        public async Task<EquipedJewelery> CreateNewJeweleryAsync()
-        {
-            var jewelery = new EquipedJewelery();
-            {
+    //    public async Task<EquipedJewelery> CreateNewJeweleryAsync()
+    //    {
+    //        var jewelery = new EquipedJewelery();
+    //        {
 
-            };
+    //        };
 
-            _context.EquipedJeweleries.Add(jewelery);
+    //        _context.EquipedJeweleries.Add(jewelery);
 
-            await _context.SaveChangesAsync();
+    //        await _context.SaveChangesAsync();
 
-            return jewelery;
-        }
-    }
+    //        return jewelery;
+    //    }
+    //}
 }
