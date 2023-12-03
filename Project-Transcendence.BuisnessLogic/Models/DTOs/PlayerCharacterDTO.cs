@@ -16,8 +16,8 @@ namespace Project_Transcendence.BuisnessLogic.Models.DTOs
         public int Experience { get; set; }
         public List<ItemDto>? Inventory { get; set; }
         public List<ItemDto>? Jewelery { get; set; }
-        public IItem? MainHandWeapon { get; set; }
-        public IItem? OffHandWeapon { get; set; }
+        public ItemDto? MainHandWeapon { get; set; }
+        public ItemDto? OffHandWeapon { get; set; }
         public int Health { get; set; }
         public int MaxHealth { get; set; }
         public int Agility { get; set; }
@@ -28,31 +28,6 @@ namespace Project_Transcendence.BuisnessLogic.Models.DTOs
         public int RaceId { get; set; }
         public int UserId { get; set; }
         public int ClassId { get; set; }
-
-        private ICollection<Item> MapItems(List<IItem> items)
-        {
-            var mappedItems = new List<Item>();
-            foreach (var iItem in items)
-            {
-                var item = new Item
-                {
-                    Id = iItem.Id,
-                    Name = iItem.Name,
-                    Description = iItem.Description,
-                    Damage = iItem.Damage,
-                    Armor = iItem.Armor,
-                    Intelect = iItem.Statistics.Intelect,
-                    Agility = iItem.Statistics.Agility,
-                    Strength = iItem.Statistics.Strength,
-                    Luck = iItem.Statistics.Luck,
-                    Healing = iItem.Healing,
-                    ItemType = (EnumTypes.ItemType)iItem.ItemType
-                };
-                mappedItems.Add(item);
-            }
-            return mappedItems;
-        }
-
 
         public PlayerCharacter ConvertToEntity() => new()
         {
@@ -71,10 +46,6 @@ namespace Project_Transcendence.BuisnessLogic.Models.DTOs
             Expirience = this.Experience,
             FinishedDungeonIndex = this.FinishedDungeonIndex,
             UserId = this.UserId,
-            //Inventory = new Inventory
-            //{
-            //    Items = Inventory != null ? new HashSet<Item>(MapItems(Inventory)) : null
-            //},
         };
 
         public PlayerCharacterDTO ConvertFromEntity(PlayerCharacter entity) => new()
@@ -92,37 +63,27 @@ namespace Project_Transcendence.BuisnessLogic.Models.DTOs
             RaceId = entity.CharacterRaceId,
             UserId = entity.UserId,
             ClassId = entity.CharacterClassId,
-            Inventory = ConvertoToDtoList(entity),
-            
+
+            //TODO: Dokonczyc implementacje ConvertFromEntity() dla PlayerCharacterDTO
+            Inventory = ItemConverter(entity.Inventory.Items.ToList()),
+            MainHandWeapon = new ItemDto(entity.MainHandWeapon),
+            OffHandWeapon = new ItemDto(entity.OffHandWeapon),
+            Jewelery = null    
         };
 
-        private List<ItemDto> ConvertInventory(PlayerCharacter entity)
+        private List<ItemDto> ItemConverter(List<Item> itemEntities)
         {
             var result = new List<ItemDto>();
 
-            var itemsFromPlayerInventory = entity.Inventory.Items;
-
-            foreach (var item in itemsFromPlayerInventory)
+            foreach (var item in itemEntities)
             {
                 result.Add(new ItemDto(item));
             }
-
             return result;
         }
 
-        private List<ItemDto> ConvertoToDtoList(PlayerCharacter entity)
-        {
-            var result = new List<ItemDto>();
 
-            var itemsFromPlayerJewelery = entity.Jewelery;
 
-            foreach (var item in itemsFromPlayerJewelery)
-            {
-                //result.Add(new ItemDto(item));
-            }
-
-            return result;
-        }
-
+       
     }
 }

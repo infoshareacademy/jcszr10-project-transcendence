@@ -74,7 +74,7 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
 
         public void SetMainHandWeapon()
         {
-            _playerCharacter.MainHandWeapon = _dto.MainHandWeapon;
+            _playerCharacter.MainHandWeapon = (Perks.Items.IItem)_dto.MainHandWeapon;
         }
 
         public void SetName()
@@ -84,7 +84,7 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
 
         public void SetOffHandWeapon()
         {
-            _playerCharacter.OffHandWeapon = _dto.OffHandWeapon;
+            _playerCharacter.OffHandWeapon = (Perks.Items.IItem)_dto.OffHandWeapon;
         }
 
         public void SetStatisticManager()

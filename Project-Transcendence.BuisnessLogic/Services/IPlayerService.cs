@@ -1,4 +1,5 @@
-﻿using Project_Transcendence_Database.Entities;
+﻿using Project_Transcendence.BuisnessLogic.Models.DTOs;
+using Project_Transcendence_Database.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace Project_Transcendence.BuisnessLogic.Services
     public interface IPlayerService
     {
         public Task<PlayerCharacter> CreateNewCharacterAsync(string name, int raceId, int classId);
-        public Task<PlayerCharacter> LoadCharacterAsync();
-        public Task<PlayerCharacter> UpdateCharacterAsync();
+        public Task<PlayerCharacter> LoadCharacterAsync(int characterId);
+        public Task<PlayerCharacter> UpdateCharacterAsync(PlayerCharacterDTO dto);
     }
 }
