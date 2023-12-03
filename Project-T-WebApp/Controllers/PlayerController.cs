@@ -14,18 +14,43 @@ namespace Project_T_WebApp.Controllers
         }
 
 
-        [HttpPost]
-        public async Task<IActionResult> Create(string name, int raceId, int classId)
+        //[HttpGet]
+        public IActionResult CreateCharacter()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateCharacter(string characterName, int raceId, int classId, string carouselControl, string carouselControl2)
+        {  
             var character = await _playerService.CreateNewCharacterAsync(name, raceId, classId);
 
-            if (character != null)
+            return RedirectToAction("Map", "Home");
+        }
+        private int GetClassIdFromClassButton(string classButton)
+        {
+            classButton = Request.Form["carousel-control"];
+            return classButton switch
             {
-                
-                return View(character);
+                "button_a" => 1,
+                "button_b" => 2,
+                "button_c" => 3,
+                "button_d" => 4,
+                _ => 0,
+            };
+        }
 
-            }          
-            return View(character);
+        private int GetRacesIdFromRaceButton(string raceButton)
+        {
+            raceButton = Request.Form["carousel-control-2"];
+            return raceButton switch
+            {
+                "button_f" => 1,
+                "button_g" => 8,
+                "button_h" => 3,
+                "button_i" => 2,
+                _ => 0,
+            };
         }
     }
 }
