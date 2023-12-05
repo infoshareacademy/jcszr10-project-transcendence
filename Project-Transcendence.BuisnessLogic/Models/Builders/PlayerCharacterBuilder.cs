@@ -1,4 +1,5 @@
-﻿using Project_Transcendence.BuisnessLogic.Models.Character.CharacterClasses;
+﻿using Project_Transcendence.BuisnessLogic.Models.Character;
+using Project_Transcendence.BuisnessLogic.Models.Character.CharacterClasses;
 using Project_Transcendence.BuisnessLogic.Models.Character.CharacterRaces;
 using Project_Transcendence.BuisnessLogic.Models.Character.Player;
 using Project_Transcendence.BuisnessLogic.Models.DTOs;
@@ -9,11 +10,13 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
     public class PlayerCharacterBuilder : ICharacterBuilder
     {
         private readonly PlayerCharacterDTO _dto;
-        private readonly PlayerCharacter _playerCharacter = null!;
+        private readonly PlayerCharacter _playerCharacter;
 
         public PlayerCharacterBuilder(PlayerCharacterDTO dto)
         {
             _dto = dto;
+            _playerCharacter = new PlayerCharacter();
+            _playerCharacter.Statistics = new StatisticsManager(0,0,0,0);
         }
 
         public PlayerCharacter Build()
@@ -43,12 +46,12 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
 
         public void SetEquipedJewelery()
         {
-            throw new NotImplementedException();
+            _playerCharacter.Jewelery = null;
         }
 
         public void SetExpirience()
         {
-            _playerCharacter.Expirience = _dto.Experience;
+            _playerCharacter.Experience = _dto.Experience;
         }
 
         public void SetFinishedDungeonIndex()
@@ -58,13 +61,16 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
 
         public void SetHealthManager()
         {
-            _playerCharacter.Health.Health = _dto.Health;
-            _playerCharacter.Health.MaxHealth = _dto.MaxHealth;
+            if (_playerCharacter != null && _playerCharacter.Health != null)
+            {
+                _playerCharacter.Health.Health = _dto.Health;
+                _playerCharacter.Health.MaxHealth = _dto.MaxHealth;
+            }
         }
 
         public void SetInventory()
         {
-            throw new NotImplementedException();
+            _playerCharacter.Inventory = null;
         }
 
         public void SetLevel()
@@ -74,30 +80,39 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
 
         public void SetMainHandWeapon()
         {
-            _playerCharacter.MainHandWeapon = (Perks.Items.IItem)_dto.MainHandWeapon;
+            _playerCharacter.MainHandWeapon = _dto.MainHandWeapon;
         }
 
         public void SetName()
         {
-            _playerCharacter.Name = _dto.Name;
+            if (_playerCharacter != null)
+            {
+                _playerCharacter.Name = _dto.Name;
+            }
         }
 
         public void SetOffHandWeapon()
         {
-            _playerCharacter.OffHandWeapon = (Perks.Items.IItem)_dto.OffHandWeapon;
+            _playerCharacter.OffHandWeapon = _dto.OffHandWeapon;
         }
 
         public void SetStatisticManager()
         {
-            _playerCharacter.Statistics.Luck = _dto.Luck;
-            _playerCharacter.Statistics.Strength = _dto.Strength;
-            _playerCharacter.Statistics.Intelect = _dto.Intelect;
-            _playerCharacter.Statistics.Agility = _dto.Agility;
+            if (_playerCharacter != null && _playerCharacter.Statistics != null)
+            {
+                _playerCharacter.Statistics.Luck = _dto.Luck;
+                _playerCharacter.Statistics.Strength = _dto.Strength;
+                _playerCharacter.Statistics.Intelect = _dto.Intelect;
+                _playerCharacter.Statistics.Agility = _dto.Agility;
+            }
         }
 
         public void SetId()
         {
-            _playerCharacter.Id = _dto.Id;
+            if (_playerCharacter != null)
+            {
+                _playerCharacter.Id = _dto.Id;
+            }
         }
 
         public void SetUserId()
