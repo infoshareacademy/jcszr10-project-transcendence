@@ -23,7 +23,7 @@ namespace Project_T_WebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateCharacter(string characterName, int raceId, int classId, string carouselControl, string carouselControl2)
         {  
-            var character = await _playerService.CreateNewCharacterAsync(name, raceId, classId);
+            var character = await _playerService.CreateNewCharacterAsync(characterName, raceId, classId);
 
             return RedirectToAction("Map", "Home");
         }
