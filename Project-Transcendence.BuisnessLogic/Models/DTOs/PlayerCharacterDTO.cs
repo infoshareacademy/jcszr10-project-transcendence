@@ -94,11 +94,11 @@ namespace Project_Transcendence.BuisnessLogic.Models.DTOs
             result.AppendLine($"Health: {Health}/{MaxHealth}");
             result.AppendLine($"Finished Dungeon Index: {FinishedDungeonIndex}");
             result.AppendLine($"Experience: {Experience}");
-            result.AppendLine($"Main Hand Weapon: {MainHandWeapon?.Name ?? "None"}");
-            result.AppendLine($"Off Hand Weapon: {OffHandWeapon?.Name ?? "None"}");
+            result.AppendLine($"Main Hand Weapon: {MainHandWeapon.ToString() ?? "None"}");
+            result.AppendLine($"Off Hand Weapon: {OffHandWeapon.ToString() ?? "None"}");
             result.AppendLine($"Statistics: Luck={Luck}, Strength={Strength}, Intelect={Intelect}, Agility={Agility}");
-            result.AppendLine($"Inventory: {string.Join(", ", Inventory?.Select(item => item.Name) ?? Enumerable.Empty<string>())}");
-            result.AppendLine($"Jewelery: {string.Join(", ", Jewelery?.Select(item => item.Name) ?? Enumerable.Empty<string>())}");
+            result.AppendLine($"Inventory: {string.Join(", ", Inventory?.Select(item => item.ToString()) ?? Enumerable.Empty<string>())}");
+            result.AppendLine($"Jewelery: {string.Join(", ", Jewelery?.Select(item => item.ToString()) ?? Enumerable.Empty<string>())}");
             result.AppendLine($"User ID: {UserId}");
 
             return result.ToString();

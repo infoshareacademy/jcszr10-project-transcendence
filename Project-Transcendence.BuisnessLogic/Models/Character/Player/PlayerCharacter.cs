@@ -108,8 +108,8 @@ namespace Project_Transcendence.BuisnessLogic.Models.Character.Player
             result.AppendLine($"Health: {Health?.Health}/{Health?.MaxHealth}");
             result.AppendLine($"Finished Dungeon Index: {FinishedDungeonIndex}");
             result.AppendLine($"Experience: {Experience}");
-            result.AppendLine($"Main Hand Weapon: {MainHandWeapon?.Name ?? "None"}");
-            result.AppendLine($"Off Hand Weapon: {OffHandWeapon?.Name ?? "None"}");
+            result.AppendLine($"Main Hand Weapon: {MainHandWeapon?.ToString() ?? "None"}");
+            result.AppendLine($"Off Hand Weapon: {OffHandWeapon?.ToString() ?? "None"}");
             result.AppendLine($"Statistics: \n Luck = {Statistics?.Luck}\n Strength = {Statistics?.Strength}\n Intelect = {Statistics?.Intelect}\n Agility = {Statistics?.Agility}");
             result.AppendLine($"Inventory: {string.Join(", ", Inventory?.Select(item => item.Name) ?? Enumerable.Empty<string>())}");
             result.AppendLine($"Jewelery: {string.Join(", ", Jewelery?.Select(item => item.Name) ?? Enumerable.Empty<string>())}");

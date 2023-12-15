@@ -46,7 +46,7 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
 
         public void SetEquipedJewelery()
         {
-            _playerCharacter.Jewelery = null;
+            _playerCharacter.Jewelery = _dto.Jewelery;
         }
 
         public void SetExpirience()
@@ -70,7 +70,7 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
 
         public void SetInventory()
         {
-            _playerCharacter.Inventory = null;
+            _playerCharacter.Inventory = _dto.Inventory;
         }
 
         public void SetLevel()
