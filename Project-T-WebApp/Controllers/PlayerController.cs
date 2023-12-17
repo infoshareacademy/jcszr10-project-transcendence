@@ -17,7 +17,6 @@ namespace Project_T_WebApp.Controllers
         }
 
 
-        //[HttpGet]
         public IActionResult CreateCharacter()
         {
             return View();

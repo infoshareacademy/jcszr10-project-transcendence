@@ -59,8 +59,8 @@ namespace Project_Transcendence_Database.DataAccess
             {
                 new Item { Id = 1, Name = "Zwykły stalowy miecz", Description = "Zwykły miecz, widać na nim ślady użytkowania ale ogólnie jest w dobrej kondycji", Damage = 10, ItemType = EnumTypes.ItemType.Weapon },
                 new Item { Id = 2, Name = "Zwykły stalowy sztylet", Description = "Zwykły miecz, widać na nim ślady użytkowania ale ogólnie jest w dobrej kondycji", Damage = 7, ItemType = EnumTypes.ItemType.Weapon },
-                new Item { Id = 3, Name = "Zwykłe rękawice mnicha bojowego", Description = "Zwykły miecz, widać na nim ślady użytkowania ale ogólnie jest w dobrej kondycji", Damage = 5, ItemType = EnumTypes.ItemType.Weapon},
-                new Item { Id = 4, Name = "Zwykły dębowy kostur", Description = "Zwykły miecz, widać na nim ślady użytkowania ale ogólnie jest w dobrej kondycji", Damage = 5, ItemType = EnumTypes.ItemType.Weapon },
+                new Item { Id = 3, Name = "Zwykłe rękawice mnicha bojowego", Description = "Zwykłe rękawice skórzane ze wzmocnieniem, widać na nim ślady użytkowania ale ogólnie jest w dobrej kondycji", Damage = 5, ItemType = EnumTypes.ItemType.Weapon},
+                new Item { Id = 4, Name = "Zwykły dębowy kostur", Description = "Zwykły dębowy kostur, widać na nim ślady użytkowania ale ogólnie jest w dobrej kondycji", Damage = 5, ItemType = EnumTypes.ItemType.Weapon },
                 new Item { Id = 5, Name = "Zwykły pierścień szczęścia", Description = "Srebrny pierścień zaklęty przez kowala tak by zwiększał sczęście o 1", ItemType = EnumTypes.ItemType.Jewelery, Luck = 2 },
                 new Item { Id = 6, Name = "Zwykły pierścień zręczności", Description = "Srebrny pierścień zaklęty przez kowala tak by zwiększał zręczność o 1", ItemType = EnumTypes.ItemType.Jewelery, Agility = 2 },
                 new Item { Id = 7, Name = "Zwykły pierścień siły", Description = "Srebrny pierścień zaklęty przez kowala tak by zwiększał siłę o 1", ItemType = EnumTypes.ItemType.Jewelery, Strength = 2 },
@@ -101,33 +101,33 @@ namespace Project_Transcendence_Database.DataAccess
             var abilityList = new List<Ability>
             {
                     //Monk abilities
-                 new Ability { Id = 1, Name = "Umiejętność 1", Description = "Opis umiejętności mnicha 1", Damage = 10, Healing = 0, ResourceCost = 2, ClassType = AbilityType.Monk, CharacterClassId = 1 },
-                 new Ability { Id = 2, Name = "Umiejętność 2", Description = "Opis umiejętności mnicha 2", Damage = 15, Healing = 0, ResourceCost = 1, ClassType = AbilityType.Monk, CharacterClassId = 1 },
-                 new Ability { Id = 3, Name = "Umiejętność 3", Description = "Opis umiejętności mnicha 3", Damage = 15, Healing = 0, ResourceCost = 1, ClassType = AbilityType.Monk, CharacterClassId = 1 },
-                 new Ability { Id = 4, Name = "Umiejętność 4", Description = "Opis umiejętności mnicha 4", Damage = 15, Healing = 0, ResourceCost = 1, ClassType = AbilityType.Monk, CharacterClassId = 1 },
+                 new Ability { Id = 1, Name = "Uderzenie Krytyczne", Description = "Precyzyjne uderzenie w krytyczny punkt przeciwnika", Damage = 10, Healing = 0, ResourceCost = 2, ClassType = AbilityType.Monk, CharacterClassId = 1 },
+                 new Ability { Id = 2, Name = "Pięść Ognistej Siły", Description = "Skupia energię w swojej pięści, zadając obrażenia ogniowe podczas uderzenia.", Damage = 15, Healing = 0, ResourceCost = 1, ClassType = AbilityType.Monk, CharacterClassId = 1 },
+                 new Ability { Id = 3, Name = "Promień Czystego Chi", Description = "Promień energii chi, zadający obrażenia energetyczne.", Damage = 15, Healing = 0, ResourceCost = 1, ClassType = AbilityType.Monk, CharacterClassId = 1 },
+                 new Ability { Id = 4, Name = "Uderzenie Tornado", Description = "Mnich wiruje wokół siebie, zadając obrażenia wszystkim przeciwnikom w zasięgu.", Damage = 15, Healing = 0, ResourceCost = 1, ClassType = AbilityType.Monk, CharacterClassId = 1 },
                     //Wizard abilities
-                 new Ability { Id = 5, Name = "Umiejętność 1", Description = "Opis umiejętności czarodzieja 1", Damage = 10, Healing = 0, ResourceCost = 2, ClassType = AbilityType.Wizard, CharacterClassId = 2 },
-                 new Ability { Id = 6, Name = "Umiejętność 2", Description = "Opis umiejętności czarodzieja 2", Damage = 15, Healing = 0, ResourceCost = 1, ClassType = AbilityType.Wizard, CharacterClassId = 2 },
-                 new Ability { Id = 7, Name = "Umiejętność 3", Description = "Opis umiejętności czarodzieja 3", Damage = 15, Healing = 0, ResourceCost = 1, ClassType = AbilityType.Wizard, CharacterClassId = 2 },
-                 new Ability { Id = 8, Name = "Umiejętność 4", Description = "Opis umiejętności czarodzieja 4", Damage = 15, Healing = 0, ResourceCost = 1, ClassType = AbilityType.Wizard, CharacterClassId = 2 },
+                 new Ability { Id = 5, Name = "Płomień Meteorytów", Description = "Opadające meteoryty, zadając obszarowe obrażenia ogniowe.", Damage = 10, Healing = 0, ResourceCost = 2, ClassType = AbilityType.Wizard, CharacterClassId = 2 },
+                 new Ability { Id = 6, Name = "Lodowy Wiatr", Description = "Strumień lodowych strzał, zadając obrażenia mrozem celowi.", Damage = 15, Healing = 0, ResourceCost = 1, ClassType = AbilityType.Wizard, CharacterClassId = 2 },
+                 new Ability { Id = 7, Name = "Kulka Energii", Description = "Kula energetyczna, która eksploduje na celu, zadając obrażenia siłą magiczną.", Damage = 15, Healing = 0, ResourceCost = 1, ClassType = AbilityType.Wizard, CharacterClassId = 2 },
+                 new Ability { Id = 8, Name = "Klątwa Płomienia", Description = "Klątwa, otaczająca przeciwnika płomieniami i zadająca obrażenia ogniowe.", Damage = 15, Healing = 0, ResourceCost = 1, ClassType = AbilityType.Wizard, CharacterClassId = 2 },
                     //Rogue abilities
-                 new Ability { Id = 9, Name = "Umiejętność 1", Description = "Opis umiejętności łotrzyka 1", Damage = 10, Healing = 0, ResourceCost = 2, ClassType = AbilityType.Rogue, CharacterClassId = 3 },
-                 new Ability { Id = 10, Name = "Umiejętność 2", Description = "Opis umiejętności łotrzyka 2", Damage = 15, Healing = 0, ResourceCost = 1, ClassType = AbilityType.Rogue, CharacterClassId = 3 },
-                 new Ability { Id = 11, Name = "Umiejętność 3", Description = "Opis umiejętności łotrzyka 3", Damage = 15, Healing = 0, ResourceCost = 1, ClassType = AbilityType.Rogue, CharacterClassId = 3 },
-                 new Ability { Id = 12, Name = "Umiejętność 4", Description = "Opis umiejętności łotrzyka 4", Damage = 15, Healing = 0, ResourceCost = 1, ClassType = AbilityType.Rogue, CharacterClassId = 3 },
+                 new Ability { Id = 9, Name = "Cios Witalny", Description = "Cios w miejsce krytyczne, zadająca dodatkowe obrażenia i osłabiająca przeciwnika", Damage = 10, Healing = 0, ResourceCost = 2, ClassType = AbilityType.Rogue, CharacterClassId = 3 },
+                 new Ability { Id = 10, Name = "Strzał Cieniem", Description = "Strzał z ukrycia, zadający obrażenia krytyczne celowi.", Damage = 15, Healing = 0, ResourceCost = 1, ClassType = AbilityType.Rogue, CharacterClassId = 3 },
+                 new Ability { Id = 11, Name = "Pułapka Ognista", Description = "Pułapka ognista, która wybucha, zadając obrażenia ogniowe w obszarze.", Damage = 15, Healing = 0, ResourceCost = 1, ClassType = AbilityType.Rogue, CharacterClassId = 3 },
+                 new Ability { Id = 12, Name = "Szybki Atak Sztyletem", Description = "Seria szybkich ciosów sztyletem, zadająca obrażenia fizyczne.", Damage = 15, Healing = 0, ResourceCost = 1, ClassType = AbilityType.Rogue, CharacterClassId = 3 },
                     // Warrior abilities
-                 new Ability { Id = 13, Name = "Umiejętność 1", Description = "Opis umiejętności wojownika 1", Damage = 10, Healing = 0, ResourceCost = 2, ClassType = AbilityType.Warrior, CharacterClassId = 4 },
-                 new Ability { Id = 14, Name = "Umiejętność 2", Description = "Opis umiejętności wojownika 2", Damage = 15, Healing = 0, ResourceCost = 1, ClassType = AbilityType.Warrior, CharacterClassId = 4 },
-                 new Ability { Id = 15, Name = "Umiejętność 3", Description = "Opis umiejętności wojownika 3", Damage = 15, Healing = 0, ResourceCost = 1, ClassType = AbilityType.Warrior, CharacterClassId = 4 },
-                 new Ability { Id = 16, Name = "Umiejętność 4", Description = "Opis umiejętności wojownika 4", Damage = 15, Healing = 0, ResourceCost = 1, ClassType = AbilityType.Warrior, CharacterClassId = 4 }
+                 new Ability { Id = 13, Name = "Miażdżące Pchnięcie", Description = "Potężne pchnięcie, przebijające pancerze przeciwnika i zadające duże obrażenia.", Damage = 10, Healing = 0, ResourceCost = 2, ClassType = AbilityType.Warrior, CharacterClassId = 4 },
+                 new Ability { Id = 14, Name = "Tarcza Błyskawic", Description = "Uderzenie w ziemię tarczą, wywołując pioruny, które zadają obrażenia elektryczne w obszarze.", Damage = 15, Healing = 0, ResourceCost = 1, ClassType = AbilityType.Warrior, CharacterClassId = 4 },
+                 new Ability { Id = 15, Name = "Rozpryskujący Cios", Description = "Cios, który rozbryzguje kwas, zadając obrażenia trujące celowi.", Damage = 15, Healing = 0, ResourceCost = 1, ClassType = AbilityType.Warrior, CharacterClassId = 4 },
+                 new Ability { Id = 16, Name = "Obrót Młotem", Description = "OWojownik kręci się wokół siebie, uderzając młotem i zadając obrażenia obszarowe.", Damage = 15, Healing = 0, ResourceCost = 1, ClassType = AbilityType.Warrior, CharacterClassId = 4 }
             };
 
             var classList = new List<CharacterClass>
             {
                 new CharacterClass { Id = 1, Name = "Mnich", Description = "Mnich to duchowy wojownik, mistrz w sztukach walki opartych na medytacji i kontroli nad energią życiową", ResourceId = 4},
-                new CharacterClass { Id = 2, Name = "Czarodziej", Description = "Mnich to duchowy wojownik, mistrz w sztukach walki opartych na medytacji i kontroli nad energią życiową", ResourceId = 3},
-                new CharacterClass { Id = 3, Name = "Łotrzyk", Description = "Mnich to duchowy wojownik, mistrz w sztukach walki opartych na medytacji i kontroli nad energią życiową", ResourceId = 1},
-                new CharacterClass { Id = 4, Name = "Wojownik", Description = "Mnich to duchowy wojownik, mistrz w sztukach walki opartych na medytacji i kontroli nad energią życiową", ResourceId = 2}
+                new CharacterClass { Id = 2, Name = "Czarodziej", Description = "Posiadacz wiedzy magicznej, potrafiący rzucać zaklęcia ofensywne, kontrolować żywioły i manipulować rzeczywistością za pomocą magii.", ResourceId = 3},
+                new CharacterClass { Id = 3, Name = "Łotrzyk", Description = "Sprawny i zręczny, specjalizujący się w skradaniu się, unikaniu pułapek oraz zadawaniu celnych ciosów krytycznych wrogom.", ResourceId = 1},
+                new CharacterClass { Id = 4, Name = "Wojownik", Description = "Doświadczony w walce wojownik, posługujący się różnymi rodzajami broni, zdolny do zadawania potężnych obrażeń fizycznych i prowadzenia frontu walki.", ResourceId = 2}
             };
 
             var inventoryList = new List<Inventory>

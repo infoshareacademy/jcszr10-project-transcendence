@@ -4,10 +4,14 @@
 <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
     <div class="image-container fight-panel">
         <img src="~/images/fight-panel.png" />
-    <img class="fight-btn health-enemy" src="~/images/life.png" />
-        <img class="fight-btn enemy" src="~/images/orc.png" />
-    <img class="fight-btn health-player" src="~/images/life.png" />
+    <img class="fight-btn health-enemy" src="~/images/heart_empty.png" />
+    <span class="enemy-health-text">100</span>
+    <a class="enemy-attack-btn" href="#"><img class="fight-btn enemy-attack" src="~/images/enemy-attack.png" /></a>
+    <img class="fight-btn enemy" src="~/images/orc.png" /> 
+    <img class="fight-btn health-player" src="~/images/heart_empty.png" />
+    <span class="player-health-text">100</span>
     <img class="fight-btn player-hero" src="~/images/czarodziej.png" />
+
 </div>
 <div class="fight-btn circle">
 <nav class='menu'>
@@ -15,23 +19,67 @@
     <label for='menu-toggler'></label>
     <ul>
         <li class='menu-item'>
-            <a href='ability' ><img src="~/images/potka.png" /></a>
+            <a><img src="~/images/potka.png" /></a>
         </li>
         <li class='menu-item'>
-                <a href='ability1'><img src="~/images/spell1.png" /></a>
+                <a><img src="~/images/spell1.png" /></a>
         </li>
         <li class='menu-item'>
-                <a href='ability2'><img src="~/images/spell2.png" /></a>
+                <a><img src="~/images/spell2.png" /></a>
         </li>
         <li class='menu-item'>
-                <a href='ability3'><img src="~/images/spell3.png" /></a>
+                <a><img src="~/images/spell3.png" /></a>
         </li>
         <li class='menu-item'>
-                <a href='weapon'><img src="~/images/sword.png" /></a>
+                <a><img src="~/images/sword.png" /></a>
         </li>
         <li class='menu-item'>
-                <a href='weapon1'><img src="~/images/bow.png" /></a>
+                <a><img src="~/images/bow.png" /></a>
         </li>
     </ul>
 </nav>
+
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Pobierz elementy, które będą podlegać interakcji
+        const healthTextEnemy = document.querySelector('.enemy-health-text');
+        const healthTextPlayer = document.querySelector('.player-health-text');
+
+        // Pobierz wszystkie elementy
+        const menuItems = document.querySelectorAll('.menu-item');
+        const enemyAttack = document.querySelector('.enemy-attack-btn');
+
+      
+        menuItems.forEach(function (menuItem) {
+            menuItem.addEventListener('click', function () {
+             
+                let currentHealthEnemy = parseInt(healthTextEnemy.textContent);
+
+                currentHealthEnemy -= 10;
+                currentHealthEnemy = Math.max(currentHealthEnemy, 0);
+
+                healthTextEnemy.textContent = currentHealthEnemy;
+
+                if (currentHealthEnemy === 0) {
+                    window.location.href = '@Url.Action("Win", "Home")';
+                }
+            });
+        });
+
+      
+        enemyAttack.addEventListener('click', function () {
+            let currentHealthPlayer = parseInt(healthTextPlayer.textContent);
+
+            currentHealthPlayer -= 10;
+            currentHealthPlayer = Math.max(currentHealthPlayer, 0);
+
+            healthTextPlayer.textContent = currentHealthPlayer;
+
+            if (currentHealthPlayer === 0) {
+                window.location.href = '@Url.Action("Defeat", "Home")';
+            }
+        });
+    });
+</script>

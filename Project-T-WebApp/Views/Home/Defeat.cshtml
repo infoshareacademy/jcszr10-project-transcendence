@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Defeat";
+}
+<link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+<div class="defeat-container">
+    <img src="/images/druid_elf.png" alt="Character Image" id="characterImage">
+    <div class="defeat-overlay">
+        <h1>Przegrana!</h1>
+    </div>
+</div>
+
+<div class="shooting-star">*</div>
+<div class="shooting-star">*</div>
+<div class="shooting-star">*</div>
+<div class="shooting-star">*</div>
+<div class="shooting-star">*</div>
+<a class="menu-btn btn-f-1" href="@Url.Action("Fight", "Home")">Ponów</a>
+<a class="menu-btn btn-f-2" href="@Url.Action("Menu", "Home")">Wyjście</a>
+<script>
+
+document.addEventListener('DOMContentLoaded', function () {
+    const characterImage = document.getElementById('characterImage');
+    const defeatOverlay = document.querySelector('.defeat-overlay');
+
+    setTimeout(() => {
+        characterImage.classList.add('animateDefeat');
+        defeatOverlay.style.opacity = '1';
+        defeatOverlay.classList.add('animateDefeat');
+    }, 1000); 
+
+    characterImage.addEventListener('animationendDefeat', function () {
+        defeatOverlay.innerHTML = 'Przegrana!';
+    });
+});
+
+</script>
