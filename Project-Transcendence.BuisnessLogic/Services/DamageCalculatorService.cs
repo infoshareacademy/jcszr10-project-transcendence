@@ -7,7 +7,7 @@ namespace Project_Transcendence.BuisnessLogic.Services
 {
     public class DamageCalculatorService : IDamageCalculatorService
     {
-        public int? CalculateDamage(PlayerCharacter attacker, Enemy defender, ICharacterAction action, Ability ability = null)
+        public int? CalculateDamage(PlayerCharacter attacker, EnemyCharacter defender, ICharacterAction action, Ability ability = null)
         {
             return action switch
             {
@@ -17,14 +17,14 @@ namespace Project_Transcendence.BuisnessLogic.Services
             };
         }
 
-        private int CalculatePhysicalDamage(PlayerCharacter attacker, Enemy defender)
+        private int CalculatePhysicalDamage(PlayerCharacter attacker, EnemyCharacter defender)
         {
             int? weaponDamage = attacker.MainHandWeapon.Damage + attacker.OffHandWeapon.Damage;
             int? damage = weaponDamage + attacker.Statistics.Strength;
             return damage ?? 0;
         }
 
-        private int CalculateMagicalDamage(PlayerCharacter attacker, Enemy defender, Ability ability)
+        private int CalculateMagicalDamage(PlayerCharacter attacker, EnemyCharacter defender, Ability ability)
         {
             int? damage = ability.Damage + attacker.Statistics.Intelect;
             return damage ?? 0;

@@ -19,6 +19,9 @@ namespace Project_Transcendence.BuisnessLogic.Models.Character.Player
         public List<Perks.Items.Item> Inventory { get; set; }
         public List<Perks.Items.Item> Jewelery { get; set; }
         public int UserId { get; set; }
+        public List<ICharacterAction> AvailableActions { get; set; }
+
+
 
         public PlayerCharacterDTO ConvertToDto()
         {
@@ -85,17 +88,17 @@ namespace Project_Transcendence.BuisnessLogic.Models.Character.Player
 
 
         private List<ItemDto> ItemDtos(List<Perks.Items.Item> items)
+        {
+            var result = new List<ItemDto>();
+
+            foreach (var item1 in items)
             {
-                var result = new List<ItemDto>();
-
-                foreach (var item1 in items)
-                {
-                    var x = item1 as Perks.Items.Item;
-                    result.Add(x.ConvertToDto());
-                }
-
-                return result;
+                var x = item1 as Perks.Items.Item;
+                result.Add(x.ConvertToDto());
             }
+
+            return result;
+        }
 
         public override string ToString()
         {
@@ -116,6 +119,16 @@ namespace Project_Transcendence.BuisnessLogic.Models.Character.Player
             result.AppendLine($"User ID: {UserId}");
 
             return result.ToString();
+        }
+
+        public void LevelUp()
+        {
+            Level++;
+            Health.MaxHealth += 10;
+            Statistics.Luck += 1;
+            Statistics.Strength += 5;
+            Statistics.Intelect += 5;
+            Statistics.Agility += 5;
         }
 
     }

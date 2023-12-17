@@ -39,6 +39,7 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
             _characterBuilder.SetEquipedJewelery();
             _characterBuilder.SetStatisticManager();
             _characterBuilder.SetUserId();
+            _characterBuilder.SetPlayerActions();
         }
 
         public void ConstructEnemy()
