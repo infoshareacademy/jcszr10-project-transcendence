@@ -19,15 +19,13 @@
         const characterImage = document.getElementById('characterImage');
         const levelUpOverlay = document.querySelector('.level-up-overlay');
 
-        // Dodaj klasę animate po załadowaniu strony
         setTimeout(() => {
             characterImage.classList.add('animate');
             levelUpOverlay.style.opacity = '1';
-        }, 1000); // Poczekaj 1 sekundę przed rozpoczęciem animacji
+        }, 1000); 
 
-        // Po zakończeniu animacji, wykonaj dodatkowe kroki (np. powiększenie)
         characterImage.addEventListener('animationend', function () {
-            // Dodaj dodatkowe kroki animacji tutaj
+          
             levelUpOverlay.innerHTML = 'Wygrana!';
         });
     });
