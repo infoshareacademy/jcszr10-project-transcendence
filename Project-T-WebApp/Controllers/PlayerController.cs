@@ -31,20 +31,6 @@ namespace Project_T_WebApp.Controllers
             return RedirectToAction("Map", "Home");
         }
 
-        [HttpGet("GetAvailableActions")]
-        public IActionResult GetAvailableActions(int playerId)
-        {
-            PlayerCharacter player; // Pobierz gracza na podstawie playerId
-            var actions = player.AvailableActions;
-            return Ok(actions.Select(a => new { a.Id, a.Name }));
-        }
-
-        [HttpPost("PerformAction")]
-        public IActionResult PerformAction(int playerId, int actionId)
-        {
-            // Logika wykonania akcji
-        }
-
         private int GetClassIdFromClassButton(string classButton)
         {
             classButton = Request.Form["carousel-control"];

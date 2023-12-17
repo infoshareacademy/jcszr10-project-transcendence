@@ -47,13 +47,6 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
 
         public void SetEquipedJewelery()
         {
-
-            /*
-                var characterBuilder = new PlayerCharacterBuilder(playerCharacterDTO);
-                var director = new Director(characterBuilder);
-                director.ConstructPlayerCharacter();
-                PlayerCharacter player = characterBuilder.Build();
-            */
             var jeweleryList = new List<Item>();
             foreach (var item in _dto.Jewelery)
             {
@@ -63,8 +56,6 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
                 Item jewelery = itemBuilder.Build();
                 jeweleryList.Add(jewelery);
             }
-
-
 
             _playerCharacter.Jewelery = jeweleryList;
         }
@@ -101,7 +92,6 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
                 inventoriItemList.Add(jewelery);
             }
 
-
             _playerCharacter.Inventory = inventoriItemList;
         }
 
@@ -112,8 +102,6 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
 
         public void SetMainHandWeapon()
         {
-
-
             var itemBuilder = new ItemBuilder(_dto.MainHandWeapon);
             var director = new Director(itemBuilder);
             director.ConstructWeapon();
@@ -161,5 +149,11 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
         {
             _playerCharacter.UserId = _dto.UserId;
         }
+
+        public void SetPlayerActions()
+        {
+            _playerCharacter.AvailableActions = new() { new AttackAction(), new CastSpellAction(), new DrinkPotionAction() };
+        }
+
     }
 }

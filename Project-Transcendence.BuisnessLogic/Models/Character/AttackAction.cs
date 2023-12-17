@@ -1,4 +1,6 @@
-﻿using Project_Transcendence.BuisnessLogic.Services;
+﻿using Project_Transcendence.BuisnessLogic.Models.Character.Enemy;
+using Project_Transcendence.BuisnessLogic.Models.Character.Player;
+using Project_Transcendence.BuisnessLogic.Services;
 
 namespace Project_Transcendence.BuisnessLogic.Models.Character
 {
@@ -21,6 +23,9 @@ namespace Project_Transcendence.BuisnessLogic.Models.Character
         public void Execute(IBasicCharacter performer, IBasicCharacter target)
         {
             // Logika ataku, wykorzystując _damageCalculatorService
+
+            target.Health.DecreaseHealth(_damageCalculatorService.CalculateDamage(performer as PlayerCharacter, target as EnemyCharacter , new AttackAction()) ?? 1);
+
         }
     }
 }

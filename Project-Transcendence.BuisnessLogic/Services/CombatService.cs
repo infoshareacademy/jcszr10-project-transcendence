@@ -7,7 +7,6 @@ namespace Project_Transcendence.BuisnessLogic.Services
 {
     public class CombatService : ICombatService
     {
-     
         private IActionDirector _actionDirector;
         private IActionService _actionService;
 
@@ -27,9 +26,7 @@ namespace Project_Transcendence.BuisnessLogic.Services
 
                 PerformTurn(enemy, player);
             }
-
             // Zakończenie walki
-
         }
 
         private void PerformTurn(IBasicCharacter performer, IBasicCharacter target)

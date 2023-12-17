@@ -18,6 +18,7 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
         public void SetHealthManager();
         public void SetStatisticManager();
         public void SetUserId();
+        public void SetPlayerActions();
 
         PlayerCharacter Build();
     }
