@@ -69,7 +69,7 @@ namespace Project_T_WebApp.Controllers
 
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Play", "Home");
+                    return RedirectToAction("Menu", "Home");
                 }
 
                 ModelState.AddModelError(string.Empty, "Invalid login attempt");
