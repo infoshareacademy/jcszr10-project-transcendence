@@ -1,16 +1,59 @@
 ﻿﻿@{
     ViewData["Title"] = "Inventory";
 }
+
+<link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+<div class="inventory-btn inventory-backpack"></div>
+
+<div class="inventory-btn ivtr-item">
+    <table class="image-table">
+        <tr>
+            <td><a data-tooltip="Elektryzujące strzały z błyszczącym łukiem." class="image-link"><img src="~/images/bow.png" class="image" /></a></td>
+            <td><a data-tooltip="Mroczny miecz, pozostawiający poparzenia" class="image-link"><img src="~/images/sword.png" class="image" /></a></td>
+            <td><a data-tooltip="Karmazynowy eliksir, zadający obrażenia płomieniami." class="image-link"><img src="~/images/potka.png" class="image" /></a></td>
+
+        </tr>
+        <tr>
+            <td><a data-tooltip="Zaklęcie Chaosowego Pioruna: Rozszczepia powietrze błyskawicami, zadając obrażenia." class="image-link"><img src="~/images/spell1.png" class="image" /></a></td>
+            <td><a data-tooltip="Zaklęcie Lodowej Lanii: Tworzy lodową strzałę, zamrażając wroga." class="image-link"><img src="~/images/spell2.png" class="image" /></a></td>
+            <td><a data-tooltip="Zaklęcie Płomiennej Eksplozji: Nagła erupcja ognia wokół, zadająca obrażenia ogniowe." class="image-link"><img src="~/images/spell3.png" class="image" /></a></td>
+
+        </tr>
+        <tr>
+            <td><a data-tooltip="Pusty slot" class="image-link"><img src="~/images/x.png" class="image" /></a></td>
+            <td><a data-tooltip="Pusty slot" class="image-link"><img src="~/images/x.png" class="image" /></a></td>
+            <td><a data-tooltip="Pusty slot" class="image-link"><img src="~/images/x.png" class="image" /></a></td>
+
+        </tr>
+        <tr>
+            <td><a data-tooltip="Pusty slot" class="image-link"><img src="~/images/x.png" class="image" /></a></td>
+            <td><a data-tooltip="Pusty slot" class="image-link"><img src="~/images/x.png" class="image" /></a></td>
+            <td><a data-tooltip="Pusty slot" class="image-link"><img src="~/images/x.png" class="image" /></a></td>
+
+        </tr>
+    </table>
+</div>
+<button><img src="~/images/arrows.png" class="inventory-btn arrows" /></button>
+<div class="inventory-btn inventory-character">
+    <img src="@ViewBag.SelectedImagePath" />
+    <div class="inventory-btn equiped-common equiped-1"></div>
+    <div class="inventory-btn equiped-common equiped-2"></div>
+    <div class="inventory-btn equiped-common equiped-3"></div>
+    <div class="inventory-btn equiped-common equiped-4"></div>
+    <div class="inventory-btn equiped-common equiped-5"></div>
+    <div class="inventory-btn equiped-common equiped-6"></div>
+</div>
+<a class="menu-btn btn-ivtr" href="@Url.Action("Map", "Home")">Powrót</a>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var arrowsButton = document.querySelector('.arrows');
         var equipedDivs = document.querySelectorAll('.inventory-btn.inventory-character .inventory-btn');
         var imageLinks = document.querySelectorAll('.ivtr-item a.image-link');
 
-       
+
         imageLinks.forEach(function (link, index) {
             link.addEventListener('click', function () {
-              
+
                 imageLinks.forEach(function (link) {
                     link.classList.remove('active');
                 });
@@ -23,7 +66,7 @@
             var activeImage = document.querySelector('.ivtr-item a.image-link.active img');
 
             if (activeImage) {
-               
+
                 var firstEmptySlot = Array.from(equipedDivs).findIndex(function (div) {
                     return !div.hasChildNodes();
                 });
@@ -64,59 +107,14 @@
 
         equipedDivs.forEach(function (div) {
             div.addEventListener('click', function () {
-               
+
                 equipedDivs.forEach(function (div) {
                     div.classList.remove('active');
                 });
 
-              
+
                 div.classList.add('active');
             });
         });
     });
 </script>
-
-
-
-
-<link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
-<div class="inventory-btn inventory-backpack"></div>
-
-<div class="inventory-btn ivtr-item">
-    <table class="image-table">
-        <tr>
-            <td><a data-tooltip="opis zaklęcia 1" class="image-link"><img src="~/images/bow.png" class="image" /></a></td>
-            <td><a data-tooltip="opis zaklecia 2" class="image-link"><img src="~/images/sword.png" class="image" /></a></td>
-            <td><a data-tooltip="opis zaklecia 2" class="image-link"><img src="~/images/potka.png" class="image" /></a></td>
-
-        </tr>
-        <tr>
-            <td><a data-tooltip="opis zaklęcia 3" class="image-link"><img src="~/images/spell1.png" class="image" /></a></td>
-            <td><a data-tooltip="opis potki" class="image-link"><img src="~/images/spell2.png" class="image" /></a></td>
-            <td><a data-tooltip="opis zaklecia 2" class="image-link"><img src="~/images/spell3.png" class="image" /></a></td>
-
-        </tr>
-        <tr>
-            <td><a data-tooltip="opis miecza" class="image-link"><img src="~/images/x.png" class="image" /></a></td>
-            <td><a data-tooltip="opis łuku" class="image-link"><img src="~/images/x.png" class="image" /></a></td>
-            <td><a data-tooltip="opis zaklecia 2" class="image-link"><img src="~/images/x.png" class="image" /></a></td>
-
-        </tr>
-        <tr>
-            <td><a data-tooltip="opis miecza" class="image-link"><img src="~/images/x.png" class="image" /></a></td>
-            <td><a data-tooltip="opis łuku" class="image-link"><img src="~/images/x.png" class="image" /></a></td>
-            <td><a data-tooltip="opis zaklecia 2" class="image-link"><img src="~/images/x.png" class="image" /></a></td>
-
-        </tr>
-    </table>
-</div>
-<button><img src="~/images/arrows.png" class="inventory-btn arrows" /></button>
-<div class="inventory-btn inventory-character">
-    <div class="inventory-btn equiped-common equiped-1"></div>
-    <div class="inventory-btn equiped-common equiped-2"></div>
-    <div class="inventory-btn equiped-common equiped-3"></div>
-    <div class="inventory-btn equiped-common equiped-4"></div>
-    <div class="inventory-btn equiped-common equiped-5"></div>
-    <div class="inventory-btn equiped-common equiped-6"></div>
-</div>
-<a class="menu-btn btn-ivtr" href="@Url.Action("Map", "Home")">Powrót</a>

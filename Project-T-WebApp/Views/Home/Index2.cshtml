@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Index2";
+}
+<link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+
+    <div class="container-xxl">
+        <header class="welcome">
+            <h2 class="hero-name">PROJECT TRANSCENDENCE</h2>
+
+            <p class="hero-text">
+                Przeżyj przygodę godną obrońcy świata i poszukiwacza przygód. Stwórz swoją postać już teraz, aby rozpocząć pokonywanie wrogów i rozwiązywanie zagadek. Przejdź przez wszystkie lochy!
+            </p>
+
+            <div class="hero-buttons">
+                <a class="hero-btn" href="@Url.Action("Login", "Identity")">Logowanie</a>
+                <a class="hero-btn" href="@Url.Action("Register", "Identity")">Rejestracja</a>
+            </div>
+        </header>
+    </div>
+

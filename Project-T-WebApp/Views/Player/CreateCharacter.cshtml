@@ -2,77 +2,158 @@
     ViewData["Title"] = "Create Character";
 }
 <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+@{
+    ViewData["Title"] = "Create Character";
+}
+
+<link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+
 <div class="createCharacterMenu">
-    <h1 style="color: white;"> Stwórz swoją postać!</h1>
-    <form method="post" action="@Url.Action("CreateCharacter", "Player")" />
-    <div class="form-floating mt-3 mb-3 col-5">
-        <input type="text" name="characterName" class="form-control" id="floatingInputCharacterName" placeholder="characterName" required autofocus>
-        <label for="floatingInputCharacterName">Imię postaci</label>
-    </div>
+    <h1 style="color: white;">Stwórz swoją postać!</h1>
 
-    <div id="container">
-        <input hidden type="radio" name="carousel-control" id="button_a" checked />
-        <input hidden type="radio" name="carousel-control" id="button_b" />
-        <input hidden type="radio" name="carousel-control" id="button_c" />
-        <input hidden type="radio" name="carousel-control" id="button_d" />
-        <input hidden type="radio" name="carousel-control-2" id="button_f" checked />
-        <input hidden type="radio" name="carousel-control-2" id="button_g" />
-        <input hidden type="radio" name="carousel-control-2" id="button_h" />
-        <input hidden type="radio" name="carousel-control-2" id="button_i" />
-
-        <div id="carousel-create">
-            <div class="p-wrapper">
-
-                <section class="panel_a">
-
-                    <div class="classImageCreate">
-                        <img src="" />
-                    </div>
-
-                </section>
-
-                <section class="panel_b">
-
-                    <div class="classImageCreate">
-                        <img src="" />
-                    </div>
-                </section>
-
-                <section class="panel_c">
-                    <div class="classImageCreate">
-                        <img src="" />
-                    </div>
-                </section>
-
-                <section class="panel_d">
-                    <div class="classImageCreate">
-                        <img src="" />
-                    </div>
-                </section>
-
-            </div> 
-        </div> 
-
-
-        <div id="navigation">
-            <h3 style="color: white;">Wybierz klasę</h3>
-            <label for="button_a" class="label_a"> <span>Mnich</span> </label>
-            <label for="button_b" class="label_b"> <span>Czarodziej</span> </label>
-            <label for="button_c" class="label_c"> <span>Druid</span> </label>
-            <label for="button_d" class="label_d"> <span>Wojownik</span> </label>
-
+    <form method="post" action="@Url.Action("CreateCharacter", "Player")">
+        <div class="form-floating mt-3 mb-3 col-5">
+            <input type="text" name="characterName" class="form-control" id="floatingInputCharacterName" placeholder="characterName" required autofocus>
+            <label for="floatingInputCharacterName">Imię postaci</label>
         </div>
 
-        <div id="navigation-races">
-            <h3 style="color: white;">Wybierz rasę</h3>
-            <label for="button_f" class="label_f"> <span>Człowiek</span> </label>
-            <label for="button_g" class="label_g"> <span>Aasimar</span> </label>
-            <label for="button_h" class="label_h"> <span>Krasnolud</span> </label>
-            <label for="button_i" class="label_i"> <span>Elf</span> </label>
+        <div id="container">
+            <input hidden type="radio" name="carousel-control" id="button_a" checked />
+            <input hidden type="radio" name="carousel-control" id="button_b" />
+            <input hidden type="radio" name="carousel-control" id="button_c" />
+            <input hidden type="radio" name="carousel-control" id="button_d" />
+
+            <input hidden type="radio" name="carousel-control-2" id="button_f" checked />
+            <input hidden type="radio" name="carousel-control-2" id="button_g" />
+            <input hidden type="radio" name="carousel-control-2" id="button_h" />
+            <input hidden type="radio" name="carousel-control-2" id="button_i" />
+
+            <div id="carousel-create">
+                <div class="p-wrapper">
+                    <section class="panel_a">
+                        <div class="classImageCreate">
+                            <img id="selectedImage" src="" />
+                        </div>
+                    </section>
+
+                    <section class="panel_b">
+                        <div class="classImageCreate">
+                            <img src="" />
+                        </div>
+                    </section>
+
+                    <section class="panel_c">
+                        <div class="classImageCreate">
+                            <img src="" />
+                        </div>
+                    </section>
+
+                    <section class="panel_d">
+                        <div class="classImageCreate">
+                            <img src="" />
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <div id="navigation">
+                <h3 style="color: white;">Wybierz klasę</h3>
+                <label for="button_a" class="label_a"> <span>Mnich</span> </label>
+                <label for="button_b" class="label_b"> <span>Czarodziej</span> </label>
+                <label for="button_c" class="label_c"> <span>Druid</span> </label>
+                <label for="button_d" class="label_d"> <span>Wojownik</span> </label>
+            </div>
+
+            <div id="navigation-races">
+                <h3 style="color: white;">Wybierz rasę</h3>
+                <label for="button_f" class="label_f"> <span>Człowiek</span> </label>
+                <label for="button_g" class="label_g"> <span>Aasimar</span> </label>
+                <label for="button_h" class="label_h"> <span>Krasnolud</span> </label>
+                <label for="button_i" class="label_i"> <span>Elf</span> </label>
+            </div>
+
+            <button type="submit" class="menu-btn btn-q-3"><span>Zaczynajmy!</span></button>
         </div>
-        <button type="submit" class="menu-btn btn-q-3"><span>Zaczynajmy!</span></button>
-    </div>
+    </form>
 
+    <!-- Skrypty JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var selectedImage = document.getElementById('selectedImage');
 
+            // Funkcja do aktualizacji obrazka na podstawie zaznaczonych opcji
+            function updateSelectedImage() {
+                var classButton = document.querySelector('input[name="carousel-control"]:checked');
+                var raceButton = document.querySelector('input[name="carousel-control-2"]:checked');
 
-</div>
+                // Pobierz wartości zaznaczonych przycisków
+                var classButtonValue = classButton ? classButton.id : null;
+                var raceButtonValue = raceButton ? raceButton.id : null;
+
+                // Ustal ścieżkę obrazu w zależności od zaznaczonych opcji
+                var imagePath = getImagePath(classButtonValue, raceButtonValue);
+
+                selectedImage.src = imagePath;
+
+                // Wyślij ścieżkę obrazu do kontrolera
+                var formData = new FormData();
+                formData.append('imagePath', imagePath);
+
+                fetch('@Url.Action("SetSelectedImagePath", "Player")', {
+                    method: 'POST',
+                    body: formData
+                });
+            }
+          
+  
+            
+
+            // Funkcja do pobrania ścieżki obrazu na podstawie zaznaczonych opcji
+            function getImagePath(classButton, raceButton) {
+                // Dodaj odpowiednie warunki dla ścieżek obrazów
+                if (classButton === 'button_a' && raceButton === 'button_f') {
+                    return '/images/monk_human.png';
+                } else if (classButton === 'button_b' && raceButton === 'button_f') {
+                    return '/images/wizard_human.png';
+                } else if (classButton === 'button_c' && raceButton === 'button_f') {
+                    return '/images/druid_human.png';
+                } else if (classButton === 'button_d' && raceButton === 'button_f') {
+                    return '/images/warrior_human.png';
+                } else if (classButton === 'button_a' && raceButton === 'button_g') {
+                    return '/images/monk_aasimar.png';
+                } else if (classButton === 'button_b' && raceButton === 'button_g') {
+                    return '/images/wizard_aasimar.png';
+                } else if (classButton === 'button_c' && raceButton === 'button_g') {
+                    return '/images/druid_aasimar.png';
+                } else if (classButton === 'button_d' && raceButton === 'button_g') {
+                    return '/images/warrior_aasimar.png';
+                } else if (classButton === 'button_a' && raceButton === 'button_h') {
+                    return '/images/monk_dwarf.png';
+                } else if (classButton === 'button_b' && raceButton === 'button_h') {
+                    return '/images/wizard_dwarf.png';
+                } else if (classButton === 'button_c' && raceButton === 'button_h') {
+                    return '/images/druid_dwarf.png';
+                } else if (classButton === 'button_d' && raceButton === 'button_h') {
+                    return '/images/warrior_dwarf.png';
+                } else if (classButton === 'button_a' && raceButton === 'button_i') {
+                    return '/images/monk_elf.png';
+                } else if (classButton === 'button_b' && raceButton === 'button_i') {
+                    return '/images/wizard_elf.png';
+                } else if (classButton === 'button_c' && raceButton === 'button_i') {
+                    return '/images/druid_elf.png';
+                } else if (classButton === 'button_d' && raceButton === 'button_i') {
+                    return '/images/warrior_elf.png';
+                }
+                // Dodaj pozostałe warunki dla różnych klas i ras
+
+                // Domyślna ścieżka, jeśli nie pasuje żaden warunek
+                return '';
+            }
+
+            // Nasłuchuj zmiany zaznaczonych opcji
+            document.addEventListener('change', updateSelectedImage);
+
+            // Aktualizuj obraz na początku, aby odzwierciedlić początkowe zaznaczenia
+            updateSelectedImage();
+        });
+    </script>

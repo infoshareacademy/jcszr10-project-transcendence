@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Project_T_WebApp.Models;
 using Project_Transcendence_Database.DataAccess;
 using System.Diagnostics;
+using Project_Transcendence.BuisnessLogic.Services;
 
 namespace Project_T_WebApp.Controllers
 {
@@ -9,18 +11,22 @@ namespace Project_T_WebApp.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ApplicationDbContext _context;
-
+       
         public HomeController(ILogger<HomeController> logger, ApplicationDbContext dbContext)
         {
             _logger = logger;
             _context = dbContext;
+           
         }
 
         public IActionResult Index()
         {
             return View();
         }
-
+        public IActionResult Index2()
+        {
+            return View();
+        }
         public IActionResult Menu()
         {
             return View();
@@ -54,8 +60,11 @@ namespace Project_T_WebApp.Controllers
         {
             return View();
         }
+
         public IActionResult Fight()
         {
+            ViewBag.SelectedImagePath = HttpContext.Session.GetString("selectedImagePath");
+
             return View();
         }
         public IActionResult Beaten()
@@ -64,14 +73,20 @@ namespace Project_T_WebApp.Controllers
         }
         public IActionResult Inventory()
         {
+            ViewBag.SelectedImagePath = HttpContext.Session.GetString("selectedImagePath");
+
             return View();
         }
         public IActionResult Win()
         {
+            ViewBag.SelectedImagePath = HttpContext.Session.GetString("selectedImagePath");
+
             return View();
         }
         public IActionResult Defeat()
         {
+            ViewBag.SelectedImagePath = HttpContext.Session.GetString("selectedImagePath");
+
             return View();
         }
         public IActionResult ShowCharacterClassAbilities()
