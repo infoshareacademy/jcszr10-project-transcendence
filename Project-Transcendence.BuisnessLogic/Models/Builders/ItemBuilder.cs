@@ -9,6 +9,13 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
         private readonly ItemDto _itemDto;
         private readonly Item _item;
 
+        public ItemBuilder(ItemDto itemDto)
+        {
+            _itemDto = itemDto;
+            _item = new Item();
+            _item.Statistics = new(0,0,0,0);
+        }
+
         public Item Build()
         {
             return _item;
@@ -56,8 +63,5 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
             _item.Statistics.Intelect = _itemDto.Intelect;
             _item.Statistics.Strength = _itemDto.Strength;
         }
-
-
-
     }
 }

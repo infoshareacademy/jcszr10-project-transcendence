@@ -1,6 +1,7 @@
 ﻿using Project_Transcendence.BuisnessLogic.Models.Character.CharacterClasses;
 using Project_Transcendence.BuisnessLogic.Models.Perks.Items;
 using Project_Transcendence_Database.Entities;
+using System.Text;
 using static Project_Transcendence.BuisnessLogic.Globals.GlobalEnums;
 using Item = Project_Transcendence_Database.Entities.Item;
 
@@ -82,8 +83,27 @@ namespace Project_Transcendence.BuisnessLogic.Models.DTOs
             return result;
         }
 
+        public override string ToString()
+        {
+            StringBuilder result = new StringBuilder();
+            result.AppendLine($"ID: {Id}");
+            result.AppendLine($"Name: {Name}");
+            result.AppendLine($"Character Class: {CharacterClass}");
+            result.AppendLine($"Race: {Race}");
+            result.AppendLine($"Level: {Level}");
+            result.AppendLine($"Health: {Health}/{MaxHealth}");
+            result.AppendLine($"Finished Dungeon Index: {FinishedDungeonIndex}");
+            result.AppendLine($"Experience: {Experience}");
+            result.AppendLine($"Main Hand Weapon: {MainHandWeapon.ToString() ?? "None"}");
+            result.AppendLine($"Off Hand Weapon: {OffHandWeapon.ToString() ?? "None"}");
+            result.AppendLine($"Statistics: Luck={Luck}, Strength={Strength}, Intelect={Intelect}, Agility={Agility}");
+            result.AppendLine($"Inventory: {string.Join(", ", Inventory?.Select(item => item.ToString()) ?? Enumerable.Empty<string>())}");
+            result.AppendLine($"Jewelery: {string.Join(", ", Jewelery?.Select(item => item.ToString()) ?? Enumerable.Empty<string>())}");
+            result.AppendLine($"User ID: {UserId}");
+
+            return result.ToString();
+        }
 
 
-       
     }
 }

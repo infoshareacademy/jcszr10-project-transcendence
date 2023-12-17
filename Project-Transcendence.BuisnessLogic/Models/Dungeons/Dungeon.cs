@@ -10,7 +10,7 @@ namespace Project_Transcendence.BuisnessLogic.Models.Dungeons
         public string DungeonStory { get; set; }
         public DungeonType DungeonType { get; set; }
         public int DungeonLevel { get; set; }
-        public ICollection<Enemy> EnemyInDungeon { get; set; }
+        public ICollection<EnemyCharacter> EnemyInDungeon { get; set; }
         public Puzzle PuzzleToSolve { get; set; }
 
         public DungeonDto ConvertToDto() => new()

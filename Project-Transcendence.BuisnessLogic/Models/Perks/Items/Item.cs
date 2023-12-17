@@ -30,5 +30,18 @@ namespace Project_Transcendence.BuisnessLogic.Models.Perks.Items
             Intelect = this.Statistics.Intelect,
             Agility = this.Statistics.Agility
         };
+
+
+        public override string ToString()
+        {
+            return $"Id: {Id}, " +
+                   $"Name: {Name}, " +
+                   $"Description: {Description}, " +
+                   $"Damage: {Damage?.ToString() ?? "N/A"}, " +
+                   $"Armor: {Armor?.ToString() ?? "N/A"}, " +
+                   $"Healing: {Healing?.ToString() ?? "N/A"}, " +
+                   $"ItemType: {ItemType}, ";
+        }
+
     }
 }

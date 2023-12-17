@@ -6,6 +6,8 @@
 
         public int MaxHealth { get; set; }
 
+
+
         public HealthManager(int health = 100)
         {
             Health = health;
@@ -15,6 +17,18 @@
         public void IncreaseMaxHealth(int addHealth)
         {
             MaxHealth += addHealth;
+        }
+
+        public bool IsDead()
+        {
+            if (Health <= 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public void IncreaseHealth(int addHealth)
@@ -44,5 +58,7 @@
         {
             return MaxHealth;
         }
+
+       
     }
 }

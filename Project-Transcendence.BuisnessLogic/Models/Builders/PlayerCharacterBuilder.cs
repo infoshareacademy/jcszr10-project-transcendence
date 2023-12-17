@@ -1,7 +1,9 @@
-﻿using Project_Transcendence.BuisnessLogic.Models.Character.CharacterClasses;
+﻿using Project_Transcendence.BuisnessLogic.Models.Character;
+using Project_Transcendence.BuisnessLogic.Models.Character.CharacterClasses;
 using Project_Transcendence.BuisnessLogic.Models.Character.CharacterRaces;
 using Project_Transcendence.BuisnessLogic.Models.Character.Player;
 using Project_Transcendence.BuisnessLogic.Models.DTOs;
+using Project_Transcendence.BuisnessLogic.Models.Perks.Items;
 using static Project_Transcendence.BuisnessLogic.Globals.GlobalEnums;
 
 namespace Project_Transcendence.BuisnessLogic.Models.Builders
@@ -9,11 +11,13 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
     public class PlayerCharacterBuilder : ICharacterBuilder
     {
         private readonly PlayerCharacterDTO _dto;
-        private readonly PlayerCharacter _playerCharacter = null!;
+        private readonly PlayerCharacter _playerCharacter;
 
         public PlayerCharacterBuilder(PlayerCharacterDTO dto)
         {
             _dto = dto;
+            _playerCharacter = new PlayerCharacter();
+            _playerCharacter.Statistics = new StatisticsManager(0,0,0,0);
         }
 
         public PlayerCharacter Build()
@@ -43,12 +47,31 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
 
         public void SetEquipedJewelery()
         {
-            throw new NotImplementedException();
+
+            /*
+                var characterBuilder = new PlayerCharacterBuilder(playerCharacterDTO);
+                var director = new Director(characterBuilder);
+                director.ConstructPlayerCharacter();
+                PlayerCharacter player = characterBuilder.Build();
+            */
+            var jeweleryList = new List<Item>();
+            foreach (var item in _dto.Jewelery)
+            {
+                var itemBuilder = new ItemBuilder(item);
+                var director = new Director(itemBuilder);
+                director.ConstructJewelery();
+                Item jewelery = itemBuilder.Build();
+                jeweleryList.Add(jewelery);
+            }
+
+
+
+            _playerCharacter.Jewelery = jeweleryList;
         }
 
         public void SetExpirience()
         {
-            _playerCharacter.Expirience = _dto.Experience;
+            _playerCharacter.Experience = _dto.Experience;
         }
 
         public void SetFinishedDungeonIndex()
@@ -58,13 +81,28 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
 
         public void SetHealthManager()
         {
-            _playerCharacter.Health.Health = _dto.Health;
-            _playerCharacter.Health.MaxHealth = _dto.MaxHealth;
+            if (_playerCharacter != null && _playerCharacter.Health != null)
+            {
+                _playerCharacter.Health.Health = _dto.Health;
+                _playerCharacter.Health.MaxHealth = _dto.MaxHealth;
+            }
         }
 
         public void SetInventory()
         {
-            throw new NotImplementedException();
+
+            var inventoriItemList = new List<Item>();
+            foreach (var item in _dto.Inventory)
+            {
+                var itemBuilder = new ItemBuilder(item);
+                var director = new Director(itemBuilder);
+                director.ConstructJewelery();
+                Item jewelery = itemBuilder.Build();
+                inventoriItemList.Add(jewelery);
+            }
+
+
+            _playerCharacter.Inventory = inventoriItemList;
         }
 
         public void SetLevel()
@@ -74,30 +112,49 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
 
         public void SetMainHandWeapon()
         {
-            _playerCharacter.MainHandWeapon = (Perks.Items.IItem)_dto.MainHandWeapon;
+
+
+            var itemBuilder = new ItemBuilder(_dto.MainHandWeapon);
+            var director = new Director(itemBuilder);
+            director.ConstructWeapon();
+            Item weapon = itemBuilder.Build();
+            _playerCharacter.MainHandWeapon = weapon;
         }
 
         public void SetName()
         {
-            _playerCharacter.Name = _dto.Name;
+            if (_playerCharacter != null)
+            {
+                _playerCharacter.Name = _dto.Name;
+            }
         }
 
         public void SetOffHandWeapon()
         {
-            _playerCharacter.OffHandWeapon = (Perks.Items.IItem)_dto.OffHandWeapon;
+            var itemBuilder = new ItemBuilder(_dto.OffHandWeapon);
+            var director = new Director(itemBuilder);
+            director.ConstructWeapon();
+            Item weapon = itemBuilder.Build();
+            _playerCharacter.OffHandWeapon = weapon; // uzyj item buildera
         }
 
         public void SetStatisticManager()
         {
-            _playerCharacter.Statistics.Luck = _dto.Luck;
-            _playerCharacter.Statistics.Strength = _dto.Strength;
-            _playerCharacter.Statistics.Intelect = _dto.Intelect;
-            _playerCharacter.Statistics.Agility = _dto.Agility;
+            if (_playerCharacter != null && _playerCharacter.Statistics != null)
+            {
+                _playerCharacter.Statistics.Luck = _dto.Luck;
+                _playerCharacter.Statistics.Strength = _dto.Strength;
+                _playerCharacter.Statistics.Intelect = _dto.Intelect;
+                _playerCharacter.Statistics.Agility = _dto.Agility;
+            }
         }
 
         public void SetId()
         {
-            _playerCharacter.Id = _dto.Id;
+            if (_playerCharacter != null)
+            {
+                _playerCharacter.Id = _dto.Id;
+            }
         }
 
         public void SetUserId()

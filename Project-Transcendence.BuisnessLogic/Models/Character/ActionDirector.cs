@@ -1,11 +1,19 @@
-﻿
-namespace Project_Transcendence.BuisnessLogic.Models.Character
+﻿namespace Project_Transcendence.BuisnessLogic.Models.Character
 {
-    internal class ActionDirector : IActionDirector
+    public class ActionDirector : IActionDirector
     {
         public void PerformAction(IBasicCharacter performer, ICharacterAction action, IBasicCharacter target)
         {
-            throw new NotImplementedException();
+            if (action == null)
+            {
+                throw new ArgumentNullException(nameof(action), "Akcja nie może być null.");
+            }
+
+            if (performer == null || target == null)
+            {
+                throw new ArgumentNullException("Wykonawca i cel akcji nie mogą być null.");
+            }
+            action.Execute(performer, target);
         }
     }
 }
