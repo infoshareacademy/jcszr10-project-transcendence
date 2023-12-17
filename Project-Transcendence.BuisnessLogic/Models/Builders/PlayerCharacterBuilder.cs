@@ -3,6 +3,7 @@ using Project_Transcendence.BuisnessLogic.Models.Character.CharacterClasses;
 using Project_Transcendence.BuisnessLogic.Models.Character.CharacterRaces;
 using Project_Transcendence.BuisnessLogic.Models.Character.Player;
 using Project_Transcendence.BuisnessLogic.Models.DTOs;
+using Project_Transcendence.BuisnessLogic.Models.Perks.Items;
 using static Project_Transcendence.BuisnessLogic.Globals.GlobalEnums;
 
 namespace Project_Transcendence.BuisnessLogic.Models.Builders
@@ -46,7 +47,26 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
 
         public void SetEquipedJewelery()
         {
-            _playerCharacter.Jewelery = _dto.Jewelery;
+
+            /*
+                var characterBuilder = new PlayerCharacterBuilder(playerCharacterDTO);
+                var director = new Director(characterBuilder);
+                director.ConstructPlayerCharacter();
+                PlayerCharacter player = characterBuilder.Build();
+            */
+            var jeweleryList = new List<Item>();
+            foreach (var item in _dto.Jewelery)
+            {
+                var itemBuilder = new ItemBuilder(item);
+                var director = new Director(itemBuilder);
+                director.ConstructJewelery();
+                Item jewelery = itemBuilder.Build();
+                jeweleryList.Add(jewelery);
+            }
+
+
+
+            _playerCharacter.Jewelery = jeweleryList;
         }
 
         public void SetExpirience()
@@ -70,7 +90,19 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
 
         public void SetInventory()
         {
-            _playerCharacter.Inventory = _dto.Inventory;
+
+            var inventoriItemList = new List<Item>();
+            foreach (var item in _dto.Inventory)
+            {
+                var itemBuilder = new ItemBuilder(item);
+                var director = new Director(itemBuilder);
+                director.ConstructJewelery();
+                Item jewelery = itemBuilder.Build();
+                inventoriItemList.Add(jewelery);
+            }
+
+
+            _playerCharacter.Inventory = inventoriItemList;
         }
 
         public void SetLevel()
@@ -80,7 +112,13 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
 
         public void SetMainHandWeapon()
         {
-            _playerCharacter.MainHandWeapon = _dto.MainHandWeapon;
+
+
+            var itemBuilder = new ItemBuilder(_dto.MainHandWeapon);
+            var director = new Director(itemBuilder);
+            director.ConstructWeapon();
+            Item weapon = itemBuilder.Build();
+            _playerCharacter.MainHandWeapon = weapon;
         }
 
         public void SetName()
@@ -93,7 +131,11 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
 
         public void SetOffHandWeapon()
         {
-            _playerCharacter.OffHandWeapon = _dto.OffHandWeapon;
+            var itemBuilder = new ItemBuilder(_dto.OffHandWeapon);
+            var director = new Director(itemBuilder);
+            director.ConstructWeapon();
+            Item weapon = itemBuilder.Build();
+            _playerCharacter.OffHandWeapon = weapon; // uzyj item buildera
         }
 
         public void SetStatisticManager()

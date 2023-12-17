@@ -19,6 +19,11 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
             _dungeonBuilder = dungeonBuilder;
         }
 
+        public Director(IItemBuilder itemBuilder)
+        {
+            _itemBuilder = itemBuilder;
+        }
+
         public void ConstructPlayerCharacter()
         {
             _characterBuilder.SetId();

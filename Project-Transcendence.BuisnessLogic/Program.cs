@@ -30,6 +30,8 @@ var playerCharacterDTO = new PlayerCharacterDTO()
 Console.WriteLine("DTO:");
 Console.WriteLine(playerCharacterDTO.ToString());
 
+
+
 var characterBuilder = new PlayerCharacterBuilder(playerCharacterDTO);
 var director = new Director(characterBuilder);
 director.ConstructPlayerCharacter();
@@ -42,3 +44,5 @@ Console.WriteLine(player.ToString());
 var x = player.ConvertToDto();
 
 
+Console.WriteLine("DTO after mapping:");
+Console.WriteLine(x.ToString());

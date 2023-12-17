@@ -4,9 +4,9 @@ namespace Project_Transcendence.BuisnessLogic.Models.Character.Player
 {
     public interface IInventory
     {
-        public List<IItem> Inventory { get; set; }
-        public IItem MainHandWeapon { get; set; }
-        public IItem OffHandWeapon { get; set; }
-        public List<IItem> Jewelery { get; set; }
+        public List<Item> Inventory { get; set; }
+        public Item MainHandWeapon { get; set; }
+        public Item OffHandWeapon { get; set; }
+        public List<Item> Jewelery { get; set; }
     }
 }

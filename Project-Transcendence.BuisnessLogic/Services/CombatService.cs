@@ -1,18 +1,45 @@
-﻿using Project_Transcendence_Database.DataAccess;
+﻿using Project_Transcendence.BuisnessLogic.Models.Character;
+using Project_Transcendence.BuisnessLogic.Models.Character.Enemy;
+using Project_Transcendence.BuisnessLogic.Models.Character.Player;
 
 
 namespace Project_Transcendence.BuisnessLogic.Services
 {
     public class CombatService : ICombatService
     {
-        private readonly ApplicationDbContext _context;
+     
+        private IActionDirector _actionDirector;
 
-        public CombatService(ApplicationDbContext context)
+        public CombatService(IActionDirector actionDirector)
         {
-            _context = context;
+            _actionDirector = actionDirector;
         }
 
-      //TODO: Create CombatService
+        public void StartBattle(PlayerCharacter player, Enemy enemy)
+        {
+            // Logika zarządzania walką
+            while (!player.Health.IsDead() && !enemy.Health.IsDead())
+            {
+                PerformTurn(player, enemy);
+                if (enemy.Health.IsDead()) break;
+
+                PerformTurn(enemy, player);
+            }
+
+            // Zakończenie walki
+
+
+
+        }
+
+        private void PerformTurn(IBasicCharacter performer, IBasicCharacter target)
+        {
+            // Logika wybierania i wykonania akcji
+
+
+
+
+        }
 
     }
 }

@@ -13,11 +13,11 @@ namespace Project_Transcendence.BuisnessLogic.Models.Character.Player
         public ICharacterClass CharacterClass { get; set; }
         public int FinishedDungeonIndex { get; set; } = 0;
         public int Experience { get; set; }
-        public IItem MainHandWeapon { get; set; }
-        public IItem OffHandWeapon { get; set; }
+        public Perks.Items.Item MainHandWeapon { get; set; }
+        public Perks.Items.Item OffHandWeapon { get; set; }
         public StatisticsManager Statistics { get; set; }
-        public List<IItem> Inventory { get; set; }
-        public List<IItem> Jewelery { get; set; }
+        public List<Perks.Items.Item> Inventory { get; set; }
+        public List<Perks.Items.Item> Jewelery { get; set; }
         public int UserId { get; set; }
 
         public PlayerCharacterDTO ConvertToDto()
@@ -57,12 +57,12 @@ namespace Project_Transcendence.BuisnessLogic.Models.Character.Player
 
             if (this.MainHandWeapon != null)
             {
-                dto.MainHandWeapon = (ItemDto)this.MainHandWeapon;
+                dto.MainHandWeapon = this.MainHandWeapon.ConvertToDto();
             }
 
             if (this.OffHandWeapon != null)
             {
-                dto.OffHandWeapon = (ItemDto)this.OffHandWeapon;
+                dto.OffHandWeapon = this.OffHandWeapon.ConvertToDto();
             }
 
             if (this.Race != null)
@@ -84,7 +84,7 @@ namespace Project_Transcendence.BuisnessLogic.Models.Character.Player
         }
 
 
-        private List<ItemDto> ItemDtos(List<IItem> items)
+        private List<ItemDto> ItemDtos(List<Perks.Items.Item> items)
             {
                 var result = new List<ItemDto>();
 
@@ -111,8 +111,8 @@ namespace Project_Transcendence.BuisnessLogic.Models.Character.Player
             result.AppendLine($"Main Hand Weapon: {MainHandWeapon?.ToString() ?? "None"}");
             result.AppendLine($"Off Hand Weapon: {OffHandWeapon?.ToString() ?? "None"}");
             result.AppendLine($"Statistics: \n Luck = {Statistics?.Luck}\n Strength = {Statistics?.Strength}\n Intelect = {Statistics?.Intelect}\n Agility = {Statistics?.Agility}");
-            result.AppendLine($"Inventory: {string.Join(", ", Inventory?.Select(item => item.Name) ?? Enumerable.Empty<string>())}");
-            result.AppendLine($"Jewelery: {string.Join(", ", Jewelery?.Select(item => item.Name) ?? Enumerable.Empty<string>())}");
+            result.AppendLine($"Inventory: {string.Join(", ", Inventory?.Select(item => item.ToString()) ?? Enumerable.Empty<string>())}");
+            result.AppendLine($"Jewelery: {string.Join(", ", Jewelery?.Select(item => item.ToString()) ?? Enumerable.Empty<string>())}");
             result.AppendLine($"User ID: {UserId}");
 
             return result.ToString();
