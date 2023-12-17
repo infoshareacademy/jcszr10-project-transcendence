@@ -10,31 +10,6 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
         private readonly IAbilityBuilder? _abilityBuilder;
         private readonly IDungeonBuilder _dungeonBuilder;
 
-        public Director(ICharacterBuilder characterBuilder)
-        {
-            _characterBuilder = characterBuilder;
-        }
-
-        public Director(IItemBuilder itemBuilder)
-        {
-            _itemBuilder = itemBuilder;
-        }
-
-        public Director(IEnemyCharacterBuilder enemyCharacterBuilder)
-        {
-            _enemyCharacterBuilder = enemyCharacterBuilder;
-        }
-
-        public Director(IAbilityBuilder abilityBuilder)
-        {
-            _abilityBuilder = abilityBuilder;
-        }
-
-        public Director(IDungeonBuilder dungeonBuilder)
-        {
-            _dungeonBuilder = dungeonBuilder;
-        }
-
         public Director(ICharacterBuilder characterBuilder = null!, IItemBuilder itemBuilder = null!, IEnemyCharacterBuilder enemyCharacterBuilder = null!, IAbilityBuilder? abilityBuilder = null!, IDungeonBuilder dungeonBuilder = null!)
         {
             _characterBuilder = characterBuilder;
@@ -42,6 +17,11 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
             _enemyCharacterBuilder= enemyCharacterBuilder;
             _abilityBuilder = abilityBuilder;
             _dungeonBuilder = dungeonBuilder;
+        }
+
+        public Director(IItemBuilder itemBuilder)
+        {
+            _itemBuilder = itemBuilder;
         }
 
         public void ConstructPlayerCharacter()
@@ -59,6 +39,7 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
             _characterBuilder.SetEquipedJewelery();
             _characterBuilder.SetStatisticManager();
             _characterBuilder.SetUserId();
+            _characterBuilder.SetPlayerActions();
         }
 
         public void ConstructEnemy()

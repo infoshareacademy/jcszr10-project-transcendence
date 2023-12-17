@@ -7,7 +7,7 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
     public class EnemyCharacterBuilder : IEnemyCharacterBuilder
     {
         private readonly EnemyDto _enemyDto;
-        private readonly Enemy _enemy;
+        private readonly EnemyCharacter _enemy;
 
         public EnemyCharacterBuilder(EnemyDto dto)
         {
@@ -15,7 +15,7 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
         }
 
 
-        public Enemy Build()
+        public EnemyCharacter Build()
         {
             return _enemy;
         }

@@ -4,13 +4,9 @@ namespace Project_Transcendence.BuisnessLogic.Services
 {
     public interface IEquipmentService
     {
-        public Task<Inventory> CreateNewInventoryAsync();
 
-        public Task<EquipedJewelery> CreateNewJeweleryAsync();
-
-        public Task<Item> CreateNewMainWeapon();
-
-        public Task<Item> CreateNewOffWeapon();
+        public Task<Inventory> AddItemToInventory(int itemId, int InventoryId);
+        public Task<Inventory> RemoveItemFromInventory(int itemId, int InventoryId);
 
     }
 }

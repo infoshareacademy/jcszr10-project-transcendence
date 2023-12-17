@@ -8,10 +8,12 @@ namespace Project_T_WebApp.Controllers
     {
         
         private readonly IPlayerService _playerService;
+        private readonly IActionService _actionService;
 
-        public PlayerController(IPlayerService playerService)
+        public PlayerController(IPlayerService playerService, IActionService actionService)
         {
             _playerService = playerService;
+            _actionService = actionService;
         }
 
 

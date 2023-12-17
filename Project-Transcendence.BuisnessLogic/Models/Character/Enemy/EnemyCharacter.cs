@@ -6,7 +6,7 @@
     using Project_Transcendence.BuisnessLogic.Models.Perks.Items;
     using System.Collections.Generic;
 
-    public class Enemy : BasicCharacter, IEnemy, IDtoConvertible<EnemyDto>
+    public class EnemyCharacter : BasicCharacter, IEnemy, IDtoConvertible<EnemyDto>
     {
         public int Id { get; set; }
         public List<Ability> Abilities { get; set; }

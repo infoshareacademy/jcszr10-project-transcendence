@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Project_Transcendence_Database.Entities
 {
@@ -7,9 +8,10 @@ namespace Project_Transcendence_Database.Entities
 
         public int? PlayerCharacterId { get; set; }
 
+        [ForeignKey("Item")]
         public int? ItemId { get; set; }
 
-
+        public virtual Item Item { get; set; }
 
     }
 }

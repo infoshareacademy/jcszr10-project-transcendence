@@ -16,6 +16,6 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
         public void SetAbilities();
         public void SetInventory();
 
-        Enemy Build();
+        EnemyCharacter Build();
     }
 }

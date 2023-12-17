@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Project_Transcendence_Database.DataAccess;
 
@@ -11,9 +12,11 @@ using Project_Transcendence_Database.DataAccess;
 namespace Project_Transcendence_Database.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231119180339_jewelery")]
+    partial class jewelery
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -802,12 +805,14 @@ namespace Project_Transcendence_Database.Migrations
                         .HasColumnType("int");
 
                     b.Property<int?>("MainHandWeaponId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("OffHandWeaponId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int>("Strength")
@@ -1059,12 +1064,14 @@ namespace Project_Transcendence_Database.Migrations
                     b.HasOne("Project_Transcendence_Database.Entities.Item", "MainHandWeapon")
                         .WithMany()
                         .HasForeignKey("MainHandWeaponId")
-                        .OnDelete(DeleteBehavior.NoAction);
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
 
                     b.HasOne("Project_Transcendence_Database.Entities.Item", "OffHandWeapon")
                         .WithMany()
                         .HasForeignKey("OffHandWeaponId")
-                        .OnDelete(DeleteBehavior.NoAction);
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
 
                     b.HasOne("Project_Transcendence_Database.Entities.User", "User")
                         .WithOne("Character")
