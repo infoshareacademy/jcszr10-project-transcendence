@@ -66,7 +66,14 @@ namespace Project_T_WebApp.Controllers
         {
             return View();
         }
-
+        public IActionResult Win()
+        {
+            return View();
+        }
+        public IActionResult Defeat()
+        {
+            return View();
+        }
         public IActionResult ShowCharacterClassAbilities()
         {
             var characterClass = _context.Classes

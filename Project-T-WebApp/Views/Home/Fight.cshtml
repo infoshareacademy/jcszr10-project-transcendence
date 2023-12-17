@@ -4,9 +4,9 @@
 <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
     <div class="image-container fight-panel">
         <img src="~/images/fight-panel.png" />
-    <img class="fight-btn health-enemy" src="~/images/life.png" />
-        <img class="fight-btn enemy" src="~/images/orc.png" />
-    <img class="fight-btn health-player" src="~/images/life.png" />
+    <img class="fight-btn health-enemy" src="~/images/heart_empty.png" />
+      <a>  <img class="fight-btn enemy" src="~/images/orc.png" /> 50 </a>
+    <img class="fight-btn health-player" src="~/images/heart_empty.png" />
     <img class="fight-btn player-hero" src="~/images/czarodziej.png" />
 </div>
 <div class="fight-btn circle">
@@ -34,4 +34,6 @@
         </li>
     </ul>
 </nav>
+    <a class="menu-btn btn-3" href="@Url.Action("Win", "Home")">Win</a>
+    <a class="menu-btn btn-1" href="@Url.Action("Defeat", "Home")">Defeat</a>
 </div>

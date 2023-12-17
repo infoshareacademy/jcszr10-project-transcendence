@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Win";
+}
+<link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+<div class="level-up-container">
+    <img src="/images/druid_elf.png" alt="Character Image" id="characterImage">
+    <div class="level-up-overlay">
+        <h1>Wygrana!</h1>
+    </div>
+</div>
+<div class="shooting-star">*</div>
+<div class="shooting-star">*</div>
+<div class="shooting-star">*</div>
+<div class="shooting-star">*</div>
+<div class="shooting-star">*</div>
+<a class="menu-btn btn-w-1" href="@Url.Action("Map", "Home")">Dalej</a>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const characterImage = document.getElementById('characterImage');
+        const levelUpOverlay = document.querySelector('.level-up-overlay');
+
+        // Dodaj klasę animate po załadowaniu strony
+        setTimeout(() => {
+            characterImage.classList.add('animate');
+            levelUpOverlay.style.opacity = '1';
+        }, 1000); // Poczekaj 1 sekundę przed rozpoczęciem animacji
+
+        // Po zakończeniu animacji, wykonaj dodatkowe kroki (np. powiększenie)
+        characterImage.addEventListener('animationend', function () {
+            // Dodaj dodatkowe kroki animacji tutaj
+            levelUpOverlay.innerHTML = 'Wygrana!';
+        });
+    });
+
+</script>

@@ -37,9 +37,24 @@ body {
     background-image: url('/images/big-background-3.png');
     background-position: center;
     background-repeat: no-repeat;
-    overflow: hidden;
-    width: auto;
+    width: 100vw;
+    height: 100vh;
     background-size: cover;
+    display: flex;
+    overflow: hidden;
+}
+body.hello {
+    font-family: "Papyrus";
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/big-background-3.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    overflow: visible;
 }
 
 .image-container {
@@ -67,8 +82,8 @@ img {
     border-radius: 0px;
     font-family: "Papyrus";
     font-size: 20px;
-    width: 115px;
-    height: 42px;
+    width: 13vh;
+    height: 5vh;
     text-align: center;
     line-height: 21px;
     text-shadow: 0.1em 0.1em 0.2em black;
@@ -147,8 +162,8 @@ img {
 /*Welcome page*/
 .welcome {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/dnd.jpg');
-    height: 850px;
-    width: 1706px;
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     padding: 0 380px;
@@ -159,6 +174,7 @@ img {
     margin: 0;
     position: absolute;
     left: 1px;
+    overflow: visible;
 }
 
 .hero-name {
@@ -620,8 +636,21 @@ img {
 }
 .btn-q-3 {
     width: 300px;
-    top: 65%;
+    top: 75%;
     left: 76%;
+}
+
+.btn-f-1 {
+    top: 90%;
+    left: 40%;
+}
+.btn-f-2 {
+    top: 90%;
+    left: 60%;
+}
+.btn-w-1 {
+    top: 90%;
+    left: 50%;
 }
 .fight-panel{
     height: 600px;
@@ -646,16 +675,19 @@ img {
     left: 62%;
 }
 .health-enemy {
-    width: 150px;
+    width: 210px;
     height: auto;
     top: 25%;
     left: 25%;
+    color: darkred;
+  
 }
 .health-player {
-    width: 150px;
+    width: 210px;
     height: auto;
     top: 25%;
     left: 75%;
+   
 }
 /*Attack menu*/
 .circle{
@@ -990,3 +1022,178 @@ img {
         box-shadow: 0 0 0px 0px black;
         transform: translate(-50%, -50%) scale(1.2) rotate(360deg);
     }
+
+
+/*Level Up*/
+
+
+
+.level-up-container {
+    position: relative;
+    height: 100vh; /* Wysokość 100% widoku */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    
+}
+.defeat-container {
+    position: relative;
+    height: 100vh; /* Wysokość 100% widoku */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    filter: grayscale(80%);
+}
+
+/* Styl dla wrappera centralizującego */
+.centering-wrapper {
+    text-align: center;
+}
+
+/* Styl dla obrazu postaci */
+#characterImage {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px; /* Zaokrąglenie rogów obrazu */
+}
+
+/* Styl dla nakładki "LEVEL UP!" */
+.level-up-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    text-align: center;
+    font-size: 5em;
+    font-weight: bold;
+    color: khaki;
+    text-shadow: 5px 5px 40px rgba(0, 0, 0, 0.9), -5px -5px 40px rgba(0, 0, 0, 0.9);
+    transition: opacity 0.9s ease; /* Efekt płynnego pojawiania się */
+}
+
+.defeat-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    text-align: center;
+    font-size: 10em;
+    font-weight: bold;
+    color: red;
+    text-shadow: 5px 5px 40px rgba(0, 0, 0, 0.9), -5px -5px 40px rgba(0, 0, 0, 0.9);
+    transition: opacity 0.9s ease; /* Efekt płynnego pojawiania się */
+} 
+/* Styl animacji poruszania w lewo i prawo */
+@keyframes moveLeftRight {
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    20%, 40%, 60% {
+        transform: translateX(10%);
+    }
+
+    80% {
+        transform: translateX(-10%);
+    }
+}
+
+/* Styl animacji pojawiania się cienia */
+@keyframes shadowGrow {
+    0%, 100% {
+        box-shadow: 0 0 0 0 #ffcc00; /* Kolor cienia*/
+    }
+
+    50% {
+        box-shadow: 0 0 20px 10px #ffcc00; /* Powiększenie cienia */
+    }
+}
+@keyframes shadowGrowDefeat {
+    0%, 100% {
+        box-shadow: 0 0 0 0 #ff0000 
+    }
+
+    50% {
+        box-shadow: 0 0 20px 10px #9f4848 
+    }
+}
+
+/* Styl dla animowanej klasy */
+.animate {
+    animation: moveLeftRight 2s ease-in-out 1, shadowGrow 5s 3s ease forwards, fadeIn 1s 8s ease forwards; /* Kolejne animacje z opóźnieniem */
+}
+.animateDefeat {
+    animation: moveLeftRight 2s ease-in-out 1, shadowGrowDefeat 5s 3s ease forwards, fadeIn 1s 8s ease forwards; 
+}
+
+/* Styl animacji pojawiania się tekstu */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+/* Animacja gwiazdek - keyframes */
+@keyframes shootingStar {
+    0% {
+        transform: translateY(-100vh) rotate(45deg);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+/* Styl dla gwiazdek */
+.shooting-star {
+    position: absolute;
+    color: gold;
+    font-size: 3em;
+    opacity: 0;
+    animation: shootingStar 2s linear infinite;
+}
+
+    /* Dodaj kilka gwiazdek do dokumentu HTML */
+    .shooting-star:nth-child(1) {
+        left: 10%;
+        animation-delay: 0s;
+    }
+
+    .shooting-star:nth-child(2) {
+        left: 30%;
+        animation-delay: 1s;
+    }
+
+    .shooting-star:nth-child(3) {
+        left: 50%;
+        animation-delay: 2s;
+    }
+
+    .shooting-star:nth-child(4) {
+        left: 70%;
+        animation-delay: 0.5s;
+    }
+
+    .shooting-star:nth-child(5) {
+        left: 90%;
+        animation-delay: 1.5s;
+    }
+
+
+
+
+
+

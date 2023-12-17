@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Project_Transcendence_Database.DataAccess;
 
@@ -11,9 +12,11 @@ using Project_Transcendence_Database.DataAccess;
 namespace Project_Transcendence_Database.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231205175441_Migration-12")]
+    partial class Migration12
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -519,8 +522,6 @@ namespace Project_Transcendence_Database.Migrations
 
                     b.HasKey("PlayerCharacterId", "ItemId");
 
-                    b.HasIndex("ItemId");
-
                     b.ToTable("EquipedJeweleries");
                 });
 
@@ -1012,19 +1013,11 @@ namespace Project_Transcendence_Database.Migrations
 
             modelBuilder.Entity("Project_Transcendence_Database.Entities.EquipedJewelery", b =>
                 {
-                    b.HasOne("Project_Transcendence_Database.Entities.Item", "Item")
-                        .WithMany()
-                        .HasForeignKey("ItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Project_Transcendence_Database.Entities.PlayerCharacter", null)
                         .WithMany("Jewelery")
                         .HasForeignKey("PlayerCharacterId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Item");
                 });
 
             modelBuilder.Entity("Project_Transcendence_Database.Entities.Inventory", b =>
