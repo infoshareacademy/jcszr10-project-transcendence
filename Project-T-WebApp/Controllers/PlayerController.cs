@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Project_Transcendence.BuisnessLogic.Models.Character.Player;
+using Project_T_WebApp.Models;
 using Project_Transcendence.BuisnessLogic.Services;
 
 namespace Project_T_WebApp.Controllers
 {
     public class PlayerController : Controller
     {
-
+        
         private readonly IPlayerService _playerService;
         private readonly IActionService _actionService;
 
@@ -24,8 +24,20 @@ namespace Project_T_WebApp.Controllers
 
         [HttpPost]
         public async Task<IActionResult> CreateCharacter(string characterName, int raceId, int classId, string carouselControl, string carouselControl2)
-        {  
-            var character = await _playerService.CreateNewCharacterAsync(characterName, raceId, classId);
+        {
+            //characterName = Request.Form["characterName"];
+            //classId = GetClassIdFromClassButton(carouselControl);
+            //raceId = GetRacesIdFromRaceButton(carouselControl2);
+
+
+            //var newPlayerCharacter = await _playerService.CreateNewCharacterAsync(characterName, raceId, classId);
+
+
+            //return RedirectToAction("Map", "Home");
+           
+
+            // Przypisz ścieżkę obrazu do TempData
+            
 
             return RedirectToAction("Map", "Home");
         }
@@ -46,29 +58,40 @@ namespace Project_T_WebApp.Controllers
         }
 
         private int GetClassIdFromClassButton(string classButton)
-        {
-            classButton = Request.Form["carousel-control"];
-            return classButton switch
-            {
-                "button_a" => 1,
-                "button_b" => 2,
-                "button_c" => 3,
-                "button_d" => 4,
-                _ => 0,
-            };
-        }
 
-        private int GetRacesIdFromRaceButton(string raceButton)
         {
-            raceButton = Request.Form["carousel-control-2"];
-            return raceButton switch
+            if (!string.IsNullOrEmpty(imagePath))
             {
-                "button_f" => 1,
-                "button_g" => 8,
-                "button_h" => 3,
-                "button_i" => 2,
-                _ => 0,
-            };
+                // Ustaw ścieżkę obrazu w sesji
+                HttpContext.Session.SetString("selectedImagePath", imagePath);
+            }
+
+            return Ok();
         }
+        //private int GetClassIdFromClassButton(string classButton)
+        //{
+        //    classButton = Request.Form["carousel-control"];
+        //    return classButton switch
+        //    {
+        //        "button_a" => 1,
+        //        "button_b" => 2,
+        //        "button_c" => 3,
+        //        "button_d" => 4,
+        //        _ => 0,
+        //    };
+        //}
+
+        //private int GetRacesIdFromRaceButton(string raceButton)
+        //{
+        //    raceButton = Request.Form["carousel-control-2"];
+        //    return raceButton switch
+        //    {
+        //        "button_f" => 1,
+        //        "button_g" => 8,
+        //        "button_h" => 3,
+        //        "button_i" => 2,
+        //        _ => 0,
+        //    };
+        //}
     }
 }

@@ -8,10 +8,9 @@ Gra jest osadzona w świecie fantasy, gracz wciela się w nej w stworzoną przez
 
 ## Twórcy
 
- - <span style="color:yellow">**Tech Lead**</span> Piotr Niewczas
- - <span style="color:yellow">**Scrum Master**</span> Paula Migulska
- - <span style="color:yellow">**Developer**</span> Piotr Żak
- - <span style="color:Yellow">**Developer**</span> Marek Laskowski
+ - <span style="color:yellow">**Tech Lead / Back-end**</span> Piotr Niewczas
+ - <span style="color:yellow">**Scrum Master / Front-end**</span> Paula Migulska
+ - <span style="color:yellow">**Grafika**</span> Piotr Żak
  - <span style="color:Yellow">**Trener**</span> Tymoteusz Micherda
  #
 

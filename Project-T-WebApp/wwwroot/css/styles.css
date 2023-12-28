@@ -45,19 +45,6 @@ body {
     display: flex;
     overflow: hidden;
 }
-body.hello {
-    font-family: "Papyrus";
-    margin: 0;
-    padding: 0;
-    background-image: url('/images/big-background-3.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100vw;
-    height: 100vh;
-    background-size: cover;
-    display: flex;
-    overflow: visible;
-}
 
 .image-container {
     height: 100vh;
@@ -95,6 +82,8 @@ img {
 
 .btn-1 {
     top: 47%;
+    height: 50px;
+    width: 130px;
 }
 
 .btn-2 {
@@ -103,6 +92,8 @@ img {
 
 .btn-3 {
     top: 63%;
+    height: 50px;
+    width: 130px;
 }
 
 .btn-4 {
@@ -135,6 +126,8 @@ img {
 
 .btn-9 {
     top: 55%;
+    height: 50px;
+    width: 130px;
 }
 
 .about {
@@ -985,7 +978,6 @@ img {
     height: 800px;
     left: 80%;
     top: 50%;
-    background-image: url('/images/wizard_human.png');
     background-size: cover;
     background-size: contain;
     background-repeat: no-repeat;
