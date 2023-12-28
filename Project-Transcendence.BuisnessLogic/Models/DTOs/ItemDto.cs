@@ -17,7 +17,7 @@ namespace Project_Transcendence.BuisnessLogic.Models.DTOs
         public int? Luck { get; set; }
         public int? Healing { get; set; }
         public ItemType ItemType { get; set; }
-        public StatisticsManager Statistics { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public StatisticsManager Statistics { get; set; }
 
         public ItemDto()
         {

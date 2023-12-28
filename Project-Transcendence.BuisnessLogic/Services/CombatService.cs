@@ -2,7 +2,6 @@
 using Project_Transcendence.BuisnessLogic.Models.Character.Enemy;
 using Project_Transcendence.BuisnessLogic.Models.Character.Player;
 
-
 namespace Project_Transcendence.BuisnessLogic.Services
 {
     public class CombatService : ICombatService
@@ -26,7 +25,6 @@ namespace Project_Transcendence.BuisnessLogic.Services
 
                 PerformTurn(enemy, player);
             }
-            // Zakończenie walki
         }
 
         private void PerformTurn(IBasicCharacter performer, IBasicCharacter target)
@@ -35,17 +33,15 @@ namespace Project_Transcendence.BuisnessLogic.Services
 
             if (performer is PlayerCharacter player)
             {
-                // Logika wybierania akcji przez gracza
                 selectedAction = _actionService.ChooseActionForPlayer(player);
             }
             else if (performer is EnemyCharacter enemy)
             {
-                // wybieranie akcji przez przeciwnika
+                selectedAction = _actionService.ChooseActionForEnemy(enemy);
             }
 
             if (selectedAction != null)
             {
-                // Wykonanie wybranej akcji
                 _actionDirector.PerformAction(performer, selectedAction, target);
             }
             else

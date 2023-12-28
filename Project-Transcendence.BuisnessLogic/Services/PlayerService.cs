@@ -79,12 +79,10 @@ namespace Project_Transcendence.BuisnessLogic.Services
             character.Luck = dto.Luck;
             character.CharacterRaceId = dto.RaceId;
             character.CharacterClassId = dto.ClassId;
-            //TODO: Dokonczyc implementacje dto
-
-            character.Inventory = null;
-            character.Jewelery = null;
-            character.MainHandWeapon = null;
-            character.OffHandWeapon = null;
+            //character.Inventory = dto.Inventory;
+            //character.Jewelery = dto.Jewelery;
+            //character.MainHandWeapon = dto.MainHandWeapon;
+            //character.OffHandWeapon = dto.OffHandWeapon;
 
             await _context.SaveChangesAsync();
 

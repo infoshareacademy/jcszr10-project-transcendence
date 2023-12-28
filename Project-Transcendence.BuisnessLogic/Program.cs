@@ -12,6 +12,7 @@ var playerCharacterDTO = new PlayerCharacterDTO()
     Level = 1,
     Experience = 0,
     Health = 100,
+    MaxHealth = 100,
     Agility = 10,
     Strength = 10,
     Intelect = 10,

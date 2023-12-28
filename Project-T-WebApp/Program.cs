@@ -1,8 +1,6 @@
 
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
-using Project_T_WebApp.Models;
 using Project_Transcendence.BuisnessLogic.Services;
 using Project_Transcendence_Database.DataAccess;
 
@@ -12,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
 builder.Services.AddTransient<IPlayerService, PlayerService>();
 builder.Services.AddTransient<IActionService, ActionService>();
+builder.Services.AddTransient<IDamageCalculatorService, DamageCalculatorService>();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options =>
 {
