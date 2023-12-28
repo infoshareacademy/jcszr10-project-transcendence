@@ -18,6 +18,7 @@ namespace Project_Transcendence.BuisnessLogic.Models.Builders
             _dto = dto;
             _playerCharacter = new PlayerCharacter();
             _playerCharacter.Statistics = new StatisticsManager(0,0,0,0);
+            _playerCharacter.Health = new HealthManager(0,0);
         }
 
         public PlayerCharacter Build()

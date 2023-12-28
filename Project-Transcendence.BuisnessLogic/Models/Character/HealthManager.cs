@@ -8,10 +8,10 @@
 
 
 
-        public HealthManager(int health = 100)
+        public HealthManager(int health = 0, int maxHEalth = 0)
         {
             Health = health;
-            MaxHealth = health;
+            MaxHealth = maxHEalth;
         }
 
         public void IncreaseMaxHealth(int addHealth)

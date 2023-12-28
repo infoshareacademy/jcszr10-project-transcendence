@@ -1,6 +1,4 @@
-﻿using Project_Transcendence.BuisnessLogic.Models.Character.CharacterClasses;
-using Project_Transcendence.BuisnessLogic.Models.Perks.Items;
-using Project_Transcendence_Database.Entities;
+﻿using Project_Transcendence_Database.Entities;
 using System.Text;
 using static Project_Transcendence.BuisnessLogic.Globals.GlobalEnums;
 using Item = Project_Transcendence_Database.Entities.Item;
