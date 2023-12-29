@@ -1,9 +1,7 @@
-﻿using Project_Transcendence.BuisnessLogic.Models.Character.Enemy;
-using Project_Transcendence.BuisnessLogic.Models.Character.Player;
-using Project_Transcendence.BuisnessLogic.Models.Perks.Ability;
+﻿using Project_Transcendence.BuisnessLogic.Models.Perks.Ability;
 using Project_Transcendence.BuisnessLogic.Services;
 
-namespace Project_Transcendence.BuisnessLogic.Models.Character.CharacterImplementations
+namespace Project_Transcendence.BuisnessLogic.Models.Character.CharacterImplementations.Actions
 {
     public class CastSpellAction : ICharacterAction
     {
@@ -24,7 +22,11 @@ namespace Project_Transcendence.BuisnessLogic.Models.Character.CharacterImplemen
 
         public void Execute(IBasicCharacter performer, IBasicCharacter target)
         {
-            target.Health.DecreaseHealth(_damageCalculatorService.CalculateDamage(performer as PlayerCharacter, target as EnemyCharacter, new CastSpellAction(), _ability) ?? 1);
+            target.Health.DecreaseHealth(_damageCalculatorService.CalculateDamage(performer, target, new CastSpellAction(), _ability) ?? 1);
+            if(_ability.EffectOccurChance >= 100)
+            {
+                target.State.AddState(_ability.State);
+            }
         }
     }
 }

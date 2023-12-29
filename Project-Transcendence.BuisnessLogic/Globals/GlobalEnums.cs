@@ -58,5 +58,15 @@ namespace Project_Transcendence.BuisnessLogic.Globals
             Chi           
         }
 
+        public enum  StateType
+        {
+            DamageOverTime,
+            HealingOverTime,
+            Stun,
+            Silence,
+            Weakened,
+            None
+        }
+
     }
 }

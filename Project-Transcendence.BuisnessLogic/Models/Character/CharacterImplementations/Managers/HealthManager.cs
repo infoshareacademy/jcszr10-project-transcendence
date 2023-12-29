@@ -1,12 +1,10 @@
-﻿namespace Project_Transcendence.BuisnessLogic.Models.Character.CharacterImplementations
+﻿namespace Project_Transcendence.BuisnessLogic.Models.Character.CharacterImplementations.Managers
 {
     public class HealthManager
     {
-        public int Health { get; set; }
+        public int Health { get; private set; }
 
-        public int MaxHealth { get; set; }
-
-
+        public int MaxHealth { get; private set; }
 
         public HealthManager(int health = 0, int maxHEalth = 0)
         {

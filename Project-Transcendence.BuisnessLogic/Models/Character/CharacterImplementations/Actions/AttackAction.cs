@@ -2,7 +2,7 @@
 using Project_Transcendence.BuisnessLogic.Models.Character.Player;
 using Project_Transcendence.BuisnessLogic.Services;
 
-namespace Project_Transcendence.BuisnessLogic.Models.Character.CharacterImplementations
+namespace Project_Transcendence.BuisnessLogic.Models.Character.CharacterImplementations.Actions
 {
     public class AttackAction : ICharacterAction
     {

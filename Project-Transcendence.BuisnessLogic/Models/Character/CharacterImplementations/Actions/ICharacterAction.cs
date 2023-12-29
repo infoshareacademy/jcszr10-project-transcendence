@@ -1,4 +1,4 @@
-﻿namespace Project_Transcendence.BuisnessLogic.Models.Character.CharacterImplementations
+﻿namespace Project_Transcendence.BuisnessLogic.Models.Character.CharacterImplementations.Actions
 {
     public interface ICharacterAction
     {
