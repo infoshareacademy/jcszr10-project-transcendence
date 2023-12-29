@@ -12,6 +12,20 @@ namespace Project_Transcendence.BuisnessLogic.Globals
             Potion
         }
 
+        public enum  EnemyType
+        {
+            Normal,
+            Elite,
+            Boss
+        }
+
+        public enum ItemRarity
+        {
+            Uncommon,
+            Epic,
+            Legendary
+        }
+
         public enum AbilityType
         {
             Monk,
@@ -34,6 +48,14 @@ namespace Project_Transcendence.BuisnessLogic.Globals
             Warrior,
             Wizard,
             Rogue
+        }
+
+        public enum  ResourceType
+        {
+            Mana,
+            Rage,
+            Energy,
+            Chi           
         }
 
     }

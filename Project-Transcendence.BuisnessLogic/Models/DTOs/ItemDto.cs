@@ -1,4 +1,4 @@
-﻿using Project_Transcendence.BuisnessLogic.Models.Character.Player;
+﻿using Project_Transcendence.BuisnessLogic.Models.Character.CharacterImplementations;
 using Project_Transcendence.BuisnessLogic.Models.Perks.Items;
 using static Project_Transcendence.BuisnessLogic.Globals.GlobalEnums;
 

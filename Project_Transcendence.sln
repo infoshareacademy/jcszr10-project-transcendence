@@ -5,11 +5,9 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project-Transcendence.BusinessLogic", "Project-Transcendence.BuisnessLogic\Project-Transcendence.BusinessLogic.csproj", "{67D6EE80-29D6-44A3-B567-84272CE2959A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project-Transcendence.ConsoleApp", "Project-Transcendence.ConsoleApp\Project-Transcendence.ConsoleApp.csproj", "{EFB21574-7685-4A41-BFA7-10568EFC2455}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project-Transcendence.WebApp", "Project-T-WebApp\Project-Transcendence.WebApp.csproj", "{8705FF96-6064-43FE-B7DF-73AE6F8FCDDE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project-T-WebApp", "Project-T-WebApp\Project-T-WebApp.csproj", "{8705FF96-6064-43FE-B7DF-73AE6F8FCDDE}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project-Transcendence_Database", "Project-Transcendence_Database\Project-Transcendence_Database.csproj", "{419F156A-CF5D-4083-B775-68F072230364}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project-Transcendence.Database", "Project-Transcendence_Database\Project-Transcendence.Database.csproj", "{419F156A-CF5D-4083-B775-68F072230364}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +19,6 @@ Global
 		{67D6EE80-29D6-44A3-B567-84272CE2959A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67D6EE80-29D6-44A3-B567-84272CE2959A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67D6EE80-29D6-44A3-B567-84272CE2959A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EFB21574-7685-4A41-BFA7-10568EFC2455}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EFB21574-7685-4A41-BFA7-10568EFC2455}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EFB21574-7685-4A41-BFA7-10568EFC2455}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EFB21574-7685-4A41-BFA7-10568EFC2455}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8705FF96-6064-43FE-B7DF-73AE6F8FCDDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8705FF96-6064-43FE-B7DF-73AE6F8FCDDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8705FF96-6064-43FE-B7DF-73AE6F8FCDDE}.Release|Any CPU.ActiveCfg = Release|Any CPU

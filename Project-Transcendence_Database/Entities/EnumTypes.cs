@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Project_Transcendence_Database.Entities
+﻿namespace Project_Transcendence_Database.Entities
 {
     public class EnumTypes
     {
@@ -13,7 +7,21 @@ namespace Project_Transcendence_Database.Entities
             Weapon,
             Jewelery,
             Shield,
-            Potion,
+            Potion
+        }
+
+        public enum EnemyType
+        {
+            Normal,
+            Elite,
+            Boss
+        }
+
+        public enum ItemRarity
+        {
+            Uncommon,
+            Epic,
+            Legendary
         }
 
         public enum AbilityType
@@ -30,6 +38,22 @@ namespace Project_Transcendence_Database.Entities
             Enemy,
             Shop,
             Puzzle
+        }
+
+        public enum ClassType
+        {
+            Monk,
+            Warrior,
+            Wizard,
+            Rogue
+        }
+
+        public enum ResourceType
+        {
+            Mana,
+            Rage,
+            Energy,
+            Chi
         }
     }
 }

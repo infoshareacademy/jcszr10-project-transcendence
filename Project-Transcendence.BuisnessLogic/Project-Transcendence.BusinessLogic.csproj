@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Project-Transcendence_Database\Project-Transcendence_Database.csproj" />
+    <ProjectReference Include="..\Project-Transcendence_Database\Project-Transcendence.Database.csproj" />
   </ItemGroup>
 
 </Project>

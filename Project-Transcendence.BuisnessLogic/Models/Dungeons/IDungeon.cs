@@ -1,6 +1,4 @@
-﻿
-using Project_Transcendence.BuisnessLogic.Models.Character.Enemy;
-using static Project_Transcendence.BuisnessLogic.Globals.GlobalEnums;
+﻿using Project_Transcendence.BuisnessLogic.Models.Character.EnemyCharacter;
 
 namespace Project_Transcendence.BuisnessLogic.Models.Dungeons
 {
@@ -8,9 +6,8 @@ namespace Project_Transcendence.BuisnessLogic.Models.Dungeons
     {
         public int Id { get; set; }
         public string DungeonStory { get; set; }
-        public DungeonType DungeonType { get; set; }
         public int DungeonLevel { get; set; }
-        public ICollection<EnemyCharacter> EnemyInDungeon { get; set; }
-        public Puzzle PuzzleToSolve { get; set; }
+        public List<Puzzle> Puzzles { get; set; }
+        public List<Enemy> Enemies { get; set; }
     }
 }
